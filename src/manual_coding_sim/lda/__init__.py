@@ -9,6 +9,18 @@
 априорной модели ``LDA_prior``.
 """
 
+
+from manual_coding_sim.lda.chapter4_report import (
+    Chapter4LdaReportBuilder,
+    Chapter4LdaReportConfig,
+    Chapter4LdaReportResult,
+)
+from manual_coding_sim.lda.chapter4_runner import (
+    Chapter4LdaRunner,
+    Chapter4RunResult,
+    Chapter4RunnerConfig,
+)
+
 from manual_coding_sim.lda.config import (
     Chapter4LdaConfig,
     LdaInputPaths,
@@ -93,6 +105,12 @@ from manual_coding_sim.lda.tokenization import (
 )
 
 __all__ = [
+    "Chapter4LdaReportBuilder",
+    "Chapter4LdaReportConfig",
+    "Chapter4LdaReportResult",
+    "Chapter4LdaRunner",
+    "Chapter4RunResult",
+    "Chapter4RunnerConfig",
     "Chapter4LdaConfig",
     "DEFAULT_DIAGNOSTIC_FEATURES_PATH",
     "DEFAULT_FACT_FEATURES_PATH",
