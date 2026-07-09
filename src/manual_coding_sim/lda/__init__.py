@@ -4,8 +4,9 @@
 артефакты главы 3 как входные данные и формируют воспроизводимые артефакты
 для главы 4: корпус токенов, LDA-модель, латентные профили и отчеты.
 
-На первом этапе в пакете фиксируются только конфигурации, пути и защита от
-утечки фактических признаков в априорную модель ``LDA_prior``.
+Пакет постепенно расширяется: сначала фиксируются конфигурации, пути и
+защита от утечки, затем добавляются токенизация и построение корпуса для
+априорной модели ``LDA_prior``.
 """
 
 from manual_coding_sim.lda.config import (
@@ -14,6 +15,11 @@ from manual_coding_sim.lda.config import (
     LdaModelConfig,
     LdaOutputPaths,
     LdaTokenizationConfig,
+)
+from manual_coding_sim.lda.corpus_builder import (
+    LdaCorpusBuilder,
+    LdaCorpusBuilderConfig,
+    LdaCorpusBuildResult,
 )
 from manual_coding_sim.lda.leakage_guard import (
     LeakageCheckResult,
@@ -30,6 +36,11 @@ from manual_coding_sim.lda.paths import (
     DEFAULT_PROTOCOLS_PATH,
     DEFAULT_QUALITY_TARGETS_PATH,
 )
+from manual_coding_sim.lda.tokenization import (
+    FeatureTokenizationRule,
+    FeatureTokenizer,
+    TokenizedFeature,
+)
 
 __all__ = [
     "Chapter4LdaConfig",
@@ -41,6 +52,12 @@ __all__ = [
     "DEFAULT_PRIOR_FEATURES_PATH",
     "DEFAULT_PROTOCOLS_PATH",
     "DEFAULT_QUALITY_TARGETS_PATH",
+    "FeatureTokenizationRule",
+    "FeatureTokenizer",
+    "LdaCorpusBuilder",
+    "LdaCorpusBuilderConfig",
+    "LdaCorpusBuildResult",
+    "TokenizedFeature",
     "LdaInputPaths",
     "LdaLeakageError",
     "LdaModelConfig",
