@@ -13,6 +13,16 @@ from manual_coding_sim.message_model import (
     messages_to_rows,
     summarize_message,
 )
+from manual_coding_sim.operator_model import (
+    OperatorModel,
+    OperatorModelConfig,
+    OperatorPlanEstimate,
+    OperatorProfile,
+    OperatorState,
+    OperatorStepEstimate,
+    operator_estimates_to_rows,
+    summarize_operator_estimate,
+)
 from manual_coding_sim.procedure_model import (
     CodingOperationRule,
     ProcedureModel,
@@ -39,6 +49,12 @@ __all__ = [
     "MessageElement",
     "MessageGenerationConfig",
     "MessageModel",
+    "OperatorModel",
+    "OperatorModelConfig",
+    "OperatorPlanEstimate",
+    "OperatorProfile",
+    "OperatorState",
+    "OperatorStepEstimate",
     "ProcedureModel",
     "ProcedureModelConfig",
     "ProcedurePlan",
@@ -47,7 +63,9 @@ __all__ = [
     "ScenarioParameters",
     "load_experiment_config",
     "messages_to_rows",
+    "operator_estimates_to_rows",
     "procedure_plans_to_rows",
     "summarize_message",
+    "summarize_operator_estimate",
     "summarize_procedure_plan",
 ]
