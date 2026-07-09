@@ -1,4 +1,24 @@
-"""Исследовательский симулятор ручного кодирования для главы 3 диссертации.
+"""Исправление предупреждения RuntimeWarning при запуске отчета главы 3.
+
+Скрипт удаляет преждевременный импорт модуля `chapter3_report` из
+`src/manual_coding_sim/__init__.py`. Для пакета с layout `src/` отчетный модуль
+должен запускаться командой `python -m manual_coding_sim.chapter3_report`, но
+не должен импортироваться автоматически при обычной загрузке пакета
+`manual_coding_sim`.
+"""
+
+from __future__ import annotations
+
+import ast
+import json
+from pathlib import Path
+
+
+PROJECT_ROOT = Path.cwd()
+PACKAGE_INIT_PATH = PROJECT_ROOT / "src" / "manual_coding_sim" / "__init__.py"
+REPORT_PATH = PROJECT_ROOT / "reports" / "chapter3" / "stage13_runtime_warning_fix_report.json"
+
+INIT_CONTENT = '''"""Исследовательский симулятор ручного кодирования для главы 3 диссертации.
 
 Пакет содержит программные модели компонентов сценария A = {S, O, U, G, K},
 а также средства формирования протоколов, признаков и показателей качества.
@@ -180,3 +200,40 @@ __all__ = [
     "run_experiment",
     "run_experiment_from_yaml",
 ]
+'''
+
+
+def main() -> None:
+    """Перезаписывает `__init__.py` безопасной версией без импортов отчета."""
+    if not PACKAGE_INIT_PATH.exists():
+        raise FileNotFoundError(f"Не найден файл пакета: {PACKAGE_INIT_PATH}")
+
+    PACKAGE_INIT_PATH.write_text(INIT_CONTENT, encoding="utf-8")
+    ast.parse(PACKAGE_INIT_PATH.read_text(encoding="utf-8"))
+
+    REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    report = {
+        "stage": 13,
+        "task": "fix_runtime_warning_for_chapter3_report",
+        "fixed_file": str(PACKAGE_INIT_PATH),
+        "removed_automatic_chapter3_report_import": True,
+        "recommended_check_commands": [
+            "python -m pytest",
+            "python -W error::RuntimeWarning -m manual_coding_sim.chapter3_report",
+        ],
+    }
+    REPORT_PATH.write_text(
+        json.dumps(report, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+    print("Исправление RuntimeWarning подготовлено.")
+    print(f"[OK] Обновлен файл: {PACKAGE_INIT_PATH}")
+    print(f"[OK] Отчет: {REPORT_PATH}")
+    print("\nТеперь выполните команды:")
+    print("python -m pytest")
+    print("python -W error::RuntimeWarning -m manual_coding_sim.chapter3_report")
+
+
+if __name__ == "__main__":
+    main()
