@@ -169,3 +169,10 @@ from manual_coding_sim.experiment_runner import (
     run_experiment,
     run_experiment_from_yaml,
 )
+
+# Экспорт этапа 13: итоговая отчетность программной реализации главы 3.
+from manual_coding_sim.chapter3_report import (
+    Chapter3ImplementationReport,
+    Chapter3ImplementationReportConfig,
+    build_chapter3_implementation_report,
+)
