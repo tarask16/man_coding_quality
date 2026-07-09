@@ -1,0 +1,3 @@
+experiment:
+  name: chapter3_base_environment_check
+  random_seed: 42
