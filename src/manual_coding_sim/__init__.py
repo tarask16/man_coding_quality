@@ -33,6 +33,14 @@ from manual_coding_sim.error_model import (
     error_protocols_to_rows,
     summarize_error_protocol,
 )
+from manual_coding_sim.feature_extractor import (
+    FeatureExtractor,
+    FeatureExtractorConfig,
+    feature_group_to_flat_row,
+    feature_groups_to_rows,
+    summarize_feature_group,
+    validate_feature_group,
+)
 from manual_coding_sim.message_model import (
     MessageGenerationConfig,
     MessageModel,
@@ -91,6 +99,8 @@ __all__ = [
     "ErrorModelConfig",
     "ErrorProtocol",
     "ErrorStepOutcome",
+    "FeatureExtractor",
+    "FeatureExtractorConfig",
     "FeatureGroup",
     "GeneratedMessage",
     "MessageElement",
@@ -114,6 +124,8 @@ __all__ = [
     "condition_estimates_to_rows",
     "control_protocols_to_rows",
     "error_protocols_to_rows",
+    "feature_group_to_flat_row",
+    "feature_groups_to_rows",
     "load_experiment_config",
     "messages_to_rows",
     "operator_estimates_to_rows",
@@ -122,8 +134,10 @@ __all__ = [
     "summarize_condition_estimate",
     "summarize_control_protocol",
     "summarize_error_protocol",
+    "summarize_feature_group",
     "summarize_message",
     "summarize_operator_estimate",
     "summarize_procedure_plan",
     "summarize_simulation_result",
+    "validate_feature_group",
 ]
