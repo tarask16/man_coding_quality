@@ -141,3 +141,13 @@ __all__ = [
     "summarize_simulation_result",
     "validate_feature_group",
 ]
+
+# Экспорт этапа 10: расчет частных показателей качества q(A).
+from manual_coding_sim.quality_calculator import (
+    QualityAssessment,
+    QualityCalculator,
+    QualityCalculatorConfig,
+    quality_assessments_to_rows,
+    quality_vector_to_dict,
+    summarize_quality_assessment,
+)
