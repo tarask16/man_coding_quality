@@ -1,0 +1,62 @@
+{
+  "allowed_for_apriori_forecast": false,
+  "diagnostic_only": true,
+  "models": {
+    "diag": {
+      "allowed_for_apriori_forecast": false,
+      "corpus_hash": "b402f3cae9ee12c1ef69d2305b2181ba79294195bffa43bf277e6273dc835fee",
+      "diagnostic_kind": "diag",
+      "diagnostic_only": true,
+      "doc_topic_prior": null,
+      "document_count": 5,
+      "evaluate_every": -1,
+      "extension_features_path": "data\\processed\\diagnostic_features.csv",
+      "learning_method": "batch",
+      "matrix_corpus_hash": "b402f3cae9ee12c1ef69d2305b2181ba79294195bffa43bf277e6273dc835fee",
+      "max_iter": 100,
+      "model_hash": "a5576e780c13a6e53630bde9611c0200fff88dca3dbe79338f8af143dc875086",
+      "model_name": "LDA_diag",
+      "model_path": "lda_diag.joblib",
+      "n_components": 3,
+      "prior_features_path": "data\\processed\\prior_features.csv",
+      "random_state": 11,
+      "theta_columns": [
+        "theta_0",
+        "theta_1",
+        "theta_2"
+      ],
+      "theta_path": "theta_diag.csv",
+      "token_count": 36,
+      "topic_word_path": "topic_word_diag.csv",
+      "topic_word_prior": null
+    },
+    "full": {
+      "allowed_for_apriori_forecast": false,
+      "corpus_hash": "b6ba21aa0d3609b039c64a34d2dc3ecfc0e3585dd875f9fc4e4bc78aa5bcdd22",
+      "diagnostic_kind": "full",
+      "diagnostic_only": true,
+      "doc_topic_prior": null,
+      "document_count": 5,
+      "evaluate_every": -1,
+      "extension_features_path": "data\\processed\\fact_features.csv",
+      "learning_method": "batch",
+      "matrix_corpus_hash": "b6ba21aa0d3609b039c64a34d2dc3ecfc0e3585dd875f9fc4e4bc78aa5bcdd22",
+      "max_iter": 100,
+      "model_hash": "f3a853f033815344a7853d4e7920a04fdf9d69012d5b72292403f1966fbe99fb",
+      "model_name": "LDA_full",
+      "model_path": "lda_full.joblib",
+      "n_components": 3,
+      "prior_features_path": "data\\processed\\prior_features.csv",
+      "random_state": 11,
+      "theta_columns": [
+        "theta_0",
+        "theta_1",
+        "theta_2"
+      ],
+      "theta_path": "theta_full.csv",
+      "token_count": 46,
+      "topic_word_path": "topic_word_full.csv",
+      "topic_word_prior": null
+    }
+  }
+}

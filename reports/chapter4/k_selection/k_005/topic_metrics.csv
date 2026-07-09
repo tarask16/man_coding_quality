@@ -1,0 +1,11 @@
+metric,value
+model_name,LDA_prior
+n_components,5
+top_n,10
+document_count,5
+token_count,32
+perplexity,67.68788723993185
+mean_coherence,0.04675185337246386
+topic_diversity,0.6
+corpus_hash,18f86353c9a3a455c4ce8ff87ec05636d534b9a7f932c54b5798dd24fb337125
+model_hash,57010d6987e99af81cebae64125058b67b252f631d14192e97407a92a83706ba

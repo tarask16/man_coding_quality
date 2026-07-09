@@ -1,0 +1,6 @@
+model_name,diagnostic_kind,document_index,run_id,protocol_id,scenario_id,theta_0,theta_1,theta_2,selected_k,doc_topic_prior,topic_word_prior,random_state,diagnostic_only,allowed_for_apriori_forecast
+LDA_full,full,0,1,doc_000000,A_001,0.0144053957814,0.0142942551929,0.971300349026,3,,,11,true,false
+LDA_full,full,1,2,doc_000001,A_001,0.0190745392854,0.0169589765901,0.963966484124,3,,,11,true,false
+LDA_full,full,2,3,doc_000002,A_001,0.0170536457613,0.477767332875,0.505179021364,3,,,11,true,false
+LDA_full,full,3,4,doc_000003,A_001,0.0162594618462,0.966517321207,0.0172232169467,3,,,11,true,false
+LDA_full,full,4,5,doc_000004,A_001,0.966586072353,0.0156246745709,0.0177892530761,3,,,11,true,false
