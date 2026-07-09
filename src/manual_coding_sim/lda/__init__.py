@@ -42,6 +42,14 @@ from manual_coding_sim.lda.matrix_builder import (
     LdaVocabularyItem,
 )
 
+
+from manual_coding_sim.lda.topic_stability import (
+    LdaTopicStabilityAnalyzer,
+    LdaTopicStabilityConfig,
+    LdaTopicStabilityResult,
+    LdaTopicStabilityRun,
+)
+
 from manual_coding_sim.lda.topic_metrics import (
     LdaTopicMetricsConfig,
     LdaTopicMetricsEvaluator,
@@ -94,6 +102,10 @@ __all__ = [
     "LdaPriorModel",
     "LdaPriorModelConfig",
     "LdaPriorTrainingResult",
+    "LdaTopicStabilityAnalyzer",
+    "LdaTopicStabilityConfig",
+    "LdaTopicStabilityResult",
+    "LdaTopicStabilityRun",
     "LdaTopicMetricsConfig",
     "LdaTopicMetricsEvaluator",
     "LdaTopicMetricsResult",
