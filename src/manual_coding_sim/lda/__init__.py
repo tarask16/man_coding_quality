@@ -30,6 +30,13 @@ from manual_coding_sim.lda.k_selection import (
     LdaKSelector,
 )
 
+
+from manual_coding_sim.lda.lda_diagnostic_model import (
+    LdaDiagnosticModel,
+    LdaDiagnosticModelConfig,
+    LdaDiagnosticTrainingResult,
+)
+
 from manual_coding_sim.lda.lda_prior_model import (
     LdaPriorModel,
     LdaPriorModelConfig,
@@ -48,6 +55,14 @@ from manual_coding_sim.lda.topic_stability import (
     LdaTopicStabilityConfig,
     LdaTopicStabilityResult,
     LdaTopicStabilityRun,
+)
+
+
+from manual_coding_sim.lda.topic_interpreter import (
+    LdaTopicInterpretation,
+    LdaTopicInterpretationResult,
+    LdaTopicInterpreter,
+    LdaTopicInterpreterConfig,
 )
 
 from manual_coding_sim.lda.topic_metrics import (
@@ -92,6 +107,9 @@ __all__ = [
     "LdaCorpusBuilder",
     "LdaCorpusBuilderConfig",
     "LdaCorpusBuildResult",
+    "LdaDiagnosticModel",
+    "LdaDiagnosticModelConfig",
+    "LdaDiagnosticTrainingResult",
     "LdaDocumentMetadata",
     "LdaKSelectionCandidate",
     "LdaKSelectionConfig",
@@ -106,6 +124,10 @@ __all__ = [
     "LdaTopicStabilityConfig",
     "LdaTopicStabilityResult",
     "LdaTopicStabilityRun",
+    "LdaTopicInterpretation",
+    "LdaTopicInterpretationResult",
+    "LdaTopicInterpreter",
+    "LdaTopicInterpreterConfig",
     "LdaTopicMetricsConfig",
     "LdaTopicMetricsEvaluator",
     "LdaTopicMetricsResult",
