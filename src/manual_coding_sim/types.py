@@ -1,28 +1,21 @@
-"""
-Базовые типы данных для исследовательского симулятора.
-
-В этом модуле задаются только структуры данных. Алгоритмы генерации
-сообщений, моделирования ошибок, контроля и расчета показателей качества
-будут реализованы в последующих задачах.
-"""
+"""Базовые типы данных для исследовательского симулятора."""
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from enum import StrEnum
-
-
-class FeatureGroup(StrEnum):
-    """Группы признаков, используемые в главах 3–6 диссертации."""
-
-    PRIOR = "prior"
-    FACT = "fact"
-    DIAGNOSTIC = "diagnostic"
+from dataclasses import dataclass, field
+from typing import Any
 
 
 @dataclass(frozen=True)
 class ScenarioParameters:
-    """Параметры сценария A = {S, O, U, G, K}."""
+    """
+    Параметры сценария применения A = {S, O, U, G, K}.
+
+    Поля класса пока содержат строковые идентификаторы сущностей.
+    На последующих этапах они будут связаны с моделями средства
+    кодирования, оператора, условий применения, класса сообщений
+    и контрольных процедур.
+    """
 
     scenario_id: str
     coding_tool_id: str
@@ -34,7 +27,7 @@ class ScenarioParameters:
 
 @dataclass(frozen=True)
 class MessageElement:
-    """Элемент исходного сообщения M, подлежащий ручному кодированию."""
+    """Элемент исходного сообщения M."""
 
     value: str
     element_type: str
@@ -44,16 +37,22 @@ class MessageElement:
 
 @dataclass(frozen=True)
 class GeneratedMessage:
-    """Сгенерированное исходное сообщение M."""
+    """Исходное сообщение M как последовательность элементов."""
 
     message_id: str
-    message_class_id: str
     elements: tuple[MessageElement, ...]
+    metadata: dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)
 class QualityVector:
-    """Вектор частных показателей качества ручного кодирования."""
+    """
+    Вектор частных показателей качества ручного кодирования.
+
+    Показатели соответствуют обозначению q(A) из главы 3:
+    точность, время, трудоемкость, устойчивость, повторяемость
+    и пригодность сценария применения.
+    """
 
     q_acc: float
     q_time: float
@@ -61,3 +60,19 @@ class QualityVector:
     q_res: float
     q_rep: float
     q_fit: float
+
+
+@dataclass(frozen=True)
+class FeatureGroup:
+    """
+    Группа признаков, полученных при моделировании.
+
+    Используется для раздельного хранения априорных, фактических
+    и диагностических признаков, чтобы исключить утечку фактических
+    результатов в процедуру априорной оценки качества.
+    """
+
+    scenario_id: str
+    prior_features: dict[str, float]
+    fact_features: dict[str, float]
+    diagnostic_features: dict[str, float]
