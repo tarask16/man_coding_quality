@@ -22,6 +22,14 @@ from manual_coding_sim.lda.corpus_builder import (
     LdaCorpusBuildResult,
 )
 
+
+from manual_coding_sim.lda.k_selection import (
+    LdaKSelectionCandidate,
+    LdaKSelectionConfig,
+    LdaKSelectionResult,
+    LdaKSelector,
+)
+
 from manual_coding_sim.lda.lda_prior_model import (
     LdaPriorModel,
     LdaPriorModelConfig,
@@ -32,6 +40,12 @@ from manual_coding_sim.lda.matrix_builder import (
     LdaMatrixBuilder,
     LdaMatrixBuildResult,
     LdaVocabularyItem,
+)
+
+from manual_coding_sim.lda.topic_metrics import (
+    LdaTopicMetricsConfig,
+    LdaTopicMetricsEvaluator,
+    LdaTopicMetricsResult,
 )
 
 from manual_coding_sim.lda.leakage_guard import (
@@ -71,11 +85,18 @@ __all__ = [
     "LdaCorpusBuilderConfig",
     "LdaCorpusBuildResult",
     "LdaDocumentMetadata",
+    "LdaKSelectionCandidate",
+    "LdaKSelectionConfig",
+    "LdaKSelectionResult",
+    "LdaKSelector",
     "LdaMatrixBuilder",
     "LdaMatrixBuildResult",
     "LdaPriorModel",
     "LdaPriorModelConfig",
     "LdaPriorTrainingResult",
+    "LdaTopicMetricsConfig",
+    "LdaTopicMetricsEvaluator",
+    "LdaTopicMetricsResult",
     "LdaVocabularyItem",
     "TokenizedFeature",
     "LdaInputPaths",
