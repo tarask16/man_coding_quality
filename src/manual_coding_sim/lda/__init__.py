@@ -30,6 +30,20 @@ from manual_coding_sim.lda.config_loader import (
     load_chapter4_runner_config,
 )
 
+
+from manual_coding_sim.lda.chapter4_extended_cli import (
+    build_extended_arg_parser,
+    main as extended_main,
+)
+from manual_coding_sim.lda.corpus_sufficiency import (
+    CorpusCoverageResult,
+    CorpusCoverageRule,
+    CorpusSufficiencyAnalyzer,
+    CorpusSufficiencyConfig,
+    CorpusSufficiencyConfigLoader,
+    CorpusSufficiencyResult,
+)
+
 from manual_coding_sim.lda.config import (
     Chapter4LdaConfig,
     LdaInputPaths,
@@ -114,6 +128,14 @@ from manual_coding_sim.lda.tokenization import (
 )
 
 __all__ = [
+    "CorpusSufficiencyResult",
+    "CorpusSufficiencyConfigLoader",
+    "CorpusSufficiencyConfig",
+    "CorpusSufficiencyAnalyzer",
+    "CorpusCoverageRule",
+    "CorpusCoverageResult",
+    "extended_main",
+    "build_extended_arg_parser",
     "load_chapter4_runner_config",
     "Chapter4ConfigOverrides",
     "Chapter4ConfigLoader",

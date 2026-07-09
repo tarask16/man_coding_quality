@@ -1,0 +1,69 @@
+{
+  "passed": false,
+  "document_count": 2,
+  "min_documents": 100,
+  "unique_scenario_count": 1,
+  "min_unique_scenarios": 100,
+  "unique_protocol_count": 2,
+  "min_unique_protocols": 100,
+  "vocabulary_token_count": 25,
+  "min_vocabulary_tokens": 30,
+  "coverage_results": [
+    {
+      "column": "prior_mean_complexity",
+      "exists": true,
+      "unique_count": 2,
+      "required_min_unique_values": 3,
+      "passed": false,
+      "sample_values": [
+        "0.5167",
+        "0.5409"
+      ]
+    },
+    {
+      "column": "prior_mean_message_criticality",
+      "exists": true,
+      "unique_count": 2,
+      "required_min_unique_values": 3,
+      "passed": false,
+      "sample_values": [
+        "0.532067",
+        "0.604682"
+      ]
+    },
+    {
+      "column": "prior_operator_total_estimated_time",
+      "exists": true,
+      "unique_count": 2,
+      "required_min_unique_values": 3,
+      "passed": false,
+      "sample_values": [
+        "18.853538",
+        "9.5916"
+      ]
+    },
+    {
+      "column": "prior_condition_total_adjusted_time",
+      "exists": true,
+      "unique_count": 2,
+      "required_min_unique_values": 3,
+      "passed": false,
+      "sample_values": [
+        "10.390101",
+        "20.423095"
+      ]
+    }
+  ],
+  "recommendations": [
+    "Увеличить число документов корпуса минимум до 100; сейчас 2.",
+    "Увеличить число уникальных scenario_id минимум до 100; сейчас 1.",
+    "Увеличить число уникальных protocol_id минимум до 100; сейчас 2.",
+    "Расширить разнообразие априорных признаков и токенов минимум до 30; сейчас 25.",
+    "Расширить покрытие признака 'prior_mean_complexity' минимум до 3 уникальных значений; сейчас 2.",
+    "Расширить покрытие признака 'prior_mean_message_criticality' минимум до 3 уникальных значений; сейчас 2.",
+    "Расширить покрытие признака 'prior_operator_total_estimated_time' минимум до 3 уникальных значений; сейчас 2.",
+    "Расширить покрытие признака 'prior_condition_total_adjusted_time' минимум до 3 уникальных значений; сейчас 2."
+  ],
+  "report_json_path": "reports\\chapter4\\corpus_sufficiency_report.json",
+  "report_md_path": "reports\\chapter4\\corpus_sufficiency_report.md"
+}
