@@ -7,6 +7,12 @@
 """
 
 from manual_coding_sim.config import load_experiment_config
+from manual_coding_sim.message_model import (
+    MessageGenerationConfig,
+    MessageModel,
+    messages_to_rows,
+    summarize_message,
+)
 from manual_coding_sim.types import (
     FeatureGroup,
     GeneratedMessage,
@@ -21,7 +27,11 @@ __all__ = [
     "FeatureGroup",
     "GeneratedMessage",
     "MessageElement",
+    "MessageGenerationConfig",
+    "MessageModel",
     "QualityVector",
     "ScenarioParameters",
     "load_experiment_config",
+    "messages_to_rows",
+    "summarize_message",
 ]
