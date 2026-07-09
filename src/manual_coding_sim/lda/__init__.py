@@ -21,6 +21,15 @@ from manual_coding_sim.lda.chapter4_runner import (
     Chapter4RunnerConfig,
 )
 
+
+from manual_coding_sim.lda.chapter4_cli import build_arg_parser, main
+from manual_coding_sim.lda.config_loader import (
+    Chapter4ConfigLoadResult,
+    Chapter4ConfigLoader,
+    Chapter4ConfigOverrides,
+    load_chapter4_runner_config,
+)
+
 from manual_coding_sim.lda.config import (
     Chapter4LdaConfig,
     LdaInputPaths,
@@ -105,6 +114,12 @@ from manual_coding_sim.lda.tokenization import (
 )
 
 __all__ = [
+    "load_chapter4_runner_config",
+    "Chapter4ConfigOverrides",
+    "Chapter4ConfigLoader",
+    "Chapter4ConfigLoadResult",
+    "main",
+    "build_arg_parser",
     "Chapter4LdaReportBuilder",
     "Chapter4LdaReportConfig",
     "Chapter4LdaReportResult",
