@@ -159,3 +159,13 @@ from manual_coding_sim.dataset_builder import (
     DatasetBuilderConfig,
     build_dataset,
 )
+
+# Экспорт этапа 12: запуск воспроизводимого эксперимента главы 3.
+from manual_coding_sim.experiment_runner import (
+    ExperimentRunResult,
+    ExperimentRunner,
+    ExperimentRunnerConfig,
+    hash_dataset_result,
+    run_experiment,
+    run_experiment_from_yaml,
+)
