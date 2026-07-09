@@ -16,6 +16,23 @@ from manual_coding_sim.condition_model import (
     summarize_condition_estimate,
 )
 from manual_coding_sim.config import load_experiment_config
+from manual_coding_sim.control_model import (
+    ControlModel,
+    ControlModelConfig,
+    ControlProfile,
+    ControlProtocol,
+    ControlStepOutcome,
+    control_protocols_to_rows,
+    summarize_control_protocol,
+)
+from manual_coding_sim.error_model import (
+    ErrorModel,
+    ErrorModelConfig,
+    ErrorProtocol,
+    ErrorStepOutcome,
+    error_protocols_to_rows,
+    summarize_error_protocol,
+)
 from manual_coding_sim.message_model import (
     MessageGenerationConfig,
     MessageModel,
@@ -41,6 +58,13 @@ from manual_coding_sim.procedure_model import (
     procedure_plans_to_rows,
     summarize_procedure_plan,
 )
+from manual_coding_sim.protocol_simulator import (
+    ProtocolSimulator,
+    ProtocolSimulatorConfig,
+    SimulationResult,
+    simulation_results_to_rows,
+    summarize_simulation_result,
+)
 from manual_coding_sim.types import (
     FeatureGroup,
     GeneratedMessage,
@@ -58,6 +82,15 @@ __all__ = [
     "ConditionPlanEstimate",
     "ConditionProfile",
     "ConditionStepEstimate",
+    "ControlModel",
+    "ControlModelConfig",
+    "ControlProfile",
+    "ControlProtocol",
+    "ControlStepOutcome",
+    "ErrorModel",
+    "ErrorModelConfig",
+    "ErrorProtocol",
+    "ErrorStepOutcome",
     "FeatureGroup",
     "GeneratedMessage",
     "MessageElement",
@@ -73,15 +106,24 @@ __all__ = [
     "ProcedureModelConfig",
     "ProcedurePlan",
     "ProcedureStep",
+    "ProtocolSimulator",
+    "ProtocolSimulatorConfig",
     "QualityVector",
     "ScenarioParameters",
+    "SimulationResult",
     "condition_estimates_to_rows",
+    "control_protocols_to_rows",
+    "error_protocols_to_rows",
     "load_experiment_config",
     "messages_to_rows",
     "operator_estimates_to_rows",
     "procedure_plans_to_rows",
+    "simulation_results_to_rows",
     "summarize_condition_estimate",
+    "summarize_control_protocol",
+    "summarize_error_protocol",
     "summarize_message",
     "summarize_operator_estimate",
     "summarize_procedure_plan",
+    "summarize_simulation_result",
 ]
