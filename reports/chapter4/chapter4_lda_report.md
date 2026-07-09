@@ -15,20 +15,20 @@
 
 ## Метрики основной модели LDA_prior
 
-- Perplexity: 58.435311779755935
-- Mean coherence: 0.23426872912916163
-- Topic diversity: 0.8666666666666667
+- Perplexity: 94.81725487366135
+- Mean coherence: -0.5299670207227024
+- Topic diversity: 0.9666666666666667
 
 ## Устойчивость тем
 
-- Mean stability: 0.8928944612554363
-- Min stability: 0.8473245771174586
+- Mean stability: 0.8488497859956521
+- Min stability: 0.8084181184315237
 
 ## Интерпретированные латентные факторы
 
-- Латентный фактор качества 0: prior_control_marker_ratio, prior_digit_ratio, prior_mean_message_criticality
-- Латентный фактор качества 1: prior_condition_total_adjusted_time, prior_operator_total_estimated_time, prior_total_nominal_time
-- Латентный фактор качества 2: prior_condition_mean_adjusted_attention, prior_condition_total_adjusted_time, prior_mean_complexity
+- Латентный фактор качества 0: prior_total_nominal_time, prior_memory_load_index, prior_manual_operation_count
+- Латентный фактор качества 1: prior_condition_mean_adjusted_attention, prior_attention_deficit, prior_control_intensity
+- Латентный фактор качества 2: prior_condition_time_pressure, prior_time_pressure_index, prior_repetition_expected_count
 
 ## Методические ограничения
 

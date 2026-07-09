@@ -21,8 +21,6 @@ from manual_coding_sim.lda.chapter4_runner import (
     Chapter4RunnerConfig,
 )
 
-
-from manual_coding_sim.lda.chapter4_cli import build_arg_parser, main
 from manual_coding_sim.lda.config_loader import (
     Chapter4ConfigLoadResult,
     Chapter4ConfigLoader,
@@ -31,10 +29,6 @@ from manual_coding_sim.lda.config_loader import (
 )
 
 
-from manual_coding_sim.lda.chapter4_extended_cli import (
-    build_extended_arg_parser,
-    main as extended_main,
-)
 from manual_coding_sim.lda.corpus_sufficiency import (
     CorpusCoverageResult,
     CorpusCoverageRule,
@@ -134,14 +128,10 @@ __all__ = [
     "CorpusSufficiencyAnalyzer",
     "CorpusCoverageRule",
     "CorpusCoverageResult",
-    "extended_main",
-    "build_extended_arg_parser",
     "load_chapter4_runner_config",
     "Chapter4ConfigOverrides",
     "Chapter4ConfigLoader",
     "Chapter4ConfigLoadResult",
-    "main",
-    "build_arg_parser",
     "Chapter4LdaReportBuilder",
     "Chapter4LdaReportConfig",
     "Chapter4LdaReportResult",

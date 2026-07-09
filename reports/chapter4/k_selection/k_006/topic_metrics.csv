@@ -2,10 +2,10 @@ metric,value
 model_name,LDA_prior
 n_components,6
 top_n,10
-document_count,5
-token_count,32
-perplexity,75.26781258222935
-mean_coherence,0.07877675490434337
-topic_diversity,0.5
-corpus_hash,18f86353c9a3a455c4ce8ff87ec05636d534b9a7f932c54b5798dd24fb337125
-model_hash,cf29a123e620dbe9606d75a61a1d53758b5e466fe910e532c5f9106e2b4dd7ee
+document_count,150
+token_count,96
+perplexity,95.73417955543702
+mean_coherence,-0.5873458702899815
+topic_diversity,0.9166666666666666
+corpus_hash,5c68cbc758ee2bfff62e5f63770679249406af90454514fd4e954a054417f1a0
+model_hash,ca0e83136ef75c5de6abff3a7b2bdd3b728d5714d0b5dda1b4fc9d2598e1dea9

@@ -1,467 +1,467 @@
 {
-  "corpus_hash": "18f86353c9a3a455c4ce8ff87ec05636d534b9a7f932c54b5798dd24fb337125",
-  "document_count": 5,
-  "mean_coherence": 0.07877675490434337,
-  "model_hash": "cf29a123e620dbe9606d75a61a1d53758b5e466fe910e532c5f9106e2b4dd7ee",
+  "corpus_hash": "5c68cbc758ee2bfff62e5f63770679249406af90454514fd4e954a054417f1a0",
+  "document_count": 150,
+  "mean_coherence": -0.5873458702899815,
+  "model_hash": "ca0e83136ef75c5de6abff3a7b2bdd3b728d5714d0b5dda1b4fc9d2598e1dea9",
   "model_name": "LDA_prior",
   "n_components": 6,
-  "perplexity": 75.26781258222935,
-  "token_count": 32,
+  "perplexity": 95.73417955543702,
+  "token_count": 96,
   "top_n": 10,
-  "topic_diversity": 0.5,
+  "topic_diversity": 0.9166666666666666,
   "topics": [
     {
-      "coherence": -0.0767152193204749,
+      "coherence": -0.6754011348721513,
       "top_tokens": [
         {
-          "document_frequency": 2,
+          "document_frequency": 67,
           "rank": 1,
-          "token": "prior_total_nominal_time__level_high",
-          "token_id": 30,
-          "weight": 0.031250306054981254
+          "token": "prior_operator_attention__level_mid",
+          "token_id": 63,
+          "weight": 0.06109271062958059
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 34,
           "rank": 2,
-          "token": "prior_operator_total_estimated_time__level_high",
-          "token_id": 20,
-          "weight": 0.031250306054981254
+          "token": "prior_operator_skill__level_mid",
+          "token_id": 72,
+          "weight": 0.059113015289318956
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 50,
           "rank": 3,
-          "token": "prior_condition_total_adjusted_time__level_high",
-          "token_id": 2,
-          "weight": 0.031250306054981254
-        },
-        {
-          "document_frequency": 2,
-          "rank": 4,
-          "token": "prior_service_ratio__level_low",
-          "token_id": 25,
-          "weight": 0.031250237384605986
-        },
-        {
-          "document_frequency": 2,
-          "rank": 5,
-          "token": "prior_control_marker_ratio__level_low",
+          "token": "prior_attention_deficit__level_mid",
           "token_id": 5,
-          "weight": 0.031250237384605986
+          "weight": 0.054315282889465015
         },
         {
-          "document_frequency": 2,
-          "rank": 6,
-          "token": "prior_digit_ratio__level_high",
-          "token_id": 6,
-          "weight": 0.031250237384605986
-        },
-        {
-          "document_frequency": 2,
-          "rank": 7,
-          "token": "prior_mean_message_criticality__level_high",
-          "token_id": 10,
-          "weight": 0.031250237384605986
-        },
-        {
-          "document_frequency": 2,
-          "rank": 8,
-          "token": "prior_step_count__level_mid",
-          "token_id": 27,
-          "weight": 0.03125011431955482
-        },
-        {
-          "document_frequency": 2,
-          "rank": 9,
-          "token": "prior_message_length__level_mid",
-          "token_id": 13,
-          "weight": 0.03125011431955482
-        },
-        {
-          "document_frequency": 2,
-          "rank": 10,
-          "token": "prior_mean_complexity__level_mid",
+          "document_frequency": 46,
+          "rank": 4,
+          "token": "prior_coding_tool_type__value_table",
           "token_id": 9,
-          "weight": 0.03125011431955482
+          "weight": 0.05396225276680383
+        },
+        {
+          "document_frequency": 38,
+          "rank": 5,
+          "token": "prior_control_intensity__level_mid",
+          "token_id": 33,
+          "weight": 0.05266747696770838
+        },
+        {
+          "document_frequency": 61,
+          "rank": 6,
+          "token": "prior_condition_profile__value_hard",
+          "token_id": 19,
+          "weight": 0.0486970955883433
+        },
+        {
+          "document_frequency": 33,
+          "rank": 7,
+          "token": "prior_condition_noise_level__level_high",
+          "token_id": 16,
+          "weight": 0.04776200384637566
+        },
+        {
+          "document_frequency": 33,
+          "rank": 8,
+          "token": "prior_condition_noise_adjustment__level_high",
+          "token_id": 13,
+          "weight": 0.04776200384637566
+        },
+        {
+          "document_frequency": 50,
+          "rank": 9,
+          "token": "prior_operator_error_susceptibility__level_mid",
+          "token_id": 66,
+          "weight": 0.03770023751905167
+        },
+        {
+          "document_frequency": 48,
+          "rank": 10,
+          "token": "prior_condition_mean_adjusted_attention__level_mid",
+          "token_id": 12,
+          "weight": 0.03739656838433476
         }
       ],
       "topic_id": 0
     },
     {
-      "coherence": -0.0767152193204749,
+      "coherence": -0.48570534306844854,
       "top_tokens": [
         {
-          "document_frequency": 2,
+          "document_frequency": 50,
           "rank": 1,
-          "token": "prior_total_nominal_time__level_high",
-          "token_id": 30,
-          "weight": 0.03125030605445655
+          "token": "prior_expected_error_probability__level_high",
+          "token_id": 40,
+          "weight": 0.03664979981623069
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 49,
           "rank": 2,
-          "token": "prior_operator_total_estimated_time__level_high",
-          "token_id": 20,
-          "weight": 0.03125030605445655
+          "token": "prior_operator_error_susceptibility__level_high",
+          "token_id": 64,
+          "weight": 0.03421536765147485
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 58,
           "rank": 3,
-          "token": "prior_condition_total_adjusted_time__level_high",
-          "token_id": 2,
-          "weight": 0.03125030605445655
+          "token": "prior_condition_mean_adjusted_attention__level_low",
+          "token_id": 11,
+          "weight": 0.03305369242778145
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 49,
           "rank": 4,
-          "token": "prior_service_ratio__level_low",
-          "token_id": 25,
-          "weight": 0.03125023738623464
+          "token": "prior_attention_deficit__level_high",
+          "token_id": 3,
+          "weight": 0.0316051563220568
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 58,
           "rank": 5,
-          "token": "prior_control_marker_ratio__level_low",
-          "token_id": 5,
-          "weight": 0.03125023738623464
+          "token": "prior_operator_attention__level_low",
+          "token_id": 62,
+          "weight": 0.030979008972974512
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 76,
           "rank": 6,
-          "token": "prior_digit_ratio__level_high",
-          "token_id": 6,
-          "weight": 0.03125023738623464
+          "token": "prior_control_intensity__level_low",
+          "token_id": 32,
+          "weight": 0.02940185550548575
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 59,
           "rank": 7,
-          "token": "prior_mean_message_criticality__level_high",
-          "token_id": 10,
-          "weight": 0.03125023738623464
+          "token": "prior_manual_operation_count__level_low",
+          "token_id": 44,
+          "weight": 0.02910909039658808
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 66,
           "rank": 8,
-          "token": "prior_step_count__level_mid",
-          "token_id": 27,
-          "weight": 0.03125011431903012
+          "token": "prior_symbol_group_count__level_low",
+          "token_id": 86,
+          "weight": 0.02831755855892221
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 66,
           "rank": 9,
-          "token": "prior_message_length__level_mid",
-          "token_id": 13,
-          "weight": 0.03125011431903012
+          "token": "prior_message_length__level_low",
+          "token_id": 59,
+          "weight": 0.02831755855892221
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 68,
           "rank": 10,
-          "token": "prior_mean_complexity__level_mid",
-          "token_id": 9,
-          "weight": 0.03125011431903012
+          "token": "prior_operator_skill__level_low",
+          "token_id": 71,
+          "weight": 0.025469813056992047
         }
       ],
       "topic_id": 1
     },
     {
-      "coherence": -0.0767152193204749,
+      "coherence": -0.775358307219013,
       "top_tokens": [
         {
-          "document_frequency": 2,
+          "document_frequency": 42,
           "rank": 1,
-          "token": "prior_total_nominal_time__level_high",
-          "token_id": 30,
-          "weight": 0.031250306054100396
+          "token": "prior_symbol_group_count__level_mid",
+          "token_id": 87,
+          "weight": 0.09408703011250834
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 42,
           "rank": 2,
-          "token": "prior_operator_total_estimated_time__level_high",
-          "token_id": 20,
-          "weight": 0.031250306054100396
-        },
-        {
-          "document_frequency": 2,
-          "rank": 3,
-          "token": "prior_condition_total_adjusted_time__level_high",
-          "token_id": 2,
-          "weight": 0.031250306054100396
-        },
-        {
-          "document_frequency": 2,
-          "rank": 4,
-          "token": "prior_service_ratio__level_low",
-          "token_id": 25,
-          "weight": 0.03125023738734015
-        },
-        {
-          "document_frequency": 2,
-          "rank": 5,
-          "token": "prior_control_marker_ratio__level_low",
-          "token_id": 5,
-          "weight": 0.03125023738734015
-        },
-        {
-          "document_frequency": 2,
-          "rank": 6,
-          "token": "prior_digit_ratio__level_high",
-          "token_id": 6,
-          "weight": 0.03125023738734015
-        },
-        {
-          "document_frequency": 2,
-          "rank": 7,
-          "token": "prior_mean_message_criticality__level_high",
-          "token_id": 10,
-          "weight": 0.03125023738734015
-        },
-        {
-          "document_frequency": 2,
-          "rank": 8,
-          "token": "prior_step_count__level_mid",
-          "token_id": 27,
-          "weight": 0.03125011431867397
-        },
-        {
-          "document_frequency": 2,
-          "rank": 9,
           "token": "prior_message_length__level_mid",
-          "token_id": 13,
-          "weight": 0.03125011431867397
+          "token_id": 60,
+          "weight": 0.09408703011250834
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 50,
+          "rank": 3,
+          "token": "prior_total_nominal_time__level_mid",
+          "token_id": 93,
+          "weight": 0.07513895392772915
+        },
+        {
+          "document_frequency": 50,
+          "rank": 4,
+          "token": "prior_operator_total_estimated_time__level_mid",
+          "token_id": 75,
+          "weight": 0.059672632907049404
+        },
+        {
+          "document_frequency": 50,
+          "rank": 5,
+          "token": "prior_condition_total_adjusted_time__level_mid",
+          "token_id": 27,
+          "weight": 0.059320483847683285
+        },
+        {
+          "document_frequency": 78,
+          "rank": 6,
+          "token": "prior_condition_time_pressure__level_low",
+          "token_id": 23,
+          "weight": 0.048936048145324276
+        },
+        {
+          "document_frequency": 78,
+          "rank": 7,
+          "token": "prior_time_pressure_index__level_low",
+          "token_id": 89,
+          "weight": 0.048936048145324276
+        },
+        {
+          "document_frequency": 33,
+          "rank": 8,
+          "token": "prior_condition_noise_level__level_mid",
+          "token_id": 18,
+          "weight": 0.04768131633583728
+        },
+        {
+          "document_frequency": 33,
+          "rank": 9,
+          "token": "prior_condition_noise_adjustment__level_mid",
+          "token_id": 15,
+          "weight": 0.04768131633583728
+        },
+        {
+          "document_frequency": 47,
           "rank": 10,
-          "token": "prior_mean_complexity__level_mid",
-          "token_id": 9,
-          "weight": 0.03125011431867397
+          "token": "prior_condition_profile__value_moderate",
+          "token_id": 20,
+          "weight": 0.043535162775725826
         }
       ],
       "topic_id": 2
     },
     {
-      "coherence": 0.10812402882884384,
+      "coherence": -0.4901668524504704,
       "top_tokens": [
         {
-          "document_frequency": 2,
+          "document_frequency": 50,
           "rank": 1,
-          "token": "prior_total_nominal_time__level_high",
-          "token_id": 30,
-          "weight": 0.06731657028164817
-        },
-        {
-          "document_frequency": 2,
-          "rank": 2,
           "token": "prior_operator_total_estimated_time__level_high",
-          "token_id": 20,
-          "weight": 0.06731657028164817
+          "token_id": 73,
+          "weight": 0.05961149719621853
         },
         {
-          "document_frequency": 2,
-          "rank": 3,
+          "document_frequency": 50,
+          "rank": 2,
           "token": "prior_condition_total_adjusted_time__level_high",
-          "token_id": 2,
-          "weight": 0.06731657028164817
+          "token_id": 25,
+          "weight": 0.05961122942175552
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 50,
+          "rank": 3,
+          "token": "prior_total_nominal_time__level_high",
+          "token_id": 91,
+          "weight": 0.056211143833631474
+        },
+        {
+          "document_frequency": 42,
           "rank": 4,
-          "token": "prior_step_count__level_mid",
-          "token_id": 27,
-          "weight": 0.06730917543658162
+          "token": "prior_symbol_group_count__level_high",
+          "token_id": 85,
+          "weight": 0.05010503024031445
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 42,
           "rank": 5,
-          "token": "prior_message_length__level_mid",
-          "token_id": 13,
-          "weight": 0.06730917543658162
+          "token": "prior_message_length__level_high",
+          "token_id": 58,
+          "weight": 0.05010503024031445
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 50,
           "rank": 6,
-          "token": "prior_mean_complexity__level_mid",
-          "token_id": 9,
-          "weight": 0.06730917543658162
+          "token": "prior_memory_load_index__level_high",
+          "token_id": 52,
+          "weight": 0.045636792782657816
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 46,
           "rank": 7,
-          "token": "prior_reference_ratio__level_low",
-          "token_id": 23,
-          "weight": 0.06730649519189834
+          "token": "prior_manual_operation_count__level_high",
+          "token_id": 43,
+          "weight": 0.04095006754925471
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 90,
           "rank": 8,
-          "token": "prior_service_ratio__level_high",
-          "token_id": 24,
-          "weight": 0.06730649519189834
+          "token": "prior_verification_required__absent",
+          "token_id": 94,
+          "weight": 0.02278579796873677
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 38,
           "rank": 9,
-          "token": "prior_mean_message_criticality__level_low",
-          "token_id": 11,
-          "weight": 0.06730649519189834
+          "token": "prior_procedure_steps__level_high",
+          "token_id": 79,
+          "weight": 0.021861113552344002
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 58,
           "rank": 10,
-          "token": "prior_symbol_ratio__level_high",
-          "token_id": 28,
-          "weight": 0.06730649519189834
+          "token": "prior_condition_mean_adjusted_attention__level_low",
+          "token_id": 11,
+          "weight": 0.021503116686846072
         }
       ],
       "topic_id": 3
     },
     {
-      "coherence": 0.18921705045047668,
+      "coherence": -0.5353313103713424,
       "top_tokens": [
         {
-          "document_frequency": 2,
+          "document_frequency": 48,
           "rank": 1,
-          "token": "prior_symbol_ratio__level_low",
-          "token_id": 29,
-          "weight": 0.06917071021874807
+          "token": "prior_operator_skill__level_high",
+          "token_id": 70,
+          "weight": 0.055800624041849295
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 44,
           "rank": 2,
-          "token": "prior_operator_mean_attention__level_low",
-          "token_id": 17,
-          "weight": 0.06917071021874807
-        },
-        {
-          "document_frequency": 2,
-          "rank": 3,
-          "token": "prior_operator_total_effort__level_high",
-          "token_id": 18,
-          "weight": 0.06917071021874807
-        },
-        {
-          "document_frequency": 2,
-          "rank": 4,
-          "token": "prior_reference_ratio__level_high",
-          "token_id": 22,
-          "weight": 0.06917071021874807
-        },
-        {
-          "document_frequency": 2,
-          "rank": 5,
-          "token": "prior_condition_mean_adjusted_attention__level_low",
-          "token_id": 1,
-          "weight": 0.06917071021874807
-        },
-        {
-          "document_frequency": 2,
-          "rank": 6,
-          "token": "prior_operator_final_fatigue__level_high",
-          "token_id": 14,
-          "weight": 0.06917071021874807
-        },
-        {
-          "document_frequency": 2,
-          "rank": 7,
-          "token": "prior_service_ratio__level_low",
-          "token_id": 25,
-          "weight": 0.06907145027110792
-        },
-        {
-          "document_frequency": 2,
-          "rank": 8,
-          "token": "prior_digit_ratio__level_high",
-          "token_id": 6,
-          "weight": 0.06907145027110792
-        },
-        {
-          "document_frequency": 2,
-          "rank": 9,
-          "token": "prior_mean_message_criticality__level_high",
+          "token": "prior_condition_mean_adjusted_attention__level_high",
           "token_id": 10,
-          "weight": 0.06907145027110792
+          "weight": 0.05116727930602448
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 51,
+          "rank": 3,
+          "token": "prior_attention_deficit__level_low",
+          "token_id": 4,
+          "weight": 0.05058526501519046
+        },
+        {
+          "document_frequency": 50,
+          "rank": 4,
+          "token": "prior_control_expected_detection_rate__level_high",
+          "token_id": 28,
+          "weight": 0.04726255774513261
+        },
+        {
+          "document_frequency": 36,
+          "rank": 5,
+          "token": "prior_control_intensity__level_high",
+          "token_id": 31,
+          "weight": 0.04189745614126653
+        },
+        {
+          "document_frequency": 35,
+          "rank": 6,
+          "token": "prior_coding_tool_type__value_mixed",
+          "token_id": 7,
+          "weight": 0.04073984125631023
+        },
+        {
+          "document_frequency": 84,
+          "rank": 7,
+          "token": "prior_condition_noise_adjustment__level_low",
+          "token_id": 14,
+          "weight": 0.02926916053426565
+        },
+        {
+          "document_frequency": 84,
+          "rank": 8,
+          "token": "prior_condition_noise_level__level_low",
+          "token_id": 17,
+          "weight": 0.02926916053426565
+        },
+        {
+          "document_frequency": 25,
+          "rank": 9,
+          "token": "prior_operator_attention__level_high",
+          "token_id": 61,
+          "weight": 0.02915445862254931
+        },
+        {
+          "document_frequency": 66,
           "rank": 10,
-          "token": "prior_control_marker_ratio__level_low",
-          "token_id": 5,
-          "weight": 0.06907145027110792
+          "token": "prior_operator_fatigue__level_low",
+          "token_id": 68,
+          "weight": 0.026485167114013088
         }
       ],
       "topic_id": 4
     },
     {
-      "coherence": 0.40546510810816433,
+      "coherence": -0.5621122737584638,
       "top_tokens": [
         {
-          "document_frequency": 2,
+          "document_frequency": 62,
           "rank": 1,
-          "token": "prior_total_nominal_time__level_low",
-          "token_id": 31,
-          "weight": 0.06911932526424193
+          "token": "prior_procedure_branch_count__level_low",
+          "token_id": 77,
+          "weight": 0.0393048646324256
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 81,
           "rank": 2,
-          "token": "prior_step_count__level_low",
-          "token_id": 26,
-          "weight": 0.06911932526424193
+          "token": "prior_repetition_expected_count__level_low",
+          "token_id": 83,
+          "weight": 0.03915956173691399
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 78,
           "rank": 3,
-          "token": "prior_operator_total_effort__level_low",
-          "token_id": 19,
-          "weight": 0.06911932526424193
+          "token": "prior_time_pressure_index__level_low",
+          "token_id": 89,
+          "weight": 0.03799898565612646
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 78,
           "rank": 4,
-          "token": "prior_operator_total_estimated_time__level_low",
-          "token_id": 21,
-          "weight": 0.06911932526424193
+          "token": "prior_condition_time_pressure__level_low",
+          "token_id": 23,
+          "weight": 0.03799898565612646
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 42,
           "rank": 5,
-          "token": "prior_operator_mean_attention__level_high",
-          "token_id": 16,
-          "weight": 0.06911932526424193
+          "token": "prior_condition_profile__value_normal",
+          "token_id": 21,
+          "weight": 0.03465081669775143
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 90,
           "rank": 6,
-          "token": "prior_mean_complexity__level_low",
-          "token_id": 8,
-          "weight": 0.06911932526424193
+          "token": "prior_verification_required__absent",
+          "token_id": 94,
+          "weight": 0.03459691268314175
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 51,
           "rank": 7,
-          "token": "prior_message_length__level_low",
-          "token_id": 12,
-          "weight": 0.06911932526424193
+          "token": "prior_operator_error_susceptibility__level_low",
+          "token_id": 65,
+          "weight": 0.02875759042751763
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 76,
           "rank": 8,
-          "token": "prior_operator_final_fatigue__level_low",
-          "token_id": 15,
-          "weight": 0.06911932526424193
+          "token": "prior_control_intensity__level_low",
+          "token_id": 32,
+          "weight": 0.02812749624916888
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 50,
           "rank": 9,
-          "token": "prior_condition_mean_adjusted_attention__level_high",
-          "token_id": 0,
-          "weight": 0.06911932526424193
+          "token": "prior_expected_error_probability__level_low",
+          "token_id": 41,
+          "weight": 0.027707865250316644
         },
         {
-          "document_frequency": 2,
+          "document_frequency": 46,
           "rank": 10,
-          "token": "prior_condition_total_adjusted_time__level_low",
-          "token_id": 3,
-          "weight": 0.06911932526424193
+          "token": "prior_coding_tool_type__value_codebook",
+          "token_id": 6,
+          "weight": 0.02658158620151558
         }
       ],
       "topic_id": 5

@@ -3,45 +3,45 @@
   "doc_topic_prior": null,
   "learning_method": "batch",
   "max_iter": 100,
-  "mean_stability": 0.8928944612554363,
-  "min_stability": 0.8473245771174586,
+  "mean_stability": 0.8488497859956521,
+  "min_stability": 0.8084181184315237,
   "model_name": "LDA_prior",
   "n_components": 3,
   "pairwise_run_stability": [
     {
       "left_random_state": 11,
-      "mean_similarity": 0.8833636224319646,
-      "min_similarity": 0.812324147470508,
+      "mean_similarity": 0.8969131918829141,
+      "min_similarity": 0.845486203588078,
       "right_random_state": 42
     },
     {
       "left_random_state": 11,
-      "mean_similarity": 0.9233437598077727,
-      "min_similarity": 0.7816463322773296,
+      "mean_similarity": 0.8629230345791343,
+      "min_similarity": 0.8032572657314795,
       "right_random_state": 77
     },
     {
       "left_random_state": 11,
-      "mean_similarity": 0.8942571063683222,
-      "min_similarity": 0.8350064177111018,
+      "mean_similarity": 0.8067670988902764,
+      "min_similarity": 0.676233700413584,
       "right_random_state": 101
     },
     {
       "left_random_state": 42,
-      "mean_similarity": 0.8634873338272451,
-      "min_similarity": 0.7727115941034853,
+      "mean_similarity": 0.8175400449892474,
+      "min_similarity": 0.7449906201870313,
       "right_random_state": 77
     },
     {
       "left_random_state": 42,
-      "mean_similarity": 0.9207128566627857,
-      "min_similarity": 0.885314417861737,
+      "mean_similarity": 0.8520017082499072,
+      "min_similarity": 0.7575171714300477,
       "right_random_state": 101
     },
     {
       "left_random_state": 77,
-      "mean_similarity": 0.9193055318094676,
-      "min_similarity": 0.8812329782951844,
+      "mean_similarity": 0.8477466575732031,
+      "min_similarity": 0.6447854861931537,
       "right_random_state": 101
     }
   ],
@@ -49,45 +49,45 @@
     {
       "matches": [
         {
-          "matched_topic_id": 2,
+          "matched_topic_id": 1,
           "random_state": 42,
-          "similarity": 0.9253209813639445
-        },
-        {
-          "matched_topic_id": 0,
-          "random_state": 77,
-          "similarity": 0.7816463322773296
+          "similarity": 0.845486203588078
         },
         {
           "matched_topic_id": 2,
+          "random_state": 77,
+          "similarity": 0.9035344512929088
+        },
+        {
+          "matched_topic_id": 1,
           "random_state": 101,
-          "similarity": 0.8350064177111018
+          "similarity": 0.676233700413584
         }
       ],
-      "mean_similarity": 0.8473245771174586,
-      "min_similarity": 0.7816463322773296,
+      "mean_similarity": 0.8084181184315237,
+      "min_similarity": 0.676233700413584,
       "topic_id": 0
     },
     {
       "matches": [
         {
-          "matched_topic_id": 1,
+          "matched_topic_id": 2,
           "random_state": 42,
-          "similarity": 0.9124457384614412
-        },
-        {
-          "matched_topic_id": 0,
-          "random_state": 77,
-          "similarity": 0.9229652537303416
+          "similarity": 0.9119621245408955
         },
         {
           "matched_topic_id": 1,
+          "random_state": 77,
+          "similarity": 0.8032572657314795
+        },
+        {
+          "matched_topic_id": 2,
           "random_state": 101,
-          "similarity": 0.8975557853658113
+          "similarity": 0.891224621789301
         }
       ],
-      "mean_similarity": 0.9109889258525313,
-      "min_similarity": 0.8975557853658113,
+      "mean_similarity": 0.8688146706872253,
+      "min_similarity": 0.8032572657314795,
       "topic_id": 1
     },
     {
@@ -95,21 +95,21 @@
         {
           "matched_topic_id": 0,
           "random_state": 42,
-          "similarity": 0.812324147470508
-        },
-        {
-          "matched_topic_id": 2,
-          "random_state": 77,
-          "similarity": 0.9999982685837493
+          "similarity": 0.9332912475197689
         },
         {
           "matched_topic_id": 0,
+          "random_state": 77,
+          "similarity": 0.8734403248484197
+        },
+        {
+          "matched_topic_id": 1,
           "random_state": 101,
-          "similarity": 0.9487872263346994
+          "similarity": 0.8012181342364328
         }
       ],
-      "mean_similarity": 0.9203698807963189,
-      "min_similarity": 0.812324147470508,
+      "mean_similarity": 0.8693165688682072,
+      "min_similarity": 0.8012181342364328,
       "topic_id": 2
     }
   ],
@@ -123,7 +123,7 @@
   "runs": [
     {
       "metadata_path": "reports\\chapter4\\topic_stability\\seed_00011\\lda_prior_metadata.json",
-      "model_hash": "04af6811ebeaf6e25c1ab98f5a114fdd2b31848232290405f4e3ee4c9faa782e",
+      "model_hash": "56acc875f52035fe85ed70f08bf0be4c5625435a5598146093208eb2f2adf5c2",
       "model_path": "models\\lda\\topic_stability\\seed_00011\\lda_prior.joblib",
       "random_state": 11,
       "theta_prior_path": "reports\\chapter4\\topic_stability\\seed_00011\\theta_prior.csv",
@@ -131,7 +131,7 @@
     },
     {
       "metadata_path": "reports\\chapter4\\topic_stability\\seed_00042\\lda_prior_metadata.json",
-      "model_hash": "87be2e37d1d81afbc2869bba8e75fb939aa25657c15fc86fee43b751a7441fb5",
+      "model_hash": "40e3300dbb0f4d2cf8ee85c7d4612d44fea3e51447598d9aec21b59cd8d6bbfe",
       "model_path": "models\\lda\\topic_stability\\seed_00042\\lda_prior.joblib",
       "random_state": 42,
       "theta_prior_path": "reports\\chapter4\\topic_stability\\seed_00042\\theta_prior.csv",
@@ -139,7 +139,7 @@
     },
     {
       "metadata_path": "reports\\chapter4\\topic_stability\\seed_00077\\lda_prior_metadata.json",
-      "model_hash": "2ae51480a4480ff39b35c4b3e6f9a7ef463e7c87751c8684a964c9d4ea40c180",
+      "model_hash": "ff160c59783cc5a8f186957c912fb9da6c0d17cca36bdefb8dd15191f13faa1e",
       "model_path": "models\\lda\\topic_stability\\seed_00077\\lda_prior.joblib",
       "random_state": 77,
       "theta_prior_path": "reports\\chapter4\\topic_stability\\seed_00077\\theta_prior.csv",
@@ -147,7 +147,7 @@
     },
     {
       "metadata_path": "reports\\chapter4\\topic_stability\\seed_00101\\lda_prior_metadata.json",
-      "model_hash": "40e79322acaba1bcd2bf605d90fd81a693351e611c366fb5075a19ccaf9fefd6",
+      "model_hash": "a172ac0280d693dcc53be2e65fdc0f8d9afe8f3cc947fb46bd682c00823a9516",
       "model_path": "models\\lda\\topic_stability\\seed_00101\\lda_prior.joblib",
       "random_state": 101,
       "theta_prior_path": "reports\\chapter4\\topic_stability\\seed_00101\\theta_prior.csv",
