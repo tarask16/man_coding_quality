@@ -21,6 +21,19 @@ from manual_coding_sim.lda.corpus_builder import (
     LdaCorpusBuilderConfig,
     LdaCorpusBuildResult,
 )
+
+from manual_coding_sim.lda.lda_prior_model import (
+    LdaPriorModel,
+    LdaPriorModelConfig,
+    LdaPriorTrainingResult,
+)
+from manual_coding_sim.lda.matrix_builder import (
+    LdaDocumentMetadata,
+    LdaMatrixBuilder,
+    LdaMatrixBuildResult,
+    LdaVocabularyItem,
+)
+
 from manual_coding_sim.lda.leakage_guard import (
     LeakageCheckResult,
     LeakageGuard,
@@ -57,6 +70,13 @@ __all__ = [
     "LdaCorpusBuilder",
     "LdaCorpusBuilderConfig",
     "LdaCorpusBuildResult",
+    "LdaDocumentMetadata",
+    "LdaMatrixBuilder",
+    "LdaMatrixBuildResult",
+    "LdaPriorModel",
+    "LdaPriorModelConfig",
+    "LdaPriorTrainingResult",
+    "LdaVocabularyItem",
     "TokenizedFeature",
     "LdaInputPaths",
     "LdaLeakageError",
