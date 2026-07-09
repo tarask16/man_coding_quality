@@ -151,3 +151,11 @@ from manual_coding_sim.quality_calculator import (
     quality_vector_to_dict,
     summarize_quality_assessment,
 )
+
+# Экспорт этапа 11: формирование табличного датасета главы 3.
+from manual_coding_sim.dataset_builder import (
+    DatasetBuildResult,
+    DatasetBuilder,
+    DatasetBuilderConfig,
+    build_dataset,
+)
