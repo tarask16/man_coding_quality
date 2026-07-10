@@ -16,6 +16,8 @@ import yaml
 
 from manual_coding_sim.prediction.paths import (
     DEFAULT_CHAPTER5_REPORTS_DIR,
+    DEFAULT_LATENT_QUALITY_COMPONENT_PATH,
+    DEFAULT_LATENT_QUALITY_COMPONENT_REPORT_PATH,
     DEFAULT_NORMALIZATION_REPORT_PATH,
     DEFAULT_NORMALIZED_PRIOR_FEATURES_PATH,
     DEFAULT_PREDICTION_REPORT_JSON_PATH,
@@ -49,6 +51,8 @@ class Chapter5OutputPaths:
     q_pred_components_path: Path = DEFAULT_Q_PRED_COMPONENTS_PATH
     normalized_prior_features_path: Path = DEFAULT_NORMALIZED_PRIOR_FEATURES_PATH
     normalization_report_path: Path = DEFAULT_NORMALIZATION_REPORT_PATH
+    latent_quality_component_path: Path = DEFAULT_LATENT_QUALITY_COMPONENT_PATH
+    latent_quality_component_report_path: Path = DEFAULT_LATENT_QUALITY_COMPONENT_REPORT_PATH
     report_json_path: Path = DEFAULT_PREDICTION_REPORT_JSON_PATH
     report_md_path: Path = DEFAULT_PREDICTION_REPORT_MD_PATH
 
@@ -359,6 +363,14 @@ class Chapter5ConfigLoader:
                 normalization_report_path=_path(
                     output_section.get("normalization_report"),
                     DEFAULT_NORMALIZATION_REPORT_PATH,
+                ),
+                latent_quality_component_path=_path(
+                    output_section.get("latent_quality_component"),
+                    DEFAULT_LATENT_QUALITY_COMPONENT_PATH,
+                ),
+                latent_quality_component_report_path=_path(
+                    output_section.get("latent_quality_component_report"),
+                    DEFAULT_LATENT_QUALITY_COMPONENT_REPORT_PATH,
                 ),
                 report_json_path=_path(
                     output_section.get("report_json"),

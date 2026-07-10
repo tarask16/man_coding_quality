@@ -25,6 +25,9 @@ from manual_coding_sim.prediction.chapter5_leakage_guard import (
     Chapter5LeakageError,
     Chapter5LeakageGuard,
 )
+from manual_coding_sim.prediction.latent_quality_component import (
+    LatentQualityComponentCalculator,
+)
 from manual_coding_sim.prediction.paths import resolve_project_path
 from manual_coding_sim.prediction.prior_feature_normalizer import (
     PriorFeatureNormalizer,
@@ -56,6 +59,11 @@ def build_arg_parser() -> argparse.ArgumentParser:
         "--normalize-inputs",
         action="store_true",
         help="Нормировать априорные признаки главы 5 и сохранить отчет.",
+    )
+    parser.add_argument(
+        "--calculate-latent-component",
+        action="store_true",
+        help="Рассчитать латентную компоненту качества Q_lat и сохранить отчет.",
     )
     return parser
 
@@ -90,13 +98,16 @@ def main(argv: Sequence[str] | None = None) -> int:
     print(f"Направления латентных факторов: {config.factor_directions.directions}")
 
     loaded_inputs: Chapter5LoadedInputs | None = None
-    if args.validate_inputs or args.normalize_inputs:
+    if args.validate_inputs or args.normalize_inputs or args.calculate_latent_component:
         loaded_inputs = _load_and_report_inputs(project_root, config)
         if loaded_inputs is None:
             return 1
 
     if args.normalize_inputs:
         _normalize_and_save(project_root, config, loaded_inputs)
+
+    if args.calculate_latent_component:
+        _calculate_latent_component_and_save(project_root, config, loaded_inputs)
 
     print("Расчет Q_pred не выполнялся: это будет реализовано на следующих этапах.")
     return 0
@@ -168,6 +179,40 @@ def _normalize_and_save(
     print(f"Пропущено нечисловых признаков: {len(result.report.non_numeric_features)}")
     print(f"Таблица нормированных признаков сохранена: {normalized_path}")
     print(f"Отчет нормировки сохранен: {report_path}")
+
+
+def _calculate_latent_component_and_save(
+    project_root: Path,
+    config: Chapter5PredictionConfig,
+    loaded_inputs: Chapter5LoadedInputs | None,
+) -> None:
+    """Рассчитать латентную компоненту качества и сохранить артефакты."""
+
+    if loaded_inputs is None:
+        msg = "Внутренняя ошибка: расчет Q_lat вызван без загруженных входных данных."
+        raise RuntimeError(msg)
+
+    calculator = LatentQualityComponentCalculator(config.factor_directions)
+    result = calculator.calculate(loaded_inputs.theta_prior)
+    latent_path = resolve_project_path(
+        project_root,
+        config.outputs.latent_quality_component_path,
+    )
+    report_path = resolve_project_path(
+        project_root,
+        config.outputs.latent_quality_component_report_path,
+    )
+    calculator.save_outputs(
+        result,
+        latent_component_path=latent_path,
+        report_path=report_path,
+    )
+    print("Латентная компонента качества: рассчитана.")
+    print(f"Строк латентной компоненты: {result.report.row_count}")
+    print(f"Минимальное q_latent: {result.report.q_latent_min:.6f}")
+    print(f"Максимальное q_latent: {result.report.q_latent_max:.6f}")
+    print(f"Таблица латентной компоненты сохранена: {latent_path}")
+    print(f"Отчет латентной компоненты сохранен: {report_path}")
 
 
 if __name__ == "__main__":

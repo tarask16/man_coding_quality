@@ -57,3 +57,25 @@ def test_chapter5_runner_normalizes_inputs(capsys) -> None:
     assert "Нормировка априорных признаков: выполнена" in captured.out
     assert normalized_path.exists()
     assert report_path.exists()
+
+
+def test_chapter5_runner_calculates_latent_component(capsys) -> None:
+    """Runner этапа 6 должен сохранять латентную компоненту качества."""
+
+    exit_code = main(
+        [
+            "--project-root",
+            str(PROJECT_ROOT),
+            "--config",
+            "configs/chapter5.yaml",
+            "--calculate-latent-component",
+        ]
+    )
+
+    captured = capsys.readouterr()
+    latent_path = PROJECT_ROOT / "reports/chapter5/latent_quality_component.csv"
+    report_path = PROJECT_ROOT / "reports/chapter5/latent_quality_component_report.json"
+    assert exit_code == 0
+    assert "Латентная компонента качества: рассчитана" in captured.out
+    assert latent_path.exists()
+    assert report_path.exists()

@@ -1,0 +1,78 @@
+{
+  "base_stage": "stage5_normalization",
+  "target_stage": "stage6_latent_quality_component",
+  "delta_type": "changed_files_only",
+  "changed_files": [
+    {
+      "path": "src/manual_coding_sim/prediction/latent_quality_component.py",
+      "size_bytes": 9039,
+      "sha256": "258ee8c8964503f1d5d4010868a6c14069b957a62f63112b7bf37774bdd520ae"
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/chapter5_runner.py",
+      "size_bytes": 9688,
+      "sha256": "10a7518ef7505aa73777e22b9978e3f51d7c4363a94e7fa95ae15dee1d3a1300"
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/chapter5_config.py",
+      "size_bytes": 25840,
+      "sha256": "a7e49260e74df83bc25030c625d94aa2f538232ef654509378fc5d3c9fcbeecc"
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/paths.py",
+      "size_bytes": 2118,
+      "sha256": "8013be927df3f5a9356e49503a5f4ba3caec0a972eb7f68826d33104f71a4350"
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/__init__.py",
+      "size_bytes": 3354,
+      "sha256": "1ab51e82e75cfdb40262a8fc591d72d3067ef659d781afb2b32099308d956443"
+    },
+    {
+      "path": "configs/chapter5.yaml",
+      "size_bytes": 1457,
+      "sha256": "a6dff4487ccd9a958fb6db0e4e5f214951faa42ac08344a9f202cf6035567152"
+    },
+    {
+      "path": "tests/conftest.py",
+      "size_bytes": 1956,
+      "sha256": "e1524e61ee1eb7234264d439fd5688b38e72e64fc36fa0a2b8d3964dacfd6364"
+    },
+    {
+      "path": "tests/prediction/test_latent_quality_component.py",
+      "size_bytes": 4128,
+      "sha256": "3ca923860123520f35b47e84b127537895743b74975b971afa52a939c7503b48"
+    },
+    {
+      "path": "tests/prediction/test_chapter5_runner.py",
+      "size_bytes": 2904,
+      "sha256": "a091a9c78d3c7893e04855343d4eb6d4c5665cc2b15684f720f14b717b8ff216"
+    },
+    {
+      "path": "tests/prediction/test_chapter5_config.py",
+      "size_bytes": 6336,
+      "sha256": "a9d7fff19f6e2df9b709789c40277cf4e4277ef515b7af031e6eb619118834bf"
+    },
+    {
+      "path": "reports/chapter5/latent_quality_component.csv",
+      "size_bytes": 21613,
+      "sha256": "80856f5a54a5a7951346d98f0b667beb28fc2d1308bdbd20779bb654db312e99"
+    },
+    {
+      "path": "reports/chapter5/latent_quality_component_report.json",
+      "size_bytes": 609,
+      "sha256": "eb33cb53d2ca16ddd28c2f9045dc4490b36ac17853921dcd520c0748bde2ed8f"
+    },
+    {
+      "path": "reports/chapter5/stage6_latent_quality_report.md",
+      "size_bytes": 2979,
+      "sha256": "584dd40a31f5c0928e32f27e4e5d7b324f225ea976a416c2d62b76a5e2284de4"
+    },
+    {
+      "path": "reports/chapter5/stage6_hashes.txt",
+      "size_bytes": 1431,
+      "sha256": "b052fd0259287d73089fc11815dd52b4ca7c6ee5257ceae3a12badd26dc38800"
+    }
+  ],
+  "deleted_files": []
+}

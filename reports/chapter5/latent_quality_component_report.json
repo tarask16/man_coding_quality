@@ -1,0 +1,33 @@
+{
+  "row_count": 150,
+  "theta_columns": [
+    "theta_0",
+    "theta_1",
+    "theta_2"
+  ],
+  "factor_directions": {
+    "theta_0": -1.0,
+    "theta_1": -1.0,
+    "theta_2": 1.0
+  },
+  "q_latent_min": 0.01071998484504999,
+  "q_latent_max": 0.978029444383,
+  "q_latent_mean": 0.419521416158972,
+  "dominant_topic_counts": {
+    "theta_0": 34,
+    "theta_1": 46,
+    "theta_2": 70
+  },
+  "output_columns": [
+    "scenario_id",
+    "protocol_id",
+    "run_id",
+    "theta_0",
+    "theta_1",
+    "theta_2",
+    "latent_direction_score",
+    "q_latent",
+    "theta_dominant_topic",
+    "theta_dominant_value"
+  ]
+}

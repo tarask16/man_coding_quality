@@ -39,6 +39,9 @@ from manual_coding_sim.prediction.integral_quality_predictor import (
 )
 from manual_coding_sim.prediction.latent_quality_component import (
     LatentQualityComponentCalculator,
+    LatentQualityComponentError,
+    LatentQualityComponentReport,
+    LatentQualityComponentResult,
 )
 from manual_coding_sim.prediction.partial_quality_predictor import PartialQualityPredictor
 from manual_coding_sim.prediction.prediction_uncertainty import (
@@ -76,6 +79,9 @@ __all__ = [
     "Chapter5UncertaintyConfig",
     "IntegralQualityPredictor",
     "LatentQualityComponentCalculator",
+    "LatentQualityComponentError",
+    "LatentQualityComponentReport",
+    "LatentQualityComponentResult",
     "PartialQualityPredictor",
     "PredictionUncertaintyEstimator",
     "PriorFeatureNormalizationError",

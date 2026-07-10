@@ -149,3 +149,16 @@ def test_decision_thresholds_reject_wrong_order() -> None:
 
     with pytest.raises(ValueError, match="Пороги качества"):
         thresholds.validate()
+
+
+def test_chapter5_config_contains_latent_component_paths() -> None:
+    """Конфигурация этапа 6 должна содержать пути латентной компоненты."""
+
+    config = load_chapter5_prediction_config(project_root=PROJECT_ROOT)
+
+    assert config.outputs.latent_quality_component_path.as_posix() == (
+        "reports/chapter5/latent_quality_component.csv"
+    )
+    assert config.outputs.latent_quality_component_report_path.as_posix() == (
+        "reports/chapter5/latent_quality_component_report.json"
+    )
