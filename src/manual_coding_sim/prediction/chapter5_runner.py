@@ -25,11 +25,16 @@ from manual_coding_sim.prediction.chapter5_leakage_guard import (
     Chapter5LeakageError,
     Chapter5LeakageGuard,
 )
+from manual_coding_sim.prediction.integral_quality_predictor import (
+    IntegralQualityPredictionResult,
+    IntegralQualityPredictor,
+)
 from manual_coding_sim.prediction.latent_quality_component import (
     LatentQualityComponentCalculator,
     LatentQualityComponentResult,
 )
 from manual_coding_sim.prediction.partial_quality_predictor import (
+    PartialQualityPredictionResult,
     PartialQualityPredictor,
 )
 from manual_coding_sim.prediction.paths import resolve_project_path
@@ -75,6 +80,11 @@ def build_arg_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Рассчитать частные прогнозные критерии и сохранить q_pred_components.csv.",
     )
+    parser.add_argument(
+        "--calculate-q-pred",
+        action="store_true",
+        help="Рассчитать интегральный прогнозный показатель Q_pred и сохранить q_pred.csv.",
+    )
     return parser
 
 
@@ -113,6 +123,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         or args.normalize_inputs
         or args.calculate_latent_component
         or args.calculate_partial_criteria
+        or args.calculate_q_pred
     ):
         loaded_inputs = _load_and_report_inputs(project_root, config)
         if loaded_inputs is None:
@@ -126,8 +137,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.calculate_latent_component:
         latent_result = _calculate_latent_component_and_save(project_root, config, loaded_inputs)
 
+    partial_result: PartialQualityPredictionResult | None = None
     if args.calculate_partial_criteria:
-        _calculate_partial_criteria_and_save(
+        partial_result = _calculate_partial_criteria_and_save(
             project_root,
             config,
             loaded_inputs,
@@ -135,7 +147,20 @@ def main(argv: Sequence[str] | None = None) -> int:
             latent_result,
         )
 
-    print("Расчет Q_pred не выполнялся: интегральный показатель будет реализован на следующих этапах.")
+    if args.calculate_q_pred:
+        _calculate_q_pred_and_save(
+            project_root,
+            config,
+            loaded_inputs,
+            normalization_result,
+            latent_result,
+            partial_result,
+        )
+    else:
+        print(
+            "Расчет Q_pred не выполнялся: интегральный показатель "
+            "будет реализован на следующих этапах."
+        )
     return 0
 
 
@@ -249,7 +274,7 @@ def _calculate_partial_criteria_and_save(
     loaded_inputs: Chapter5LoadedInputs | None,
     normalization_result: PriorFeatureNormalizationResult | None,
     latent_result: LatentQualityComponentResult | None,
-) -> None:
+) -> PartialQualityPredictionResult:
     """Рассчитать частные прогнозные критерии и сохранить компоненты."""
 
     if loaded_inputs is None:
@@ -279,6 +304,44 @@ def _calculate_partial_criteria_and_save(
     print(f"Критериев рассчитано: {len(result.report.criteria)}")
     print(f"Таблица компонентов качества сохранена: {components_path}")
     print(f"Отчет компонентов качества сохранен: {report_path}")
+    return result
+
+
+def _calculate_q_pred_and_save(
+    project_root: Path,
+    config: Chapter5PredictionConfig,
+    loaded_inputs: Chapter5LoadedInputs | None,
+    normalization_result: PriorFeatureNormalizationResult | None,
+    latent_result: LatentQualityComponentResult | None,
+    partial_result: PartialQualityPredictionResult | None,
+) -> IntegralQualityPredictionResult:
+    """Рассчитать интегральный показатель Q_pred и сохранить артефакты."""
+
+    if partial_result is None:
+        partial_result = _calculate_partial_criteria_and_save(
+            project_root,
+            config,
+            loaded_inputs,
+            normalization_result,
+            latent_result,
+        )
+
+    predictor = IntegralQualityPredictor(config.quality_weights)
+    result = predictor.predict(partial_result.components)
+    q_pred_path = resolve_project_path(project_root, config.outputs.q_pred_path)
+    report_path = resolve_project_path(project_root, config.outputs.q_pred_report_path)
+    predictor.save_outputs(
+        result,
+        q_pred_path=q_pred_path,
+        report_path=report_path,
+    )
+    print("Интегральный прогнозный показатель Q_pred: рассчитан.")
+    print(f"Строк интегрального прогноза: {result.report.row_count}")
+    print(f"Минимальное Q_pred: {result.report.q_pred_min:.6f}")
+    print(f"Максимальное Q_pred: {result.report.q_pred_max:.6f}")
+    print(f"Таблица интегрального прогноза сохранена: {q_pred_path}")
+    print(f"Отчет интегрального прогноза сохранен: {report_path}")
+    return result
 
 
 if __name__ == "__main__":

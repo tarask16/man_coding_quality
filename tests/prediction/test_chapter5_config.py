@@ -175,3 +175,14 @@ def test_chapter5_config_contains_partial_criteria_paths() -> None:
     assert config.outputs.q_pred_components_report_path.as_posix() == (
         "reports/chapter5/q_pred_components_report.json"
     )
+
+
+def test_chapter5_config_contains_q_pred_paths() -> None:
+    """Конфигурация этапа 8 должна содержать пути интегрального прогноза."""
+
+    config = load_chapter5_prediction_config(project_root=PROJECT_ROOT)
+
+    assert config.outputs.q_pred_path.as_posix() == "reports/chapter5/q_pred.csv"
+    assert config.outputs.q_pred_report_path.as_posix() == (
+        "reports/chapter5/q_pred_report.json"
+    )

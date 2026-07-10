@@ -9,6 +9,7 @@ input:
 output:
   reports_dir: reports/chapter5
   q_pred: reports/chapter5/q_pred.csv
+  q_pred_report: reports/chapter5/q_pred_report.json
   q_pred_components: reports/chapter5/q_pred_components.csv
   q_pred_components_report: reports/chapter5/q_pred_components_report.json
   normalized_prior_features: reports/chapter5/normalized_prior_features.csv

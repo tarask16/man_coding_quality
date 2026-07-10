@@ -1,0 +1,73 @@
+{
+  "stage": "stage8_integral_quality",
+  "base": "stage7_delta_applied",
+  "description": "Delta-архив этапа 8: расчет интегрального прогнозного показателя Q_pred.",
+  "includes_prior_features": false,
+  "files": [
+    {
+      "path": "configs/chapter5.yaml",
+      "sha256": "870df138913796deb519448101a728a63159ef18bb5453d5960e01a2debf04ac",
+      "size_bytes": 1585
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/__init__.py",
+      "sha256": "84e787ab375f803565f99621f17b4386eaf7c8c282cac41bbadb9b7864bc63e0",
+      "size_bytes": 3955
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/chapter5_config.py",
+      "sha256": "b623174775baa850eb00cd2e06d0246822f28f2570fe38d8c3fc92942932827e",
+      "size_bytes": 26418
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/chapter5_runner.py",
+      "sha256": "d02508ae4f3372d06280d6545a3c3321792256ec561199d9f8e3f52297e40537",
+      "size_bytes": 15273
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/integral_quality_predictor.py",
+      "sha256": "eaba2f6cb67eeeaf3ea2c6b77d705b06e414a39d3592046554e5e256c3e66130",
+      "size_bytes": 12655
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/paths.py",
+      "sha256": "a095b7f306e061e331d89359e73e942015043da1c0899aae074e49e75b2fc231",
+      "size_bytes": 2310
+    },
+    {
+      "path": "tests/prediction/test_chapter5_config.py",
+      "sha256": "7a01449c6d758f3d6e1fbd377f79f83be823d3ec02afad4fbb8e02dec17d8c26",
+      "size_bytes": 7341
+    },
+    {
+      "path": "tests/prediction/test_chapter5_runner.py",
+      "sha256": "253d1f6b5f45bceae736a0a1f21a88f5d58dbbb1b072c41d2fcae0ad8f67a7eb",
+      "size_bytes": 4461
+    },
+    {
+      "path": "tests/prediction/test_integral_quality_predictor.py",
+      "sha256": "cf8a85c115d6e98fe43d3e727574a0ce072afa9c5b053ab086d415fb6579d435",
+      "size_bytes": 4097
+    },
+    {
+      "path": "reports/chapter5/q_pred.csv",
+      "sha256": "2f7ed04da3525286ade1964f47407384c4e3310211d3a2e7992ce2756e7aa67a",
+      "size_bytes": 59631
+    },
+    {
+      "path": "reports/chapter5/q_pred_report.json",
+      "sha256": "3c9daeda66093a8cbebc882b10c607ee855dec4c79c97bfef451b28b68bac0c7",
+      "size_bytes": 3758
+    },
+    {
+      "path": "reports/chapter5/stage8_hashes.txt",
+      "sha256": "ff677b46faf5b0c75429e795313e71a5a2d52398f2acbc49c779c43323503949",
+      "size_bytes": 868
+    },
+    {
+      "path": "reports/chapter5/stage8_integral_quality_report.md",
+      "sha256": "91880fc08e1be6d3d05c0ac21cc086603013727bdfe02a68bf5568bec7958f46",
+      "size_bytes": 1949
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "row_count": 150,
+  "criteria": [
+    "q_acc",
+    "q_time",
+    "q_effort",
+    "q_res",
+    "q_rep",
+    "q_fit"
+  ],
+  "weights": {
+    "q_acc": 0.1666666667,
+    "q_time": 0.1666666667,
+    "q_effort": 0.1666666667,
+    "q_res": 0.1666666667,
+    "q_rep": 0.1666666666,
+    "q_fit": 0.1666666666
+  },
+  "weight_sum": 1.0,
+  "merge_columns": [
+    "scenario_id",
+    "protocol_id"
+  ],
+  "output_columns": [
+    "scenario_id",
+    "protocol_id",
+    "run_id",
+    "alternative_id",
+    "q_latent",
+    "q_acc_pred",
+    "q_acc_weight",
+    "q_acc_contribution",
+    "q_time_pred",
+    "q_time_weight",
+    "q_time_contribution",
+    "q_effort_pred",
+    "q_effort_weight",
+    "q_effort_contribution",
+    "q_res_pred",
+    "q_res_weight",
+    "q_res_contribution",
+    "q_rep_pred",
+    "q_rep_weight",
+    "q_rep_contribution",
+    "q_fit_pred",
+    "q_fit_weight",
+    "q_fit_contribution",
+    "q_pred"
+  ],
+  "q_pred_min": 0.10344477176221134,
+  "q_pred_max": 0.8893015161715213,
+  "q_pred_mean": 0.49884356862888296,
+  "q_pred_std": 0.2140675501390494,
+  "criterion_reports": [
+    {
+      "criterion_name": "q_acc",
+      "weight": 0.1666666667,
+      "prediction_column": "q_acc_pred",
+      "contribution_column": "q_acc_contribution",
+      "prediction_min": 0.003935610739847511,
+      "prediction_max": 0.9291105930647074,
+      "prediction_mean": 0.4677022108758239,
+      "contribution_min": 0.0006559351234391056,
+      "contribution_max": 0.15485176554175492,
+      "contribution_mean": 0.07795036849489403
+    },
+    {
+      "criterion_name": "q_time",
+      "weight": 0.1666666667,
+      "prediction_column": "q_time_pred",
+      "contribution_column": "q_time_contribution",
+      "prediction_min": 0.0630734668876822,
+      "prediction_max": 0.9846888593891445,
+      "prediction_mean": 0.552851043708117,
+      "contribution_min": 0.010512244483382815,
+      "contribution_max": 0.1641148099310137,
+      "contribution_mean": 0.09214184063644784
+    },
+    {
+      "criterion_name": "q_effort",
+      "weight": 0.1666666667,
+      "prediction_column": "q_effort_pred",
+      "contribution_column": "q_effort_contribution",
+      "prediction_min": 0.034841050054388,
+      "prediction_max": 0.9219461278548444,
+      "prediction_mean": 0.5072190826852191,
+      "contribution_min": 0.005806841676892702,
+      "contribution_max": 0.15365768800653892,
+      "contribution_mean": 0.08453651379777716
+    },
+    {
+      "criterion_name": "q_res",
+      "weight": 0.1666666667,
+      "prediction_column": "q_res_pred",
+      "contribution_column": "q_res_contribution",
+      "prediction_min": 0.06843247368372192,
+      "prediction_max": 0.9607227870808877,
+      "prediction_mean": 0.4523257901718526,
+      "contribution_min": 0.011405412282901402,
+      "contribution_max": 0.16012046454550535,
+      "contribution_mean": 0.07538763171038629
+    },
+    {
+      "criterion_name": "q_rep",
+      "weight": 0.1666666666,
+      "prediction_column": "q_rep_pred",
+      "contribution_column": "q_rep_contribution",
+      "prediction_min": 0.09928299393802,
+      "prediction_max": 0.9912117777532,
+      "prediction_mean": 0.5282752331302555,
+      "contribution_min": 0.0165471656497178,
+      "contribution_max": 0.1652019628927859,
+      "contribution_mean": 0.08804587215315757
+    },
+    {
+      "criterion_name": "q_fit",
+      "weight": 0.1666666666,
+      "prediction_column": "q_fit_pred",
+      "contribution_column": "q_fit_contribution",
+      "prediction_min": 0.08229366136243417,
+      "prediction_max": 0.910859551629335,
+      "prediction_mean": 0.48468805121119585,
+      "contribution_min": 0.013715610221586119,
+      "contribution_max": 0.15180992521083186,
+      "contribution_mean": 0.0807813418362201
+    }
+  ]
+}

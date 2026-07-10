@@ -101,3 +101,25 @@ def test_chapter5_runner_calculates_partial_criteria(capsys) -> None:
     assert "Частные прогнозные критерии: рассчитаны" in captured.out
     assert components_path.exists()
     assert report_path.exists()
+
+
+def test_chapter5_runner_calculates_q_pred(capsys) -> None:
+    """Runner этапа 8 должен сохранять интегральный прогноз Q_pred."""
+
+    exit_code = main(
+        [
+            "--project-root",
+            str(PROJECT_ROOT),
+            "--config",
+            "configs/chapter5.yaml",
+            "--calculate-q-pred",
+        ]
+    )
+
+    captured = capsys.readouterr()
+    q_pred_path = PROJECT_ROOT / "reports/chapter5/q_pred.csv"
+    report_path = PROJECT_ROOT / "reports/chapter5/q_pred_report.json"
+    assert exit_code == 0
+    assert "Интегральный прогнозный показатель Q_pred: рассчитан" in captured.out
+    assert q_pred_path.exists()
+    assert report_path.exists()

@@ -35,6 +35,10 @@ from manual_coding_sim.prediction.chapter5_leakage_guard import (
 )
 from manual_coding_sim.prediction.chapter5_report_builder import Chapter5ReportBuilder
 from manual_coding_sim.prediction.integral_quality_predictor import (
+    IntegralQualityCriterionReport,
+    IntegralQualityPredictionError,
+    IntegralQualityPredictionReport,
+    IntegralQualityPredictionResult,
     IntegralQualityPredictor,
 )
 from manual_coding_sim.prediction.latent_quality_component import (
@@ -83,6 +87,10 @@ __all__ = [
     "Chapter5QualityWeights",
     "Chapter5ReportBuilder",
     "Chapter5UncertaintyConfig",
+    "IntegralQualityCriterionReport",
+    "IntegralQualityPredictionError",
+    "IntegralQualityPredictionReport",
+    "IntegralQualityPredictionResult",
     "IntegralQualityPredictor",
     "LatentQualityComponentCalculator",
     "LatentQualityComponentError",

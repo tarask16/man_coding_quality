@@ -15,6 +15,7 @@ DEFAULT_PRIOR_FEATURES_PATH = Path("data/processed/prior_features.csv")
 DEFAULT_THETA_PRIOR_PATH = Path("reports/chapter4/theta_prior.csv")
 DEFAULT_TOPIC_INTERPRETATION_PATH = Path("reports/chapter4/topic_interpretation.json")
 DEFAULT_Q_PRED_PATH = DEFAULT_CHAPTER5_REPORTS_DIR / "q_pred.csv"
+DEFAULT_Q_PRED_REPORT_PATH = DEFAULT_CHAPTER5_REPORTS_DIR / "q_pred_report.json"
 DEFAULT_Q_PRED_COMPONENTS_PATH = DEFAULT_CHAPTER5_REPORTS_DIR / "q_pred_components.csv"
 DEFAULT_Q_PRED_COMPONENTS_REPORT_PATH = (
     DEFAULT_CHAPTER5_REPORTS_DIR / "q_pred_components_report.json"
