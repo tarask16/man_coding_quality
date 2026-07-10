@@ -15,6 +15,10 @@ from manual_coding_sim.prediction.chapter5_config import (
     Chapter5PredictionConfig,
     load_chapter5_prediction_config,
 )
+from manual_coding_sim.prediction.chapter5_data_loader import (
+    Chapter5DataLoadError,
+    Chapter5DataLoader,
+)
 
 
 def build_arg_parser() -> argparse.ArgumentParser:
@@ -32,6 +36,11 @@ def build_arg_parser() -> argparse.ArgumentParser:
         "--config",
         default="configs/chapter5.yaml",
         help="Путь к конфигурации главы 5.",
+    )
+    parser.add_argument(
+        "--validate-inputs",
+        action="store_true",
+        help="Проверить и объединить входные данные главы 5 без расчета Q_pred.",
     )
     return parser
 
@@ -64,6 +73,23 @@ def main(argv: Sequence[str] | None = None) -> int:
     print(f"Конфигурация главы 5: {args.config}")
     print(f"Веса частных критериев: {config.quality_weights.weights}")
     print(f"Направления латентных факторов: {config.factor_directions.directions}")
+    if args.validate_inputs:
+        loader = Chapter5DataLoader(
+            paths=config.inputs,
+            project_root=project_root,
+            expected_topic_count=config.expected_topic_count,
+        )
+        try:
+            loaded_inputs = loader.load()
+        except (Chapter5DataLoadError, FileNotFoundError) as error:
+            print(f"Проверка входных данных главы 5 не пройдена: {error}")
+            return 1
+        report = loaded_inputs.validation_report
+        print(
+            "Данные главы 5 успешно загружены: "
+            f"{report.scenario_count} сценариев, {report.topic_count} латентных фактора."
+        )
+        print(f"Ключи объединения: {report.merge_key_columns}")
     print("Расчет Q_pred не выполнялся: это будет реализовано на следующих этапах.")
     return 0
 

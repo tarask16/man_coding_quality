@@ -22,8 +22,11 @@ from manual_coding_sim.prediction.chapter5_config import (
     load_chapter5_prediction_config,
 )
 from manual_coding_sim.prediction.chapter5_data_loader import (
+    Chapter5DataLoadError,
     Chapter5DataLoader,
     Chapter5InputContract,
+    Chapter5InputValidationReport,
+    Chapter5LoadedInputs,
 )
 from manual_coding_sim.prediction.chapter5_leakage_guard import (
     Chapter5LeakageCheckResult,
@@ -46,12 +49,15 @@ from manual_coding_sim.prediction.prior_feature_normalizer import PriorFeatureNo
 __all__ = [
     "Chapter5ConfigFilePaths",
     "Chapter5ConfigLoader",
+    "Chapter5DataLoadError",
     "Chapter5DataLoader",
     "Chapter5DecisionThresholds",
     "Chapter5FactorDirections",
     "Chapter5FeatureCriterionWeights",
     "Chapter5FeatureWeights",
     "Chapter5InputContract",
+    "Chapter5InputValidationReport",
+    "Chapter5LoadedInputs",
     "Chapter5InputPaths",
     "Chapter5LeakageCheckResult",
     "Chapter5LeakageError",
