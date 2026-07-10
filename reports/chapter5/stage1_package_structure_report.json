@@ -1,0 +1,31 @@
+{
+  "stage": 1,
+  "title": "Каркас программного модуля главы 5",
+  "status": "closed",
+  "created_source_files": [
+    "src/manual_coding_sim/prediction/__init__.py",
+    "src/manual_coding_sim/prediction/paths.py",
+    "src/manual_coding_sim/prediction/chapter5_config.py",
+    "src/manual_coding_sim/prediction/chapter5_data_loader.py",
+    "src/manual_coding_sim/prediction/chapter5_leakage_guard.py",
+    "src/manual_coding_sim/prediction/prior_feature_normalizer.py",
+    "src/manual_coding_sim/prediction/latent_quality_component.py",
+    "src/manual_coding_sim/prediction/partial_quality_predictor.py",
+    "src/manual_coding_sim/prediction/integral_quality_predictor.py",
+    "src/manual_coding_sim/prediction/prediction_uncertainty.py",
+    "src/manual_coding_sim/prediction/chapter5_report_builder.py",
+    "src/manual_coding_sim/prediction/chapter5_runner.py"
+  ],
+  "created_test_files": [
+    "tests/prediction/test_chapter5_config.py",
+    "tests/prediction/test_chapter5_data_loader.py",
+    "tests/prediction/test_chapter5_leakage_guard.py",
+    "tests/prediction/test_chapter5_runner.py"
+  ],
+  "test_results": {
+    "prediction_tests": "10 passed in 0.20s",
+    "full_pytest": "258 passed in 3.67s"
+  },
+  "next_stage": "Этап 2. Конфигурации главы 5",
+  "next_stage_started": false
+}
