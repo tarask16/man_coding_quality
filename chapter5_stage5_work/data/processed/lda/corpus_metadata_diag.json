@@ -1,0 +1,17 @@
+{
+  "allowed_for_apriori_forecast": false,
+  "corpus_hash": "8cfe85569d555461e4392f56f3ff4fb0f6d087d5f77d8a3bf1f96f0d6dc7c998",
+  "df_max_ratio": 0.95,
+  "df_min": 2,
+  "diagnostic_kind": "diag",
+  "diagnostic_only": true,
+  "document_count": 150,
+  "extension_features_path": "data\\processed\\diagnostic_features.csv",
+  "extension_prefix": "diag",
+  "model_name": "LDA_diag",
+  "numeric_bins": 3,
+  "numeric_strategy": "quantile",
+  "prior_features_path": "data\\processed\\prior_features.csv",
+  "token_count_after_filter": 111,
+  "token_count_before_filter": 111
+}

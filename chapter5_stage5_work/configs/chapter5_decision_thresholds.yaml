@@ -1,0 +1,10 @@
+# Пороги классов качества по интегральной априорной оценке.
+# low_max < high_min, оба значения находятся в диапазоне [0, 1].
+
+decision_thresholds:
+  low_max: 0.45
+  high_min: 0.70
+  class_labels:
+    low: low_quality
+    medium: medium_quality
+    high: high_quality

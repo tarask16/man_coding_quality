@@ -1,0 +1,47 @@
+{
+  "document_count": 150,
+  "unique_scenario_count": 150,
+  "unique_protocol_count": 150,
+  "prior_feature_count": 32,
+  "diagnostic_feature_count": 5,
+  "fact_feature_count": 5,
+  "quality_target_count": 7,
+  "artifacts": {
+    "protocols": "data/processed/protocols.csv",
+    "prior_features": "data/processed/prior_features.csv",
+    "diagnostic_features": "data/processed/diagnostic_features.csv",
+    "fact_features": "data/processed/fact_features.csv",
+    "quality_targets": "data/processed/quality_targets.csv",
+    "all_features": "data/processed/all_features.csv",
+    "summary_json": "reports/chapter3/extended_corpus_summary.json",
+    "summary_md": "reports/chapter3/extended_corpus_summary.md"
+  },
+  "coverage": {
+    "message_complexity_values": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "message_criticality_values": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "condition_profiles": [
+      "hard",
+      "moderate",
+      "normal"
+    ],
+    "tool_types": [
+      "codebook",
+      "mixed",
+      "mnemonic",
+      "table"
+    ]
+  },
+  "methodological_note": "Корпус сформирован параметрическим планом сценариев главы 3; строки не являются копиями исходного малого корпуса."
+}

@@ -1,0 +1,159 @@
+{
+  "summary": {
+    "title": "Итоговый отчет программной реализации главы 3",
+    "scientific_chain": "S, O, U, G, K → M → E_h → C → D_h → M'",
+    "implemented_scope": "компьютерное моделирование процессов ручного кодирования, разделение признаков и формирование датасета",
+    "not_implemented_in_chapter3": [
+      "адаптированная LDA-модель латентных факторов качества",
+      "построение априорной прогнозной оценки качества",
+      "проверка достоверности прогноза по train/val/test-разбиению"
+    ],
+    "source_files_total": 15,
+    "source_files_present": 15,
+    "test_files_total": 13,
+    "test_files_present": 13,
+    "dataset_artifacts_total": 7,
+    "dataset_artifacts_present": 7,
+    "scientific_components": [
+      {
+        "component": "G",
+        "module": "message_model.py",
+        "meaning": "модель класса исходных сообщений M"
+      },
+      {
+        "component": "S",
+        "module": "procedure_model.py",
+        "meaning": "модель средства ручного кодирования"
+      },
+      {
+        "component": "O",
+        "module": "operator_model.py",
+        "meaning": "модель оператора ручного кодирования"
+      },
+      {
+        "component": "U",
+        "module": "condition_model.py",
+        "meaning": "модель условий применения"
+      },
+      {
+        "component": "ErrorModel",
+        "module": "error_model.py",
+        "meaning": "вероятностная модель ошибок"
+      },
+      {
+        "component": "K",
+        "module": "control_model.py",
+        "meaning": "модель контрольных процедур"
+      },
+      {
+        "component": "ProtocolSimulator",
+        "module": "protocol_simulator.py",
+        "meaning": "интегральный симулятор протоколов"
+      },
+      {
+        "component": "FeatureExtractor",
+        "module": "feature_extractor.py",
+        "meaning": "разделение X_prior, X_fact и X_diag"
+      },
+      {
+        "component": "QualityCalculator",
+        "module": "quality_calculator.py",
+        "meaning": "расчет q(A)"
+      },
+      {
+        "component": "DatasetBuilder",
+        "module": "dataset_builder.py",
+        "meaning": "формирование табличного датасета"
+      },
+      {
+        "component": "ExperimentRunner",
+        "module": "experiment_runner.py",
+        "meaning": "воспроизводимый запуск вычислительного эксперимента"
+      }
+    ]
+  },
+  "source_file_status": {
+    "src/manual_coding_sim/__init__.py": true,
+    "src/manual_coding_sim/config.py": true,
+    "src/manual_coding_sim/types.py": true,
+    "src/manual_coding_sim/message_model.py": true,
+    "src/manual_coding_sim/procedure_model.py": true,
+    "src/manual_coding_sim/operator_model.py": true,
+    "src/manual_coding_sim/condition_model.py": true,
+    "src/manual_coding_sim/error_model.py": true,
+    "src/manual_coding_sim/control_model.py": true,
+    "src/manual_coding_sim/protocol_simulator.py": true,
+    "src/manual_coding_sim/feature_extractor.py": true,
+    "src/manual_coding_sim/quality_calculator.py": true,
+    "src/manual_coding_sim/dataset_builder.py": true,
+    "src/manual_coding_sim/experiment_runner.py": true,
+    "src/manual_coding_sim/chapter3_report.py": true
+  },
+  "test_file_status": {
+    "tests/test_stage1_package_structure.py": true,
+    "tests/test_stage2_message_model.py": true,
+    "tests/test_stage3_procedure_model.py": true,
+    "tests/test_stage4_operator_model.py": true,
+    "tests/test_stage5_condition_model.py": true,
+    "tests/test_stage6_error_model.py": true,
+    "tests/test_stage7_control_model.py": true,
+    "tests/test_stage8_protocol_simulator.py": true,
+    "tests/test_stage9_feature_extractor.py": true,
+    "tests/test_stage10_quality_calculator.py": true,
+    "tests/test_stage11_dataset_builder.py": true,
+    "tests/test_stage12_experiment_runner.py": true,
+    "tests/test_stage13_chapter3_report.py": true
+  },
+  "dataset_artifact_status": {
+    "protocols": true,
+    "prior_features": true,
+    "fact_features": true,
+    "diagnostic_features": true,
+    "quality_targets": true,
+    "all_features": true,
+    "summary": true
+  },
+  "experiment_summary": {
+    "experiment_name": "chapter3_final_control_experiment",
+    "scenario_id": "A_001",
+    "run_count": 5,
+    "random_seed": 42,
+    "message_random_seed": 42,
+    "error_random_seed": 1042,
+    "control_random_seed": 2042,
+    "reproducibility_hash": "867988eb0e3f0b8ff9c494626da6cfd7c285fb267167771863edf4e774f5ae9c",
+    "reproducibility_ok": true,
+    "dataset_summary": {
+      "run_count": 5,
+      "protocol_row_count": 5,
+      "prior_feature_row_count": 5,
+      "fact_feature_row_count": 5,
+      "diagnostic_feature_row_count": 5,
+      "quality_row_count": 5,
+      "prior_feature_count": 25,
+      "fact_feature_count": 10,
+      "diagnostic_feature_count": 5,
+      "mean_integral_quality": 0.751068,
+      "mean_q_acc": 0.8,
+      "mean_residual_error_rate": 0.2,
+      "saved_files": {
+        "protocols": "D:\\Projects\\man_coding_quality\\data\\processed\\protocols.csv",
+        "prior_features": "D:\\Projects\\man_coding_quality\\data\\processed\\prior_features.csv",
+        "fact_features": "D:\\Projects\\man_coding_quality\\data\\processed\\fact_features.csv",
+        "diagnostic_features": "D:\\Projects\\man_coding_quality\\data\\processed\\diagnostic_features.csv",
+        "quality_targets": "D:\\Projects\\man_coding_quality\\data\\processed\\quality_targets.csv",
+        "all_features": "D:\\Projects\\man_coding_quality\\data\\processed\\all_features.csv",
+        "summary": "D:\\Projects\\man_coding_quality\\reports\\chapter3\\dataset_summary.json"
+      }
+    },
+    "saved_files": {
+      "protocols": "D:\\Projects\\man_coding_quality\\data\\processed\\protocols.csv",
+      "prior_features": "D:\\Projects\\man_coding_quality\\data\\processed\\prior_features.csv",
+      "fact_features": "D:\\Projects\\man_coding_quality\\data\\processed\\fact_features.csv",
+      "diagnostic_features": "D:\\Projects\\man_coding_quality\\data\\processed\\diagnostic_features.csv",
+      "quality_targets": "D:\\Projects\\man_coding_quality\\data\\processed\\quality_targets.csv",
+      "all_features": "D:\\Projects\\man_coding_quality\\data\\processed\\all_features.csv",
+      "summary": "D:\\Projects\\man_coding_quality\\reports\\chapter3\\dataset_summary.json"
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "allowed_for_apriori_forecast": true,
+  "model_name": "LDA_prior",
+  "top_n": 10,
+  "topic_count": 3,
+  "topic_word_path": "reports\\chapter4\\topic_word.csv",
+  "topics": [
+    {
+      "dominant_token": "prior_total_nominal_time__level_high",
+      "interpretation_comment": "Тема 0 интерпретируется как фактор, связанный с признаками: prior_total_nominal_time, prior_memory_load_index, prior_manual_operation_count, prior_operator_total_estimated_time, prior_condition_total_adjusted_time. Доминирующий токен: prior_total_nominal_time__level_high. Наиболее характерные состояния: априорный признак prior_total_nominal_time: уровень high; априорный признак prior_memory_load_index: уровень high; априорный признак prior_manual_operation_count: уровень high.",
+      "max_weight": 0.0388118156564,
+      "source_features": [
+        "prior_total_nominal_time",
+        "prior_memory_load_index",
+        "prior_manual_operation_count",
+        "prior_operator_total_estimated_time",
+        "prior_condition_total_adjusted_time",
+        "prior_message_length",
+        "prior_symbol_group_count",
+        "prior_operator_attention",
+        "prior_procedure_branch_count",
+        "prior_operator_error_susceptibility"
+      ],
+      "suggested_factor_name": "Латентный фактор качества 0: prior_total_nominal_time, prior_memory_load_index, prior_manual_operation_count",
+      "top_tokens": [
+        "prior_total_nominal_time__level_high",
+        "prior_memory_load_index__level_high",
+        "prior_manual_operation_count__level_high",
+        "prior_operator_total_estimated_time__level_high",
+        "prior_condition_total_adjusted_time__level_high",
+        "prior_message_length__level_high",
+        "prior_symbol_group_count__level_high",
+        "prior_operator_attention__level_mid",
+        "prior_procedure_branch_count__level_high",
+        "prior_operator_error_susceptibility__level_mid"
+      ],
+      "top_weight_sum": 0.3177474439433,
+      "topic_id": 0
+    },
+    {
+      "dominant_token": "prior_condition_mean_adjusted_attention__level_low",
+      "interpretation_comment": "Тема 1 интерпретируется как фактор, связанный с признаками: prior_condition_mean_adjusted_attention, prior_attention_deficit, prior_control_intensity, prior_operator_error_susceptibility, prior_operator_attention. Доминирующий токен: prior_condition_mean_adjusted_attention__level_low. Наиболее характерные состояния: априорный признак prior_condition_mean_adjusted_attention: уровень low; априорный признак prior_attention_deficit: уровень high; априорный признак prior_control_intensity: уровень low.",
+      "max_weight": 0.0377813140398,
+      "source_features": [
+        "prior_condition_mean_adjusted_attention",
+        "prior_attention_deficit",
+        "prior_control_intensity",
+        "prior_operator_error_susceptibility",
+        "prior_operator_attention",
+        "prior_expected_error_probability",
+        "prior_condition_time_pressure",
+        "prior_time_pressure_index",
+        "prior_verification_required",
+        "prior_operator_skill"
+      ],
+      "suggested_factor_name": "Латентный фактор качества 1: prior_condition_mean_adjusted_attention, prior_attention_deficit, prior_control_intensity",
+      "top_tokens": [
+        "prior_condition_mean_adjusted_attention__level_low",
+        "prior_attention_deficit__level_high",
+        "prior_control_intensity__level_low",
+        "prior_operator_error_susceptibility__level_high",
+        "prior_operator_attention__level_low",
+        "prior_expected_error_probability__level_high",
+        "prior_condition_time_pressure__level_mid",
+        "prior_time_pressure_index__level_mid",
+        "prior_verification_required__absent",
+        "prior_operator_skill__level_low"
+      ],
+      "top_weight_sum": 0.28285369932500004,
+      "topic_id": 1
+    },
+    {
+      "dominant_token": "prior_condition_time_pressure__level_low",
+      "interpretation_comment": "Тема 2 интерпретируется как фактор, связанный с признаками: prior_condition_time_pressure, prior_time_pressure_index, prior_repetition_expected_count, prior_operator_error_susceptibility, prior_expected_error_probability. Доминирующий токен: prior_condition_time_pressure__level_low. Наиболее характерные состояния: априорный признак prior_condition_time_pressure: уровень low; априорный признак prior_time_pressure_index: уровень low; априорный признак prior_repetition_expected_count: уровень low.",
+      "max_weight": 0.0323248222961,
+      "source_features": [
+        "prior_condition_time_pressure",
+        "prior_time_pressure_index",
+        "prior_repetition_expected_count",
+        "prior_operator_error_susceptibility",
+        "prior_expected_error_probability",
+        "prior_operator_fatigue",
+        "prior_procedure_branch_count",
+        "prior_verification_required",
+        "prior_condition_noise_adjustment",
+        "prior_condition_noise_level"
+      ],
+      "suggested_factor_name": "Латентный фактор качества 2: prior_condition_time_pressure, prior_time_pressure_index, prior_repetition_expected_count",
+      "top_tokens": [
+        "prior_condition_time_pressure__level_low",
+        "prior_time_pressure_index__level_low",
+        "prior_repetition_expected_count__level_low",
+        "prior_operator_error_susceptibility__level_low",
+        "prior_expected_error_probability__level_low",
+        "prior_operator_fatigue__level_low",
+        "prior_procedure_branch_count__level_low",
+        "prior_verification_required__absent",
+        "prior_condition_noise_adjustment__level_low",
+        "prior_condition_noise_level__level_low"
+      ],
+      "top_weight_sum": 0.2528042360495,
+      "topic_id": 2
+    }
+  ]
+}

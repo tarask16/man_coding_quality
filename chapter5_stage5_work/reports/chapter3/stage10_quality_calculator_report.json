@@ -1,0 +1,31 @@
+{
+  "stage": 10,
+  "title": "Расчет частных показателей качества QualityCalculator",
+  "created_files": [
+    "src\\manual_coding_sim\\quality_calculator.py",
+    "src\\manual_coding_sim\\__init__.py",
+    "tests\\test_stage10_quality_calculator.py"
+  ],
+  "syntax_report": {
+    "src\\manual_coding_sim\\quality_calculator.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "src\\manual_coding_sim\\__init__.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "tests\\test_stage10_quality_calculator.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    }
+  },
+  "scientific_scope": "Расчет вектора q(A) = (q_acc, q_time, q_effort, q_res, q_rep, q_fit) по группам признаков X_prior, X_fact и X_diag.",
+  "not_implemented_yet": [
+    "формирование итогового датасета",
+    "сохранение таблиц признаков и качества в CSV",
+    "токенизация признаков для LDA",
+    "обучение LDA-модели",
+    "проверка достоверности прогноза качества"
+  ]
+}

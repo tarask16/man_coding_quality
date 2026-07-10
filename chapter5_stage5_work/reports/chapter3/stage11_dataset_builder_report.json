@@ -1,0 +1,30 @@
+{
+  "stage": 11,
+  "title": "Формирование датасета DatasetBuilder",
+  "created_files": [
+    "src\\manual_coding_sim\\dataset_builder.py",
+    "src\\manual_coding_sim\\__init__.py",
+    "tests\\test_stage11_dataset_builder.py"
+  ],
+  "syntax_report": {
+    "src\\manual_coding_sim\\dataset_builder.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "src\\manual_coding_sim\\__init__.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "tests\\test_stage11_dataset_builder.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    }
+  },
+  "scientific_scope": "Формирование табличных артефактов protocols.csv, prior_features.csv, fact_features.csv, diagnostic_features.csv и quality_targets.csv по результатам моделирования сценариев A = {S, O, U, G, K}.",
+  "not_implemented_yet": [
+    "токенизация признаков для LDA",
+    "обучение LDA-модели",
+    "построение априорного прогноза качества",
+    "проверка достоверности прогноза на train/val/test разбиении"
+  ]
+}

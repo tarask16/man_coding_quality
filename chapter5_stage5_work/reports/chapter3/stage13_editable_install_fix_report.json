@@ -1,0 +1,10 @@
+{
+  "pyproject_path": "D:\\Projects\\man_coding_quality\\pyproject.toml",
+  "changed": true,
+  "build_system_added": true,
+  "setuptools_find_added": true,
+  "next_commands": [
+    "python -m pip install -e .",
+    "python -m manual_coding_sim.chapter3_report"
+  ]
+}

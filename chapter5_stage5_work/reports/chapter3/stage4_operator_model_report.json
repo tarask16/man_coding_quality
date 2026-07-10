@@ -1,0 +1,25 @@
+{
+  "stage": "stage_4_operator_model",
+  "status": "OK",
+  "created_or_rewritten_files": [
+    "src\\manual_coding_sim\\__init__.py",
+    "src\\manual_coding_sim\\operator_model.py",
+    "tests\\test_stage4_operator_model.py"
+  ],
+  "scientific_scope": "Реализована модель оператора O как априорное описание подготовленности, опыта, внимания, утомляемости и навыка контроля. Модель рассчитывает ожидаемое время и трудоемкость выполнения нормативного плана S, но не генерирует ошибки, не моделирует условия U, контрольные процедуры K и не формирует восстановленное сообщение M'.",
+  "syntax_report": {
+    "src\\manual_coding_sim\\__init__.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "src\\manual_coding_sim\\operator_model.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "tests\\test_stage4_operator_model.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    }
+  },
+  "next_command": "python -m pytest"
+}

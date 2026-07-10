@@ -1,0 +1,43 @@
+{
+  "experiment_name": "chapter3_final_control_experiment",
+  "scenario_id": "A_TEST_FINAL",
+  "run_count": 2,
+  "random_seed": 42,
+  "message_random_seed": 42,
+  "error_random_seed": 1042,
+  "control_random_seed": 2042,
+  "reproducibility_hash": "62f27a973ec6713080d31bf896e99586d05cbaf80a195a3616ce061b2fcedd92",
+  "reproducibility_ok": true,
+  "dataset_summary": {
+    "run_count": 2,
+    "protocol_row_count": 2,
+    "prior_feature_row_count": 2,
+    "fact_feature_row_count": 2,
+    "diagnostic_feature_row_count": 2,
+    "quality_row_count": 2,
+    "prior_feature_count": 25,
+    "fact_feature_count": 10,
+    "diagnostic_feature_count": 5,
+    "mean_integral_quality": 0.79374,
+    "mean_q_acc": 1.0,
+    "mean_residual_error_rate": 0.0,
+    "saved_files": {
+      "protocols": "/mnt/data/chapter5_stage5_work/data/processed/protocols.csv",
+      "prior_features": "/mnt/data/chapter5_stage5_work/data/processed/prior_features.csv",
+      "fact_features": "/mnt/data/chapter5_stage5_work/data/processed/fact_features.csv",
+      "diagnostic_features": "/mnt/data/chapter5_stage5_work/data/processed/diagnostic_features.csv",
+      "quality_targets": "/mnt/data/chapter5_stage5_work/data/processed/quality_targets.csv",
+      "all_features": "/mnt/data/chapter5_stage5_work/data/processed/all_features.csv",
+      "summary": "/mnt/data/chapter5_stage5_work/reports/chapter3/dataset_summary.json"
+    }
+  },
+  "saved_files": {
+    "protocols": "/mnt/data/chapter5_stage5_work/data/processed/protocols.csv",
+    "prior_features": "/mnt/data/chapter5_stage5_work/data/processed/prior_features.csv",
+    "fact_features": "/mnt/data/chapter5_stage5_work/data/processed/fact_features.csv",
+    "diagnostic_features": "/mnt/data/chapter5_stage5_work/data/processed/diagnostic_features.csv",
+    "quality_targets": "/mnt/data/chapter5_stage5_work/data/processed/quality_targets.csv",
+    "all_features": "/mnt/data/chapter5_stage5_work/data/processed/all_features.csv",
+    "summary": "/mnt/data/chapter5_stage5_work/reports/chapter3/dataset_summary.json"
+  }
+}

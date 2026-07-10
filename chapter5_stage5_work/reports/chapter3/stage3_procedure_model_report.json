@@ -1,0 +1,25 @@
+{
+  "stage": "stage_3_procedure_model",
+  "status": "OK",
+  "created_or_rewritten_files": [
+    "src\\manual_coding_sim\\__init__.py",
+    "src\\manual_coding_sim\\procedure_model.py",
+    "tests\\test_stage3_procedure_model.py"
+  ],
+  "scientific_scope": "Реализована модель средства ручного кодирования S как нормативный план абстрактных операций над элементами сообщения M. Оператор O, условия U, вероятностные ошибки, контрольные процедуры K и фактическое декодирование M' на этом этапе не реализуются.",
+  "syntax_report": {
+    "src\\manual_coding_sim\\__init__.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "src\\manual_coding_sim\\procedure_model.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "tests\\test_stage3_procedure_model.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    }
+  },
+  "next_command": "python -m pytest"
+}

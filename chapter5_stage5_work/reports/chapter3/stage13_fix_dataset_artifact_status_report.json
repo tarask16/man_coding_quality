@@ -1,0 +1,10 @@
+{
+  "stage": 13,
+  "fix": "collect_dataset_artifact_status_empty_summary",
+  "module": "src\\manual_coding_sim\\chapter3_report.py",
+  "syntax_status": {
+    "status": "OK",
+    "message": "Синтаксис корректен"
+  },
+  "scientific_meaning": "Исправлена проверка наличия артефактов датасета главы 3: пустая сводка эксперимента больше не считается подтверждением наличия protocols.csv, X_prior, X_fact, X_diag и q(A)."
+}

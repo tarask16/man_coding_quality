@@ -1,0 +1,42 @@
+# Конфигурация программного блока главы 4.
+# Пути указаны относительно корня проекта.
+
+input:
+  protocols: data/processed/protocols.csv
+  prior_features: data/processed/prior_features.csv
+  diagnostic_features: data/processed/diagnostic_features.csv
+  fact_features: data/processed/fact_features.csv
+  quality_targets: data/processed/quality_targets.csv
+
+output:
+  data_dir: data/processed/lda
+  models_dir: models/lda
+  reports_dir: reports/chapter4
+
+tokenization:
+  df_min: 2
+  df_max_ratio: 0.95
+  numeric_strategy: quantile
+  numeric_bins: 3
+
+lda:
+  k_values: [3, 4, 5, 6, 7, 8]
+  selected_k: null
+  doc_topic_prior: null
+  topic_word_prior: null
+  learning_method: batch
+  max_iter: 100
+  random_seeds: [11, 42, 77, 101]
+
+diagnostics:
+  build_lda_diag: true
+  build_lda_full: true
+
+runner:
+  top_n: 10
+  overwrite: true
+
+safety:
+  forbid_fact_features_in_prior: true
+  forbid_quality_targets_in_prior: true
+  require_corpus_hash: true

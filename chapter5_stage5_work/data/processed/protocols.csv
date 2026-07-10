@@ -1,0 +1,3 @@
+run_id,message_id,scenario_id,message_length,step_count,nominal_time,condition_adjusted_time,original_error_count,detected_error_count,corrected_error_count,residual_error_count,total_control_effort
+1,M_000001,A_TEST_FINAL,6,6,8.4,10.390101,0,0,0,0,6.0
+2,M_000002,A_TEST_FINAL,11,11,16.0,20.423095,0,0,0,0,11.0

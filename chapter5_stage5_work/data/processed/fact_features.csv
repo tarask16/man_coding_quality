@@ -1,0 +1,3 @@
+run_id,scenario_id,fact_error_count,fact_error_rate,fact_weighted_error_sum,fact_detected_error_count,fact_corrected_error_count,fact_residual_error_count,fact_detection_rate,fact_correction_rate,fact_residual_error_rate,fact_total_control_effort
+1,A_TEST_FINAL,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,6.0
+2,A_TEST_FINAL,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,11.0

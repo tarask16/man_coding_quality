@@ -1,0 +1,23 @@
+{
+  "stage": "Этап 3: загрузка и объединение входных данных",
+  "status": "закрыт после регенерации data/processed/prior_features.csv",
+  "generated_at_utc": "2026-07-10T00:16:59.675758+00:00",
+  "generation_command": "PYTHONPATH=src python -m manual_coding_sim.experiments.extended_corpus_cli --project-root . --config configs/chapter3_extended_corpus.yaml",
+  "validation_command": "PYTHONPATH=src python -m manual_coding_sim.prediction.chapter5_runner --project-root . --config configs/chapter5.yaml --validate-inputs",
+  "prior_features_shape": [
+    150,
+    36
+  ],
+  "theta_prior_shape": [
+    150,
+    11
+  ],
+  "merged_rows": 150,
+  "unique_scenario_count": 150,
+  "unique_protocol_count": 150,
+  "forbidden_columns_in_prior_features": [],
+  "tests_before_regeneration": {
+    "tests_prediction": "24 passed in 0.31s",
+    "all_tests": "272 passed in 3.47s"
+  }
+}

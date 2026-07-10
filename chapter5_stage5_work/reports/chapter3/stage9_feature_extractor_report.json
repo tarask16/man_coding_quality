@@ -1,0 +1,30 @@
+{
+  "stage": 9,
+  "title": "Извлечение признаков FeatureExtractor",
+  "created_files": [
+    "src\\manual_coding_sim\\feature_extractor.py",
+    "src\\manual_coding_sim\\__init__.py",
+    "tests\\test_stage9_feature_extractor.py"
+  ],
+  "syntax_report": {
+    "src\\manual_coding_sim\\feature_extractor.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "src\\manual_coding_sim\\__init__.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "tests\\test_stage9_feature_extractor.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    }
+  },
+  "scientific_scope": "Раздельное формирование X_prior, X_fact и X_diag по результату интегрального моделирования ручного кодирования.",
+  "not_implemented_yet": [
+    "расчет итогового вектора качества q(A)",
+    "формирование итогового датасета для LDA",
+    "обучение LDA-модели",
+    "вычислительный эксперимент главы 6"
+  ]
+}

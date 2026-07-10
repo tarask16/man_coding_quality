@@ -1,0 +1,24 @@
+{
+  "stage": "Этап 7",
+  "task": "Модель контрольных процедур ControlModel",
+  "created_files": [
+    "D:\\Projects\\man_coding_quality\\src\\manual_coding_sim\\control_model.py",
+    "D:\\Projects\\man_coding_quality\\src\\manual_coding_sim\\__init__.py",
+    "D:\\Projects\\man_coding_quality\\tests\\test_stage7_control_model.py"
+  ],
+  "syntax_report": {
+    "D:\\Projects\\man_coding_quality\\src\\manual_coding_sim\\control_model.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "D:\\Projects\\man_coding_quality\\src\\manual_coding_sim\\__init__.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "D:\\Projects\\man_coding_quality\\tests\\test_stage7_control_model.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    }
+  },
+  "next_command": "python -m pytest"
+}

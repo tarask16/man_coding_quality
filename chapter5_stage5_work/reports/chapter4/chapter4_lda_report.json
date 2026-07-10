@@ -1,0 +1,172 @@
+{
+  "artifacts": {
+    "corpus_metadata": "data\\processed\\lda\\corpus_metadata.json",
+    "corpus_prior": "data\\processed\\lda\\corpus_prior.csv",
+    "dictionary": "data\\processed\\lda\\dictionary.json",
+    "k_selection_csv": "reports\\chapter4\\k_selection_report.csv",
+    "k_selection_json": "reports\\chapter4\\k_selection_report.json",
+    "k_selection_md": "reports\\chapter4\\k_selection_report.md",
+    "lda_prior_metadata": "reports\\chapter4\\lda_prior_metadata.json",
+    "lda_prior_model": "models\\lda\\lda_prior.joblib",
+    "leakage_report": "data\\processed\\lda\\leakage_report.json",
+    "theta_prior": "reports\\chapter4\\theta_prior.csv",
+    "token_map": "data\\processed\\lda\\token_map.json",
+    "topic_interpretation_csv": "reports\\chapter4\\topic_interpretation.csv",
+    "topic_interpretation_json": "reports\\chapter4\\topic_interpretation.json",
+    "topic_interpretation_md": "reports\\chapter4\\topic_interpretation.md",
+    "topic_metrics_csv": "reports\\chapter4\\topic_metrics.csv",
+    "topic_metrics_json": "reports\\chapter4\\topic_metrics.json",
+    "topic_stability_csv": "reports\\chapter4\\topic_stability_report.csv",
+    "topic_stability_json": "reports\\chapter4\\topic_stability_report.json",
+    "topic_stability_md": "reports\\chapter4\\topic_stability_report.md",
+    "topic_word": "reports\\chapter4\\topic_word.csv"
+  },
+  "completed_steps": [
+    "corpus_prior",
+    "k_selection",
+    "lda_prior",
+    "topic_metrics",
+    "topic_stability",
+    "topic_interpretation",
+    "lda_diagnostic_models"
+  ],
+  "diagnostic_artifacts": {
+    "corpus_diag": "data\\processed\\lda\\corpus_diag.csv",
+    "corpus_full": "data\\processed\\lda\\corpus_full.csv",
+    "corpus_metadata_diag": "data\\processed\\lda\\corpus_metadata_diag.json",
+    "corpus_metadata_full": "data\\processed\\lda\\corpus_metadata_full.json",
+    "dictionary_diag": "data\\processed\\lda\\dictionary_diag.json",
+    "dictionary_full": "data\\processed\\lda\\dictionary_full.json",
+    "lda_diag_model": "models\\lda\\lda_diag.joblib",
+    "lda_diagnostic_metadata": "reports\\chapter4\\lda_diagnostic_metadata.json",
+    "lda_full_model": "models\\lda\\lda_full.joblib",
+    "theta_diag": "reports\\chapter4\\theta_diag.csv",
+    "theta_full": "reports\\chapter4\\theta_full.csv",
+    "token_map_diag": "data\\processed\\lda\\token_map_diag.json",
+    "token_map_full": "data\\processed\\lda\\token_map_full.json",
+    "topic_word_diag": "reports\\chapter4\\topic_word_diag.csv",
+    "topic_word_full": "reports\\chapter4\\topic_word_full.csv"
+  },
+  "diagnostic_models": {
+    "allowed_for_apriori_forecast": false,
+    "diagnostic_only": true,
+    "models": {
+      "diag": {
+        "allowed_for_apriori_forecast": false,
+        "corpus_hash": "8cfe85569d555461e4392f56f3ff4fb0f6d087d5f77d8a3bf1f96f0d6dc7c998",
+        "diagnostic_kind": "diag",
+        "diagnostic_only": true,
+        "doc_topic_prior": null,
+        "document_count": 150,
+        "evaluate_every": -1,
+        "extension_features_path": "data\\processed\\diagnostic_features.csv",
+        "learning_method": "batch",
+        "matrix_corpus_hash": "8cfe85569d555461e4392f56f3ff4fb0f6d087d5f77d8a3bf1f96f0d6dc7c998",
+        "max_iter": 100,
+        "model_hash": "d5c4c73f5aeac5582173143e9ba9af8587d4d99ccba970cfdbdb288d1bbb4e93",
+        "model_name": "LDA_diag",
+        "model_path": "lda_diag.joblib",
+        "n_components": 3,
+        "prior_features_path": "data\\processed\\prior_features.csv",
+        "random_state": 11,
+        "theta_columns": [
+          "theta_0",
+          "theta_1",
+          "theta_2"
+        ],
+        "theta_path": "theta_diag.csv",
+        "token_count": 111,
+        "topic_word_path": "topic_word_diag.csv",
+        "topic_word_prior": null
+      },
+      "full": {
+        "allowed_for_apriori_forecast": false,
+        "corpus_hash": "79b4284f912773bc345a8fac5e56d53cf98d732d82d63ccde9d95e0890e1354f",
+        "diagnostic_kind": "full",
+        "diagnostic_only": true,
+        "doc_topic_prior": null,
+        "document_count": 150,
+        "evaluate_every": -1,
+        "extension_features_path": "data\\processed\\fact_features.csv",
+        "learning_method": "batch",
+        "matrix_corpus_hash": "79b4284f912773bc345a8fac5e56d53cf98d732d82d63ccde9d95e0890e1354f",
+        "max_iter": 100,
+        "model_hash": "55d6713f244ecb096271f508d05417271412fb29afbd45c9f1452a5d38931c92",
+        "model_name": "LDA_full",
+        "model_path": "lda_full.joblib",
+        "n_components": 3,
+        "prior_features_path": "data\\processed\\prior_features.csv",
+        "random_state": 11,
+        "theta_columns": [
+          "theta_0",
+          "theta_1",
+          "theta_2"
+        ],
+        "theta_path": "theta_full.csv",
+        "token_count": 109,
+        "topic_word_path": "topic_word_full.csv",
+        "topic_word_prior": null
+      }
+    }
+  },
+  "k_selection": {
+    "candidate_count": 6,
+    "recommended_k": 3,
+    "selection_method": "weighted_min_max_score"
+  },
+  "methodological_constraints": {
+    "diagnostic_models_allowed_for_apriori_forecast": false,
+    "fact_features_forbidden_in_lda_prior": true,
+    "lda_prior_uses_only_prior_features": true,
+    "quality_targets_forbidden_in_lda_prior": true
+  },
+  "prior_model": {
+    "corpus_hash": "5c68cbc758ee2bfff62e5f63770679249406af90454514fd4e954a054417f1a0",
+    "doc_topic_prior": null,
+    "document_count": 150,
+    "evaluate_every": -1,
+    "learning_method": "batch",
+    "max_iter": 100,
+    "model_hash": "56acc875f52035fe85ed70f08bf0be4c5625435a5598146093208eb2f2adf5c2",
+    "model_name": "LDA_prior",
+    "n_components": 3,
+    "random_state": 11,
+    "theta_columns": [
+      "theta_0",
+      "theta_1",
+      "theta_2"
+    ],
+    "token_count": 96,
+    "topic_word_prior": null
+  },
+  "report_name": "chapter4_lda_report",
+  "selected_k": 3,
+  "status": "completed",
+  "topic_interpretation": {
+    "factor_names": [
+      "Латентный фактор качества 0: prior_total_nominal_time, prior_memory_load_index, prior_manual_operation_count",
+      "Латентный фактор качества 1: prior_condition_mean_adjusted_attention, prior_attention_deficit, prior_control_intensity",
+      "Латентный фактор качества 2: prior_condition_time_pressure, prior_time_pressure_index, prior_repetition_expected_count"
+    ],
+    "top_n": 10,
+    "topic_count": 3
+  },
+  "topic_metrics": {
+    "mean_coherence": -0.5299670207227024,
+    "n_components": 3,
+    "perplexity": 94.81725487366135,
+    "top_n": 10,
+    "topic_diversity": 0.9666666666666667
+  },
+  "topic_stability": {
+    "analysis_method": "topic_word_cosine_similarity",
+    "mean_stability": 0.8488497859956521,
+    "min_stability": 0.8084181184315237,
+    "random_states": [
+      11,
+      42,
+      77,
+      101
+    ]
+  }
+}

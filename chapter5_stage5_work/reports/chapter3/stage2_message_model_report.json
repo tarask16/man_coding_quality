@@ -1,0 +1,25 @@
+{
+  "stage": "stage_2_message_model",
+  "status": "OK",
+  "created_or_rewritten_files": [
+    "src\\manual_coding_sim\\__init__.py",
+    "src\\manual_coding_sim\\message_model.py",
+    "tests\\test_stage2_message_model.py"
+  ],
+  "scientific_scope": "Реализована только модель генерации исходного сообщения M. Средство ручного кодирования S, оператор O, условия U, контроль K, ручное кодирование E_h и декодирование D_h на этом этапе не реализуются.",
+  "syntax_report": {
+    "src\\manual_coding_sim\\__init__.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "src\\manual_coding_sim\\message_model.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "tests\\test_stage2_message_model.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    }
+  },
+  "next_command": "python -m pytest"
+}

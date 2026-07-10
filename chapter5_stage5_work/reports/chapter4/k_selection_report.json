@@ -1,0 +1,93 @@
+{
+  "candidates": [
+    {
+      "k": 3,
+      "mean_coherence": -0.5299670207227024,
+      "metrics_json_path": "reports\\chapter4\\k_selection\\k_003\\topic_metrics.json",
+      "model_hash": "56acc875f52035fe85ed70f08bf0be4c5625435a5598146093208eb2f2adf5c2",
+      "model_path": "models\\lda\\k_selection\\k_003\\lda_prior.joblib",
+      "normalized_coherence": 1.0,
+      "normalized_inverse_perplexity": 1.0,
+      "normalized_topic_diversity": 1.0,
+      "perplexity": 94.81725487366135,
+      "selection_score": 1.0,
+      "topic_diversity": 0.9666666666666667
+    },
+    {
+      "k": 4,
+      "mean_coherence": -0.5805635355614587,
+      "metrics_json_path": "reports\\chapter4\\k_selection\\k_004\\topic_metrics.json",
+      "model_hash": "7d98aa7b63fa22192a5eca056fc9e02f98aaa61a16098b6c89bb0e0dc0ece203",
+      "model_path": "models\\lda\\k_selection\\k_004\\lda_prior.joblib",
+      "normalized_coherence": 0.48041509634071555,
+      "normalized_inverse_perplexity": 0.6204694741306319,
+      "normalized_topic_diversity": 0.7058823529411768,
+      "perplexity": 96.4318194694756,
+      "selection_score": 0.6022556411375081,
+      "topic_diversity": 0.925
+    },
+    {
+      "k": 5,
+      "mean_coherence": -0.562361746404932,
+      "metrics_json_path": "reports\\chapter4\\k_selection\\k_005\\topic_metrics.json",
+      "model_hash": "c28c8ad501a400cbab770f7d422b517135fe2278e6fd76679b93950f3a9040d0",
+      "model_path": "models\\lda\\k_selection\\k_005\\lda_prior.joblib",
+      "normalized_coherence": 0.6673326122103326,
+      "normalized_inverse_perplexity": 0.9117463227734853,
+      "normalized_topic_diversity": 0.3882352941176473,
+      "perplexity": 95.18785254913462,
+      "selection_score": 0.6557714097004884,
+      "topic_diversity": 0.88
+    },
+    {
+      "k": 6,
+      "mean_coherence": -0.5873458702899815,
+      "metrics_json_path": "reports\\chapter4\\k_selection\\k_006\\topic_metrics.json",
+      "model_hash": "ca0e83136ef75c5de6abff3a7b2bdd3b728d5714d0b5dda1b4fc9d2598e1dea9",
+      "model_path": "models\\lda\\k_selection\\k_006\\lda_prior.joblib",
+      "normalized_coherence": 0.41076605533986726,
+      "normalized_inverse_perplexity": 0.782890767666429,
+      "normalized_topic_diversity": 0.6470588235294116,
+      "perplexity": 95.73417955543702,
+      "selection_score": 0.6135718821785693,
+      "topic_diversity": 0.9166666666666666
+    },
+    {
+      "k": 7,
+      "mean_coherence": -0.5924904437180457,
+      "metrics_json_path": "reports\\chapter4\\k_selection\\k_007\\topic_metrics.json",
+      "model_hash": "074f579a8272ac01b92f6c963739b89787e6076ab1435c2f117a79b633e3ef3e",
+      "model_path": "models\\lda\\k_selection\\k_007\\lda_prior.joblib",
+      "normalized_coherence": 0.357935485931926,
+      "normalized_inverse_perplexity": 0.5508898409009458,
+      "normalized_topic_diversity": 0.5294117647058826,
+      "perplexity": 96.73380193573092,
+      "selection_score": 0.47941236384625147,
+      "topic_diversity": 0.9
+    },
+    {
+      "k": 8,
+      "mean_coherence": -0.627345744550935,
+      "metrics_json_path": "reports\\chapter4\\k_selection\\k_008\\topic_metrics.json",
+      "model_hash": "e8bb166237c52ecdaf9b8f8d7fdd8c0160379a957cba9b694118495b9343270f",
+      "model_path": "models\\lda\\k_selection\\k_008\\lda_prior.joblib",
+      "normalized_coherence": 0.0,
+      "normalized_inverse_perplexity": 0.0,
+      "normalized_topic_diversity": 0.0,
+      "perplexity": 99.19318297976437,
+      "selection_score": 0.0,
+      "topic_diversity": 0.825
+    }
+  ],
+  "max_iter": 100,
+  "model_name": "LDA_prior",
+  "random_state": 11,
+  "recommended_k": 3,
+  "selection_method": "weighted_min_max_score",
+  "top_n": 10,
+  "weights": {
+    "coherence": 1.0,
+    "inverse_perplexity": 1.0,
+    "topic_diversity": 1.0
+  }
+}

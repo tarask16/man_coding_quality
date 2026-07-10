@@ -1,0 +1,102 @@
+{
+  "project_root": "D:\\Projects\\man_coding_quality",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python_executable": "D:\\Projects\\man_coding_quality\\.venv\\Scripts\\python.exe",
+  "checks": [
+    {
+      "name": "Версия Python не ниже 3.11",
+      "passed": true,
+      "details": "Python 3.11.9"
+    },
+    {
+      "name": "Активировано виртуальное окружение",
+      "passed": true,
+      "details": "sys.prefix=D:\\Projects\\man_coding_quality\\.venv; sys.base_prefix=C:\\Users\\TarasK\\AppData\\Local\\Programs\\Python\\Python311"
+    },
+    {
+      "name": "Пакет numpy",
+      "passed": true,
+      "details": "найден"
+    },
+    {
+      "name": "Пакет pandas",
+      "passed": true,
+      "details": "найден"
+    },
+    {
+      "name": "Пакет sklearn",
+      "passed": true,
+      "details": "найден"
+    },
+    {
+      "name": "Пакет yaml",
+      "passed": true,
+      "details": "найден"
+    },
+    {
+      "name": "Пакет pytest",
+      "passed": true,
+      "details": "найден"
+    },
+    {
+      "name": "Каталог src",
+      "passed": true,
+      "details": "D:\\Projects\\man_coding_quality\\src"
+    },
+    {
+      "name": "Каталог src/manual_coding_sim",
+      "passed": true,
+      "details": "D:\\Projects\\man_coding_quality\\src\\manual_coding_sim"
+    },
+    {
+      "name": "Каталог configs",
+      "passed": true,
+      "details": "D:\\Projects\\man_coding_quality\\configs"
+    },
+    {
+      "name": "Каталог data/raw",
+      "passed": true,
+      "details": "D:\\Projects\\man_coding_quality\\data\\raw"
+    },
+    {
+      "name": "Каталог data/processed",
+      "passed": true,
+      "details": "D:\\Projects\\man_coding_quality\\data\\processed"
+    },
+    {
+      "name": "Каталог reports/chapter3",
+      "passed": true,
+      "details": "D:\\Projects\\man_coding_quality\\reports\\chapter3"
+    },
+    {
+      "name": "Каталог tests",
+      "passed": true,
+      "details": "D:\\Projects\\man_coding_quality\\tests"
+    },
+    {
+      "name": "Каталог .vscode",
+      "passed": true,
+      "details": "D:\\Projects\\man_coding_quality\\.vscode"
+    },
+    {
+      "name": "Файл pyproject.toml",
+      "passed": true,
+      "details": "D:\\Projects\\man_coding_quality\\pyproject.toml"
+    },
+    {
+      "name": "Файл configs/base_experiment.yaml",
+      "passed": true,
+      "details": "D:\\Projects\\man_coding_quality\\configs\\base_experiment.yaml"
+    },
+    {
+      "name": "Файл .vscode/settings.json",
+      "passed": true,
+      "details": "D:\\Projects\\man_coding_quality\\.vscode\\settings.json"
+    },
+    {
+      "name": "Файл .vscode/launch.json",
+      "passed": true,
+      "details": "D:\\Projects\\man_coding_quality\\.vscode\\launch.json"
+    }
+  ]
+}

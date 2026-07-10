@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "document_count": 150,
+  "min_documents": 100,
+  "unique_scenario_count": 150,
+  "min_unique_scenarios": 100,
+  "unique_protocol_count": 150,
+  "min_unique_protocols": 100,
+  "vocabulary_token_count": 96,
+  "min_vocabulary_tokens": 30,
+  "coverage_results": [
+    {
+      "column": "prior_mean_complexity",
+      "exists": true,
+      "unique_count": 5,
+      "required_min_unique_values": 3,
+      "passed": true,
+      "sample_values": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "column": "prior_mean_message_criticality",
+      "exists": true,
+      "unique_count": 5,
+      "required_min_unique_values": 3,
+      "passed": true,
+      "sample_values": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "column": "prior_operator_total_estimated_time",
+      "exists": true,
+      "unique_count": 150,
+      "required_min_unique_values": 3,
+      "passed": true,
+      "sample_values": [
+        "20.3338",
+        "22.6832",
+        "23.4",
+        "24.36",
+        "24.5249",
+        "24.6866",
+        "25.0264",
+        "25.663",
+        "27.2364",
+        "27.6341"
+      ]
+    },
+    {
+      "column": "prior_condition_total_adjusted_time",
+      "exists": true,
+      "unique_count": 150,
+      "required_min_unique_values": 3,
+      "passed": true,
+      "sample_values": [
+        "100.1514",
+        "104.1824",
+        "110.064",
+        "111.6625",
+        "113.7849",
+        "23.1805",
+        "23.4",
+        "28.0138",
+        "29.1302",
+        "29.5312"
+      ]
+    }
+  ],
+  "recommendations": [],
+  "report_json_path": "reports\\chapter4\\corpus_sufficiency_report.json",
+  "report_md_path": "reports\\chapter4\\corpus_sufficiency_report.md"
+}

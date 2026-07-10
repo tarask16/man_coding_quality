@@ -1,0 +1,19 @@
+{
+  "corpus_hash": "5c68cbc758ee2bfff62e5f63770679249406af90454514fd4e954a054417f1a0",
+  "doc_topic_prior": null,
+  "document_count": 150,
+  "evaluate_every": -1,
+  "learning_method": "batch",
+  "max_iter": 100,
+  "model_hash": "a172ac0280d693dcc53be2e65fdc0f8d9afe8f3cc947fb46bd682c00823a9516",
+  "model_name": "LDA_prior",
+  "n_components": 3,
+  "random_state": 101,
+  "theta_columns": [
+    "theta_0",
+    "theta_1",
+    "theta_2"
+  ],
+  "token_count": 96,
+  "topic_word_prior": null
+}

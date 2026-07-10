@@ -1,0 +1,10 @@
+{
+  "stage": 13,
+  "task": "fix_runtime_warning_for_chapter3_report",
+  "fixed_file": "D:\\Projects\\man_coding_quality\\src\\manual_coding_sim\\__init__.py",
+  "removed_automatic_chapter3_report_import": true,
+  "recommended_check_commands": [
+    "python -m pytest",
+    "python -W error::RuntimeWarning -m manual_coding_sim.chapter3_report"
+  ]
+}

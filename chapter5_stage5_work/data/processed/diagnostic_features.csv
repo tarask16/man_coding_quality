@@ -1,0 +1,3 @@
+run_id,scenario_id,diag_mean_error_probability,diag_mean_detection_probability,diag_message_random_seed,diag_error_random_seed,diag_control_random_seed
+1,A_TEST_FINAL,0.043253,0.0,42.0,1042.0,2042.0
+2,A_TEST_FINAL,0.043903,0.0,42.0,1042.0,2042.0

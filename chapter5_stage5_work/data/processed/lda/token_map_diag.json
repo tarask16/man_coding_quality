@@ -1,0 +1,392 @@
+{
+  "diagnostic_kind": "diag",
+  "feature_columns": [
+    "prior_message_length",
+    "prior_mean_complexity",
+    "prior_mean_message_criticality",
+    "prior_digit_ratio",
+    "prior_control_marker_ratio",
+    "prior_procedure_steps",
+    "prior_total_nominal_time",
+    "prior_operator_skill",
+    "prior_operator_fatigue",
+    "prior_operator_attention",
+    "prior_operator_total_estimated_time",
+    "prior_condition_noise_level",
+    "prior_condition_time_pressure",
+    "prior_condition_mean_adjusted_attention",
+    "prior_condition_total_adjusted_time",
+    "prior_control_intensity",
+    "prior_expected_error_probability",
+    "prior_coding_tool_type",
+    "prior_condition_profile",
+    "prior_symbol_group_count",
+    "prior_alpha_ratio",
+    "prior_message_entropy_estimate",
+    "prior_operator_error_susceptibility",
+    "prior_control_expected_detection_rate",
+    "prior_procedure_branch_count",
+    "prior_memory_load_index",
+    "prior_time_pressure_index",
+    "prior_condition_noise_adjustment",
+    "prior_attention_deficit",
+    "prior_manual_operation_count",
+    "prior_verification_required",
+    "prior_repetition_expected_count",
+    "diag_diagnostic_expected_error_probability",
+    "diag_diagnostic_control_load",
+    "diag_diagnostic_operator_stress",
+    "diag_diagnostic_risk_class",
+    "diag_diagnostic_condition_profile"
+  ],
+  "identifier_columns": [
+    "alternative_id",
+    "created_at",
+    "document_id",
+    "id",
+    "protocol_id",
+    "run_id",
+    "sample_id",
+    "scenario_id"
+  ],
+  "model_name": "LDA_diag",
+  "numeric_bins": 3,
+  "numeric_strategy": "quantile",
+  "rules": [
+    {
+      "categories": [],
+      "feature_name": "prior_message_length",
+      "thresholds": [
+        32.0,
+        64.0
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_mean_complexity",
+      "thresholds": [
+        2.0,
+        4.0
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_mean_message_criticality",
+      "thresholds": [
+        2.0,
+        4.0
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_digit_ratio",
+      "thresholds": [
+        0.18036666666666668,
+        0.41286666666666666
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_control_marker_ratio",
+      "thresholds": [
+        0.03733333333333333,
+        0.10836666666666667
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_procedure_steps",
+      "thresholds": [
+        5.0,
+        8.0
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_total_nominal_time",
+      "thresholds": [
+        35.30233333333334,
+        49.16633333333333
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_operator_skill",
+      "thresholds": [
+        2.0,
+        3.0
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_operator_fatigue",
+      "thresholds": [
+        1.0,
+        3.0
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_operator_attention",
+      "thresholds": [
+        2.0,
+        4.0
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_operator_total_estimated_time",
+      "thresholds": [
+        38.58546666666666,
+        53.0102
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_condition_noise_level",
+      "thresholds": [
+        1.0,
+        2.0
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_condition_time_pressure",
+      "thresholds": [
+        1.0,
+        2.0
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_condition_mean_adjusted_attention",
+      "thresholds": [
+        1.7,
+        2.65
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_condition_total_adjusted_time",
+      "thresholds": [
+        43.70713333333333,
+        62.57829999999999
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_control_intensity",
+      "thresholds": [
+        1.0,
+        2.0
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_expected_error_probability",
+      "thresholds": [
+        0.14299633333333334,
+        0.19840366666666667
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [
+        "codebook",
+        "mixed",
+        "mnemonic",
+        "table"
+      ],
+      "feature_name": "prior_coding_tool_type",
+      "thresholds": [],
+      "token_kind": "categorical"
+    },
+    {
+      "categories": [
+        "hard",
+        "moderate",
+        "normal"
+      ],
+      "feature_name": "prior_condition_profile",
+      "thresholds": [],
+      "token_kind": "categorical"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_symbol_group_count",
+      "thresholds": [
+        8.0,
+        16.0
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_alpha_ratio",
+      "thresholds": [
+        0.5183666666666666,
+        0.7194333333333333
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_message_entropy_estimate",
+      "thresholds": [
+        2.062533333333333,
+        2.636233333333333
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_operator_error_susceptibility",
+      "thresholds": [
+        0.4,
+        0.62
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_control_expected_detection_rate",
+      "thresholds": [
+        0.35263333333333335,
+        0.5885333333333334
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_procedure_branch_count",
+      "thresholds": [
+        5.0,
+        7.0
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_memory_load_index",
+      "thresholds": [
+        0.42269999999999996,
+        0.5787666666666667
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_time_pressure_index",
+      "thresholds": [
+        0.3333,
+        0.6667
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_condition_noise_adjustment",
+      "thresholds": [
+        1.12,
+        1.24
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_attention_deficit",
+      "thresholds": [
+        2.35,
+        3.3
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_manual_operation_count",
+      "thresholds": [
+        10.0,
+        13.0
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_verification_required",
+      "thresholds": [],
+      "token_kind": "binary"
+    },
+    {
+      "categories": [],
+      "feature_name": "prior_repetition_expected_count",
+      "thresholds": [
+        0.0,
+        1.0
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "diag_diagnostic_expected_error_probability",
+      "thresholds": [
+        0.14299633333333334,
+        0.19840366666666667
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "diag_diagnostic_control_load",
+      "thresholds": [
+        0.5,
+        1.2
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [],
+      "feature_name": "diag_diagnostic_operator_stress",
+      "thresholds": [
+        0.3333,
+        0.5
+      ],
+      "token_kind": "numeric"
+    },
+    {
+      "categories": [
+        "high",
+        "low",
+        "mid"
+      ],
+      "feature_name": "diag_diagnostic_risk_class",
+      "thresholds": [],
+      "token_kind": "categorical"
+    },
+    {
+      "categories": [
+        "hard",
+        "moderate",
+        "normal"
+      ],
+      "feature_name": "diag_diagnostic_condition_profile",
+      "thresholds": [],
+      "token_kind": "categorical"
+    }
+  ]
+}

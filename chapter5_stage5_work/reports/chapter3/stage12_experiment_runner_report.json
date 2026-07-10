@@ -1,0 +1,30 @@
+{
+  "stage": 12,
+  "title": "Запуск воспроизводимого эксперимента ExperimentRunner",
+  "created_files": [
+    "src\\manual_coding_sim\\experiment_runner.py",
+    "src\\manual_coding_sim\\__init__.py",
+    "tests\\test_stage12_experiment_runner.py"
+  ],
+  "syntax_report": {
+    "src\\manual_coding_sim\\experiment_runner.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "src\\manual_coding_sim\\__init__.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "tests\\test_stage12_experiment_runner.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    }
+  },
+  "scientific_scope": "Единая точка запуска вычислительного эксперимента главы 3: загрузка YAML-конфигурации, формирование датасета, сохранение табличных артефактов и проверка воспроизводимости по контрольному хешу.",
+  "not_implemented_yet": [
+    "токенизация признаков для LDA",
+    "обучение LDA-модели",
+    "построение априорной прогнозной оценки качества",
+    "сравнение прогнозной и фактической оценки качества"
+  ]
+}

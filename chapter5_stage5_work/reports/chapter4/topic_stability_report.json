@@ -1,0 +1,158 @@
+{
+  "analysis_method": "topic_word_cosine_similarity",
+  "doc_topic_prior": null,
+  "learning_method": "batch",
+  "max_iter": 100,
+  "mean_stability": 0.8488497859956521,
+  "min_stability": 0.8084181184315237,
+  "model_name": "LDA_prior",
+  "n_components": 3,
+  "pairwise_run_stability": [
+    {
+      "left_random_state": 11,
+      "mean_similarity": 0.8969131918829141,
+      "min_similarity": 0.845486203588078,
+      "right_random_state": 42
+    },
+    {
+      "left_random_state": 11,
+      "mean_similarity": 0.8629230345791343,
+      "min_similarity": 0.8032572657314795,
+      "right_random_state": 77
+    },
+    {
+      "left_random_state": 11,
+      "mean_similarity": 0.8067670988902764,
+      "min_similarity": 0.676233700413584,
+      "right_random_state": 101
+    },
+    {
+      "left_random_state": 42,
+      "mean_similarity": 0.8175400449892474,
+      "min_similarity": 0.7449906201870313,
+      "right_random_state": 77
+    },
+    {
+      "left_random_state": 42,
+      "mean_similarity": 0.8520017082499072,
+      "min_similarity": 0.7575171714300477,
+      "right_random_state": 101
+    },
+    {
+      "left_random_state": 77,
+      "mean_similarity": 0.8477466575732031,
+      "min_similarity": 0.6447854861931537,
+      "right_random_state": 101
+    }
+  ],
+  "per_topic_stability": [
+    {
+      "matches": [
+        {
+          "matched_topic_id": 1,
+          "random_state": 42,
+          "similarity": 0.845486203588078
+        },
+        {
+          "matched_topic_id": 2,
+          "random_state": 77,
+          "similarity": 0.9035344512929088
+        },
+        {
+          "matched_topic_id": 1,
+          "random_state": 101,
+          "similarity": 0.676233700413584
+        }
+      ],
+      "mean_similarity": 0.8084181184315237,
+      "min_similarity": 0.676233700413584,
+      "topic_id": 0
+    },
+    {
+      "matches": [
+        {
+          "matched_topic_id": 2,
+          "random_state": 42,
+          "similarity": 0.9119621245408955
+        },
+        {
+          "matched_topic_id": 1,
+          "random_state": 77,
+          "similarity": 0.8032572657314795
+        },
+        {
+          "matched_topic_id": 2,
+          "random_state": 101,
+          "similarity": 0.891224621789301
+        }
+      ],
+      "mean_similarity": 0.8688146706872253,
+      "min_similarity": 0.8032572657314795,
+      "topic_id": 1
+    },
+    {
+      "matches": [
+        {
+          "matched_topic_id": 0,
+          "random_state": 42,
+          "similarity": 0.9332912475197689
+        },
+        {
+          "matched_topic_id": 0,
+          "random_state": 77,
+          "similarity": 0.8734403248484197
+        },
+        {
+          "matched_topic_id": 1,
+          "random_state": 101,
+          "similarity": 0.8012181342364328
+        }
+      ],
+      "mean_similarity": 0.8693165688682072,
+      "min_similarity": 0.8012181342364328,
+      "topic_id": 2
+    }
+  ],
+  "random_states": [
+    11,
+    42,
+    77,
+    101
+  ],
+  "reference_random_state": 11,
+  "runs": [
+    {
+      "metadata_path": "reports\\chapter4\\topic_stability\\seed_00011\\lda_prior_metadata.json",
+      "model_hash": "56acc875f52035fe85ed70f08bf0be4c5625435a5598146093208eb2f2adf5c2",
+      "model_path": "models\\lda\\topic_stability\\seed_00011\\lda_prior.joblib",
+      "random_state": 11,
+      "theta_prior_path": "reports\\chapter4\\topic_stability\\seed_00011\\theta_prior.csv",
+      "topic_word_path": "reports\\chapter4\\topic_stability\\seed_00011\\topic_word.csv"
+    },
+    {
+      "metadata_path": "reports\\chapter4\\topic_stability\\seed_00042\\lda_prior_metadata.json",
+      "model_hash": "40e3300dbb0f4d2cf8ee85c7d4612d44fea3e51447598d9aec21b59cd8d6bbfe",
+      "model_path": "models\\lda\\topic_stability\\seed_00042\\lda_prior.joblib",
+      "random_state": 42,
+      "theta_prior_path": "reports\\chapter4\\topic_stability\\seed_00042\\theta_prior.csv",
+      "topic_word_path": "reports\\chapter4\\topic_stability\\seed_00042\\topic_word.csv"
+    },
+    {
+      "metadata_path": "reports\\chapter4\\topic_stability\\seed_00077\\lda_prior_metadata.json",
+      "model_hash": "ff160c59783cc5a8f186957c912fb9da6c0d17cca36bdefb8dd15191f13faa1e",
+      "model_path": "models\\lda\\topic_stability\\seed_00077\\lda_prior.joblib",
+      "random_state": 77,
+      "theta_prior_path": "reports\\chapter4\\topic_stability\\seed_00077\\theta_prior.csv",
+      "topic_word_path": "reports\\chapter4\\topic_stability\\seed_00077\\topic_word.csv"
+    },
+    {
+      "metadata_path": "reports\\chapter4\\topic_stability\\seed_00101\\lda_prior_metadata.json",
+      "model_hash": "a172ac0280d693dcc53be2e65fdc0f8d9afe8f3cc947fb46bd682c00823a9516",
+      "model_path": "models\\lda\\topic_stability\\seed_00101\\lda_prior.joblib",
+      "random_state": 101,
+      "theta_prior_path": "reports\\chapter4\\topic_stability\\seed_00101\\theta_prior.csv",
+      "topic_word_path": "reports\\chapter4\\topic_stability\\seed_00101\\topic_word.csv"
+    }
+  ],
+  "topic_word_prior": null
+}

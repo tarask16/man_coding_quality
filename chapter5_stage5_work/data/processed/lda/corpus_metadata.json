@@ -1,0 +1,12 @@
+{
+  "corpus_hash": "5c68cbc758ee2bfff62e5f63770679249406af90454514fd4e954a054417f1a0",
+  "df_max_ratio": 0.95,
+  "df_min": 2,
+  "dictionary_token_count": 96,
+  "document_count": 150,
+  "numeric_bins": 3,
+  "numeric_strategy": "quantile",
+  "source_path": "data\\processed\\prior_features.csv",
+  "token_count_after_filter": 4800,
+  "token_count_before_filter": 4800
+}

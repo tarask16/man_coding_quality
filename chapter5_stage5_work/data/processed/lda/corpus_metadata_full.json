@@ -1,0 +1,17 @@
+{
+  "allowed_for_apriori_forecast": false,
+  "corpus_hash": "79b4284f912773bc345a8fac5e56d53cf98d732d82d63ccde9d95e0890e1354f",
+  "df_max_ratio": 0.95,
+  "df_min": 2,
+  "diagnostic_kind": "full",
+  "diagnostic_only": true,
+  "document_count": 150,
+  "extension_features_path": "data\\processed\\fact_features.csv",
+  "extension_prefix": "fact",
+  "model_name": "LDA_full",
+  "numeric_bins": 3,
+  "numeric_strategy": "quantile",
+  "prior_features_path": "data\\processed\\prior_features.csv",
+  "token_count_after_filter": 109,
+  "token_count_before_filter": 109
+}

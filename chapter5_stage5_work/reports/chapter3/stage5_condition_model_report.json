@@ -1,0 +1,25 @@
+{
+  "stage": "stage_5_condition_model",
+  "status": "OK",
+  "created_or_rewritten_files": [
+    "src\\manual_coding_sim\\__init__.py",
+    "src\\manual_coding_sim\\condition_model.py",
+    "tests\\test_stage5_condition_model.py"
+  ],
+  "scientific_scope": "Реализована модель условий применения U как априорное описание внешней обстановки: лимита времени, шума, доступности инструкции, рабочей нагрузки, прерываний и качества освещения. Модель корректирует расчетное время, внимание и устойчивость выполнения плана, но не генерирует ошибки, не реализует контроль K и не формирует фактическое сообщение M'.",
+  "syntax_report": {
+    "src\\manual_coding_sim\\__init__.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "src\\manual_coding_sim\\condition_model.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "tests\\test_stage5_condition_model.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    }
+  },
+  "next_command": "python -m pytest"
+}

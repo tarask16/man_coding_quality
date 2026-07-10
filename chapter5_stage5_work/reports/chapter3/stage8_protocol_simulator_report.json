@@ -1,0 +1,30 @@
+{
+  "stage": 8,
+  "title": "Интегральный симулятор протоколов ProtocolSimulator",
+  "created_files": [
+    "src\\manual_coding_sim\\protocol_simulator.py",
+    "src\\manual_coding_sim\\__init__.py",
+    "tests\\test_stage8_protocol_simulator.py"
+  ],
+  "syntax_report": {
+    "src\\manual_coding_sim\\protocol_simulator.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "src\\manual_coding_sim\\__init__.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    },
+    "tests\\test_stage8_protocol_simulator.py": {
+      "status": "OK",
+      "message": "Синтаксис корректен"
+    }
+  },
+  "scientific_scope": "Объединение моделей G, S, O, U, ErrorModel и K в воспроизводимую цепочку получения протокола моделирования ручного кодирования.",
+  "not_implemented_yet": [
+    "декодирование D_h",
+    "восстановленное сообщение M'",
+    "извлечение признаков X_prior, X_fact, X_diag",
+    "расчет итогового вектора качества q(A)"
+  ]
+}
