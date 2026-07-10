@@ -19,6 +19,7 @@ from manual_coding_sim.prediction.chapter5_config import (
     THETA_COLUMNS,
     Chapter5InputPaths,
 )
+from manual_coding_sim.prediction.chapter5_leakage_guard import Chapter5LeakageGuard
 from manual_coding_sim.prediction.paths import resolve_project_path
 
 
@@ -80,6 +81,7 @@ class Chapter5DataLoader:
         self.project_root = Path(project_root)
         self.expected_topic_count = expected_topic_count
         self.theta_sum_tolerance = theta_sum_tolerance
+        self.leakage_guard = Chapter5LeakageGuard()
 
     def describe_expected_inputs(self) -> Chapter5InputContract:
         """Вернуть описание обязательных входных файлов без чтения данных."""
@@ -120,6 +122,10 @@ class Chapter5DataLoader:
         path = self._resolve(self.paths.prior_features_path)
         prior_features = self._read_csv(path, "априорных признаков")
         self._require_columns(prior_features, ("scenario_id",), path)
+        self.leakage_guard.require_safe_dataframe(
+            prior_features,
+            source_name=str(path),
+        )
         self._require_prior_columns(prior_features, path)
         self._require_no_duplicate_keys(prior_features, self._prior_key_columns(prior_features), path)
         return prior_features

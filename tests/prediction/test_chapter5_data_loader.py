@@ -166,3 +166,17 @@ def _write_input_files(tmp_path: Path, *, include_protocol_in_prior: bool) -> Ch
         theta_prior_path=theta_path,
         topic_interpretation_path=topic_path,
     )
+
+
+def test_data_loader_rejects_leakage_in_prior_features(tmp_path: Path) -> None:
+    """Загрузчик главы 5 должен блокировать фактические признаки в prior_features."""
+
+    paths = _write_input_files(tmp_path, include_protocol_in_prior=True)
+    prior_path = tmp_path / paths.prior_features_path
+    prior_df = pd.read_csv(prior_path)
+    prior_df["fact_error_count"] = [1, 0]
+    prior_df.to_csv(prior_path, index=False)
+    loader = Chapter5DataLoader(paths=paths, project_root=tmp_path, expected_topic_count=3)
+
+    with pytest.raises(ValueError, match="методическая утечка"):
+        loader.load()

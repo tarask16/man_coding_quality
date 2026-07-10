@@ -1,0 +1,6 @@
+﻿
+Algorithm       Hash                                                                   Path                              
+---------       ----                                                                   ----                              
+SHA256          B3C1AC7062C883DE1C4CE9767A5534EA8DBE8805942E99D20A0E266419535EAC       D:\Projects\man_coding_quality\...
+
+

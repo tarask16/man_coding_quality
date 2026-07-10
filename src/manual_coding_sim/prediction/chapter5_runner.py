@@ -19,6 +19,11 @@ from manual_coding_sim.prediction.chapter5_data_loader import (
     Chapter5DataLoadError,
     Chapter5DataLoader,
 )
+from manual_coding_sim.prediction.chapter5_leakage_guard import (
+    Chapter5LeakageError,
+    Chapter5LeakageGuard,
+)
+from manual_coding_sim.prediction.paths import resolve_project_path
 
 
 def build_arg_parser() -> argparse.ArgumentParser:
@@ -81,15 +86,27 @@ def main(argv: Sequence[str] | None = None) -> int:
         )
         try:
             loaded_inputs = loader.load()
-        except (Chapter5DataLoadError, FileNotFoundError) as error:
+        except (Chapter5DataLoadError, Chapter5LeakageError, FileNotFoundError) as error:
             print(f"Проверка входных данных главы 5 не пройдена: {error}")
             return 1
+        leakage_guard = Chapter5LeakageGuard()
+        leakage_report = leakage_guard.check_dataframe(
+            loaded_inputs.prior_features,
+            source_name=str(resolve_project_path(project_root, config.inputs.prior_features_path)),
+        )
+        leakage_report_path = resolve_project_path(
+            project_root,
+            config.outputs.reports_dir / "chapter5_leakage_report.json",
+        )
+        leakage_guard.save_json_report(leakage_report_path, leakage_report)
         report = loaded_inputs.validation_report
         print(
             "Данные главы 5 успешно загружены: "
             f"{report.scenario_count} сценариев, {report.topic_count} латентных фактора."
         )
         print(f"Ключи объединения: {report.merge_key_columns}")
+        print("Проверка методической утечки: пройдена.")
+        print(f"Отчет проверки утечки сохранен: {leakage_report_path}")
     print("Расчет Q_pred не выполнялся: это будет реализовано на следующих этапах.")
     return 0
 
