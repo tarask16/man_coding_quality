@@ -1,6 +1,11 @@
 """Тесты CLI-каркаса главы 5."""
 
+from pathlib import Path
+
 from manual_coding_sim.prediction.chapter5_runner import build_arg_parser, main
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
 def test_chapter5_runner_arg_parser() -> None:
@@ -21,11 +26,12 @@ def test_chapter5_runner_arg_parser() -> None:
 
 
 def test_chapter5_runner_outputs_russian_message(capsys) -> None:
-    """Runner этапа 1 должен завершаться успешно и выводить русское сообщение."""
+    """Runner этапа 2 должен завершаться успешно и выводить русское сообщение."""
 
-    exit_code = main(["--project-root", "/project"])
+    exit_code = main(["--project-root", str(PROJECT_ROOT)])
 
     captured = capsys.readouterr()
     assert exit_code == 0
     assert "Каркас программного блока главы 5 успешно загружен" in captured.out
+    assert "Конфигурация главы 5 успешно проверена" in captured.out
     assert "Расчет Q_pred не выполнялся" in captured.out
