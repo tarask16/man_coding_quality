@@ -1,0 +1,12 @@
+{
+  "stage": "stage6_prior_features_hotfix",
+  "reason": "Restore correct data/processed/prior_features.csv with 150 scenarios after local stale test file was detected.",
+  "files": [
+    {
+      "path": "data/processed/prior_features.csv",
+      "source": "prior_features_regenerated.csv",
+      "sha256": "24eec65576212ce74bbda16e0612a397ad148f2e16b4ca0ecefc4ec0ec9c8b69",
+      "size_bytes": 29482
+    }
+  ]
+}
