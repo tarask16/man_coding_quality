@@ -1,5 +1,5 @@
 # Словарь априорных признаков главы 5.
-# direction: higher_is_better или lower_is_better.
+# direction: higher_is_better, lower_is_better или neutral.
 # role фиксирует принадлежность к априорному входу; фактические и целевые признаки здесь запрещены.
 
 features:
@@ -8,198 +8,158 @@ features:
     role: prior
     group: message
     description: Длина сообщения; рост обычно увеличивает число ручных операций.
-  prior_mean_message_criticality:
-    direction: lower_is_better
-    role: prior
-    group: message
-    description: Средняя критичность элементов сообщения.
-  prior_symbol_ratio:
-    direction: neutral
-    role: prior
-    group: message
-    description: Доля символьных элементов сообщения.
-  prior_digit_ratio:
-    direction: neutral
-    role: prior
-    group: message
-    description: Доля цифровых элементов сообщения.
-  prior_service_ratio:
-    direction: neutral
-    role: prior
-    group: message
-    description: Доля служебных элементов сообщения.
-  prior_symbol_group_count:
-    direction: lower_is_better
-    role: prior
-    group: message
-    description: Число групп символов в сообщении.
-  prior_step_count:
-    direction: lower_is_better
-    role: prior
-    group: procedure
-    description: Ожидаемое число шагов ручной процедуры.
-  prior_manual_operation_count:
-    direction: lower_is_better
-    role: prior
-    group: procedure
-    description: Ожидаемое число ручных операций.
-  prior_procedure_branch_count:
-    direction: lower_is_better
-    role: prior
-    group: procedure
-    description: Число ветвлений процедуры.
-  prior_total_nominal_time:
-    direction: lower_is_better
-    role: prior
-    group: procedure
-    description: Номинальное время выполнения процедуры.
   prior_mean_complexity:
     direction: lower_is_better
     role: prior
     group: procedure
     description: Средняя процедурная сложность.
-  prior_reference_ratio:
+  prior_mean_message_criticality:
     direction: lower_is_better
     role: prior
-    group: procedure
-    description: Доля операций обращения к справочным материалам.
+    group: message
+    description: Средняя критичность элементов сообщения.
+  prior_digit_ratio:
+    direction: neutral
+    role: prior
+    group: message
+    description: Доля цифровых элементов сообщения.
   prior_control_marker_ratio:
     direction: higher_is_better
     role: prior
     group: control
     description: Доля контрольных маркеров в процедуре.
-  prior_control_intensity:
-    direction: higher_is_better
-    role: prior
-    group: control
-    description: Интенсивность контрольных процедур.
-  prior_verification_required:
-    direction: higher_is_better
-    role: prior
-    group: control
-    description: Наличие требуемой проверки результата.
-  prior_operator_total_estimated_time:
+  prior_procedure_steps:
     direction: lower_is_better
     role: prior
-    group: operator
-    description: Оцененное время выполнения с учетом оператора.
-  prior_operator_total_effort:
+    group: procedure
+    description: Ожидаемое число шагов ручной процедуры.
+  prior_total_nominal_time:
     direction: lower_is_better
     role: prior
-    group: operator
-    description: Оцененная трудоемкость для оператора.
-  prior_operator_mean_attention:
-    direction: higher_is_better
-    role: prior
-    group: operator
-    description: Средний уровень внимания оператора.
-  prior_operator_attention:
-    direction: higher_is_better
-    role: prior
-    group: operator
-    description: Уровень внимания оператора.
-  prior_operator_final_fatigue:
-    direction: lower_is_better
-    role: prior
-    group: operator
-    description: Ожидаемая итоговая усталость оператора.
-  prior_operator_fatigue:
-    direction: lower_is_better
-    role: prior
-    group: operator
-    description: Уровень утомления оператора.
-  prior_operator_preparation_level:
-    direction: higher_is_better
-    role: prior
-    group: operator
-    description: Уровень подготовки оператора.
-  prior_operator_experience_level:
-    direction: higher_is_better
-    role: prior
-    group: operator
-    description: Уровень опыта оператора.
-  prior_operator_control_skill:
-    direction: higher_is_better
-    role: prior
-    group: operator
-    description: Навык выполнения контрольных действий.
+    group: procedure
+    description: Номинальное время выполнения процедуры.
   prior_operator_skill:
     direction: higher_is_better
     role: prior
     group: operator
     description: Обобщенный навык оператора.
-  prior_operator_error_susceptibility:
+  prior_operator_fatigue:
     direction: lower_is_better
     role: prior
     group: operator
-    description: Ошибкоопасность оператора.
-  prior_attention_deficit:
+    description: Уровень утомления оператора.
+  prior_operator_attention:
+    direction: higher_is_better
+    role: prior
+    group: operator
+    description: Уровень внимания оператора.
+  prior_operator_total_estimated_time:
     direction: lower_is_better
     role: prior
     group: operator
-    description: Дефицит внимания.
-  prior_condition_total_adjusted_time:
-    direction: lower_is_better
-    role: prior
-    group: condition
-    description: Скорректированное время выполнения с учетом условий.
-  prior_condition_mean_adjusted_attention:
-    direction: higher_is_better
-    role: prior
-    group: condition
-    description: Среднее внимание с учетом условий применения.
-  prior_condition_mean_environmental_load:
-    direction: lower_is_better
-    role: prior
-    group: condition
-    description: Средняя внешняя нагрузка.
-  prior_condition_mean_stability_index:
-    direction: higher_is_better
-    role: prior
-    group: condition
-    description: Индекс стабильности условий выполнения.
-  prior_condition_time_pressure:
-    direction: lower_is_better
-    role: prior
-    group: condition
-    description: Давление времени.
-  prior_time_pressure_index:
-    direction: lower_is_better
-    role: prior
-    group: condition
-    description: Индекс временной напряженности.
+    description: Оцененное время выполнения с учетом оператора.
   prior_condition_noise_level:
     direction: lower_is_better
     role: prior
     group: condition
     description: Уровень шума или помех.
-  prior_condition_noise_adjustment:
+  prior_condition_time_pressure:
     direction: lower_is_better
     role: prior
     group: condition
-    description: Поправка на шумовую нагрузку.
-  prior_condition_workload_level:
-    direction: lower_is_better
-    role: prior
-    group: condition
-    description: Уровень рабочей нагрузки.
-  prior_condition_instruction_access:
+    description: Давление времени.
+  prior_condition_mean_adjusted_attention:
     direction: higher_is_better
     role: prior
     group: condition
-    description: Доступность инструкции.
-  prior_repetition_expected_count:
+    description: Среднее внимание с учетом условий применения.
+  prior_condition_total_adjusted_time:
     direction: lower_is_better
     role: prior
-    group: procedure
-    description: Ожидаемое число повторов или повторных обращений.
+    group: condition
+    description: Скорректированное время выполнения с учетом условий.
+  prior_control_intensity:
+    direction: higher_is_better
+    role: prior
+    group: control
+    description: Интенсивность контрольных процедур.
   prior_expected_error_probability:
     direction: lower_is_better
     role: prior
     group: risk
     description: Априорно ожидаемая вероятность ошибки.
+  prior_coding_tool_type:
+    direction: neutral
+    role: prior
+    group: procedure
+    description: Тип ручного средства кодирования; нечисловой служебно-сценарный признак.
+  prior_condition_profile:
+    direction: neutral
+    role: prior
+    group: condition
+    description: Профиль условий применения; нечисловой служебно-сценарный признак.
+  prior_symbol_group_count:
+    direction: lower_is_better
+    role: prior
+    group: message
+    description: Число групп символов в сообщении.
+  prior_alpha_ratio:
+    direction: neutral
+    role: prior
+    group: message
+    description: Доля буквенных элементов сообщения.
+  prior_message_entropy_estimate:
+    direction: lower_is_better
+    role: prior
+    group: message
+    description: Оценка разнообразия и неоднородности сообщения.
+  prior_operator_error_susceptibility:
+    direction: lower_is_better
+    role: prior
+    group: operator
+    description: Ошибкоопасность оператора.
+  prior_control_expected_detection_rate:
+    direction: higher_is_better
+    role: prior
+    group: control
+    description: Ожидаемая вероятность обнаружения ошибки контролем.
+  prior_procedure_branch_count:
+    direction: lower_is_better
+    role: prior
+    group: procedure
+    description: Число ветвлений процедуры.
   prior_memory_load_index:
     direction: lower_is_better
     role: prior
     group: procedure
     description: Индекс нагрузки на память оператора.
+  prior_time_pressure_index:
+    direction: lower_is_better
+    role: prior
+    group: condition
+    description: Индекс временной напряженности.
+  prior_condition_noise_adjustment:
+    direction: lower_is_better
+    role: prior
+    group: condition
+    description: Поправка на шумовую нагрузку.
+  prior_attention_deficit:
+    direction: lower_is_better
+    role: prior
+    group: operator
+    description: Дефицит внимания.
+  prior_manual_operation_count:
+    direction: lower_is_better
+    role: prior
+    group: procedure
+    description: Ожидаемое число ручных операций.
+  prior_verification_required:
+    direction: higher_is_better
+    role: prior
+    group: control
+    description: Наличие требуемой проверки результата.
+  prior_repetition_expected_count:
+    direction: lower_is_better
+    role: prior
+    group: procedure
+    description: Ожидаемое число повторов или повторных обращений.

@@ -1,6 +1,7 @@
 # Связь частных прогнозных критериев с априорными признаками.
 # observed_weight задает вклад нормированных X_prior; остальная часть берется из theta_prior.
 # Веса признаков внутри каждого критерия должны суммироваться в 1.
+# Все признаки ниже присутствуют в data/processed/prior_features.csv расширенного корпуса.
 
 feature_weights:
   q_acc:
@@ -21,28 +22,28 @@ feature_weights:
     observed_weight: 0.70
     features:
       prior_manual_operation_count: 0.25
-      prior_step_count: 0.25
+      prior_procedure_steps: 0.25
       prior_memory_load_index: 0.25
-      prior_operator_total_effort: 0.25
+      prior_total_nominal_time: 0.25
   q_res:
     observed_weight: 0.60
     features:
-      prior_control_intensity: 0.30
+      prior_control_intensity: 0.25
       prior_verification_required: 0.20
       prior_expected_error_probability: 0.25
-      prior_condition_mean_stability_index: 0.25
+      prior_control_expected_detection_rate: 0.30
   q_rep:
     observed_weight: 0.60
     features:
       prior_repetition_expected_count: 0.30
-      prior_condition_mean_stability_index: 0.35
-      prior_condition_noise_level: 0.20
-      prior_condition_workload_level: 0.15
+      prior_condition_noise_level: 0.25
+      prior_time_pressure_index: 0.25
+      prior_operator_fatigue: 0.20
   q_fit:
     observed_weight: 0.65
     features:
       prior_condition_time_pressure: 0.25
       prior_condition_noise_adjustment: 0.20
       prior_condition_noise_level: 0.20
-      prior_condition_instruction_access: 0.20
+      prior_operator_attention: 0.20
       prior_mean_complexity: 0.15

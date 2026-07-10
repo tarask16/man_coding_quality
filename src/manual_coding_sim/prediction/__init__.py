@@ -44,7 +44,13 @@ from manual_coding_sim.prediction.partial_quality_predictor import PartialQualit
 from manual_coding_sim.prediction.prediction_uncertainty import (
     PredictionUncertaintyEstimator,
 )
-from manual_coding_sim.prediction.prior_feature_normalizer import PriorFeatureNormalizer
+from manual_coding_sim.prediction.prior_feature_normalizer import (
+    PriorFeatureNormalizationError,
+    PriorFeatureNormalizationItem,
+    PriorFeatureNormalizationReport,
+    PriorFeatureNormalizationResult,
+    PriorFeatureNormalizer,
+)
 
 __all__ = [
     "Chapter5ConfigFilePaths",
@@ -72,6 +78,10 @@ __all__ = [
     "LatentQualityComponentCalculator",
     "PartialQualityPredictor",
     "PredictionUncertaintyEstimator",
+    "PriorFeatureNormalizationError",
+    "PriorFeatureNormalizationItem",
+    "PriorFeatureNormalizationReport",
+    "PriorFeatureNormalizationResult",
     "PriorFeatureNormalizer",
     "load_chapter5_prediction_config",
 ]

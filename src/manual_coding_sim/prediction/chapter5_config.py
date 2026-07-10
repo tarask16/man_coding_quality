@@ -16,6 +16,8 @@ import yaml
 
 from manual_coding_sim.prediction.paths import (
     DEFAULT_CHAPTER5_REPORTS_DIR,
+    DEFAULT_NORMALIZATION_REPORT_PATH,
+    DEFAULT_NORMALIZED_PRIOR_FEATURES_PATH,
     DEFAULT_PREDICTION_REPORT_JSON_PATH,
     DEFAULT_PREDICTION_REPORT_MD_PATH,
     DEFAULT_PRIOR_FEATURES_PATH,
@@ -45,6 +47,8 @@ class Chapter5OutputPaths:
     reports_dir: Path = DEFAULT_CHAPTER5_REPORTS_DIR
     q_pred_path: Path = DEFAULT_Q_PRED_PATH
     q_pred_components_path: Path = DEFAULT_Q_PRED_COMPONENTS_PATH
+    normalized_prior_features_path: Path = DEFAULT_NORMALIZED_PRIOR_FEATURES_PATH
+    normalization_report_path: Path = DEFAULT_NORMALIZATION_REPORT_PATH
     report_json_path: Path = DEFAULT_PREDICTION_REPORT_JSON_PATH
     report_md_path: Path = DEFAULT_PREDICTION_REPORT_MD_PATH
 
@@ -347,6 +351,14 @@ class Chapter5ConfigLoader:
                 q_pred_components_path=_path(
                     output_section.get("q_pred_components"),
                     DEFAULT_Q_PRED_COMPONENTS_PATH,
+                ),
+                normalized_prior_features_path=_path(
+                    output_section.get("normalized_prior_features"),
+                    DEFAULT_NORMALIZED_PRIOR_FEATURES_PATH,
+                ),
+                normalization_report_path=_path(
+                    output_section.get("normalization_report"),
+                    DEFAULT_NORMALIZATION_REPORT_PATH,
                 ),
                 report_json_path=_path(
                     output_section.get("report_json"),
