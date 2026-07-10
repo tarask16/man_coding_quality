@@ -1,0 +1,77 @@
+{
+  "base_stage": "stage6_latent_quality_component",
+  "target_stage": "stage7_partial_quality_criteria",
+  "changed_files": [
+    {
+      "path": "src/manual_coding_sim/prediction/partial_quality_predictor.py",
+      "sha256": "8fb2a8798570f450b18520858b55bdfe704ea5642695434d5a01ff99c64b0ec0",
+      "size_bytes": 15990
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/chapter5_runner.py",
+      "sha256": "5674fb5a49db73a2ac26ca095598aa97bf87ed20234a7301f3ba00700968155c",
+      "size_bytes": 12694
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/chapter5_config.py",
+      "sha256": "25f35454a1d1555323398f6cdafba9e0acf8f6e69ae8c578052d8202b5af367b",
+      "size_bytes": 26162
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/paths.py",
+      "sha256": "4e8195b3c7180ca7fec809c19535d91127b2c5307d52447a6ea73a357066509d",
+      "size_bytes": 2229
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/__init__.py",
+      "sha256": "cfb4677cdb1c65b535ee6087eec756ef80403038b93b89172c28be23cb0c570e",
+      "size_bytes": 3655
+    },
+    {
+      "path": "configs/chapter5.yaml",
+      "sha256": "7ca9c64721b5b80923c70fe33c5c130bc4fb57cea3b938e045fe86a3475151e1",
+      "size_bytes": 1532
+    },
+    {
+      "path": "tests/prediction/test_partial_quality_predictor.py",
+      "sha256": "e9a2398e86f43a8dcb9b96fae572eccd546af5c78aad4753f4461d9420b4d701",
+      "size_bytes": 4527
+    },
+    {
+      "path": "tests/prediction/test_chapter5_runner.py",
+      "sha256": "b9aad4572a5d778a57796141f4c86639d1649cefc134b9ebfc4b2f53bf4cd910",
+      "size_bytes": 3701
+    },
+    {
+      "path": "tests/prediction/test_chapter5_config.py",
+      "sha256": "bf12ed122aede747449799a33831aca05effeb656b48a8c3ef77cb219583abfe",
+      "size_bytes": 6878
+    },
+    {
+      "path": "reports/chapter5/q_pred_components.csv",
+      "sha256": "2b1ec17f38d766e708449028c85b7e42a2395a0c82d1f00631586b144513ff38",
+      "size_bytes": 72702
+    },
+    {
+      "path": "reports/chapter5/q_pred_components_report.json",
+      "sha256": "9547627a545c9432c46f60905dad4690f188f4372325125cfbded1f94a4c3f49",
+      "size_bytes": 5100
+    },
+    {
+      "path": "reports/chapter5/stage7_partial_quality_report.md",
+      "sha256": "8602f6b849b2098bc3496b3b75b1eb38a60f94bc86a2c0befb59d0b8ea04bd3d",
+      "size_bytes": 2553
+    },
+    {
+      "path": "reports/chapter5/stage7_hashes.txt",
+      "sha256": "6bff319a3e8bf163ced7401aa7de18387b962c3c7299e8fc86fe0d602f7436e0",
+      "size_bytes": 1336
+    }
+  ],
+  "removed_files": [],
+  "notes": [
+    "Delta archive contains only files added or changed at stage 7.",
+    "Input datasets from previous stages are intentionally excluded.",
+    "data/processed/prior_features.csv is not included."
+  ]
+}

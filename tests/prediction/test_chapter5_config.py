@@ -162,3 +162,16 @@ def test_chapter5_config_contains_latent_component_paths() -> None:
     assert config.outputs.latent_quality_component_report_path.as_posix() == (
         "reports/chapter5/latent_quality_component_report.json"
     )
+
+
+def test_chapter5_config_contains_partial_criteria_paths() -> None:
+    """Конфигурация этапа 7 должна содержать путь отчета компонентов качества."""
+
+    config = load_chapter5_prediction_config(project_root=PROJECT_ROOT)
+
+    assert config.outputs.q_pred_components_path.as_posix() == (
+        "reports/chapter5/q_pred_components.csv"
+    )
+    assert config.outputs.q_pred_components_report_path.as_posix() == (
+        "reports/chapter5/q_pred_components_report.json"
+    )

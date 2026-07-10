@@ -24,6 +24,7 @@ from manual_coding_sim.prediction.paths import (
     DEFAULT_PREDICTION_REPORT_MD_PATH,
     DEFAULT_PRIOR_FEATURES_PATH,
     DEFAULT_Q_PRED_COMPONENTS_PATH,
+    DEFAULT_Q_PRED_COMPONENTS_REPORT_PATH,
     DEFAULT_Q_PRED_PATH,
     DEFAULT_THETA_PRIOR_PATH,
     DEFAULT_TOPIC_INTERPRETATION_PATH,
@@ -49,6 +50,7 @@ class Chapter5OutputPaths:
     reports_dir: Path = DEFAULT_CHAPTER5_REPORTS_DIR
     q_pred_path: Path = DEFAULT_Q_PRED_PATH
     q_pred_components_path: Path = DEFAULT_Q_PRED_COMPONENTS_PATH
+    q_pred_components_report_path: Path = DEFAULT_Q_PRED_COMPONENTS_REPORT_PATH
     normalized_prior_features_path: Path = DEFAULT_NORMALIZED_PRIOR_FEATURES_PATH
     normalization_report_path: Path = DEFAULT_NORMALIZATION_REPORT_PATH
     latent_quality_component_path: Path = DEFAULT_LATENT_QUALITY_COMPONENT_PATH
@@ -355,6 +357,10 @@ class Chapter5ConfigLoader:
                 q_pred_components_path=_path(
                     output_section.get("q_pred_components"),
                     DEFAULT_Q_PRED_COMPONENTS_PATH,
+                ),
+                q_pred_components_report_path=_path(
+                    output_section.get("q_pred_components_report"),
+                    DEFAULT_Q_PRED_COMPONENTS_REPORT_PATH,
                 ),
                 normalized_prior_features_path=_path(
                     output_section.get("normalized_prior_features"),

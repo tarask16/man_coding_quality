@@ -43,7 +43,13 @@ from manual_coding_sim.prediction.latent_quality_component import (
     LatentQualityComponentReport,
     LatentQualityComponentResult,
 )
-from manual_coding_sim.prediction.partial_quality_predictor import PartialQualityPredictor
+from manual_coding_sim.prediction.partial_quality_predictor import (
+    PartialQualityCriterionReport,
+    PartialQualityPredictionError,
+    PartialQualityPredictionReport,
+    PartialQualityPredictionResult,
+    PartialQualityPredictor,
+)
 from manual_coding_sim.prediction.prediction_uncertainty import (
     PredictionUncertaintyEstimator,
 )
@@ -82,6 +88,10 @@ __all__ = [
     "LatentQualityComponentError",
     "LatentQualityComponentReport",
     "LatentQualityComponentResult",
+    "PartialQualityCriterionReport",
+    "PartialQualityPredictionError",
+    "PartialQualityPredictionReport",
+    "PartialQualityPredictionResult",
     "PartialQualityPredictor",
     "PredictionUncertaintyEstimator",
     "PriorFeatureNormalizationError",

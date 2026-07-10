@@ -1,0 +1,163 @@
+{
+  "row_count": 150,
+  "criteria": [
+    "q_acc",
+    "q_time",
+    "q_effort",
+    "q_res",
+    "q_rep",
+    "q_fit"
+  ],
+  "merge_columns": [
+    "scenario_id",
+    "protocol_id"
+  ],
+  "output_columns": [
+    "scenario_id",
+    "protocol_id",
+    "run_id",
+    "alternative_id",
+    "q_latent",
+    "q_acc_feature_component",
+    "q_acc_latent_component",
+    "q_acc_observed_weight",
+    "q_acc_latent_weight",
+    "q_acc_pred",
+    "q_time_feature_component",
+    "q_time_latent_component",
+    "q_time_observed_weight",
+    "q_time_latent_weight",
+    "q_time_pred",
+    "q_effort_feature_component",
+    "q_effort_latent_component",
+    "q_effort_observed_weight",
+    "q_effort_latent_weight",
+    "q_effort_pred",
+    "q_res_feature_component",
+    "q_res_latent_component",
+    "q_res_observed_weight",
+    "q_res_latent_weight",
+    "q_res_pred",
+    "q_rep_feature_component",
+    "q_rep_latent_component",
+    "q_rep_observed_weight",
+    "q_rep_latent_weight",
+    "q_rep_pred",
+    "q_fit_feature_component",
+    "q_fit_latent_component",
+    "q_fit_observed_weight",
+    "q_fit_latent_weight",
+    "q_fit_pred"
+  ],
+  "criterion_reports": [
+    {
+      "criterion_name": "q_acc",
+      "observed_weight": 0.65,
+      "latent_weight": 0.35,
+      "used_features": {
+        "prior_expected_error_probability": 0.35,
+        "prior_operator_error_susceptibility": 0.25,
+        "prior_operator_attention": 0.2,
+        "prior_condition_mean_adjusted_attention": 0.2
+      },
+      "feature_component_min": 0.0,
+      "feature_component_max": 0.9684717607973422,
+      "latent_component_min": 0.01071998484504999,
+      "latent_component_max": 0.978029444383,
+      "prediction_min": 0.003935610739847511,
+      "prediction_max": 0.9291105930647074,
+      "prediction_mean": 0.4677022108758239
+    },
+    {
+      "criterion_name": "q_time",
+      "observed_weight": 0.7,
+      "latent_weight": 0.30000000000000004,
+      "used_features": {
+        "prior_total_nominal_time": 0.3,
+        "prior_operator_total_estimated_time": 0.3,
+        "prior_condition_total_adjusted_time": 0.3,
+        "prior_condition_time_pressure": 0.1
+      },
+      "feature_component_min": 0.08541606019609602,
+      "feature_component_max": 0.9875428943917778,
+      "latent_component_min": 0.01071998484504999,
+      "latent_component_max": 0.978029444383,
+      "prediction_min": 0.0630734668876822,
+      "prediction_max": 0.9846888593891445,
+      "prediction_mean": 0.552851043708117
+    },
+    {
+      "criterion_name": "q_effort",
+      "observed_weight": 0.7,
+      "latent_weight": 0.30000000000000004,
+      "used_features": {
+        "prior_manual_operation_count": 0.25,
+        "prior_procedure_steps": 0.25,
+        "prior_memory_load_index": 0.25,
+        "prior_total_nominal_time": 0.25
+      },
+      "feature_component_min": 0.04479540559942574,
+      "feature_component_max": 0.9265815941314286,
+      "latent_component_min": 0.01071998484504999,
+      "latent_component_max": 0.978029444383,
+      "prediction_min": 0.034841050054388,
+      "prediction_max": 0.9219461278548444,
+      "prediction_mean": 0.5072190826852191
+    },
+    {
+      "criterion_name": "q_res",
+      "observed_weight": 0.6,
+      "latent_weight": 0.4,
+      "used_features": {
+        "prior_control_intensity": 0.25,
+        "prior_verification_required": 0.2,
+        "prior_expected_error_probability": 0.25,
+        "prior_control_expected_detection_rate": 0.3
+      },
+      "feature_component_min": 0.0882770495751023,
+      "feature_component_max": 0.9593381482884225,
+      "latent_component_min": 0.01071998484504999,
+      "latent_component_max": 0.978029444383,
+      "prediction_min": 0.06843247368372192,
+      "prediction_max": 0.9607227870808877,
+      "prediction_mean": 0.4523257901718526
+    },
+    {
+      "criterion_name": "q_rep",
+      "observed_weight": 0.6,
+      "latent_weight": 0.4,
+      "used_features": {
+        "prior_repetition_expected_count": 0.3,
+        "prior_condition_noise_level": 0.25,
+        "prior_time_pressure_index": 0.25,
+        "prior_operator_fatigue": 0.2
+      },
+      "feature_component_min": 0.158325,
+      "feature_component_max": 1.0,
+      "latent_component_min": 0.01071998484504999,
+      "latent_component_max": 0.978029444383,
+      "prediction_min": 0.09928299393802,
+      "prediction_max": 0.9912117777532,
+      "prediction_mean": 0.5282752331302555
+    },
+    {
+      "criterion_name": "q_fit",
+      "observed_weight": 0.65,
+      "latent_weight": 0.35,
+      "used_features": {
+        "prior_condition_time_pressure": 0.25,
+        "prior_condition_noise_adjustment": 0.2,
+        "prior_condition_noise_level": 0.2,
+        "prior_operator_attention": 0.2,
+        "prior_mean_complexity": 0.15
+      },
+      "feature_component_min": 0.12083333333333335,
+      "feature_component_max": 0.875,
+      "latent_component_min": 0.01071998484504999,
+      "latent_component_max": 0.978029444383,
+      "prediction_min": 0.08229366136243417,
+      "prediction_max": 0.910859551629335,
+      "prediction_mean": 0.48468805121119585
+    }
+  ]
+}

@@ -27,9 +27,14 @@ from manual_coding_sim.prediction.chapter5_leakage_guard import (
 )
 from manual_coding_sim.prediction.latent_quality_component import (
     LatentQualityComponentCalculator,
+    LatentQualityComponentResult,
+)
+from manual_coding_sim.prediction.partial_quality_predictor import (
+    PartialQualityPredictor,
 )
 from manual_coding_sim.prediction.paths import resolve_project_path
 from manual_coding_sim.prediction.prior_feature_normalizer import (
+    PriorFeatureNormalizationResult,
     PriorFeatureNormalizer,
 )
 
@@ -65,6 +70,11 @@ def build_arg_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Рассчитать латентную компоненту качества Q_lat и сохранить отчет.",
     )
+    parser.add_argument(
+        "--calculate-partial-criteria",
+        action="store_true",
+        help="Рассчитать частные прогнозные критерии и сохранить q_pred_components.csv.",
+    )
     return parser
 
 
@@ -98,18 +108,34 @@ def main(argv: Sequence[str] | None = None) -> int:
     print(f"Направления латентных факторов: {config.factor_directions.directions}")
 
     loaded_inputs: Chapter5LoadedInputs | None = None
-    if args.validate_inputs or args.normalize_inputs or args.calculate_latent_component:
+    if (
+        args.validate_inputs
+        or args.normalize_inputs
+        or args.calculate_latent_component
+        or args.calculate_partial_criteria
+    ):
         loaded_inputs = _load_and_report_inputs(project_root, config)
         if loaded_inputs is None:
             return 1
 
+    normalization_result: PriorFeatureNormalizationResult | None = None
     if args.normalize_inputs:
-        _normalize_and_save(project_root, config, loaded_inputs)
+        normalization_result = _normalize_and_save(project_root, config, loaded_inputs)
 
+    latent_result: LatentQualityComponentResult | None = None
     if args.calculate_latent_component:
-        _calculate_latent_component_and_save(project_root, config, loaded_inputs)
+        latent_result = _calculate_latent_component_and_save(project_root, config, loaded_inputs)
 
-    print("Расчет Q_pred не выполнялся: это будет реализовано на следующих этапах.")
+    if args.calculate_partial_criteria:
+        _calculate_partial_criteria_and_save(
+            project_root,
+            config,
+            loaded_inputs,
+            normalization_result,
+            latent_result,
+        )
+
+    print("Расчет Q_pred не выполнялся: интегральный показатель будет реализован на следующих этапах.")
     return 0
 
 
@@ -155,7 +181,7 @@ def _normalize_and_save(
     project_root: Path,
     config: Chapter5PredictionConfig,
     loaded_inputs: Chapter5LoadedInputs | None,
-) -> None:
+) -> PriorFeatureNormalizationResult:
     """Выполнить нормировку априорных признаков и сохранить артефакты."""
 
     if loaded_inputs is None:
@@ -179,13 +205,14 @@ def _normalize_and_save(
     print(f"Пропущено нечисловых признаков: {len(result.report.non_numeric_features)}")
     print(f"Таблица нормированных признаков сохранена: {normalized_path}")
     print(f"Отчет нормировки сохранен: {report_path}")
+    return result
 
 
 def _calculate_latent_component_and_save(
     project_root: Path,
     config: Chapter5PredictionConfig,
     loaded_inputs: Chapter5LoadedInputs | None,
-) -> None:
+) -> LatentQualityComponentResult:
     """Рассчитать латентную компоненту качества и сохранить артефакты."""
 
     if loaded_inputs is None:
@@ -213,6 +240,45 @@ def _calculate_latent_component_and_save(
     print(f"Максимальное q_latent: {result.report.q_latent_max:.6f}")
     print(f"Таблица латентной компоненты сохранена: {latent_path}")
     print(f"Отчет латентной компоненты сохранен: {report_path}")
+    return result
+
+
+def _calculate_partial_criteria_and_save(
+    project_root: Path,
+    config: Chapter5PredictionConfig,
+    loaded_inputs: Chapter5LoadedInputs | None,
+    normalization_result: PriorFeatureNormalizationResult | None,
+    latent_result: LatentQualityComponentResult | None,
+) -> None:
+    """Рассчитать частные прогнозные критерии и сохранить компоненты."""
+
+    if loaded_inputs is None:
+        msg = "Внутренняя ошибка: расчет частных критериев вызван без входных данных."
+        raise RuntimeError(msg)
+    if normalization_result is None:
+        normalizer = PriorFeatureNormalizer(config.prior_feature_dictionary)
+        normalization_result = normalizer.normalize(loaded_inputs.prior_features)
+    if latent_result is None:
+        latent_calculator = LatentQualityComponentCalculator(config.factor_directions)
+        latent_result = latent_calculator.calculate(loaded_inputs.theta_prior)
+
+    predictor = PartialQualityPredictor(config.feature_weights)
+    result = predictor.predict(
+        normalization_result.normalized_features,
+        latent_result.latent_quality,
+    )
+    components_path = resolve_project_path(project_root, config.outputs.q_pred_components_path)
+    report_path = resolve_project_path(project_root, config.outputs.q_pred_components_report_path)
+    predictor.save_outputs(
+        result,
+        components_path=components_path,
+        report_path=report_path,
+    )
+    print("Частные прогнозные критерии: рассчитаны.")
+    print(f"Строк компонентов качества: {result.report.row_count}")
+    print(f"Критериев рассчитано: {len(result.report.criteria)}")
+    print(f"Таблица компонентов качества сохранена: {components_path}")
+    print(f"Отчет компонентов качества сохранен: {report_path}")
 
 
 if __name__ == "__main__":

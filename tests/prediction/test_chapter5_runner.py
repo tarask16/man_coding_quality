@@ -79,3 +79,25 @@ def test_chapter5_runner_calculates_latent_component(capsys) -> None:
     assert "Латентная компонента качества: рассчитана" in captured.out
     assert latent_path.exists()
     assert report_path.exists()
+
+
+def test_chapter5_runner_calculates_partial_criteria(capsys) -> None:
+    """Runner этапа 7 должен сохранять частные прогнозные критерии."""
+
+    exit_code = main(
+        [
+            "--project-root",
+            str(PROJECT_ROOT),
+            "--config",
+            "configs/chapter5.yaml",
+            "--calculate-partial-criteria",
+        ]
+    )
+
+    captured = capsys.readouterr()
+    components_path = PROJECT_ROOT / "reports/chapter5/q_pred_components.csv"
+    report_path = PROJECT_ROOT / "reports/chapter5/q_pred_components_report.json"
+    assert exit_code == 0
+    assert "Частные прогнозные критерии: рассчитаны" in captured.out
+    assert components_path.exists()
+    assert report_path.exists()
