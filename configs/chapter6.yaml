@@ -1,0 +1,68 @@
+# Конфигурация программного контура экспериментальной проверки главы 6.
+# Результаты главы 5 рассматриваются как зафиксированный априорный прогноз.
+# Фактические показатели используются только для внешней проверки.
+
+input:
+  q_pred: reports/chapter5/q_pred.csv
+  q_pred_components: reports/chapter5/q_pred_components.csv
+  prediction_uncertainty: reports/chapter5/prediction_uncertainty.csv
+  chapter5_prediction_report: reports/chapter5/chapter5_prediction_report.json
+  chapter5_acceptance_report: reports/chapter5/chapter5_acceptance_report.json
+  normalized_prior_features: reports/chapter5/normalized_prior_features.csv
+  latent_quality_component: reports/chapter5/latent_quality_component.csv
+  theta_prior: reports/chapter4/theta_prior.csv
+  quality_targets: data/processed/quality_targets.csv
+  fact_features: data/processed/fact_features.csv
+
+output:
+  reports_dir: reports/chapter6
+  figures_dir: reports/chapter6/figures
+  input_validation_report_json: reports/chapter6/chapter6_input_validation_report.json
+  input_validation_report_md: reports/chapter6/chapter6_input_validation_report.md
+  validation_dataset: reports/chapter6/validation_dataset.csv
+  integral_quality_consistency: reports/chapter6/integral_quality_consistency.csv
+  integral_quality_report_json: reports/chapter6/integral_quality_consistency_report.json
+  integral_quality_report_md: reports/chapter6/integral_quality_consistency_report.md
+  validation_metrics_json: reports/chapter6/validation_metrics.json
+  validation_metrics_md: reports/chapter6/validation_metrics.md
+  integral_prediction_errors: reports/chapter6/integral_prediction_errors.csv
+  partial_criteria_validation: reports/chapter6/partial_criteria_validation.csv
+  classification_report_json: reports/chapter6/classification_report.json
+  classification_report_md: reports/chapter6/classification_report.md
+  confusion_matrix: reports/chapter6/confusion_matrix.csv
+  interval_coverage_details: reports/chapter6/interval_coverage_details.csv
+  interval_coverage_report_json: reports/chapter6/interval_coverage_report.json
+  interval_coverage_report_md: reports/chapter6/interval_coverage_report.md
+  baseline_predictions: reports/chapter6/baseline_predictions.csv
+  baseline_comparison: reports/chapter6/baseline_comparison.csv
+  bootstrap_confidence_intervals: reports/chapter6/bootstrap_confidence_intervals.csv
+  bootstrap_model_differences: reports/chapter6/bootstrap_model_differences.csv
+  top_prediction_errors: reports/chapter6/top_prediction_errors.csv
+  error_group_analysis: reports/chapter6/error_group_analysis.csv
+  final_report_json: reports/chapter6/chapter6_validation_report.json
+  final_report_md: reports/chapter6/chapter6_validation_report.md
+  pipeline_run_report: reports/chapter6/chapter6_pipeline_run_report.json
+  acceptance_report_json: reports/chapter6/chapter6_acceptance_report.json
+  acceptance_report_md: reports/chapter6/chapter6_acceptance_report.md
+
+merge:
+  key_columns: [scenario_id, protocol_id]
+  validation: one_to_one
+  expected_row_count: 150
+
+decision_thresholds:
+  low_max: 0.45
+  high_min: 0.70
+  class_labels:
+    low: low
+    medium: medium
+    high: high
+
+bootstrap:
+  resamples: 1000
+  confidence_level: 0.95
+  random_seed: 42
+  sampling_unit: scenario_id
+
+runner:
+  overwrite: true
