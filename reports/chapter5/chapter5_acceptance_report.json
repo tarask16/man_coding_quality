@@ -1,0 +1,73 @@
+{
+  "stage": 12,
+  "report_type": "chapter5_final_acceptance_report",
+  "accepted": true,
+  "checks": {
+    "artifact_existence": true,
+    "prior_features_row_count": true,
+    "prior_features_has_protocol_id": true,
+    "prior_features_no_scenario_duplicates": true,
+    "theta_prior_row_count": true,
+    "theta_key_alignment": true,
+    "all_output_row_counts": true,
+    "q_pred_range": true,
+    "partial_criteria_range": true,
+    "uncertainty_range": true,
+    "interval_radius_range": true,
+    "interval_order": true,
+    "no_missing_core_values": true,
+    "leakage_check_passed": true,
+    "no_forbidden_columns": true,
+    "full_pipeline_completed": true,
+    "final_report_stage": true,
+    "final_report_apriori_only": true
+  },
+  "row_counts": {
+    "prior_features": 150,
+    "theta_prior": 150,
+    "normalized_prior_features": 150,
+    "latent_quality_component": 150,
+    "q_pred_components": 150,
+    "q_pred": 150,
+    "prediction_uncertainty": 150,
+    "final_report": 150
+  },
+  "quality_ranges": {
+    "q_pred": {
+      "min": 0.1034447717622113,
+      "max": 0.8893015161715213
+    },
+    "uncertainty_score": {
+      "min": 0.0994170991788137,
+      "max": 0.5386938309397353
+    },
+    "interval_radius": {
+      "min": 0.014912564876822,
+      "max": 0.0808040746409603
+    }
+  },
+  "method_safety": {
+    "apriori_only": true,
+    "leakage_check_passed": true,
+    "forbidden_column_count": 0,
+    "full_pipeline_completed": true
+  },
+  "artifact_paths": {
+    "prior_features": "D:\\Projects\\man_coding_quality\\data\\processed\\prior_features.csv",
+    "theta_prior": "D:\\Projects\\man_coding_quality\\reports\\chapter4\\theta_prior.csv",
+    "leakage_report": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\chapter5_leakage_report.json",
+    "normalized_prior_features": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\normalized_prior_features.csv",
+    "latent_quality_component": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\latent_quality_component.csv",
+    "q_pred_components": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\q_pred_components.csv",
+    "q_pred": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\q_pred.csv",
+    "prediction_uncertainty": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\prediction_uncertainty.csv",
+    "pipeline_run_report": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\chapter5_pipeline_run_report.json",
+    "final_report_json": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\chapter5_prediction_report.json",
+    "final_report_md": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\chapter5_prediction_report.md"
+  },
+  "acceptance_notes": [
+    "Все артефакты главы 5 согласованы и готовы к фиксации.",
+    "Расчетный контур использует только априорные признаки и LDA_prior.",
+    "Финальные pytest-проверки и хеширование выполняются внешней процедурой этапа 12."
+  ]
+}

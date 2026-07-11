@@ -15,6 +15,8 @@ from typing import Any
 import yaml
 
 from manual_coding_sim.prediction.paths import (
+    DEFAULT_ACCEPTANCE_REPORT_JSON_PATH,
+    DEFAULT_ACCEPTANCE_REPORT_MD_PATH,
     DEFAULT_CHAPTER5_REPORTS_DIR,
     DEFAULT_LATENT_QUALITY_COMPONENT_PATH,
     DEFAULT_LATENT_QUALITY_COMPONENT_REPORT_PATH,
@@ -65,6 +67,8 @@ class Chapter5OutputPaths:
     report_json_path: Path = DEFAULT_PREDICTION_REPORT_JSON_PATH
     report_md_path: Path = DEFAULT_PREDICTION_REPORT_MD_PATH
     pipeline_run_report_path: Path = DEFAULT_PIPELINE_RUN_REPORT_PATH
+    acceptance_report_json_path: Path = DEFAULT_ACCEPTANCE_REPORT_JSON_PATH
+    acceptance_report_md_path: Path = DEFAULT_ACCEPTANCE_REPORT_MD_PATH
 
 
 @dataclass(frozen=True)
@@ -409,6 +413,14 @@ class Chapter5ConfigLoader:
                 pipeline_run_report_path=_path(
                     output_section.get("pipeline_run_report"),
                     DEFAULT_PIPELINE_RUN_REPORT_PATH,
+                ),
+                acceptance_report_json_path=_path(
+                    output_section.get("acceptance_report_json"),
+                    DEFAULT_ACCEPTANCE_REPORT_JSON_PATH,
+                ),
+                acceptance_report_md_path=_path(
+                    output_section.get("acceptance_report_md"),
+                    DEFAULT_ACCEPTANCE_REPORT_MD_PATH,
                 ),
             ),
             config_files=config_files,

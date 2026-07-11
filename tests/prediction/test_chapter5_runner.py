@@ -25,10 +25,11 @@ def test_chapter5_runner_arg_parser() -> None:
     assert args.project_root == "/project"
     assert args.config == "configs/chapter5.yaml"
 
-    full_args = parser.parse_args(["--run-full-pipeline", "--build-report"])
+    full_args = parser.parse_args(["--run-full-pipeline", "--build-report", "--run-acceptance"])
 
     assert full_args.run_full_pipeline is True
     assert full_args.build_report is True
+    assert full_args.run_acceptance is True
 
 
 def test_chapter5_runner_outputs_russian_message(capsys) -> None:
@@ -207,3 +208,34 @@ def test_chapter5_runner_builds_final_report(capsys) -> None:
     assert report["stage"] == 11
     assert report["row_count"] == 150
     assert report["method_safety"]["apriori_only"] is True
+
+
+def test_chapter5_runner_runs_acceptance(capsys) -> None:
+    """Runner этапа 12 должен выполнять финальную приемку главы 5."""
+
+    exit_code = main(
+        [
+            "--project-root",
+            str(PROJECT_ROOT),
+            "--config",
+            "configs/chapter5.yaml",
+            "--run-full-pipeline",
+            "--build-report",
+            "--run-acceptance",
+        ]
+    )
+
+    captured = capsys.readouterr()
+    json_path = PROJECT_ROOT / "reports/chapter5/chapter5_acceptance_report.json"
+    markdown_path = PROJECT_ROOT / "reports/chapter5/chapter5_acceptance_report.md"
+    assert exit_code == 0
+    assert "Финальная приемка главы 5: выполнена" in captured.out
+    assert "Статус приемки: пройдена" in captured.out
+    assert json_path.exists()
+    assert markdown_path.exists()
+
+    report = json.loads(json_path.read_text(encoding="utf-8"))
+    assert report["stage"] == 12
+    assert report["accepted"] is True
+    assert report["row_counts"]["q_pred"] == 150
+    assert report["checks"]["full_pipeline_completed"] is True

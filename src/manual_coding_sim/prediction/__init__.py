@@ -6,6 +6,11 @@
 параметры неопределенности.
 """
 
+from manual_coding_sim.prediction.chapter5_acceptance import (
+    Chapter5AcceptanceError,
+    Chapter5AcceptanceReport,
+    Chapter5AcceptanceValidator,
+)
 from manual_coding_sim.prediction.chapter5_config import (
     Chapter5ConfigFilePaths,
     Chapter5ConfigLoader,
@@ -77,6 +82,9 @@ from manual_coding_sim.prediction.prior_feature_normalizer import (
 )
 
 __all__ = [
+    "Chapter5AcceptanceError",
+    "Chapter5AcceptanceReport",
+    "Chapter5AcceptanceValidator",
     "Chapter5ConfigFilePaths",
     "Chapter5ConfigLoader",
     "Chapter5DataLoadError",

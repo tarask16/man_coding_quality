@@ -50,6 +50,13 @@ DEFAULT_PREDICTION_UNCERTAINTY_REPORT_PATH = (
     DEFAULT_CHAPTER5_REPORTS_DIR / "prediction_uncertainty_report.json"
 )
 
+DEFAULT_ACCEPTANCE_REPORT_JSON_PATH = (
+    DEFAULT_CHAPTER5_REPORTS_DIR / "chapter5_acceptance_report.json"
+)
+DEFAULT_ACCEPTANCE_REPORT_MD_PATH = (
+    DEFAULT_CHAPTER5_REPORTS_DIR / "chapter5_acceptance_report.md"
+)
+
 
 def resolve_project_path(project_root: Path, path: Path) -> Path:
     """Вернуть абсолютный путь относительно корня проекта.

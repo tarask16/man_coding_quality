@@ -6,6 +6,7 @@ Runner умеет проверять конфигурацию и входные 
 Этап 9 добавляет интервальную оценку неопределенности прогноза ``Q_pred``.
 Этап 10 завершает CLI-контур единым флагом полного запуска.
 Этап 11 добавляет формирование итогового JSON- и Markdown-отчета.
+Этап 12 добавляет финальную приемку артефактов главы 5.
 """
 
 from __future__ import annotations
@@ -14,6 +15,11 @@ import argparse
 from pathlib import Path
 from typing import Sequence
 
+from manual_coding_sim.prediction.chapter5_acceptance import (
+    Chapter5AcceptanceError,
+    Chapter5AcceptanceReport,
+    Chapter5AcceptanceValidator,
+)
 from manual_coding_sim.prediction.chapter5_config import (
     Chapter5PredictionConfig,
     load_chapter5_prediction_config,
@@ -117,6 +123,11 @@ def build_arg_parser() -> argparse.ArgumentParser:
         "--build-report",
         action="store_true",
         help="Сформировать итоговый JSON- и Markdown-отчет главы 5.",
+    )
+    parser.add_argument(
+        "--run-acceptance",
+        action="store_true",
+        help="Выполнить финальную приемку артефактов главы 5.",
     )
     return parser
 
@@ -237,7 +248,23 @@ def main(argv: Sequence[str] | None = None) -> int:
         except Chapter5ReportBuildError as error:
             print(f"Итоговый отчет главы 5 не сформирован: {error}")
             return 1
-    elif not args.calculate_q_pred and not args.run_full_pipeline:
+
+    if args.run_acceptance:
+        try:
+            acceptance_report = _run_acceptance(project_root, config)
+        except Chapter5AcceptanceError as error:
+            print(f"Финальная приемка главы 5 не выполнена: {error}")
+            return 1
+        if not acceptance_report.accepted:
+            print("Финальная приемка главы 5: не пройдена.")
+            return 1
+
+    if not (
+        args.calculate_q_pred
+        or args.run_full_pipeline
+        or args.build_report
+        or args.run_acceptance
+    ):
         print(
             "Расчет Q_pred не выполнялся: интегральный показатель "
             "будет реализован на следующих этапах."
@@ -529,6 +556,29 @@ def _build_final_report(
     print(f"Строк итогового отчета: {report.row_count}")
     print(f"JSON-отчет главы 5 сохранен: {json_path}")
     print(f"Markdown-отчет главы 5 сохранен: {markdown_path}")
+    return report
+
+
+def _run_acceptance(
+    project_root: Path,
+    config: Chapter5PredictionConfig,
+) -> Chapter5AcceptanceReport:
+    """Выполнить финальную приемку артефактов главы 5."""
+
+    validator = Chapter5AcceptanceValidator()
+    report = validator.validate(config=config, project_root=project_root)
+    json_path = resolve_project_path(project_root, config.outputs.acceptance_report_json_path)
+    markdown_path = resolve_project_path(project_root, config.outputs.acceptance_report_md_path)
+    validator.save_outputs(
+        report,
+        json_report_path=json_path,
+        markdown_report_path=markdown_path,
+    )
+    print("Финальная приемка главы 5: выполнена.")
+    print(f"Статус приемки: {'пройдена' if report.accepted else 'не пройдена'}.")
+    print(f"Проверок выполнено: {len(report.checks)}")
+    print(f"JSON-отчет приемки сохранен: {json_path}")
+    print(f"Markdown-отчет приемки сохранен: {markdown_path}")
     return report
 
 

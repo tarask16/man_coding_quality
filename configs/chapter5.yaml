@@ -21,6 +21,8 @@ output:
   report_json: reports/chapter5/chapter5_prediction_report.json
   report_md: reports/chapter5/chapter5_prediction_report.md
   pipeline_run_report: reports/chapter5/chapter5_pipeline_run_report.json
+  acceptance_report_json: reports/chapter5/chapter5_acceptance_report.json
+  acceptance_report_md: reports/chapter5/chapter5_acceptance_report.md
 
 config_files:
   quality_weights: configs/chapter5_quality_weights.yaml
