@@ -1,5 +1,6 @@
 """Тесты CLI-каркаса главы 5."""
 
+import json
 from pathlib import Path
 
 from manual_coding_sim.prediction.chapter5_runner import build_arg_parser, main
@@ -23,6 +24,10 @@ def test_chapter5_runner_arg_parser() -> None:
 
     assert args.project_root == "/project"
     assert args.config == "configs/chapter5.yaml"
+
+    full_args = parser.parse_args(["--run-full-pipeline"])
+
+    assert full_args.run_full_pipeline is True
 
 
 def test_chapter5_runner_outputs_russian_message(capsys) -> None:
@@ -123,3 +128,53 @@ def test_chapter5_runner_calculates_q_pred(capsys) -> None:
     assert "Интегральный прогнозный показатель Q_pred: рассчитан" in captured.out
     assert q_pred_path.exists()
     assert report_path.exists()
+
+
+def test_chapter5_runner_estimates_uncertainty(capsys) -> None:
+    """Runner этапа 9 должен сохранять интервальную оценку Q_pred."""
+
+    exit_code = main(
+        [
+            "--project-root",
+            str(PROJECT_ROOT),
+            "--config",
+            "configs/chapter5.yaml",
+            "--estimate-uncertainty",
+        ]
+    )
+
+    captured = capsys.readouterr()
+    uncertainty_path = PROJECT_ROOT / "reports/chapter5/prediction_uncertainty.csv"
+    report_path = PROJECT_ROOT / "reports/chapter5/prediction_uncertainty_report.json"
+    assert exit_code == 0
+    assert "Неопределенность прогноза Q_pred: рассчитана" in captured.out
+    assert uncertainty_path.exists()
+    assert report_path.exists()
+
+
+def test_chapter5_runner_runs_full_pipeline(capsys) -> None:
+    """Runner этапа 10 должен выполнять полный контур одним CLI-флагом."""
+
+    exit_code = main(
+        [
+            "--project-root",
+            str(PROJECT_ROOT),
+            "--config",
+            "configs/chapter5.yaml",
+            "--run-full-pipeline",
+        ]
+    )
+
+    captured = capsys.readouterr()
+    report_path = PROJECT_ROOT / "reports/chapter5/chapter5_pipeline_run_report.json"
+    assert exit_code == 0
+    assert "Полный контур главы 5: выполнен" in captured.out
+    assert "Неопределенность прогноза Q_pred: рассчитана" in captured.out
+    assert report_path.exists()
+
+    report = json.loads(report_path.read_text(encoding="utf-8"))
+    assert report["stage"] == 10
+    assert report["run_mode"] == "full_pipeline"
+    assert all(report["completed_steps"].values())
+    assert report["row_counts"]["q_pred"] == 150
+    assert report["row_counts"]["prediction_uncertainty"] == 150

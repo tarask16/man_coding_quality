@@ -1,0 +1,77 @@
+{
+  "stage": 10,
+  "name": "chapter5_full_cli_pipeline",
+  "base_state": "stage9_closed",
+  "target_state": "stage10_cli_finalized",
+  "contains_prior_features_csv": false,
+  "contains_theta_prior_csv": false,
+  "description": "Delta-архив этапа 10: единый CLI-флаг полного контура главы 5 и сводный отчет запуска.",
+  "files": [
+    {
+      "path": "configs/chapter5.yaml",
+      "status": "modified",
+      "sha256": "184f1209a1bcb0e055c90b3151ae87cc0662e84b5a3feb80c12b2aaf7e90f914",
+      "size_bytes": 1814
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/__init__.py",
+      "status": "modified",
+      "sha256": "876f7de593429601fa107f619fded53edb26d6cfbae14a811bc040f11f1fc144",
+      "size_bytes": 4352
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/chapter5_config.py",
+      "status": "modified",
+      "sha256": "9b2499fa219b98a4833be8db45618476a5fa7754e56d8986b1dcfcaf8d64986a",
+      "size_bytes": 27372
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/chapter5_pipeline.py",
+      "status": "new",
+      "sha256": "791ab9516fd5576413382d46863a29b086c53a076f62b0a6312d2fd66386033c",
+      "size_bytes": 7260
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/chapter5_runner.py",
+      "status": "modified",
+      "sha256": "d2e2498381f03775a64326aa76c1ddb655721c44b705217ef6c2faf659f25932",
+      "size_bytes": 21362
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/paths.py",
+      "status": "modified",
+      "sha256": "77647e3191abe478159d080b70e44ffb8f1df23d10e1c603cfd8234cb7718695",
+      "size_bytes": 2649
+    },
+    {
+      "path": "tests/prediction/test_chapter5_config.py",
+      "status": "modified",
+      "sha256": "2a02dd0a1c22e9dba4fca62a512dbda5d664ab15ff9359c559f68da19d722f93",
+      "size_bytes": 7880
+    },
+    {
+      "path": "tests/prediction/test_chapter5_runner.py",
+      "status": "modified",
+      "sha256": "3ca5fb90be1a54e9b1ea7fcfce3a40b264a75b1c9c82c9a546afc89a1263ab25",
+      "size_bytes": 6448
+    },
+    {
+      "path": "reports/chapter5/chapter5_pipeline_run_report.json",
+      "status": "new",
+      "sha256": "db1c8e493772cca9480630d6a2aa346a1300aa1017b095ed850e164c9d08f541",
+      "size_bytes": 1788
+    },
+    {
+      "path": "reports/chapter5/stage10_cli_report.md",
+      "status": "new",
+      "sha256": "6c40935c77c828964188a3c5d17eba16f8b6d21b191815500fac89b07138cf19",
+      "size_bytes": 3650
+    },
+    {
+      "path": "reports/chapter5/stage10_hashes.txt",
+      "status": "new",
+      "sha256": "3aa4c30cb07d3efa079784aa2e7dc2d0c454f5ff597cb36dc6326d97f49b5c00",
+      "size_bytes": 885
+    }
+  ]
+}

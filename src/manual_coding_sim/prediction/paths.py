@@ -39,6 +39,17 @@ DEFAULT_PREDICTION_REPORT_MD_PATH = (
     DEFAULT_CHAPTER5_REPORTS_DIR / "chapter5_prediction_report.md"
 )
 
+DEFAULT_PIPELINE_RUN_REPORT_PATH = (
+    DEFAULT_CHAPTER5_REPORTS_DIR / "chapter5_pipeline_run_report.json"
+)
+
+DEFAULT_PREDICTION_UNCERTAINTY_PATH = (
+    DEFAULT_CHAPTER5_REPORTS_DIR / "prediction_uncertainty.csv"
+)
+DEFAULT_PREDICTION_UNCERTAINTY_REPORT_PATH = (
+    DEFAULT_CHAPTER5_REPORTS_DIR / "prediction_uncertainty_report.json"
+)
+
 
 def resolve_project_path(project_root: Path, path: Path) -> Path:
     """Вернуть абсолютный путь относительно корня проекта.

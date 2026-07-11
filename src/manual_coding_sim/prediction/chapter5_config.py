@@ -22,6 +22,9 @@ from manual_coding_sim.prediction.paths import (
     DEFAULT_NORMALIZED_PRIOR_FEATURES_PATH,
     DEFAULT_PREDICTION_REPORT_JSON_PATH,
     DEFAULT_PREDICTION_REPORT_MD_PATH,
+    DEFAULT_PREDICTION_UNCERTAINTY_PATH,
+    DEFAULT_PREDICTION_UNCERTAINTY_REPORT_PATH,
+    DEFAULT_PIPELINE_RUN_REPORT_PATH,
     DEFAULT_PRIOR_FEATURES_PATH,
     DEFAULT_Q_PRED_COMPONENTS_PATH,
     DEFAULT_Q_PRED_COMPONENTS_REPORT_PATH,
@@ -57,8 +60,11 @@ class Chapter5OutputPaths:
     normalization_report_path: Path = DEFAULT_NORMALIZATION_REPORT_PATH
     latent_quality_component_path: Path = DEFAULT_LATENT_QUALITY_COMPONENT_PATH
     latent_quality_component_report_path: Path = DEFAULT_LATENT_QUALITY_COMPONENT_REPORT_PATH
+    prediction_uncertainty_path: Path = DEFAULT_PREDICTION_UNCERTAINTY_PATH
+    prediction_uncertainty_report_path: Path = DEFAULT_PREDICTION_UNCERTAINTY_REPORT_PATH
     report_json_path: Path = DEFAULT_PREDICTION_REPORT_JSON_PATH
     report_md_path: Path = DEFAULT_PREDICTION_REPORT_MD_PATH
+    pipeline_run_report_path: Path = DEFAULT_PIPELINE_RUN_REPORT_PATH
 
 
 @dataclass(frozen=True)
@@ -384,6 +390,14 @@ class Chapter5ConfigLoader:
                     output_section.get("latent_quality_component_report"),
                     DEFAULT_LATENT_QUALITY_COMPONENT_REPORT_PATH,
                 ),
+                prediction_uncertainty_path=_path(
+                    output_section.get("prediction_uncertainty"),
+                    DEFAULT_PREDICTION_UNCERTAINTY_PATH,
+                ),
+                prediction_uncertainty_report_path=_path(
+                    output_section.get("prediction_uncertainty_report"),
+                    DEFAULT_PREDICTION_UNCERTAINTY_REPORT_PATH,
+                ),
                 report_json_path=_path(
                     output_section.get("report_json"),
                     DEFAULT_PREDICTION_REPORT_JSON_PATH,
@@ -391,6 +405,10 @@ class Chapter5ConfigLoader:
                 report_md_path=_path(
                     output_section.get("report_md"),
                     DEFAULT_PREDICTION_REPORT_MD_PATH,
+                ),
+                pipeline_run_report_path=_path(
+                    output_section.get("pipeline_run_report"),
+                    DEFAULT_PIPELINE_RUN_REPORT_PATH,
                 ),
             ),
             config_files=config_files,

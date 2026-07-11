@@ -14,6 +14,7 @@ from manual_coding_sim.prediction import (
 )
 from manual_coding_sim.prediction.paths import (
     DEFAULT_CHAPTER5_REPORTS_DIR,
+    DEFAULT_PIPELINE_RUN_REPORT_PATH,
     DEFAULT_PRIOR_FEATURES_PATH,
     DEFAULT_THETA_PRIOR_PATH,
     resolve_project_path,
@@ -185,4 +186,15 @@ def test_chapter5_config_contains_q_pred_paths() -> None:
     assert config.outputs.q_pred_path.as_posix() == "reports/chapter5/q_pred.csv"
     assert config.outputs.q_pred_report_path.as_posix() == (
         "reports/chapter5/q_pred_report.json"
+    )
+
+
+def test_chapter5_config_contains_pipeline_report_path() -> None:
+    """Конфигурация этапа 10 должна содержать путь отчета полного CLI-запуска."""
+
+    config = load_chapter5_prediction_config(project_root=PROJECT_ROOT)
+
+    assert config.outputs.pipeline_run_report_path == DEFAULT_PIPELINE_RUN_REPORT_PATH
+    assert config.outputs.pipeline_run_report_path.as_posix() == (
+        "reports/chapter5/chapter5_pipeline_run_report.json"
     )

@@ -1,0 +1,51 @@
+{
+  "row_count": 150,
+  "merge_columns": [
+    "scenario_id",
+    "protocol_id"
+  ],
+  "theta_columns": [
+    "theta_0",
+    "theta_1",
+    "theta_2"
+  ],
+  "weights": {
+    "theta_entropy": 0.5,
+    "lda_stability": 0.3,
+    "input_quality": 0.2
+  },
+  "weight_sum": 1.0,
+  "delta": 0.15,
+  "mean_stability": 0.84885,
+  "min_stability": 0.808418,
+  "lda_instability": 0.15115,
+  "input_missing_share": 0.0,
+  "theta_entropy_min": 0.1081441983576274,
+  "theta_entropy_max": 0.9866976618794706,
+  "theta_entropy_mean": 0.47053102170956834,
+  "uncertainty_score_min": 0.0994170991788137,
+  "uncertainty_score_max": 0.5386938309397353,
+  "uncertainty_score_mean": 0.28061051085478417,
+  "interval_radius_min": 0.014912564876822054,
+  "interval_radius_max": 0.0808040746409603,
+  "interval_radius_mean": 0.04209157662821762,
+  "q_pred_lower_min": 0.0484037742461704,
+  "q_pred_upper_max": 0.9265067247854647,
+  "output_columns": [
+    "scenario_id",
+    "protocol_id",
+    "run_id",
+    "alternative_id",
+    "q_pred",
+    "theta_0",
+    "theta_1",
+    "theta_2",
+    "theta_entropy",
+    "lda_instability",
+    "input_missing_share",
+    "uncertainty_score",
+    "interval_radius",
+    "q_pred_lower",
+    "q_pred_upper"
+  ]
+}

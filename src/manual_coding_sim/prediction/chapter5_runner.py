@@ -3,7 +3,8 @@
 Runner умеет проверять конфигурацию и входные данные главы 5. На этапе 5
 добавлена нормировка числовых априорных признаков ``X_prior`` с сохранением
 таблицы ``normalized_prior_features.csv`` и отчета ``normalization_report.json``.
-Полный расчет ``Q_pred`` будет собран на последующих этапах.
+Этап 9 добавляет интервальную оценку неопределенности прогноза ``Q_pred``.
+Этап 10 завершает CLI-контур единым флагом полного запуска.
 """
 
 from __future__ import annotations
@@ -25,6 +26,10 @@ from manual_coding_sim.prediction.chapter5_leakage_guard import (
     Chapter5LeakageError,
     Chapter5LeakageGuard,
 )
+from manual_coding_sim.prediction.chapter5_pipeline import (
+    Chapter5PipelineRunReport,
+    Chapter5PipelineRunReporter,
+)
 from manual_coding_sim.prediction.integral_quality_predictor import (
     IntegralQualityPredictionResult,
     IntegralQualityPredictor,
@@ -38,6 +43,10 @@ from manual_coding_sim.prediction.partial_quality_predictor import (
     PartialQualityPredictor,
 )
 from manual_coding_sim.prediction.paths import resolve_project_path
+from manual_coding_sim.prediction.prediction_uncertainty import (
+    PredictionUncertaintyEstimator,
+    PredictionUncertaintyResult,
+)
 from manual_coding_sim.prediction.prior_feature_normalizer import (
     PriorFeatureNormalizationResult,
     PriorFeatureNormalizer,
@@ -85,6 +94,19 @@ def build_arg_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Рассчитать интегральный прогнозный показатель Q_pred и сохранить q_pred.csv.",
     )
+    parser.add_argument(
+        "--estimate-uncertainty",
+        action="store_true",
+        help="Рассчитать неопределенность и интервалы прогноза Q_pred.",
+    )
+    parser.add_argument(
+        "--run-full-pipeline",
+        action="store_true",
+        help=(
+            "Выполнить полный контур главы 5: проверку входов, нормировку, "
+            "Q_lat, частные критерии, Q_pred и интервальную оценку."
+        ),
+    )
     return parser
 
 
@@ -101,11 +123,27 @@ def _load_config_or_default(project_root: Path, config_path: str) -> Chapter5Pre
     return Chapter5PredictionConfig()
 
 
+
+
+def _activate_full_pipeline_options(args: argparse.Namespace) -> None:
+    """Включить все этапы расчета при запуске полного CLI-контура."""
+
+    if not args.run_full_pipeline:
+        return
+    args.validate_inputs = True
+    args.normalize_inputs = True
+    args.calculate_latent_component = True
+    args.calculate_partial_criteria = True
+    args.calculate_q_pred = True
+    args.estimate_uncertainty = True
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     """Выполнить CLI-каркас главы 5 и вернуть код завершения."""
 
     parser = build_arg_parser()
     args = parser.parse_args(argv)
+    _activate_full_pipeline_options(args)
     project_root = Path(args.project_root)
     config = _load_config_or_default(project_root=project_root, config_path=args.config)
     config.validate()
@@ -124,6 +162,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         or args.calculate_latent_component
         or args.calculate_partial_criteria
         or args.calculate_q_pred
+        or args.estimate_uncertainty
     ):
         loaded_inputs = _load_and_report_inputs(project_root, config)
         if loaded_inputs is None:
@@ -147,8 +186,9 @@ def main(argv: Sequence[str] | None = None) -> int:
             latent_result,
         )
 
+    q_pred_result: IntegralQualityPredictionResult | None = None
     if args.calculate_q_pred:
-        _calculate_q_pred_and_save(
+        q_pred_result = _calculate_q_pred_and_save(
             project_root,
             config,
             loaded_inputs,
@@ -156,7 +196,30 @@ def main(argv: Sequence[str] | None = None) -> int:
             latent_result,
             partial_result,
         )
-    else:
+
+    uncertainty_result: PredictionUncertaintyResult | None = None
+    if args.estimate_uncertainty:
+        uncertainty_result = _estimate_uncertainty_and_save(
+            project_root,
+            config,
+            loaded_inputs,
+            normalization_result,
+            latent_result,
+            partial_result,
+            q_pred_result,
+        )
+
+    if args.run_full_pipeline:
+        _save_pipeline_run_report(
+            project_root,
+            config,
+            normalization_result,
+            latent_result,
+            partial_result,
+            q_pred_result,
+            uncertainty_result,
+        )
+    elif not args.calculate_q_pred:
         print(
             "Расчет Q_pred не выполнялся: интегральный показатель "
             "будет реализован на следующих этапах."
@@ -342,6 +405,91 @@ def _calculate_q_pred_and_save(
     print(f"Таблица интегрального прогноза сохранена: {q_pred_path}")
     print(f"Отчет интегрального прогноза сохранен: {report_path}")
     return result
+
+
+def _estimate_uncertainty_and_save(
+    project_root: Path,
+    config: Chapter5PredictionConfig,
+    loaded_inputs: Chapter5LoadedInputs | None,
+    normalization_result: PriorFeatureNormalizationResult | None,
+    latent_result: LatentQualityComponentResult | None,
+    partial_result: PartialQualityPredictionResult | None,
+    q_pred_result: IntegralQualityPredictionResult | None,
+) -> PredictionUncertaintyResult:
+    """Рассчитать неопределенность прогноза и сохранить интервальные оценки."""
+
+    if loaded_inputs is None:
+        msg = "Внутренняя ошибка: расчет неопределенности вызван без входных данных."
+        raise RuntimeError(msg)
+    if normalization_result is None:
+        normalizer = PriorFeatureNormalizer(config.prior_feature_dictionary)
+        normalization_result = normalizer.normalize(loaded_inputs.prior_features)
+    if q_pred_result is None:
+        q_pred_result = _calculate_q_pred_and_save(
+            project_root,
+            config,
+            loaded_inputs,
+            normalization_result,
+            latent_result,
+            partial_result,
+        )
+
+    estimator = PredictionUncertaintyEstimator(config.uncertainty)
+    result = estimator.estimate(
+        q_pred_result.q_pred,
+        loaded_inputs.theta_prior,
+        normalization_result.normalized_features,
+    )
+    uncertainty_path = resolve_project_path(
+        project_root,
+        config.outputs.prediction_uncertainty_path,
+    )
+    report_path = resolve_project_path(
+        project_root,
+        config.outputs.prediction_uncertainty_report_path,
+    )
+    estimator.save_outputs(
+        result,
+        uncertainty_path=uncertainty_path,
+        report_path=report_path,
+    )
+    print("Неопределенность прогноза Q_pred: рассчитана.")
+    print(f"Строк интервального прогноза: {result.report.row_count}")
+    print(f"Минимальное uncertainty_score: {result.report.uncertainty_score_min:.6f}")
+    print(f"Максимальное uncertainty_score: {result.report.uncertainty_score_max:.6f}")
+    print(f"Минимальный радиус интервала: {result.report.interval_radius_min:.6f}")
+    print(f"Максимальный радиус интервала: {result.report.interval_radius_max:.6f}")
+    print(f"Таблица неопределенности сохранена: {uncertainty_path}")
+    print(f"Отчет неопределенности сохранен: {report_path}")
+    return result
+
+
+def _save_pipeline_run_report(
+    project_root: Path,
+    config: Chapter5PredictionConfig,
+    normalization_result: PriorFeatureNormalizationResult | None,
+    latent_result: LatentQualityComponentResult | None,
+    partial_result: PartialQualityPredictionResult | None,
+    q_pred_result: IntegralQualityPredictionResult | None,
+    uncertainty_result: PredictionUncertaintyResult | None,
+) -> Chapter5PipelineRunReport:
+    """Сохранить сводный JSON-отчет полного CLI-контура главы 5."""
+
+    reporter = Chapter5PipelineRunReporter()
+    report = reporter.build_report(
+        config=config,
+        project_root=project_root,
+        normalization_result=normalization_result,
+        latent_result=latent_result,
+        partial_result=partial_result,
+        q_pred_result=q_pred_result,
+        uncertainty_result=uncertainty_result,
+    )
+    report_path = resolve_project_path(project_root, config.outputs.pipeline_run_report_path)
+    reporter.save_report(report, report_path)
+    print("Полный контур главы 5: выполнен.")
+    print(f"Отчет полного CLI-запуска сохранен: {report_path}")
+    return report
 
 
 if __name__ == "__main__":

@@ -1,0 +1,52 @@
+{
+  "stage": 10,
+  "run_mode": "full_pipeline",
+  "completed_steps": {
+    "input_validation": true,
+    "leakage_guard": true,
+    "normalization": true,
+    "latent_quality": true,
+    "partial_criteria": true,
+    "integral_quality": true,
+    "uncertainty": true
+  },
+  "row_counts": {
+    "normalized_prior_features": 150,
+    "latent_quality_component": 150,
+    "q_pred_components": 150,
+    "q_pred": 150,
+    "prediction_uncertainty": 150
+  },
+  "artifact_paths": {
+    "leakage_report": "reports/chapter5/chapter5_leakage_report.json",
+    "normalized_prior_features": "reports/chapter5/normalized_prior_features.csv",
+    "normalization_report": "reports/chapter5/normalization_report.json",
+    "latent_quality_component": "reports/chapter5/latent_quality_component.csv",
+    "latent_quality_component_report": "reports/chapter5/latent_quality_component_report.json",
+    "q_pred_components": "reports/chapter5/q_pred_components.csv",
+    "q_pred_components_report": "reports/chapter5/q_pred_components_report.json",
+    "q_pred": "reports/chapter5/q_pred.csv",
+    "q_pred_report": "reports/chapter5/q_pred_report.json",
+    "prediction_uncertainty": "reports/chapter5/prediction_uncertainty.csv",
+    "prediction_uncertainty_report": "reports/chapter5/prediction_uncertainty_report.json",
+    "pipeline_run_report": "reports/chapter5/chapter5_pipeline_run_report.json"
+  },
+  "quality_ranges": {
+    "q_latent": {
+      "min": 0.01071998484504999,
+      "max": 0.978029444383
+    },
+    "q_pred": {
+      "min": 0.10344477176221134,
+      "max": 0.8893015161715213
+    },
+    "uncertainty_score": {
+      "min": 0.0994170991788137,
+      "max": 0.5386938309397353
+    },
+    "interval_radius": {
+      "min": 0.014912564876822054,
+      "max": 0.0808040746409603
+    }
+  }
+}

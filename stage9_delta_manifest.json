@@ -1,0 +1,61 @@
+{
+  "stage": "stage9_uncertainty",
+  "base_stage": "stage8_integral_quality",
+  "target_stage": "stage9_uncertainty",
+  "description": "Delta-архив этапа 9: расчет неопределенности и интервальных оценок Q_pred.",
+  "excludes": [
+    "data/processed/prior_features.csv",
+    "reports/chapter4/theta_prior.csv",
+    "reports/chapter4/topic_interpretation.json"
+  ],
+  "files": [
+    {
+      "path": "configs/chapter5.yaml",
+      "sha256": "4b8cd5dedfae217ebebd723d7de13596facf3c0558644715d1790314598dd518"
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/__init__.py",
+      "sha256": "3c8dbedec1409dc4e2982bc59638bfaf32061050c56ba310b33412ef926ed653"
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/chapter5_config.py",
+      "sha256": "6aa9ac6b2e891dbb85e9339ef786ea59e5da406d63337327e4e08aadde10c67c"
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/chapter5_runner.py",
+      "sha256": "8702ffbc50387b89e2f8950501de3a40a4475d9c170ac5494339bccaaddbcb07"
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/paths.py",
+      "sha256": "e0f35218932f8f69d503fa4186cb894fb1dff54f8cbdf587ae1a2d23b2572f9f"
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/prediction_uncertainty.py",
+      "sha256": "6e3bd694344215431c963a2feae0de956a035e3270c4d5b087353eff7206782c"
+    },
+    {
+      "path": "tests/prediction/test_chapter5_runner.py",
+      "sha256": "a8409170b0b81a6ca551418021be5dbe9f2a735214df560753fee534b740aebb"
+    },
+    {
+      "path": "tests/prediction/test_prediction_uncertainty.py",
+      "sha256": "c69ab92f0be3062dadf6100622fa8e0237906c17f0d3b24c08dd1988f0fdc229"
+    },
+    {
+      "path": "reports/chapter5/prediction_uncertainty.csv",
+      "sha256": "6e52c0001e621ce5afb9ffbce217bab4e0b287cd6b51ac75d54fb258c3ffd4b8"
+    },
+    {
+      "path": "reports/chapter5/prediction_uncertainty_report.json",
+      "sha256": "99bb9e49567ca8f72c0433e64e21676983efe92ebebd3f59be1ca93136c29f12"
+    },
+    {
+      "path": "reports/chapter5/stage9_hashes.txt",
+      "sha256": "d17bec55c791158f0b623270ee904ba2eabbe6de1289c48e4258d6dace4d1644"
+    },
+    {
+      "path": "reports/chapter5/stage9_uncertainty_report.md",
+      "sha256": "907ec9d930bcf023ffb1ade4ee80ad7fd479d9f9b2519ff9cbabefea7a1ea62f"
+    }
+  ]
+}

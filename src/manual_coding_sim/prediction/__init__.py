@@ -34,6 +34,10 @@ from manual_coding_sim.prediction.chapter5_leakage_guard import (
     Chapter5LeakageGuard,
 )
 from manual_coding_sim.prediction.chapter5_report_builder import Chapter5ReportBuilder
+from manual_coding_sim.prediction.chapter5_pipeline import (
+    Chapter5PipelineRunReport,
+    Chapter5PipelineRunReporter,
+)
 from manual_coding_sim.prediction.integral_quality_predictor import (
     IntegralQualityCriterionReport,
     IntegralQualityPredictionError,
@@ -55,7 +59,10 @@ from manual_coding_sim.prediction.partial_quality_predictor import (
     PartialQualityPredictor,
 )
 from manual_coding_sim.prediction.prediction_uncertainty import (
+    PredictionUncertaintyError,
     PredictionUncertaintyEstimator,
+    PredictionUncertaintyReport,
+    PredictionUncertaintyResult,
 )
 from manual_coding_sim.prediction.prior_feature_normalizer import (
     PriorFeatureNormalizationError,
@@ -83,6 +90,8 @@ __all__ = [
     "Chapter5LeakageGuard",
     "Chapter5OutputPaths",
     "Chapter5PredictionConfig",
+    "Chapter5PipelineRunReport",
+    "Chapter5PipelineRunReporter",
     "Chapter5PriorFeatureDictionary",
     "Chapter5QualityWeights",
     "Chapter5ReportBuilder",
@@ -101,7 +110,10 @@ __all__ = [
     "PartialQualityPredictionReport",
     "PartialQualityPredictionResult",
     "PartialQualityPredictor",
+    "PredictionUncertaintyError",
     "PredictionUncertaintyEstimator",
+    "PredictionUncertaintyReport",
+    "PredictionUncertaintyResult",
     "PriorFeatureNormalizationError",
     "PriorFeatureNormalizationItem",
     "PriorFeatureNormalizationReport",
