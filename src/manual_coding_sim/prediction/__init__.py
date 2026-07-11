@@ -33,7 +33,11 @@ from manual_coding_sim.prediction.chapter5_leakage_guard import (
     Chapter5LeakageError,
     Chapter5LeakageGuard,
 )
-from manual_coding_sim.prediction.chapter5_report_builder import Chapter5ReportBuilder
+from manual_coding_sim.prediction.chapter5_report_builder import (
+    Chapter5FinalReport,
+    Chapter5ReportBuildError,
+    Chapter5ReportBuilder,
+)
 from manual_coding_sim.prediction.chapter5_pipeline import (
     Chapter5PipelineRunReport,
     Chapter5PipelineRunReporter,
@@ -94,6 +98,8 @@ __all__ = [
     "Chapter5PipelineRunReporter",
     "Chapter5PriorFeatureDictionary",
     "Chapter5QualityWeights",
+    "Chapter5FinalReport",
+    "Chapter5ReportBuildError",
     "Chapter5ReportBuilder",
     "Chapter5UncertaintyConfig",
     "IntegralQualityCriterionReport",

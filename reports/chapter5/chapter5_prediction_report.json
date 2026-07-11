@@ -1,0 +1,156 @@
+{
+  "stage": 11,
+  "report_type": "chapter5_prediction_final_report",
+  "row_count": 150,
+  "source_artifacts": {
+    "leakage_report": "reports/chapter5/chapter5_leakage_report.json",
+    "normalized_prior_features": "reports/chapter5/normalized_prior_features.csv",
+    "normalization_report": "reports/chapter5/normalization_report.json",
+    "latent_quality_component": "reports/chapter5/latent_quality_component.csv",
+    "latent_quality_component_report": "reports/chapter5/latent_quality_component_report.json",
+    "q_pred_components": "reports/chapter5/q_pred_components.csv",
+    "q_pred_components_report": "reports/chapter5/q_pred_components_report.json",
+    "q_pred": "reports/chapter5/q_pred.csv",
+    "q_pred_report": "reports/chapter5/q_pred_report.json",
+    "prediction_uncertainty": "reports/chapter5/prediction_uncertainty.csv",
+    "prediction_uncertainty_report": "reports/chapter5/prediction_uncertainty_report.json",
+    "pipeline_run_report": "reports/chapter5/chapter5_pipeline_run_report.json"
+  },
+  "method_safety": {
+    "apriori_only": true,
+    "leakage_check_passed": true,
+    "forbidden_column_count": 0,
+    "forbidden_columns": [],
+    "full_pipeline_completed": true
+  },
+  "normalization_summary": {
+    "row_count": 150,
+    "input_column_count": 36,
+    "normalized_feature_count": 30,
+    "skipped_feature_count": 2,
+    "non_numeric_features": [
+      "prior_coding_tool_type",
+      "prior_condition_profile"
+    ],
+    "unknown_input_features": [],
+    "missing_dictionary_features": []
+  },
+  "latent_quality_summary": {
+    "row_count": 150,
+    "theta_columns": [
+      "theta_0",
+      "theta_1",
+      "theta_2"
+    ],
+    "factor_directions": {
+      "theta_0": -1.0,
+      "theta_1": -1.0,
+      "theta_2": 1.0
+    },
+    "q_latent_min": 0.01071998484504999,
+    "q_latent_max": 0.978029444383,
+    "q_latent_mean": 0.419521416158972,
+    "dominant_topic_counts": {
+      "theta_0": 34,
+      "theta_1": 46,
+      "theta_2": 70
+    }
+  },
+  "partial_criteria_summary": {
+    "row_count": 150,
+    "criteria": [
+      "q_acc",
+      "q_time",
+      "q_effort",
+      "q_res",
+      "q_rep",
+      "q_fit"
+    ],
+    "criterion_ranges": {
+      "q_acc": {
+        "min": 0.0039356107398475,
+        "max": 0.9291105930647074,
+        "mean": 0.4677022108758239
+      },
+      "q_time": {
+        "min": 0.0630734668876822,
+        "max": 0.9846888593891444,
+        "mean": 0.5528510437081169
+      },
+      "q_effort": {
+        "min": 0.034841050054388,
+        "max": 0.9219461278548444,
+        "mean": 0.507219082685219
+      },
+      "q_res": {
+        "min": 0.0684324736837219,
+        "max": 0.9607227870808877,
+        "mean": 0.4523257901718526
+      },
+      "q_rep": {
+        "min": 0.09928299393802,
+        "max": 0.9912117777532,
+        "mean": 0.5282752331302554
+      },
+      "q_fit": {
+        "min": 0.0822936613624341,
+        "max": 0.910859551629335,
+        "mean": 0.4846880512111956
+      }
+    }
+  },
+  "integral_quality_summary": {
+    "row_count": 150,
+    "criteria": [
+      "q_acc",
+      "q_time",
+      "q_effort",
+      "q_res",
+      "q_rep",
+      "q_fit"
+    ],
+    "weights": {
+      "q_acc": 0.1666666667,
+      "q_time": 0.1666666667,
+      "q_effort": 0.1666666667,
+      "q_res": 0.1666666667,
+      "q_rep": 0.1666666666,
+      "q_fit": 0.1666666666
+    },
+    "weight_sum": 1.0,
+    "q_pred_min": 0.10344477176221134,
+    "q_pred_max": 0.8893015161715213,
+    "q_pred_mean": 0.49884356862888296,
+    "q_pred_std": 0.2140675501390494
+  },
+  "uncertainty_summary": {
+    "row_count": 150,
+    "weight_sum": 1.0,
+    "delta": 0.15,
+    "mean_stability": 0.84885,
+    "input_missing_share": 0.0,
+    "uncertainty_score_min": 0.0994170991788137,
+    "uncertainty_score_max": 0.5386938309397353,
+    "uncertainty_score_mean": 0.28061051085478417,
+    "interval_radius_min": 0.014912564876822054,
+    "interval_radius_max": 0.0808040746409603,
+    "interval_radius_mean": 0.04209157662821762,
+    "q_pred_lower_min": 0.0484037742461704,
+    "q_pred_upper_max": 0.9265067247854647
+  },
+  "quality_class_counts": {
+    "low": 67,
+    "medium": 49,
+    "high": 34
+  },
+  "conclusion": {
+    "summary": "Априорный прогноз рассчитан для всех сценариев; значения Q_pred находятся в диапазоне [0.103445; 0.889302], среднее значение равно 0.498844.",
+    "recommended_use": "ранжирование альтернатив ручного кодирования до получения фактических результатов и выделение сценариев с повышенной неопределенностью",
+    "mean_uncertainty_score": 0.28061051085478417,
+    "quality_class_counts": {
+      "low": 67,
+      "medium": 49,
+      "high": 34
+    }
+  }
+}

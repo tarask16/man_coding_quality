@@ -1,0 +1,58 @@
+{
+  "stage": 11,
+  "base_stage": 10,
+  "target_stage": 11,
+  "description": "Delta-архив этапа 11: формирование итогового JSON- и Markdown-отчета главы 5.",
+  "excluded_inputs": [
+    "data/processed/prior_features.csv",
+    "reports/chapter4/theta_prior.csv",
+    "reports/chapter4/topic_interpretation.json"
+  ],
+  "files": [
+    {
+      "path": "src/manual_coding_sim/prediction/chapter5_report_builder.py",
+      "sha256": "de3db81c8cb212fd79a2bcf21ff26754380be93c1d9e345f29ff2c4b2f80ee99",
+      "size_bytes": 20919
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/chapter5_runner.py",
+      "sha256": "79eeae40dfdec68ea4464292908e691ec00a672bb4410508397b67d5c2ee2fb6",
+      "size_bytes": 23058
+    },
+    {
+      "path": "src/manual_coding_sim/prediction/__init__.py",
+      "sha256": "863a9c605d2a4ed45f7ad32289c4b53fc3d69ebf97986c0fe33835e5e8714d62",
+      "size_bytes": 4475
+    },
+    {
+      "path": "tests/prediction/test_chapter5_report_builder.py",
+      "sha256": "ee5fa05f9faf17d321854f690a4063ed9ffa739054b4665db3a1fa9ef01dc4c4",
+      "size_bytes": 6115
+    },
+    {
+      "path": "tests/prediction/test_chapter5_runner.py",
+      "sha256": "249818cdbe211bc70a5932948ae4d29e599d1e8be5179d5ce9e95117421bf310",
+      "size_bytes": 7497
+    },
+    {
+      "path": "reports/chapter5/chapter5_prediction_report.json",
+      "sha256": "2a078aa3e550a91aa6233ad58963fc95d5d298f539e6598ecb8c73e5ee31308c",
+      "size_bytes": 4851
+    },
+    {
+      "path": "reports/chapter5/chapter5_prediction_report.md",
+      "sha256": "284bd4d99928647d8660cda2d145dcda96fd74aae10b1111761dc1a67903540d",
+      "size_bytes": 3178
+    },
+    {
+      "path": "reports/chapter5/stage11_report_builder_report.md",
+      "sha256": "5680ad4b6d6405933498fdee2e4b6b2ffb0b4e0a9e6d8635c696714ac2b0579c",
+      "size_bytes": 2727
+    },
+    {
+      "path": "reports/chapter5/stage11_hashes.txt",
+      "sha256": "636e3c93c5b4ce852ad60044bcdba4a02e991bd824ca594b3e81565e422282b7",
+      "size_bytes": 805
+    }
+  ]
+}

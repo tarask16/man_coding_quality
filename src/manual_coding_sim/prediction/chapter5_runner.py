@@ -5,6 +5,7 @@ Runner умеет проверять конфигурацию и входные 
 таблицы ``normalized_prior_features.csv`` и отчета ``normalization_report.json``.
 Этап 9 добавляет интервальную оценку неопределенности прогноза ``Q_pred``.
 Этап 10 завершает CLI-контур единым флагом полного запуска.
+Этап 11 добавляет формирование итогового JSON- и Markdown-отчета.
 """
 
 from __future__ import annotations
@@ -29,6 +30,11 @@ from manual_coding_sim.prediction.chapter5_leakage_guard import (
 from manual_coding_sim.prediction.chapter5_pipeline import (
     Chapter5PipelineRunReport,
     Chapter5PipelineRunReporter,
+)
+from manual_coding_sim.prediction.chapter5_report_builder import (
+    Chapter5FinalReport,
+    Chapter5ReportBuilder,
+    Chapter5ReportBuildError,
 )
 from manual_coding_sim.prediction.integral_quality_predictor import (
     IntegralQualityPredictionResult,
@@ -106,6 +112,11 @@ def build_arg_parser() -> argparse.ArgumentParser:
             "Выполнить полный контур главы 5: проверку входов, нормировку, "
             "Q_lat, частные критерии, Q_pred и интервальную оценку."
         ),
+    )
+    parser.add_argument(
+        "--build-report",
+        action="store_true",
+        help="Сформировать итоговый JSON- и Markdown-отчет главы 5.",
     )
     return parser
 
@@ -219,7 +230,14 @@ def main(argv: Sequence[str] | None = None) -> int:
             q_pred_result,
             uncertainty_result,
         )
-    elif not args.calculate_q_pred:
+
+    if args.build_report:
+        try:
+            _build_final_report(project_root, config)
+        except Chapter5ReportBuildError as error:
+            print(f"Итоговый отчет главы 5 не сформирован: {error}")
+            return 1
+    elif not args.calculate_q_pred and not args.run_full_pipeline:
         print(
             "Расчет Q_pred не выполнялся: интегральный показатель "
             "будет реализован на следующих этапах."
@@ -489,6 +507,28 @@ def _save_pipeline_run_report(
     reporter.save_report(report, report_path)
     print("Полный контур главы 5: выполнен.")
     print(f"Отчет полного CLI-запуска сохранен: {report_path}")
+    return report
+
+
+def _build_final_report(
+    project_root: Path,
+    config: Chapter5PredictionConfig,
+) -> Chapter5FinalReport:
+    """Сформировать и сохранить итоговый отчет главы 5."""
+
+    builder = Chapter5ReportBuilder()
+    report = builder.build_report(config=config, project_root=project_root)
+    json_path = resolve_project_path(project_root, config.outputs.report_json_path)
+    markdown_path = resolve_project_path(project_root, config.outputs.report_md_path)
+    builder.save_outputs(
+        report,
+        json_report_path=json_path,
+        markdown_report_path=markdown_path,
+    )
+    print("Итоговый отчет главы 5: сформирован.")
+    print(f"Строк итогового отчета: {report.row_count}")
+    print(f"JSON-отчет главы 5 сохранен: {json_path}")
+    print(f"Markdown-отчет главы 5 сохранен: {markdown_path}")
     return report
 
 

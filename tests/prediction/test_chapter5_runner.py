@@ -25,9 +25,10 @@ def test_chapter5_runner_arg_parser() -> None:
     assert args.project_root == "/project"
     assert args.config == "configs/chapter5.yaml"
 
-    full_args = parser.parse_args(["--run-full-pipeline"])
+    full_args = parser.parse_args(["--run-full-pipeline", "--build-report"])
 
     assert full_args.run_full_pipeline is True
+    assert full_args.build_report is True
 
 
 def test_chapter5_runner_outputs_russian_message(capsys) -> None:
@@ -178,3 +179,31 @@ def test_chapter5_runner_runs_full_pipeline(capsys) -> None:
     assert all(report["completed_steps"].values())
     assert report["row_counts"]["q_pred"] == 150
     assert report["row_counts"]["prediction_uncertainty"] == 150
+
+
+def test_chapter5_runner_builds_final_report(capsys) -> None:
+    """Runner этапа 11 должен формировать итоговый отчет главы 5."""
+
+    exit_code = main(
+        [
+            "--project-root",
+            str(PROJECT_ROOT),
+            "--config",
+            "configs/chapter5.yaml",
+            "--run-full-pipeline",
+            "--build-report",
+        ]
+    )
+
+    captured = capsys.readouterr()
+    json_path = PROJECT_ROOT / "reports/chapter5/chapter5_prediction_report.json"
+    markdown_path = PROJECT_ROOT / "reports/chapter5/chapter5_prediction_report.md"
+    assert exit_code == 0
+    assert "Итоговый отчет главы 5: сформирован" in captured.out
+    assert json_path.exists()
+    assert markdown_path.exists()
+
+    report = json.loads(json_path.read_text(encoding="utf-8"))
+    assert report["stage"] == 11
+    assert report["row_count"] == 150
+    assert report["method_safety"]["apriori_only"] is True
