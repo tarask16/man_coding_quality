@@ -46,6 +46,10 @@ from manual_coding_sim.validation.partial_criteria_validator import (
     PartialCriteriaValidationError,
     PartialCriteriaValidator,
 )
+from manual_coding_sim.validation.prediction_error_analyzer import (
+    PredictionErrorAnalysisError,
+    PredictionErrorAnalyzer,
+)
 from manual_coding_sim.validation.validation_dataset_builder import (
     ValidationDatasetBuildError,
     ValidationDatasetBuilder,
@@ -139,6 +143,13 @@ def build_arg_parser() -> argparse.ArgumentParser:
             "парных разностей моделей на этапе 10."
         ),
     )
+    parser.add_argument(
+        "--analyze-prediction-errors",
+        action="store_true",
+        help=(
+            "Выполнить диагностический анализ ошибок прогноза на этапе 11."
+        ),
+    )
     return parser
 
 
@@ -168,6 +179,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             args.validate_interval_prediction,
             args.compare_baselines,
             args.bootstrap_analysis,
+            args.analyze_prediction_errors,
         )
     ):
         print(
@@ -175,8 +187,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             "--validate-inputs, --build-validation-dataset, "
             "--validate-integral-quality, --calculate-integral-metrics, "
             "--validate-partial-criteria, --validate-classification, "
-            "--validate-interval-prediction, --compare-baselines или "
-            "--bootstrap-analysis."
+            "--validate-interval-prediction, --compare-baselines, "
+            "--bootstrap-analysis или --analyze-prediction-errors."
         )
         return 0
 
@@ -604,6 +616,71 @@ def main(argv: Sequence[str] | None = None) -> int:
 
         print(
             "Этап 10 выполнен. Переход к этапу 11 требует "
+            "отдельного подтверждения."
+        )
+
+    if args.analyze_prediction_errors:
+        try:
+            error_result = PredictionErrorAnalyzer(
+                config=config,
+                project_root=project_root,
+            ).analyze_and_save(dataset=active_dataset)
+        except (
+            FileNotFoundError,
+            OSError,
+            PredictionErrorAnalysisError,
+            TypeError,
+            ValueError,
+        ) as error:
+            print(f"Ошибка диагностического анализа ошибок прогноза: {error}")
+            return 1
+
+        error_summary = error_result.report["summary"]
+        uncertainty_relation = error_result.report["uncertainty_relation"]
+        strongest_relation = error_summary[
+            "strongest_diagnostic_absolute_error_relation"
+        ]
+        print("Анализ ошибок априорного прогноза завершен.")
+        print(f"Сценариев: {error_result.report['row_count']}")
+        print(f"Сценариев в top-10: {error_result.report['top_error_count']}")
+        print(
+            "Максимальная абсолютная ошибка: "
+            f"{error_summary['max_absolute_error']:.10f}"
+        )
+        print(
+            "Занижений / завышений: "
+            f"{error_summary['underestimation_count']} / "
+            f"{error_summary['overestimation_count']}"
+        )
+        print(
+            "Spearman неопределенности с абсолютной ошибкой: "
+            f"{uncertainty_relation['spearman_absolute_error']:.10f}"
+        )
+        print(
+            "Наиболее сильная диагностическая связь: "
+            f"{strongest_relation['variable']} = "
+            f"{strongest_relation['spearman']:.10f}"
+        )
+        print(
+            "Наибольшая MAE по доминирующему фактору: "
+            f"{error_summary['worst_dominant_factor_by_mae']} = "
+            f"{error_summary['worst_dominant_factor_mae']:.10f}"
+        )
+        if error_result.top_errors_path is not None:
+            print(f"Top-10 ошибок: {error_result.top_errors_path}")
+        if error_result.group_analysis_path is not None:
+            print(f"Групповой анализ: {error_result.group_analysis_path}")
+        if error_result.json_path is not None:
+            print(f"JSON-отчет: {error_result.json_path}")
+        if error_result.markdown_path is not None:
+            print(f"Markdown-отчет: {error_result.markdown_path}")
+
+        if not error_result.passed:
+            print("Этап 11 не пройден: результаты анализа ошибок некорректны.")
+            return 1
+
+        print(
+            "Этап 11 выполнен. Переход к этапу 12 требует "
             "отдельного подтверждения."
         )
 

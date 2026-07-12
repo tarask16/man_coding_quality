@@ -1,0 +1,32 @@
+{
+  "stage": 11,
+  "name": "Диагностический анализ ошибок априорного прогноза",
+  "archive": "chapter6_stage11_error_analysis.zip",
+  "created_files": [
+    "src/manual_coding_sim/validation/prediction_error_analyzer.py",
+    "tests/validation/test_prediction_error_analyzer.py",
+    "README_STAGE11.md",
+    "STAGE11_MANIFEST.json"
+  ],
+  "modified_files": [
+    "src/manual_coding_sim/validation/chapter6_runner.py"
+  ],
+  "generated_artifacts": [
+    "reports/chapter6/top_prediction_errors.csv",
+    "reports/chapter6/error_group_analysis.csv",
+    "reports/chapter6/prediction_error_analysis.json",
+    "reports/chapter6/prediction_error_analysis.md"
+  ],
+  "cli_flag": "--analyze-prediction-errors",
+  "tests": {
+    "stage11": 18,
+    "validation_total": 139,
+    "full_regression_total": 456
+  },
+  "constraints": {
+    "chapter5_prediction_frozen": true,
+    "quality_thresholds_frozen": true,
+    "factual_values_external_validation_only": true,
+    "python_comments_and_docstrings_language": "ru"
+  }
+}
