@@ -1,0 +1,68 @@
+{
+  "dataset_role": "synthetic_positive_and_null_methodological_controls",
+  "not_empirical_evidence": true,
+  "positive_control_test": {
+    "row_count": 120,
+    "class_distribution": {
+      "low": 44,
+      "medium": 40,
+      "high": 36
+    },
+    "chapter5_model": {
+      "mae": 0.020222214283398734,
+      "rmse": 0.02530018773688501,
+      "spearman": 0.9888672824501702,
+      "kendall": 0.9137254901960784,
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "macro_f1": 1.0
+    },
+    "prior_only_baseline": {
+      "mae": 0.09637372224427819,
+      "rmse": 0.11942470638957985,
+      "spearman": 0.9155288561705675,
+      "kendall": 0.7492997198879552,
+      "accuracy": 0.7416666666666667,
+      "balanced_accuracy": 0.7423400673400673,
+      "macro_f1": 0.7384669817618628
+    },
+    "bootstrap_summary": {
+      "stable_chapter5_wins": 18,
+      "stable_baseline_wins": 0,
+      "no_stable_difference": 0,
+      "comparison_count": 18
+    }
+  },
+  "null_control_test": {
+    "row_count": 120,
+    "class_distribution": {
+      "low": 45,
+      "medium": 19,
+      "high": 56
+    },
+    "chapter5_model": {
+      "mae": 0.10021652711408947,
+      "rmse": 0.12458999895258699,
+      "spearman": 0.9071046600458366,
+      "kendall": 0.7198879551820728,
+      "accuracy": 0.85,
+      "balanced_accuracy": 0.8478975215817321,
+      "macro_f1": 0.8155992844364937
+    },
+    "prior_only_baseline": {
+      "mae": 0.0240713098376071,
+      "rmse": 0.030346547555493316,
+      "spearman": 0.9903465518438781,
+      "kendall": 0.9193277310924369,
+      "accuracy": 0.975,
+      "balanced_accuracy": 0.9676413255360624,
+      "macro_f1": 0.9631230193027948
+    },
+    "bootstrap_summary": {
+      "stable_chapter5_wins": 12,
+      "stable_baseline_wins": 6,
+      "no_stable_difference": 0,
+      "comparison_count": 18
+    }
+  }
+}

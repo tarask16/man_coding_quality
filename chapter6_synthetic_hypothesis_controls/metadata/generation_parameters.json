@@ -1,0 +1,18 @@
+{
+  "dataset_type": "synthetic_methodological_controls",
+  "not_empirical_evidence": true,
+  "row_count_per_control": 600,
+  "generation_seed": 20260712,
+  "quality_thresholds": {
+    "low_max": 0.45,
+    "high_min": 0.7
+  },
+  "positive_control": {
+    "latent_contribution_in_ground_truth": true,
+    "purpose": "Проверка способности метода обнаруживать известный вклад LDA."
+  },
+  "null_control": {
+    "latent_contribution_in_ground_truth": false,
+    "purpose": "Проверка отсутствия ложного подтверждения при нулевом эффекте."
+  }
+}
