@@ -1,0 +1,20 @@
+extended_corpus:
+  overwrite: true
+  plan:
+    document_count: 150
+    random_seed: 20260709
+    protocols_per_scenario: 1
+  output:
+    data_dir: data/processed
+    reports_dir: reports/chapter3
+    protocols: data/processed/protocols.csv
+    prior_features: data/processed/prior_features.csv
+    diagnostic_features: data/processed/diagnostic_features.csv
+    fact_features: data/processed/fact_features.csv
+    quality_targets: data/processed/quality_targets.csv
+    all_features: data/processed/all_features.csv
+    summary_json: reports/chapter3/extended_corpus_summary.json
+    summary_md: reports/chapter3/extended_corpus_summary.md
+  metadata:
+    purpose: "Расширенный корпус для финального запуска главы 4"
+    generated_by: "manual_coding_sim.experiments.extended_corpus_cli"

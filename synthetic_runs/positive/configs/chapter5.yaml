@@ -1,0 +1,44 @@
+# Конфигурация программного блока главы 5.
+# Пути указаны относительно корня проекта.
+
+input:
+  prior_features: data/processed/prior_features.csv
+  theta_prior: reports/chapter4/theta_prior.csv
+  topic_interpretation: reports/chapter4/topic_interpretation.json
+
+output:
+  reports_dir: reports/chapter5
+  q_pred: reports/chapter5/q_pred.csv
+  q_pred_report: reports/chapter5/q_pred_report.json
+  q_pred_components: reports/chapter5/q_pred_components.csv
+  q_pred_components_report: reports/chapter5/q_pred_components_report.json
+  normalized_prior_features: reports/chapter5/normalized_prior_features.csv
+  normalization_report: reports/chapter5/normalization_report.json
+  latent_quality_component: reports/chapter5/latent_quality_component.csv
+  latent_quality_component_report: reports/chapter5/latent_quality_component_report.json
+  prediction_uncertainty: reports/chapter5/prediction_uncertainty.csv
+  prediction_uncertainty_report: reports/chapter5/prediction_uncertainty_report.json
+  report_json: reports/chapter5/chapter5_prediction_report.json
+  report_md: reports/chapter5/chapter5_prediction_report.md
+  pipeline_run_report: reports/chapter5/chapter5_pipeline_run_report.json
+  acceptance_report_json: reports/chapter5/chapter5_acceptance_report.json
+  acceptance_report_md: reports/chapter5/chapter5_acceptance_report.md
+
+config_files:
+  quality_weights: configs/chapter5_quality_weights.yaml
+  feature_weights: configs/chapter5_feature_weights.yaml
+  factor_directions: configs/chapter5_factor_directions.yaml
+  uncertainty: configs/chapter5_uncertainty.yaml
+  decision_thresholds: configs/chapter5_decision_thresholds.yaml
+  prior_feature_dictionary: data/schema/prior_feature_dictionary.yaml
+
+model:
+  expected_topic_count: 3
+  expected_theta_columns: [theta_0, theta_1, theta_2]
+
+safety:
+  forbid_fact_features: true
+  forbid_quality_targets: true
+
+runner:
+  overwrite: true

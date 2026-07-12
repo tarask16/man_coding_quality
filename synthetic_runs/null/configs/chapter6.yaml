@@ -1,0 +1,40 @@
+inputs:
+  q_pred_path: reports/chapter5/q_pred.csv
+  q_pred_components_path: reports/chapter5/q_pred_components.csv
+  prediction_uncertainty_path: reports/chapter5/prediction_uncertainty.csv
+  chapter5_prediction_report_path: reports/chapter5/chapter5_prediction_report.json
+  chapter5_acceptance_report_path: reports/chapter5/chapter5_acceptance_report.json
+  normalized_prior_features_path: reports/chapter5/normalized_prior_features.csv
+  latent_quality_component_path: reports/chapter5/latent_quality_component.csv
+  theta_prior_path: reports/chapter4/theta_prior.csv
+  quality_targets_path: data/processed/quality_targets.csv
+  fact_features_path: data/processed/fact_features.csv
+
+outputs:
+  output_dir: reports/chapter6
+  input_validation_report_json_path: reports/chapter6/chapter6_input_validation_report.json
+  input_validation_report_md_path: reports/chapter6/chapter6_input_validation_report.md
+
+merge:
+  key_columns:
+    - scenario_id
+    - protocol_id
+  validation: one_to_one
+  expected_row_count: 120
+
+decision_thresholds:
+  low_max: 0.45
+  high_min: 0.70
+
+bootstrap:
+  resamples: 1000
+  confidence_level: 0.95
+  random_seed: 42
+  sampling_unit: scenario_id
+
+input_validation:
+  q_pred_tolerance: 1.0e-10
+  require_finite_values: true
+  require_unit_interval: true
+  require_key_alignment: true
+  require_all_acceptance_checks: true

@@ -1,0 +1,11 @@
+# Параметры расчета неопределенности прогноза главы 5.
+# uncertainty_weights должны суммироваться в 1.
+
+uncertainty:
+  delta: 0.15
+  mean_stability: 0.84885
+  min_stability: 0.808418
+  uncertainty_weights:
+    theta_entropy: 0.5
+    lda_stability: 0.3
+    input_quality: 0.2
