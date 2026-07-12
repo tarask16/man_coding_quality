@@ -1088,8 +1088,8 @@
     {
       "name": "bootstrap",
       "path": "reports\\chapter6\\bootstrap_report.json",
-      "sha256": "f604bea944cd5632d45feee1837d4ab4f176dc262eb47ff1e833f3b486643b28",
-      "size_bytes": 25037
+      "sha256": "125c0062cfa7568ac341f3eec87bc6c01889a1f034ec5da66e5b1039b97ec424",
+      "size_bytes": 25036
     },
     {
       "name": "error_analysis",
