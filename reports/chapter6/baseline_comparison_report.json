@@ -1,0 +1,239 @@
+{
+  "stage": 9,
+  "report_type": "baseline_model_comparison",
+  "passed": true,
+  "row_count": 150,
+  "expected_row_count": 150,
+  "model_order": [
+    "mean_baseline",
+    "prior_only_baseline",
+    "theta_only_baseline",
+    "chapter5_model"
+  ],
+  "quality_weights": {
+    "q_acc": 0.1666666667,
+    "q_time": 0.1666666667,
+    "q_effort": 0.1666666667,
+    "q_res": 0.1666666667,
+    "q_rep": 0.1666666666,
+    "q_fit": 0.1666666666
+  },
+  "quality_weights_source": "configs\\chapter5_quality_weights.yaml",
+  "mean_baseline": {
+    "strategy": "deterministic_shuffled_out_of_fold_mean",
+    "requested_fold_count": 5,
+    "actual_fold_count": 5,
+    "random_seed": 42,
+    "folds": [
+      {
+        "fold_id": 0,
+        "test_count": 30,
+        "training_count": 120,
+        "training_mean": 0.6511737916666667
+      },
+      {
+        "fold_id": 1,
+        "test_count": 30,
+        "training_count": 120,
+        "training_mean": 0.6465052583333334
+      },
+      {
+        "fold_id": 2,
+        "test_count": 30,
+        "training_count": 120,
+        "training_mean": 0.6493535833333333
+      },
+      {
+        "fold_id": 3,
+        "test_count": 30,
+        "training_count": 120,
+        "training_mean": 0.6464784916666667
+      },
+      {
+        "fold_id": 4,
+        "test_count": 30,
+        "training_count": 120,
+        "training_mean": 0.6476999416666666
+      }
+    ]
+  },
+  "methodology": {
+    "mean_baseline": "Для каждой строки используется среднее q_fact только по обучающим fold; цели текущего fold исключены.",
+    "prior_only_baseline": "Шесть q_*_feature_component агрегируются фиксированными весами качества главы 5 без использования q_latent.",
+    "theta_only_baseline": "Используется неизменная латентная компонента q_latent.",
+    "chapter5_model": "Используется неизменный интегральный прогноз q_pred главы 5."
+  },
+  "leakage_checks": {
+    "mean_baseline_is_out_of_fold": true,
+    "test_fold_targets_excluded_from_training_mean": true,
+    "prior_only_uses_q_fact": false,
+    "theta_only_uses_q_fact": false,
+    "chapter5_prediction_unchanged": true
+  },
+  "metrics": [
+    {
+      "model": "mean_baseline",
+      "description": "Out-of-fold среднее фактического качества",
+      "mae": 0.09722685733333333,
+      "rmse": 0.11290290886798957,
+      "bias": -1.628327102783563e-17,
+      "median_absolute_error": 0.09491060000000001,
+      "max_absolute_error": 0.27248120833333334,
+      "pearson": -0.06394548057809361,
+      "spearman": -0.07174442724917014,
+      "kendall": -0.05125285924134016,
+      "r2": -0.002300076273579199,
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.26666666666666666,
+      "weighted_f1": 0.5333333333333333,
+      "prediction_mean": 0.6482422133333334,
+      "prediction_std": 0.0018088752197625642,
+      "predicted_low_count": 0,
+      "predicted_medium_count": 150,
+      "predicted_high_count": 0
+    },
+    {
+      "model": "prior_only_baseline",
+      "description": "Только априорные feature-компоненты без LDA",
+      "mae": 0.11182212466744895,
+      "rmse": 0.13211309386475656,
+      "bias": -0.10771008772152825,
+      "median_absolute_error": 0.11045477939199003,
+      "max_absolute_error": 0.30971996800451845,
+      "pearson": 0.8482473879070187,
+      "spearman": 0.8590515134005956,
+      "kendall": 0.6665771812080536,
+      "r2": -0.3723953152466415,
+      "accuracy": 0.5133333333333333,
+      "balanced_accuracy": 0.6456462585034013,
+      "macro_f1": 0.3931547300596369,
+      "weighted_f1": 0.5804602705491541,
+      "prediction_mean": 0.5405321256118051,
+      "prediction_std": 0.1439457092565406,
+      "predicted_low_count": 42,
+      "predicted_medium_count": 91,
+      "predicted_high_count": 17
+    },
+    {
+      "model": "theta_only_baseline",
+      "description": "Только латентная компонента q_latent",
+      "mae": 0.3041245324865814,
+      "rmse": 0.36054419164092977,
+      "bias": -0.22872079717436142,
+      "median_absolute_error": 0.24346234853055004,
+      "max_absolute_error": 0.6363587504629,
+      "pearson": 0.8643067885365794,
+      "spearman": 0.8666891861860527,
+      "kendall": 0.6774944071588367,
+      "r2": -9.221261693560972,
+      "accuracy": 0.34,
+      "balanced_accuracy": 0.6248979591836735,
+      "macro_f1": 0.3430737205922784,
+      "weighted_f1": 0.4039629236872079,
+      "prediction_mean": 0.419521416158972,
+      "prediction_std": 0.37158801534558367,
+      "predicted_low_count": 81,
+      "predicted_medium_count": 26,
+      "predicted_high_count": 43
+    },
+    {
+      "model": "chapter5_model",
+      "description": "Неизменный интегральный прогноз главы 5",
+      "mae": 0.15924416685631146,
+      "rmse": 0.19440271102220305,
+      "bias": -0.14939864470445038,
+      "median_absolute_error": 0.1452399879442813,
+      "max_absolute_error": 0.37666320802262926,
+      "pearson": 0.8920527352062814,
+      "spearman": 0.881768967509667,
+      "kendall": 0.6993288590604027,
+      "r2": -1.9716122140335437,
+      "accuracy": 0.44666666666666666,
+      "balanced_accuracy": 0.6678231292517007,
+      "macro_f1": 0.42251516924389226,
+      "weighted_f1": 0.5552571279987696,
+      "prediction_mean": 0.49884356862888296,
+      "prediction_std": 0.2147846963694056,
+      "predicted_low_count": 67,
+      "predicted_medium_count": 49,
+      "predicted_high_count": 34
+    }
+  ],
+  "best_models": {
+    "mae": {
+      "model": "mean_baseline",
+      "value": 0.09722685733333333,
+      "direction": "min"
+    },
+    "rmse": {
+      "model": "mean_baseline",
+      "value": 0.11290290886798957,
+      "direction": "min"
+    },
+    "absolute_bias": {
+      "model": "mean_baseline",
+      "value": 1.628327102783563e-17,
+      "direction": "min"
+    },
+    "spearman": {
+      "model": "chapter5_model",
+      "value": 0.881768967509667,
+      "direction": "max"
+    },
+    "kendall": {
+      "model": "chapter5_model",
+      "value": 0.6993288590604027,
+      "direction": "max"
+    },
+    "accuracy": {
+      "model": "mean_baseline",
+      "value": 0.6666666666666666,
+      "direction": "max"
+    },
+    "balanced_accuracy": {
+      "model": "chapter5_model",
+      "value": 0.6678231292517007,
+      "direction": "max"
+    },
+    "macro_f1": {
+      "model": "chapter5_model",
+      "value": 0.42251516924389226,
+      "direction": "max"
+    }
+  },
+  "chapter5_differences": [
+    {
+      "baseline": "mean_baseline",
+      "delta_mae_chapter5_minus_baseline": 0.062017309522978126,
+      "delta_rmse_chapter5_minus_baseline": 0.08149980215421349,
+      "delta_spearman_chapter5_minus_baseline": 0.9535133947588372,
+      "delta_kendall_chapter5_minus_baseline": 0.7505817183017428,
+      "delta_accuracy_chapter5_minus_baseline": -0.21999999999999997,
+      "delta_macro_f1_chapter5_minus_baseline": 0.1558485025772256
+    },
+    {
+      "baseline": "prior_only_baseline",
+      "delta_mae_chapter5_minus_baseline": 0.04742204218886251,
+      "delta_rmse_chapter5_minus_baseline": 0.06228961715744649,
+      "delta_spearman_chapter5_minus_baseline": 0.022717454109071444,
+      "delta_kendall_chapter5_minus_baseline": 0.032751677852349004,
+      "delta_accuracy_chapter5_minus_baseline": -0.06666666666666665,
+      "delta_macro_f1_chapter5_minus_baseline": 0.02936043918425535
+    },
+    {
+      "baseline": "theta_only_baseline",
+      "delta_mae_chapter5_minus_baseline": -0.14488036563026993,
+      "delta_rmse_chapter5_minus_baseline": -0.16614148061872672,
+      "delta_spearman_chapter5_minus_baseline": 0.015079781323614316,
+      "delta_kendall_chapter5_minus_baseline": 0.021834451901565965,
+      "delta_accuracy_chapter5_minus_baseline": 0.10666666666666663,
+      "delta_macro_f1_chapter5_minus_baseline": 0.07944144865161384
+    }
+  ],
+  "interpretation": {
+    "mae_rmse": "Меньшие значения характеризуют более точное воспроизведение абсолютной шкалы качества.",
+    "rank_metrics": "Большие Spearman и Kendall характеризуют лучшее сохранение порядка сценариев по качеству.",
+    "classification": "Accuracy следует интерпретировать совместно с Balanced Accuracy и Macro F1 из-за дисбаланса классов."
+  }
+}

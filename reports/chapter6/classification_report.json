@@ -1,0 +1,104 @@
+{
+  "stage": 7,
+  "report_type": "classification_validation",
+  "passed": true,
+  "row_count": 150,
+  "expected_row_count": 150,
+  "class_labels": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "thresholds": {
+    "low": "Q < 0.45",
+    "medium": "0.45 <= Q < 0.7",
+    "high": "Q >= 0.7",
+    "low_max": 0.45,
+    "high_min": 0.7
+  },
+  "metrics": {
+    "accuracy": 0.44666666666666666,
+    "balanced_accuracy": 0.6678231292517007,
+    "macro_f1": 0.42251516924389226,
+    "weighted_f1": 0.5552571279987696
+  },
+  "per_class_metrics": [
+    {
+      "class_label": "low",
+      "precision": 0.014925373134328358,
+      "recall": 1.0,
+      "f1": 0.029411764705882353,
+      "support": 1,
+      "predicted_count": 67,
+      "true_positive": 1,
+      "false_positive": 66,
+      "false_negative": 0
+    },
+    {
+      "class_label": "medium",
+      "precision": 0.673469387755102,
+      "recall": 0.33,
+      "f1": 0.4429530201342282,
+      "support": 100,
+      "predicted_count": 49,
+      "true_positive": 33,
+      "false_positive": 16,
+      "false_negative": 67
+    },
+    {
+      "class_label": "high",
+      "precision": 0.9705882352941176,
+      "recall": 0.673469387755102,
+      "f1": 0.7951807228915663,
+      "support": 49,
+      "predicted_count": 34,
+      "true_positive": 33,
+      "false_positive": 1,
+      "false_negative": 16
+    }
+  ],
+  "predicted_class_distribution": {
+    "low": 67,
+    "medium": 49,
+    "high": 34
+  },
+  "factual_class_distribution": {
+    "low": 1,
+    "medium": 100,
+    "high": 49
+  },
+  "critical_errors": {
+    "low_to_high": 0,
+    "high_to_low": 0,
+    "total": 0
+  },
+  "error_directions": {
+    "correct": 67,
+    "high->medium": 16,
+    "medium->high": 1,
+    "medium->low": 66
+  },
+  "confusion_matrix": {
+    "low": {
+      "low": 1,
+      "medium": 0,
+      "high": 0
+    },
+    "medium": {
+      "low": 66,
+      "medium": 33,
+      "high": 1
+    },
+    "high": {
+      "low": 0,
+      "medium": 16,
+      "high": 33
+    }
+  },
+  "interpretation": {
+    "balanced_accuracy": "Средняя полнота по трем фактическим классам; применяется вместе с Accuracy из-за выраженного дисбаланса классов.",
+    "macro_f1": "Среднее F1 без учета размера классов; каждый класс имеет одинаковый вклад.",
+    "critical_errors": "low->high означает опасное завышение качества, high->low — сильное занижение качества."
+  },
+  "methodological_note": "Пороговые значения полностью совпадают с главой 5 и не корректируются по фактическим классам. Фактические данные используются только для внешней классификационной проверки."
+}

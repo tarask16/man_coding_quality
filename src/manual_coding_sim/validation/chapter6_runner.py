@@ -7,6 +7,15 @@ import json
 from pathlib import Path
 from typing import Sequence
 
+from manual_coding_sim.validation.baseline_models import (
+    BaselineComparisonError,
+    BaselineComparisonResult,
+    BaselineModelsValidator,
+)
+from manual_coding_sim.validation.bootstrap_analysis import (
+    BootstrapAnalysisError,
+    BootstrapAnalysisValidator,
+)
 from manual_coding_sim.validation.chapter6_config import (
     Chapter6ConfigError,
     Chapter6ValidationConfig,
@@ -17,9 +26,17 @@ from manual_coding_sim.validation.chapter6_data_loader import (
     Chapter6DataLoader,
     Chapter6LoadedInputs,
 )
+from manual_coding_sim.validation.classification_validator import (
+    ClassificationValidationError,
+    ClassificationValidator,
+)
 from manual_coding_sim.validation.integral_prediction_validator import (
     IntegralPredictionValidationError,
     IntegralPredictionValidator,
+)
+from manual_coding_sim.validation.interval_prediction_validator import (
+    IntervalPredictionValidationError,
+    IntervalPredictionValidator,
 )
 from manual_coding_sim.validation.integral_quality_validator import (
     IntegralQualityValidationError,
@@ -92,6 +109,36 @@ def build_arg_parser() -> argparse.ArgumentParser:
             "Проверить шесть частных прогнозных критериев на этапе 6."
         ),
     )
+    parser.add_argument(
+        "--validate-classification",
+        action="store_true",
+        help=(
+            "Проверить классификацию уровней качества на этапе 7."
+        ),
+    )
+    parser.add_argument(
+        "--validate-interval-prediction",
+        action="store_true",
+        help=(
+            "Проверить покрытие и ширину прогнозных интервалов на этапе 8."
+        ),
+    )
+    parser.add_argument(
+        "--compare-baselines",
+        action="store_true",
+        help=(
+            "Сравнить модель главы 5 с mean, prior-only и theta-only "
+            "baseline на этапе 9."
+        ),
+    )
+    parser.add_argument(
+        "--bootstrap-analysis",
+        action="store_true",
+        help=(
+            "Рассчитать bootstrap-доверительные интервалы метрик и "
+            "парных разностей моделей на этапе 10."
+        ),
+    )
     return parser
 
 
@@ -117,13 +164,19 @@ def main(argv: Sequence[str] | None = None) -> int:
             args.validate_integral_quality,
             args.calculate_integral_metrics,
             args.validate_partial_criteria,
+            args.validate_classification,
+            args.validate_interval_prediction,
+            args.compare_baselines,
+            args.bootstrap_analysis,
         )
     ):
         print(
             "Расчетные этапы не выполнялись. Используйте флаг "
             "--validate-inputs, --build-validation-dataset, "
-            "--validate-integral-quality, --calculate-integral-metrics "
-            "или --validate-partial-criteria."
+            "--validate-integral-quality, --calculate-integral-metrics, "
+            "--validate-partial-criteria, --validate-classification, "
+            "--validate-interval-prediction, --compare-baselines или "
+            "--bootstrap-analysis."
         )
         return 0
 
@@ -246,50 +299,314 @@ def main(argv: Sequence[str] | None = None) -> int:
             "отдельного подтверждения."
         )
 
-    if not args.validate_partial_criteria:
-        return 0
+    if args.validate_partial_criteria:
+        try:
+            partial_result = PartialCriteriaValidator(
+                config=config,
+                project_root=project_root,
+            ).validate_and_save(dataset=active_dataset)
+        except (
+            FileNotFoundError,
+            OSError,
+            PartialCriteriaValidationError,
+            TypeError,
+            ValueError,
+        ) as error:
+            print(f"Ошибка проверки частных прогнозных критериев: {error}")
+            return 1
 
-    try:
-        partial_result = PartialCriteriaValidator(
-            config=config,
-            project_root=project_root,
-        ).validate_and_save(dataset=active_dataset)
-    except (
-        FileNotFoundError,
-        OSError,
-        PartialCriteriaValidationError,
-        TypeError,
-        ValueError,
-    ) as error:
-        print(f"Ошибка проверки частных прогнозных критериев: {error}")
-        return 1
+        summary = partial_result.report["summary"]
+        print("Проверка частных прогнозных критериев завершена.")
+        print(f"Сценариев: {partial_result.report['row_count']}")
+        print(f"Проверено критериев: {partial_result.report['criterion_count']}")
+        print(f"Среднее MAE: {summary['mean_mae']:.10f}")
+        print(f"Средний Spearman: {summary['mean_spearman']:.10f}")
+        print(
+            "Наименьший MAE: "
+            f"{summary['best_mae_criterion']} = {summary['best_mae']:.10f}"
+        )
+        print(
+            "Наибольший MAE: "
+            f"{summary['worst_mae_criterion']} = {summary['worst_mae']:.10f}"
+        )
+        if partial_result.csv_path is not None:
+            print(f"Таблица метрик: {partial_result.csv_path}")
+        if partial_result.json_path is not None:
+            print(f"JSON-отчет: {partial_result.json_path}")
+        if partial_result.markdown_path is not None:
+            print(f"Markdown-отчет: {partial_result.markdown_path}")
 
-    summary = partial_result.report["summary"]
-    print("Проверка частных прогнозных критериев завершена.")
-    print(f"Сценариев: {partial_result.report['row_count']}")
-    print(f"Проверено критериев: {partial_result.report['criterion_count']}")
-    print(f"Среднее MAE: {summary['mean_mae']:.10f}")
-    print(f"Средний Spearman: {summary['mean_spearman']:.10f}")
-    print(
-        "Наименьший MAE: "
-        f"{summary['best_mae_criterion']} = {summary['best_mae']:.10f}"
-    )
-    print(
-        "Наибольший MAE: "
-        f"{summary['worst_mae_criterion']} = {summary['worst_mae']:.10f}"
-    )
-    if partial_result.csv_path is not None:
-        print(f"Таблица метрик: {partial_result.csv_path}")
-    if partial_result.json_path is not None:
-        print(f"JSON-отчет: {partial_result.json_path}")
-    if partial_result.markdown_path is not None:
-        print(f"Markdown-отчет: {partial_result.markdown_path}")
+        if not partial_result.passed:
+            print("Этап 6 не пройден: рассчитаны некорректные метрики.")
+            return 1
 
-    if not partial_result.passed:
-        print("Этап 6 не пройден: рассчитаны некорректные метрики.")
-        return 1
+        print(
+            "Этап 6 выполнен. Переход к этапу 7 требует "
+            "отдельного подтверждения."
+        )
 
-    print("Этап 6 выполнен. Переход к этапу 7 требует отдельного подтверждения.")
+    if args.validate_classification:
+        try:
+            classification_result = ClassificationValidator(
+                config=config,
+                project_root=project_root,
+            ).validate_and_save(dataset=active_dataset)
+        except (
+            FileNotFoundError,
+            OSError,
+            ClassificationValidationError,
+            TypeError,
+            ValueError,
+        ) as error:
+            print(f"Ошибка проверки классификации уровней качества: {error}")
+            return 1
+
+        classification_metrics = classification_result.report["metrics"]
+        critical_errors = classification_result.report["critical_errors"]
+        print("Проверка классификации уровней качества завершена.")
+        print(f"Сценариев: {classification_result.report['row_count']}")
+        print(f"Accuracy: {classification_metrics['accuracy']:.10f}")
+        print(
+            "Balanced Accuracy: "
+            f"{classification_metrics['balanced_accuracy']:.10f}"
+        )
+        print(f"Macro F1: {classification_metrics['macro_f1']:.10f}")
+        print(f"Weighted F1: {classification_metrics['weighted_f1']:.10f}")
+        print(
+            "Критических ошибок low->high: "
+            f"{critical_errors['low_to_high']}"
+        )
+        print(
+            "Критических ошибок high->low: "
+            f"{critical_errors['high_to_low']}"
+        )
+        if classification_result.predictions_path is not None:
+            print(
+                "Таблица классификации: "
+                f"{classification_result.predictions_path}"
+            )
+        if classification_result.confusion_matrix_path is not None:
+            print(
+                "Матрица ошибок: "
+                f"{classification_result.confusion_matrix_path}"
+            )
+        if classification_result.json_path is not None:
+            print(f"JSON-отчет: {classification_result.json_path}")
+        if classification_result.markdown_path is not None:
+            print(f"Markdown-отчет: {classification_result.markdown_path}")
+
+        if not classification_result.passed:
+            print("Этап 7 не пройден: классификационные метрики некорректны.")
+            return 1
+
+        print(
+            "Этап 7 выполнен. Переход к этапу 8 требует "
+            "отдельного подтверждения."
+        )
+
+    if args.validate_interval_prediction:
+        try:
+            interval_result = IntervalPredictionValidator(
+                config=config,
+                project_root=project_root,
+            ).validate_and_save(dataset=active_dataset)
+        except (
+            FileNotFoundError,
+            OSError,
+            IntervalPredictionValidationError,
+            TypeError,
+            ValueError,
+        ) as error:
+            print(f"Ошибка проверки интервального прогноза: {error}")
+            return 1
+
+        interval_metrics = interval_result.report["metrics"]
+        print("Проверка интервального прогноза качества завершена.")
+        print(f"Сценариев: {interval_result.report['row_count']}")
+        print(f"Coverage rate: {interval_metrics['coverage_rate']:.10f}")
+        print(
+            "Средняя ширина интервала: "
+            f"{interval_metrics['mean_interval_width']:.10f}"
+        )
+        print(
+            "Медианная ширина интервала: "
+            f"{interval_metrics['median_interval_width']:.10f}"
+        )
+        print(
+            "Факт ниже нижней границы: "
+            f"{interval_metrics['miss_lower_count']}"
+        )
+        print(
+            "Факт выше верхней границы: "
+            f"{interval_metrics['miss_upper_count']}"
+        )
+        print(
+            "Среднее расстояние до интервала: "
+            f"{interval_metrics['mean_distance_to_interval']:.10f}"
+        )
+        if interval_result.details_path is not None:
+            print(f"Таблица покрытия: {interval_result.details_path}")
+        if interval_result.json_path is not None:
+            print(f"JSON-отчет: {interval_result.json_path}")
+        if interval_result.markdown_path is not None:
+            print(f"Markdown-отчет: {interval_result.markdown_path}")
+
+        if not interval_result.passed:
+            print("Этап 8 не пройден: метрики интервалов рассчитаны некорректно.")
+            return 1
+
+        print(
+            "Этап 8 выполнен. Переход к этапу 9 требует "
+            "отдельного подтверждения."
+        )
+
+    baseline_result: BaselineComparisonResult | None = None
+    if args.compare_baselines:
+        try:
+            baseline_result = BaselineModelsValidator(
+                config=config,
+                project_root=project_root,
+            ).validate_and_save(dataset=active_dataset)
+        except (
+            FileNotFoundError,
+            OSError,
+            BaselineComparisonError,
+            TypeError,
+            ValueError,
+        ) as error:
+            print(f"Ошибка сравнения с базовыми моделями: {error}")
+            return 1
+
+        baseline_metrics = {
+            row["model"]: row for row in baseline_result.report["metrics"]
+        }
+        best_models = baseline_result.report["best_models"]
+        print("Сравнение с базовыми моделями завершено.")
+        print(f"Сценариев: {baseline_result.report['row_count']}")
+        print(
+            "Mean baseline MAE: "
+            f"{baseline_metrics['mean_baseline']['mae']:.10f}"
+        )
+        print(
+            "Prior-only baseline MAE: "
+            f"{baseline_metrics['prior_only_baseline']['mae']:.10f}"
+        )
+        print(
+            "Theta-only baseline MAE: "
+            f"{baseline_metrics['theta_only_baseline']['mae']:.10f}"
+        )
+        print(
+            "Chapter 5 model MAE: "
+            f"{baseline_metrics['chapter5_model']['mae']:.10f}"
+        )
+        print(
+            "Лучший MAE: "
+            f"{best_models['mae']['model']} = "
+            f"{best_models['mae']['value']:.10f}"
+        )
+        print(
+            "Лучший Spearman: "
+            f"{best_models['spearman']['model']} = "
+            f"{best_models['spearman']['value']:.10f}"
+        )
+        if baseline_result.predictions_path is not None:
+            print(f"Baseline-прогнозы: {baseline_result.predictions_path}")
+        if baseline_result.comparison_path is not None:
+            print(f"Таблица сравнения: {baseline_result.comparison_path}")
+        if baseline_result.json_path is not None:
+            print(f"JSON-отчет: {baseline_result.json_path}")
+        if baseline_result.markdown_path is not None:
+            print(f"Markdown-отчет: {baseline_result.markdown_path}")
+
+        if not baseline_result.passed:
+            print("Этап 9 не пройден: baseline-метрики рассчитаны некорректно.")
+            return 1
+
+        print(
+            "Этап 9 выполнен. Переход к этапу 10 требует "
+            "отдельного подтверждения."
+        )
+
+    if args.bootstrap_analysis:
+        try:
+            bootstrap_result = BootstrapAnalysisValidator(
+                config=config,
+                project_root=project_root,
+            ).validate_and_save(
+                predictions=(
+                    baseline_result.predictions
+                    if baseline_result is not None
+                    else None
+                )
+            )
+        except (
+            FileNotFoundError,
+            OSError,
+            BootstrapAnalysisError,
+            TypeError,
+            ValueError,
+        ) as error:
+            print(f"Ошибка bootstrap-анализа статистической устойчивости: {error}")
+            return 1
+
+        chapter5_intervals = {
+            row["metric"]: row
+            for row in bootstrap_result.report["chapter5_confidence_intervals"]
+        }
+        summary = bootstrap_result.report["summary"]
+        sampling = bootstrap_result.report["sampling"]
+        print("Bootstrap-анализ статистической устойчивости завершен.")
+        print(f"Сценариев: {bootstrap_result.report['row_count']}")
+        print(f"Bootstrap-повторов: {sampling['resamples']}")
+        print(f"Уровень доверия: {sampling['confidence_level']:.4f}")
+        print(
+            "MAE модели главы 5: "
+            f"{chapter5_intervals['mae']['point_estimate']:.10f} "
+            f"[{chapter5_intervals['mae']['ci_lower']:.10f}; "
+            f"{chapter5_intervals['mae']['ci_upper']:.10f}]"
+        )
+        print(
+            "Spearman модели главы 5: "
+            f"{chapter5_intervals['spearman']['point_estimate']:.10f} "
+            f"[{chapter5_intervals['spearman']['ci_lower']:.10f}; "
+            f"{chapter5_intervals['spearman']['ci_upper']:.10f}]"
+        )
+        print(
+            "Устойчивых преимуществ модели главы 5: "
+            f"{summary['stable_chapter5_wins']}"
+        )
+        print(
+            "Устойчивых преимуществ baseline: "
+            f"{summary['stable_baseline_wins']}"
+        )
+        print(
+            "Различий без статистически устойчивого вывода: "
+            f"{summary['no_stable_difference']}"
+        )
+        if bootstrap_result.confidence_intervals_path is not None:
+            print(
+                "Доверительные интервалы: "
+                f"{bootstrap_result.confidence_intervals_path}"
+            )
+        if bootstrap_result.model_differences_path is not None:
+            print(
+                "Парные разности моделей: "
+                f"{bootstrap_result.model_differences_path}"
+            )
+        if bootstrap_result.json_path is not None:
+            print(f"JSON-отчет: {bootstrap_result.json_path}")
+        if bootstrap_result.markdown_path is not None:
+            print(f"Markdown-отчет: {bootstrap_result.markdown_path}")
+
+        if not bootstrap_result.passed:
+            print("Этап 10 не пройден: bootstrap-результаты некорректны.")
+            return 1
+
+        print(
+            "Этап 10 выполнен. Переход к этапу 11 требует "
+            "отдельного подтверждения."
+        )
+
     return 0
 
 

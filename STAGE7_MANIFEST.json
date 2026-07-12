@@ -1,0 +1,36 @@
+{
+  "stage": 7,
+  "name": "classification_validation",
+  "description": "Проверка классификации уровней качества low, medium и high.",
+  "base_state": "Проект после закрытого этапа 6 главы 6.",
+  "files": [
+    {
+      "path": "README_STAGE7.md",
+      "sha256": "ec111f2f75f23444f79925cad5a8327af982595672164eb115d283e0db6a72c4",
+      "size_bytes": 2833
+    },
+    {
+      "path": "src/manual_coding_sim/validation/classification_validator.py",
+      "sha256": "7f32bb48b005bef6aaff8b0adf231138d64dc055d0d52c8c960d4a7bccd430ee",
+      "size_bytes": 24346
+    },
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_runner.py",
+      "sha256": "46414a92eddf263dc3e69fed04f48aeffee350105d4a496851d60a1fef07726d",
+      "size_bytes": 19147
+    },
+    {
+      "path": "tests/validation/test_classification_validator.py",
+      "sha256": "b145ff7134346b8a56e76032dfe583e9bfd0dce944690c105acd07a94d8ffef3",
+      "size_bytes": 11278
+    }
+  ],
+  "generated_artifacts": [
+    "reports/chapter6/classification_predictions.csv",
+    "reports/chapter6/confusion_matrix.csv",
+    "reports/chapter6/classification_report.json",
+    "reports/chapter6/classification_report.md"
+  ],
+  "cli_flag": "--validate-classification",
+  "test_file": "tests/validation/test_classification_validator.py"
+}

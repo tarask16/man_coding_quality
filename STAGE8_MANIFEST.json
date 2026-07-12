@@ -1,0 +1,35 @@
+{
+  "stage": 8,
+  "name": "interval_prediction_validation",
+  "description": "Проверка покрытия и информативности интервального прогноза качества.",
+  "base_state": "Проект после закрытого этапа 7 главы 6.",
+  "files": [
+    {
+      "path": "README_STAGE8.md",
+      "sha256": "12eada6caf329ceada8a0c406256733c4e7d60cd539db23b89608e256e052b3e",
+      "size_bytes": 5040
+    },
+    {
+      "path": "src/manual_coding_sim/validation/interval_prediction_validator.py",
+      "sha256": "e1b4da7d486d61c4bd5f7010f2eb2369393af8e4149a71ee96d97146d554a46a",
+      "size_bytes": 26174
+    },
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_runner.py",
+      "sha256": "90d58f824c1bf5759c647f400d43424e64d4f51e622797cff862a1e549308372",
+      "size_bytes": 22104
+    },
+    {
+      "path": "tests/validation/test_interval_prediction_validator.py",
+      "sha256": "ff06952a9728aba3f092f6537395fa73ea9453e006801844b53d6129968b7644",
+      "size_bytes": 12840
+    }
+  ],
+  "generated_artifacts": [
+    "reports/chapter6/interval_coverage_details.csv",
+    "reports/chapter6/interval_coverage_report.json",
+    "reports/chapter6/interval_coverage_report.md"
+  ],
+  "cli_flag": "--validate-interval-prediction",
+  "test_file": "tests/validation/test_interval_prediction_validator.py"
+}

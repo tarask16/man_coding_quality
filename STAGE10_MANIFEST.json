@@ -1,0 +1,50 @@
+{
+  "stage": 10,
+  "name": "bootstrap_statistical_stability",
+  "description": "Парный cluster-bootstrap по сценариям для доверительных интервалов метрик и разностей модели главы 5 с baseline.",
+  "base_state": "Проект после закрытого этапа 9 главы 6.",
+  "files": [
+    {
+      "path": "README_STAGE10.md",
+      "sha256": "dc3931f8d356cb9aefe26102f547016950326744ad53fa9ae406a65dd6fdf495",
+      "size_bytes": 5951
+    },
+    {
+      "path": "src/manual_coding_sim/validation/bootstrap_analysis.py",
+      "sha256": "343ea4b4cb71447a3a1365ec2e1b3a265417d439cfa2145e24eab60ec8653bb5",
+      "size_bytes": 31486
+    },
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_runner.py",
+      "sha256": "4383ddbf50ea7df554f0dba969d21ef6fee9be4a85516e90d48787ab7fa1456f",
+      "size_bytes": 29343
+    },
+    {
+      "path": "tests/validation/test_bootstrap_analysis.py",
+      "sha256": "a5c39c288aeb3d375a29e1934c1018d9c6e2a13d148bd435c6387e93d20c4187",
+      "size_bytes": 13044
+    }
+  ],
+  "generated_artifacts": [
+    "reports/chapter6/bootstrap_confidence_intervals.csv",
+    "reports/chapter6/bootstrap_model_differences.csv",
+    "reports/chapter6/bootstrap_report.json",
+    "reports/chapter6/bootstrap_report.md"
+  ],
+  "cli_flag": "--bootstrap-analysis",
+  "test_file": "tests/validation/test_bootstrap_analysis.py",
+  "bootstrap": {
+    "method": "paired_cluster_percentile_bootstrap",
+    "sampling_unit": "scenario_id",
+    "resamples": 1000,
+    "confidence_level": 0.95,
+    "random_seed": 42
+  },
+  "methodological_guards": [
+    "для всех моделей используются одинаковые bootstrap-выборки",
+    "используются зафиксированные out-of-fold прогнозы этапа 9",
+    "модели не переобучаются внутри bootstrap",
+    "q_pred главы 5 и пороги классов не изменяются",
+    "фактические показатели используются только для внешней проверки"
+  ]
+}

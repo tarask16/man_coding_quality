@@ -1,0 +1,42 @@
+{
+  "stage": 9,
+  "name": "baseline_model_comparison",
+  "description": "Сравнение модели главы 5 с mean, prior-only и theta-only baseline без изменения исходного Q_pred.",
+  "base_state": "Проект после закрытого этапа 8 главы 6.",
+  "files": [
+    {
+      "path": "README_STAGE9.md",
+      "sha256": "407280d72859320702a96c647fe270936527c02ada59ee422cf8c26de9f05215",
+      "size_bytes": 6087
+    },
+    {
+      "path": "src/manual_coding_sim/validation/baseline_models.py",
+      "sha256": "798f3267c0be9e4f1f5d642aaeb7bbfd581ace398f38a348466178e9fbd5a77f",
+      "size_bytes": 37548
+    },
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_runner.py",
+      "sha256": "91aa62821302b31cce322a277e41f2149cdb88f576e70df186c0b346883b007a",
+      "size_bytes": 25346
+    },
+    {
+      "path": "tests/validation/test_baseline_models.py",
+      "sha256": "0dc4adbe05535cf369654acf7b6a9f42f36090f09e6ec23c49bcfd4dce10f28c",
+      "size_bytes": 12646
+    }
+  ],
+  "generated_artifacts": [
+    "reports/chapter6/baseline_predictions.csv",
+    "reports/chapter6/baseline_comparison.csv",
+    "reports/chapter6/baseline_comparison_report.json",
+    "reports/chapter6/baseline_comparison_report.md"
+  ],
+  "cli_flag": "--compare-baselines",
+  "test_file": "tests/validation/test_baseline_models.py",
+  "methodological_guards": [
+    "mean baseline строится out-of-fold",
+    "цели текущего fold не участвуют в обучающем среднем",
+    "prior-only и theta-only не используют q_fact",
+    "q_pred главы 5 не изменяется"
+  ]
+}
