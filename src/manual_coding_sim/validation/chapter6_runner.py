@@ -16,6 +16,10 @@ from manual_coding_sim.validation.bootstrap_analysis import (
     BootstrapAnalysisError,
     BootstrapAnalysisValidator,
 )
+from manual_coding_sim.validation.chapter6_acceptance import (
+    Chapter6AcceptanceBuilder,
+    Chapter6AcceptanceError,
+)
 from manual_coding_sim.validation.chapter6_config import (
     Chapter6ConfigError,
     Chapter6ValidationConfig,
@@ -176,11 +180,16 @@ def build_arg_parser() -> argparse.ArgumentParser:
         help="Сформировать итоговый JSON- и Markdown-отчет этапа 13.",
     )
     parser.add_argument(
+        "--run-acceptance",
+        action="store_true",
+        help="Выполнить финальную техническую приемку этапа 14.",
+    )
+    parser.add_argument(
         "--run-full-pipeline",
         action="store_true",
         help=(
-            "Выполнить единый контур этапов 2--11; флаги --build-figures "
-            "и --build-report добавляют этапы 12 и 13."
+            "Выполнить единый контур этапов 2--11; флаги --build-figures, "
+            "--build-report и --run-acceptance добавляют этапы 12--14."
         ),
     )
     return parser
@@ -236,10 +245,27 @@ def main(argv: Sequence[str] | None = None) -> int:
             )
             print(f"JSON-отчет главы 6: {final_result.json_path}")
             print(f"Markdown-отчет главы 6: {final_result.markdown_path}")
-        print(
-            "Этап 13 выполнен. Переход к этапу 14 требует "
-            "отдельного подтверждения."
-        )
+        if args.run_acceptance:
+            try:
+                acceptance_result = Chapter6AcceptanceBuilder(
+                    config=config,
+                    project_root=project_root,
+                ).build_and_save()
+            except (
+                FileNotFoundError,
+                OSError,
+                Chapter6AcceptanceError,
+                TypeError,
+                ValueError,
+            ) as error:
+                print(f"Ошибка финальной приемки главы 6: {error}")
+                return 1
+            _print_stage14_result(acceptance_result)
+        else:
+            print(
+                "Этап 13 выполнен. Переход к этапу 14 требует "
+                "отдельного подтверждения."
+            )
         return 0
 
     if not any(
@@ -256,6 +282,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             args.analyze_prediction_errors,
             args.build_figures,
             args.build_report,
+            args.run_acceptance,
         )
     ):
         print(
@@ -265,8 +292,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             "--validate-partial-criteria, --validate-classification, "
             "--validate-interval-prediction, --compare-baselines, "
             "--bootstrap-analysis, --analyze-prediction-errors, "
-            "--build-figures или --build-report. Для единого запуска "
-            "используйте --run-full-pipeline."
+            "--build-figures, --build-report или --run-acceptance. Для "
+            "единого запуска используйте --run-full-pipeline."
         )
         return 0
 
@@ -823,7 +850,45 @@ def main(argv: Sequence[str] | None = None) -> int:
             "отдельного подтверждения."
         )
 
+
+    if args.run_acceptance:
+        try:
+            acceptance_result = Chapter6AcceptanceBuilder(
+                config=config,
+                project_root=project_root,
+            ).build_and_save()
+        except (
+            FileNotFoundError,
+            OSError,
+            Chapter6AcceptanceError,
+            TypeError,
+            ValueError,
+        ) as error:
+            print(f"Ошибка финальной приемки главы 6: {error}")
+            return 1
+
+        _print_stage14_result(acceptance_result)
+
     return 0
+
+
+def _print_stage14_result(result: object) -> None:
+    """Вывести результат финальной приемки этапа 14."""
+
+    report = result.report
+    print("Финальная приемка программного контура главы 6 завершена.")
+    print(f"Сценариев: {report['row_count']}")
+    print(
+        "Пройдено проверок: "
+        f"{report['passed_check_count']}/{report['check_count']}"
+    )
+    print(f"Полный pipeline завершен: {report['full_pipeline_completed']}")
+    print(f"Модель главы 5 зафиксирована: {report['prediction_model_frozen']}")
+    print(f"Целевая утечка обнаружена: {report['target_leakage_detected']}")
+    print(f"Статус основной гипотезы: {report['hypothesis_status']}")
+    print(f"JSON-акт приемки: {result.json_path}")
+    print(f"Markdown-акт приемки: {result.markdown_path}")
+    print("Этап 14 выполнен. Программный контур главы 6 принят.")
 
 
 def _print_stage3_result(result: ValidationDatasetBuildResult) -> None:

@@ -1,0 +1,56 @@
+{
+  "stage": 14,
+  "archive_name": "chapter6_stage14_final_acceptance.zip",
+  "description": "Финальная техническая и методическая приемка программного контура главы 6.",
+  "created_files": [
+    "src/manual_coding_sim/validation/chapter6_acceptance.py",
+    "tests/validation/test_chapter6_acceptance.py",
+    "README_STAGE14.md",
+    "STAGE14_MANIFEST.json"
+  ],
+  "updated_files": [
+    "src/manual_coding_sim/validation/chapter6_runner.py"
+  ],
+  "generated_artifacts": [
+    "reports/chapter6/chapter6_acceptance_report.json",
+    "reports/chapter6/chapter6_acceptance_report.md"
+  ],
+  "cli_flags": [
+    "--run-acceptance"
+  ],
+  "acceptance_check_count": 27,
+  "tests": {
+    "targeted_local_result": "20 passed",
+    "expected_validation_total_after_install": 187,
+    "expected_full_regression_total_after_install": 504,
+    "note": "Общие числа основаны на подтвержденных пользователем 167 и 484 тестах этапов 1–13."
+  },
+  "methodological_guards": [
+    "научный статус гипотезы не усиливается технической приемкой",
+    "проверяются текущие SHA-256 артефактов главы 5",
+    "синтетический holdout не допускается как основной корпус",
+    "проверяется отсутствие целевой утечки и ручной подмены данных"
+  ],
+  "files": [
+    {
+      "path": "README_STAGE14.md",
+      "sha256": "1ab1abd1f1008daa511f6930f9d91ca026db008378f898b661ed099235ebaa71",
+      "size_bytes": 7028
+    },
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_acceptance.py",
+      "sha256": "500c5dd8c0a60c93659f00693cb9998cf78b621027ae65ce6202a300a231757a",
+      "size_bytes": 41743
+    },
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_runner.py",
+      "sha256": "5c6d9f67d54aa7a251005416e6cbeeb63314ca6899bcdd4a5183b8477d7a987f",
+      "size_bytes": 41236
+    },
+    {
+      "path": "tests/validation/test_chapter6_acceptance.py",
+      "sha256": "0bc5df2cac142b65df0073be6fe009c0a3f9729df5cd960a6486dd108195efee",
+      "size_bytes": 26129
+    }
+  ]
+}
