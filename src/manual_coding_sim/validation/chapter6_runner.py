@@ -25,6 +25,10 @@ from manual_coding_sim.validation.integral_quality_validator import (
     IntegralQualityValidationError,
     IntegralQualityValidator,
 )
+from manual_coding_sim.validation.partial_criteria_validator import (
+    PartialCriteriaValidationError,
+    PartialCriteriaValidator,
+)
 from manual_coding_sim.validation.validation_dataset_builder import (
     ValidationDatasetBuildError,
     ValidationDatasetBuilder,
@@ -81,6 +85,13 @@ def build_arg_parser() -> argparse.ArgumentParser:
             "Рассчитать ошибки и метрики интегрального прогноза на этапе 5."
         ),
     )
+    parser.add_argument(
+        "--validate-partial-criteria",
+        action="store_true",
+        help=(
+            "Проверить шесть частных прогнозных критериев на этапе 6."
+        ),
+    )
     return parser
 
 
@@ -105,12 +116,14 @@ def main(argv: Sequence[str] | None = None) -> int:
             args.build_validation_dataset,
             args.validate_integral_quality,
             args.calculate_integral_metrics,
+            args.validate_partial_criteria,
         )
     ):
         print(
             "Расчетные этапы не выполнялись. Используйте флаг "
             "--validate-inputs, --build-validation-dataset, "
-            "--validate-integral-quality или --calculate-integral-metrics."
+            "--validate-integral-quality, --calculate-integral-metrics "
+            "или --validate-partial-criteria."
         )
         return 0
 
@@ -192,45 +205,91 @@ def main(argv: Sequence[str] | None = None) -> int:
             "отдельного подтверждения."
         )
 
-    if not args.calculate_integral_metrics:
+    if args.calculate_integral_metrics:
+        try:
+            prediction_result = IntegralPredictionValidator(
+                config=config,
+                project_root=project_root,
+            ).validate_and_save(dataset=active_dataset)
+        except (
+            FileNotFoundError,
+            OSError,
+            IntegralPredictionValidationError,
+            TypeError,
+            ValueError,
+        ) as error:
+            print(f"Ошибка расчета метрик интегрального прогноза: {error}")
+            return 1
+
+        prediction_metrics = prediction_result.report["metrics"]
+        print("Метрики интегрального априорного прогноза рассчитаны.")
+        print(f"Сценариев: {prediction_result.report['row_count']}")
+        print(f"MAE: {prediction_metrics['mae']:.10f}")
+        print(f"RMSE: {prediction_metrics['rmse']:.10f}")
+        print(f"Bias: {prediction_metrics['bias']:.10f}")
+        print(f"Spearman: {prediction_metrics['spearman']:.10f}")
+        print(f"Kendall: {prediction_metrics['kendall']:.10f}")
+        print(f"R²: {prediction_metrics['r2']:.10f}")
+        if prediction_result.csv_path is not None:
+            print(f"Таблица ошибок: {prediction_result.csv_path}")
+        if prediction_result.json_path is not None:
+            print(f"JSON-отчет: {prediction_result.json_path}")
+        if prediction_result.markdown_path is not None:
+            print(f"Markdown-отчет: {prediction_result.markdown_path}")
+
+        if not prediction_result.passed:
+            print("Этап 5 не пройден: рассчитаны некорректные метрики.")
+            return 1
+
+        print(
+            "Этап 5 выполнен. Переход к этапу 6 требует "
+            "отдельного подтверждения."
+        )
+
+    if not args.validate_partial_criteria:
         return 0
 
     try:
-        prediction_result = IntegralPredictionValidator(
+        partial_result = PartialCriteriaValidator(
             config=config,
             project_root=project_root,
         ).validate_and_save(dataset=active_dataset)
     except (
         FileNotFoundError,
         OSError,
-        IntegralPredictionValidationError,
+        PartialCriteriaValidationError,
         TypeError,
         ValueError,
     ) as error:
-        print(f"Ошибка расчета метрик интегрального прогноза: {error}")
+        print(f"Ошибка проверки частных прогнозных критериев: {error}")
         return 1
 
-    prediction_metrics = prediction_result.report["metrics"]
-    print("Метрики интегрального априорного прогноза рассчитаны.")
-    print(f"Сценариев: {prediction_result.report['row_count']}")
-    print(f"MAE: {prediction_metrics['mae']:.10f}")
-    print(f"RMSE: {prediction_metrics['rmse']:.10f}")
-    print(f"Bias: {prediction_metrics['bias']:.10f}")
-    print(f"Spearman: {prediction_metrics['spearman']:.10f}")
-    print(f"Kendall: {prediction_metrics['kendall']:.10f}")
-    print(f"R²: {prediction_metrics['r2']:.10f}")
-    if prediction_result.csv_path is not None:
-        print(f"Таблица ошибок: {prediction_result.csv_path}")
-    if prediction_result.json_path is not None:
-        print(f"JSON-отчет: {prediction_result.json_path}")
-    if prediction_result.markdown_path is not None:
-        print(f"Markdown-отчет: {prediction_result.markdown_path}")
+    summary = partial_result.report["summary"]
+    print("Проверка частных прогнозных критериев завершена.")
+    print(f"Сценариев: {partial_result.report['row_count']}")
+    print(f"Проверено критериев: {partial_result.report['criterion_count']}")
+    print(f"Среднее MAE: {summary['mean_mae']:.10f}")
+    print(f"Средний Spearman: {summary['mean_spearman']:.10f}")
+    print(
+        "Наименьший MAE: "
+        f"{summary['best_mae_criterion']} = {summary['best_mae']:.10f}"
+    )
+    print(
+        "Наибольший MAE: "
+        f"{summary['worst_mae_criterion']} = {summary['worst_mae']:.10f}"
+    )
+    if partial_result.csv_path is not None:
+        print(f"Таблица метрик: {partial_result.csv_path}")
+    if partial_result.json_path is not None:
+        print(f"JSON-отчет: {partial_result.json_path}")
+    if partial_result.markdown_path is not None:
+        print(f"Markdown-отчет: {partial_result.markdown_path}")
 
-    if not prediction_result.passed:
-        print("Этап 5 не пройден: рассчитаны некорректные метрики.")
+    if not partial_result.passed:
+        print("Этап 6 не пройден: рассчитаны некорректные метрики.")
         return 1
 
-    print("Этап 5 выполнен. Переход к этапу 6 требует отдельного подтверждения.")
+    print("Этап 6 выполнен. Переход к этапу 7 требует отдельного подтверждения.")
     return 0
 
 

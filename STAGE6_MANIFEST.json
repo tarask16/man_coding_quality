@@ -1,0 +1,68 @@
+{
+  "stage": 6,
+  "archive_name": "chapter6_stage6_partial_criteria.zip",
+  "purpose": "Внешняя проверка шести частных прогнозных критериев главы 5 относительно фактических критериев качества.",
+  "base_state": "Этапы 1–5 полностью закрыты.",
+  "generated_artifacts": [
+    "reports/chapter6/partial_criteria_validation.csv",
+    "reports/chapter6/partial_criteria_validation_report.json",
+    "reports/chapter6/partial_criteria_validation_report.md"
+  ],
+  "files": [
+    {
+      "path": "README_STAGE6.md",
+      "size_bytes": 7117,
+      "sha256": "455a5db7af354cbf7d6e231aad93164b6214329ea8edac0c7f7f392ca8126f3a"
+    },
+    {
+      "path": "src/manual_coding_sim/validation/partial_criteria_validator.py",
+      "size_bytes": 23052,
+      "sha256": "573cf36f6545ceeca3d989836be39ea3d88efd02e9971e40fb05ddf6dbb4651c"
+    },
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_runner.py",
+      "size_bytes": 16221,
+      "sha256": "524fc409d52f9523ee33274e43c9692f9c463f4b629daa1f5d23e2c1e8068114"
+    },
+    {
+      "path": "tests/validation/test_partial_criteria_validator.py",
+      "size_bytes": 10089,
+      "sha256": "45ca6bdd8297f176157cbfb07472a38da94174757c1e744aa39dadd168a1075e"
+    }
+  ],
+  "criterion_mappings": [
+    "q_acc_pred -> q_acc",
+    "q_time_pred -> q_time",
+    "q_effort_pred -> q_effort",
+    "q_res_pred -> q_res",
+    "q_rep_pred -> q_rep",
+    "q_fit_pred -> q_fit"
+  ],
+  "method_constraints": [
+    "Ошибка определяется как q_j_pred - q_j_fact.",
+    "Частные прогнозы и фактические критерии не изменяются.",
+    "Фактические данные используются только для внешней проверки.",
+    "Отрицательный R² допускается и не считается программной ошибкой.",
+    "Переход к этапу 7 допускается только после закрытия этапа 6."
+  ],
+  "control_results": {
+    "stage6_tests": "11 passed",
+    "validation_tests": "65 passed",
+    "full_regression": "382 passed",
+    "row_count": 150,
+    "criterion_count": 6,
+    "mean_mae": 0.2182707507926732,
+    "mean_rmse": 0.26403377523350585,
+    "mean_absolute_bias": 0.15888522470292274,
+    "mean_spearman": 0.6947963808971115,
+    "mean_kendall": 0.5392276457064696,
+    "best_mae_criterion": "q_effort",
+    "best_mae": 0.15606408721472015,
+    "worst_mae_criterion": "q_fit",
+    "worst_mae": 0.3442877621221375,
+    "best_spearman_criterion": "q_fit",
+    "best_spearman": 0.8732743677496778,
+    "worst_spearman_criterion": "q_time",
+    "worst_spearman": 0.5944744210853816
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "stage": 6,
+  "report_type": "partial_criteria_validation",
+  "passed": true,
+  "row_count": 150,
+  "expected_row_count": 150,
+  "criterion_count": 6,
+  "expected_criterion_count": 6,
+  "error_definition": "criterion_error = q_j_pred - q_j_fact",
+  "criterion_mappings": [
+    {
+      "criterion": "q_acc",
+      "predicted_column": "q_acc_pred",
+      "factual_column": "q_acc",
+      "description": "Точность восстановления сообщения"
+    },
+    {
+      "criterion": "q_time",
+      "predicted_column": "q_time_pred",
+      "factual_column": "q_time",
+      "description": "Временная эффективность"
+    },
+    {
+      "criterion": "q_effort",
+      "predicted_column": "q_effort_pred",
+      "factual_column": "q_effort",
+      "description": "Трудоемкость ручной процедуры"
+    },
+    {
+      "criterion": "q_res",
+      "predicted_column": "q_res_pred",
+      "factual_column": "q_res",
+      "description": "Результативность и устойчивость"
+    },
+    {
+      "criterion": "q_rep",
+      "predicted_column": "q_rep_pred",
+      "factual_column": "q_rep",
+      "description": "Повторяемость результата"
+    },
+    {
+      "criterion": "q_fit",
+      "predicted_column": "q_fit_pred",
+      "factual_column": "q_fit",
+      "description": "Соответствие условиям применения"
+    }
+  ],
+  "metrics": [
+    {
+      "criterion": "q_acc",
+      "predicted_column": "q_acc_pred",
+      "factual_column": "q_acc",
+      "description": "Точность восстановления сообщения",
+      "mae": 0.20892704166659282,
+      "rmse": 0.2549953068815382,
+      "bias": -0.19056167579084285,
+      "pearson": 0.8396598334098799,
+      "spearman": 0.8583211918928502,
+      "kendall": 0.691816046791952,
+      "r2": -3.4535252330726927,
+      "predicted_mean": 0.4677022108758239,
+      "factual_mean": 0.6582638866666667,
+      "predicted_std": 0.25853261374383396,
+      "factual_std": 0.12123631406945752,
+      "max_absolute_error": 0.5297105091044816
+    },
+    {
+      "criterion": "q_time",
+      "predicted_column": "q_time_pred",
+      "factual_column": "q_time",
+      "description": "Временная эффективность",
+      "mae": 0.17022825766637362,
+      "rmse": 0.2252667112466207,
+      "bias": -0.11261542295854984,
+      "pearson": 0.5837591021841233,
+      "spearman": 0.5944744210853816,
+      "kendall": 0.41906040268456374,
+      "r2": -3.3312082569938823,
+      "predicted_mean": 0.5528510437081169,
+      "factual_mean": 0.6654664666666665,
+      "predicted_std": 0.23816370349953142,
+      "factual_std": 0.10860378987477054,
+      "max_absolute_error": 0.531707380187747
+    },
+    {
+      "criterion": "q_effort",
+      "predicted_column": "q_effort_pred",
+      "factual_column": "q_effort",
+      "description": "Трудоемкость ручной процедуры",
+      "mae": 0.15606408721472015,
+      "rmse": 0.18492850110409348,
+      "bias": -0.04722535731478095,
+      "pearson": 0.6229871964954887,
+      "spearman": 0.6117192472765158,
+      "kendall": 0.4556094223959342,
+      "r2": -0.6943422141330642,
+      "predicted_mean": 0.507219082685219,
+      "factual_mean": 0.5544444399999999,
+      "predicted_std": 0.2293380163930308,
+      "factual_std": 0.14254624427701684,
+      "max_absolute_error": 0.4437468895242754
+    },
+    {
+      "criterion": "q_res",
+      "predicted_column": "q_res_pred",
+      "factual_column": "q_res",
+      "description": "Результативность и устойчивость",
+      "mae": 0.20566567233896757,
+      "rmse": 0.2560608882693847,
+      "bias": -0.1013408764948141,
+      "pearson": 0.632817307527778,
+      "spearman": 0.6328172126284024,
+      "kendall": 0.5184125397763869,
+      "r2": 0.2787144734977528,
+      "predicted_mean": 0.4523257901718526,
+      "factual_mean": 0.5536666666666668,
+      "predicted_std": 0.2197582964700712,
+      "factual_std": 0.3025116707863825,
+      "max_absolute_error": 0.6467473128045242
+    },
+    {
+      "criterion": "q_rep",
+      "predicted_column": "q_rep_pred",
+      "factual_column": "q_rep",
+      "description": "Повторяемость результата",
+      "mae": 0.2244516837472475,
+      "rmse": 0.27452572760330524,
+      "bias": -0.15728025353641123,
+      "pearson": 0.6036555757707361,
+      "spearman": 0.5981718447498416,
+      "kendall": 0.46026612030810204,
+      "r2": -0.31673435252271487,
+      "predicted_mean": 0.5282752331302554,
+      "factual_mean": 0.6855554866666668,
+      "predicted_std": 0.2646681891792586,
+      "factual_std": 0.24004157272108634,
+      "max_absolute_error": 0.6954968225593601
+    },
+    {
+      "criterion": "q_fit",
+      "predicted_column": "q_fit_pred",
+      "factual_column": "q_fit",
+      "description": "Соответствие условиям применения",
+      "mae": 0.3442877621221375,
+      "rmse": 0.3884255162960927,
+      "bias": -0.3442877621221375,
+      "pearson": 0.8633228363900988,
+      "spearman": 0.8732743677496778,
+      "kendall": 0.6902013422818792,
+      "r2": -45.852657867711045,
+      "predicted_mean": 0.4846880512111956,
+      "factual_mean": 0.8289758133333334,
+      "predicted_std": 0.2272889731579527,
+      "factual_std": 0.0569368099206311,
+      "max_absolute_error": 0.6595563386375659
+    }
+  ],
+  "summary": {
+    "mean_mae": 0.2182707507926732,
+    "mean_rmse": 0.26403377523350585,
+    "mean_absolute_bias": 0.15888522470292274,
+    "mean_spearman": 0.6947963808971115,
+    "mean_kendall": 0.5392276457064696,
+    "best_mae_criterion": "q_effort",
+    "best_mae": 0.15606408721472015,
+    "worst_mae_criterion": "q_fit",
+    "worst_mae": 0.3442877621221375,
+    "best_spearman_criterion": "q_fit",
+    "best_spearman": 0.8732743677496778,
+    "worst_spearman_criterion": "q_time",
+    "worst_spearman": 0.5944744210853816
+  },
+  "interpretation": {
+    "bias": "Отрицательное значение означает систематическое занижение частного критерия, положительное — завышение.",
+    "ranking": "MAE характеризует точность шкалы, а Spearman и Kendall показывают сохранение порядка сценариев.",
+    "r2": "Отрицательное значение R² допустимо при внешней проверке и указывает на неудовлетворительную калибровку шкалы."
+  },
+  "methodological_note": "Все метрики рассчитываются для неизмененных частных прогнозов главы 5. Фактические критерии используются только для внешней проверки и не участвуют в корректировке весов или формул."
+}
