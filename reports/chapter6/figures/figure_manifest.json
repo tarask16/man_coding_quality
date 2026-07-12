@@ -1,0 +1,121 @@
+{
+  "stage": 12,
+  "report_type": "chapter6_figure_manifest",
+  "passed": true,
+  "row_count": 150,
+  "expected_row_count": 150,
+  "figure_count": 8,
+  "dpi": 300,
+  "figure_size_inches": [
+    11.8,
+    7.0
+  ],
+  "matplotlib_backend": "Agg",
+  "language": "ru",
+  "source_data_modified": false,
+  "manual_data_substitution": false,
+  "source_files": [
+    {
+      "name": "validation_dataset",
+      "path": "reports\\chapter6\\validation_dataset.csv",
+      "sha256": "e3fde46331013a119b1a1a24bf2e2ddfff73bbba149c4336d127a90b4983ec31"
+    },
+    {
+      "name": "integral_prediction_errors",
+      "path": "reports\\chapter6\\integral_prediction_errors.csv",
+      "sha256": "60d89ae3dd277c91e1eab2eb90b36072cf6103cf14bbf6bd8aa0baf0eb7500fa"
+    },
+    {
+      "name": "confusion_matrix",
+      "path": "reports\\chapter6\\confusion_matrix.csv",
+      "sha256": "1482bafafb76a805cd4af106fa9dbc77c8d99d68478bb83d2e1b3f39b0e3ab0d"
+    },
+    {
+      "name": "baseline_comparison",
+      "path": "reports\\chapter6\\baseline_comparison.csv",
+      "sha256": "71600e6c9f515b230b7c3b0106fa4eb3d36a95432860c274fc2c642691fe213b"
+    },
+    {
+      "name": "interval_coverage_details",
+      "path": "reports\\chapter6\\interval_coverage_details.csv",
+      "sha256": "98e02230e640582fbb6f0217a597b3577f2bbf1a4b8b2c1e547b88da3ccbb4ee"
+    },
+    {
+      "name": "error_group_analysis",
+      "path": "reports\\chapter6\\error_group_analysis.csv",
+      "sha256": "96cb2bd5ec80279989718e1eed11db9bcac4b827cc212cf677c19ebbee93c8b4"
+    },
+    {
+      "name": "partial_criteria_validation",
+      "path": "reports\\chapter6\\partial_criteria_validation.csv",
+      "sha256": "0761db123986f180f444b9ced5d1d8575cec0488d5fbcb10c13040afa9d2565b"
+    }
+  ],
+  "figures": [
+    {
+      "filename": "q_pred_vs_q_fact.png",
+      "path": "reports\\chapter6\\figures\\q_pred_vs_q_fact.png",
+      "sha256": "a1f6d9d91f8f319c73e354defdf99f1a82401154798a45f6eee8a00b980ce687",
+      "width_px": 3574,
+      "height_px": 2134,
+      "size_bytes": 364979
+    },
+    {
+      "filename": "residuals_vs_q_fact.png",
+      "path": "reports\\chapter6\\figures\\residuals_vs_q_fact.png",
+      "sha256": "2b03d714bbee49017b9337856d6f1b26bfdf8ee59f93c83aae0506dafa6eff68",
+      "width_px": 3574,
+      "height_px": 2134,
+      "size_bytes": 314539
+    },
+    {
+      "filename": "absolute_error_distribution.png",
+      "path": "reports\\chapter6\\figures\\absolute_error_distribution.png",
+      "sha256": "b1b80dc63a83ff4cca39b3550f55fcbda0a9bb07c6c3407c2c8491b7de96560a",
+      "width_px": 3574,
+      "height_px": 2134,
+      "size_bytes": 120582
+    },
+    {
+      "filename": "confusion_matrix.png",
+      "path": "reports\\chapter6\\figures\\confusion_matrix.png",
+      "sha256": "3a3872bbcc27d2a3fa7ea72ce6b8b6c7961af62501ddcfd96e63ccb9e36dbee6",
+      "width_px": 2611,
+      "height_px": 2134,
+      "size_bytes": 108097
+    },
+    {
+      "filename": "baseline_comparison.png",
+      "path": "reports\\chapter6\\figures\\baseline_comparison.png",
+      "sha256": "dbcb842533bddd50207af3d03dd0788f2b2b1ddc8131662d3da334042e71a521",
+      "width_px": 3574,
+      "height_px": 2134,
+      "size_bytes": 177677
+    },
+    {
+      "filename": "prediction_intervals.png",
+      "path": "reports\\chapter6\\figures\\prediction_intervals.png",
+      "sha256": "4be99fbb395eb13718df5ac38c48a3c24fd4583cf7b794b46bb494fc126dcfdc",
+      "width_px": 3574,
+      "height_px": 2134,
+      "size_bytes": 205992
+    },
+    {
+      "filename": "error_by_dominant_topic.png",
+      "path": "reports\\chapter6\\figures\\error_by_dominant_topic.png",
+      "sha256": "d9074c69130041b14b7572f0a825263acbd022b491fa4d41fe27da1266337554",
+      "width_px": 3574,
+      "height_px": 2134,
+      "size_bytes": 86175
+    },
+    {
+      "filename": "partial_criteria_comparison.png",
+      "path": "reports\\chapter6\\figures\\partial_criteria_comparison.png",
+      "sha256": "34addd6803d62bb07567d6a731994c96debaa1b3a7e319fb3b4fa21a3da43bf9",
+      "width_px": 3574,
+      "height_px": 2134,
+      "size_bytes": 183476
+    }
+  ],
+  "methodological_note": "Рисунки построены программно по зафиксированным расчетным артефактам этапов 3--11. Исходные значения и результаты главы 5 не изменялись."
+}

@@ -26,6 +26,10 @@ from manual_coding_sim.validation.chapter6_data_loader import (
     Chapter6DataLoader,
     Chapter6LoadedInputs,
 )
+from manual_coding_sim.validation.chapter6_figure_builder import (
+    Chapter6FigureBuildError,
+    Chapter6FigureBuilder,
+)
 from manual_coding_sim.validation.classification_validator import (
     ClassificationValidationError,
     ClassificationValidator,
@@ -150,6 +154,14 @@ def build_arg_parser() -> argparse.ArgumentParser:
             "Выполнить диагностический анализ ошибок прогноза на этапе 11."
         ),
     )
+    parser.add_argument(
+        "--build-figures",
+        action="store_true",
+        help=(
+            "Построить восемь воспроизводимых графических материалов "
+            "главы 6 на этапе 12."
+        ),
+    )
     return parser
 
 
@@ -180,6 +192,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             args.compare_baselines,
             args.bootstrap_analysis,
             args.analyze_prediction_errors,
+            args.build_figures,
         )
     ):
         print(
@@ -188,7 +201,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             "--validate-integral-quality, --calculate-integral-metrics, "
             "--validate-partial-criteria, --validate-classification, "
             "--validate-interval-prediction, --compare-baselines, "
-            "--bootstrap-analysis или --analyze-prediction-errors."
+            "--bootstrap-analysis, --analyze-prediction-errors "
+            "или --build-figures."
         )
         return 0
 
@@ -681,6 +695,40 @@ def main(argv: Sequence[str] | None = None) -> int:
 
         print(
             "Этап 11 выполнен. Переход к этапу 12 требует "
+            "отдельного подтверждения."
+        )
+
+    if args.build_figures:
+        try:
+            figure_result = Chapter6FigureBuilder(
+                config=config,
+                project_root=project_root,
+            ).build_and_save()
+        except (
+            FileNotFoundError,
+            OSError,
+            Chapter6FigureBuildError,
+            TypeError,
+            ValueError,
+        ) as error:
+            print(f"Ошибка построения графических материалов главы 6: {error}")
+            return 1
+
+        print("Графические материалы главы 6 успешно сформированы.")
+        print(f"Сценариев: {figure_result.manifest['row_count']}")
+        print(f"Рисунков: {figure_result.manifest['figure_count']}")
+        print(f"Разрешение: {figure_result.manifest['dpi']} DPI")
+        for filename, path in figure_result.figure_paths.items():
+            print(f"{filename}: {path}")
+        print(f"JSON-манифест: {figure_result.manifest_json_path}")
+        print(f"Markdown-манифест: {figure_result.manifest_markdown_path}")
+
+        if not figure_result.passed:
+            print("Этап 12 не пройден: комплект рисунков сформирован некорректно.")
+            return 1
+
+        print(
+            "Этап 12 выполнен. Переход к этапу 13 требует "
             "отдельного подтверждения."
         )
 

@@ -1,0 +1,51 @@
+{
+  "stage": 12,
+  "name": "Графические материалы главы 6",
+  "archive": "chapter6_stage12_figures.zip",
+  "files": [
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_figure_builder.py",
+      "sha256": "08e62b8c97d7a8e934d3f8665319a6e3d7d796ec387ee1271e44472f3365552b",
+      "size_bytes": 38490,
+      "action": "create"
+    },
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_runner.py",
+      "sha256": "88a560eab00fcc22f3df596d7945a31dad732704a5726ef9fc1e8000d39cae36",
+      "size_bytes": 34715,
+      "action": "update"
+    },
+    {
+      "path": "tests/validation/test_chapter6_figure_builder.py",
+      "sha256": "cb87f11ebf28e029c51b000104f2c57f53e4dc977020bde76b7a7a521e0feba4",
+      "size_bytes": 13625,
+      "action": "create"
+    },
+    {
+      "path": "README_STAGE12.md",
+      "sha256": "6032413e553161f403373a4a6f56cc59c17e33703f26015e309d191431b40cef",
+      "size_bytes": 6607,
+      "action": "create"
+    }
+  ],
+  "created_outputs": [
+    "reports/chapter6/figures/q_pred_vs_q_fact.png",
+    "reports/chapter6/figures/residuals_vs_q_fact.png",
+    "reports/chapter6/figures/absolute_error_distribution.png",
+    "reports/chapter6/figures/confusion_matrix.png",
+    "reports/chapter6/figures/baseline_comparison.png",
+    "reports/chapter6/figures/prediction_intervals.png",
+    "reports/chapter6/figures/error_by_dominant_topic.png",
+    "reports/chapter6/figures/partial_criteria_comparison.png",
+    "reports/chapter6/figures/figure_manifest.json",
+    "reports/chapter6/figures/figure_manifest.md"
+  ],
+  "cli_flag": "--build-figures",
+  "test_file": "tests/validation/test_chapter6_figure_builder.py",
+  "test_count": 12,
+  "methodological_guards": {
+    "source_data_modified": false,
+    "manual_data_substitution": false,
+    "chapter5_prediction_modified": false
+  }
+}
