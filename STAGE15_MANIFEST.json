@@ -1,0 +1,51 @@
+{
+  "stage": 15,
+  "name": "chapter6_dissertation_update",
+  "created_files": [
+    "src/manual_coding_sim/validation/chapter6_dissertation_updater.py",
+    "tests/validation/test_chapter6_dissertation_updater.py",
+    "requirements-stage15.txt",
+    "README_STAGE15.md"
+  ],
+  "updated_files": [
+    "src/manual_coding_sim/validation/chapter6_runner.py"
+  ],
+  "generated_outputs": [
+    "6. Глава 6. Экспериментальная проверка достоверности априорной оценки качества.docx",
+    "reports/chapter6/chapter6_results_for_dissertation.md",
+    "reports/chapter6/chapter6_dissertation_update_report.json",
+    "reports/chapter6/chapter6_dissertation_update_report.md",
+    "reports/chapter6/dissertation/chapter6_before_stage15.docx"
+  ],
+  "cli_flag": "--update-dissertation",
+  "expected_row_count": 150,
+  "filled_table_count": 9,
+  "inserted_figure_count": 8,
+  "stage_test_count": 22,
+  "hypothesis_status_source": "reports/chapter6/chapter6_validation_report.json",
+  "requires_stage14_acceptance": true,
+  "source_artifacts_must_remain_unchanged": true,
+  "synthetic_holdout_used": false,
+  "files": {
+    "README_STAGE15.md": {
+      "sha256": "a0fd98c15bd769f4481769000b8498cfbf3d1937b9956f62d4cfa0a2028eac01",
+      "size_bytes": 4160
+    },
+    "requirements-stage15.txt": {
+      "sha256": "d7886e901cbb2a11822086791d8055639a8396a98e69f361933b0d46968b1f1b",
+      "size_bytes": 24
+    },
+    "src/manual_coding_sim/validation/chapter6_dissertation_updater.py": {
+      "sha256": "093ab34084a8249ef7e103d7ac81609e8f80b028441aa6e80b9f0d101eeaafd8",
+      "size_bytes": 52619
+    },
+    "src/manual_coding_sim/validation/chapter6_runner.py": {
+      "sha256": "9fe01d6144c4b7e0c5bc3fc3dcf4f0ba86c5f98a7e0d441cf380a06575c29e82",
+      "size_bytes": 45160
+    },
+    "tests/validation/test_chapter6_dissertation_updater.py": {
+      "sha256": "b8ea9a376071c747f113a2fe59f4ed4942e6875b6ef7dd1263744560e3b5d16f",
+      "size_bytes": 24182
+    }
+  }
+}

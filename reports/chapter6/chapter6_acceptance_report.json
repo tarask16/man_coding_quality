@@ -494,8 +494,8 @@
     {
       "name": "pipeline",
       "path": "reports\\chapter6\\chapter6_pipeline_run_report.json",
-      "sha256": "60a728f74ab796ed6bbd31057a61eba0e630065e3dadded9e093e5e0c1b65d57",
-      "size_bytes": 7230
+      "sha256": "90c12619d9bb6571c9a6bc47ef222100779566d4abd27ce6be14c3c77b29548b",
+      "size_bytes": 7228
     }
   ],
   "scientific_conclusion": {

@@ -4,9 +4,9 @@
   "run_mode": "full_pipeline",
   "passed": true,
   "full_pipeline_completed": true,
-  "started_at_utc": "2026-07-12T15:39:42.821036+00:00",
-  "finished_at_utc": "2026-07-12T15:40:21.977181+00:00",
-  "duration_seconds": 39.15669600002002,
+  "started_at_utc": "2026-07-12T16:14:05.712572+00:00",
+  "finished_at_utc": "2026-07-12T16:14:43.509829+00:00",
+  "duration_seconds": 37.797780800028704,
   "expected_row_count": 150,
   "requested_optional_steps": {
     "build_figures": true,
@@ -44,7 +44,7 @@
     "input_validation": {
       "completed": true,
       "passed": true,
-      "duration_seconds": 0.1308514999691397,
+      "duration_seconds": 0.1259515000274405,
       "error_type": null,
       "error_message": null,
       "artifacts": [
@@ -55,7 +55,7 @@
     "validation_dataset": {
       "completed": true,
       "passed": true,
-      "duration_seconds": 0.08467760006897151,
+      "duration_seconds": 0.08213110000360757,
       "error_type": null,
       "error_message": null,
       "artifacts": [
@@ -65,7 +65,7 @@
     "integral_quality": {
       "completed": true,
       "passed": true,
-      "duration_seconds": 0.018473300035111606,
+      "duration_seconds": 0.0183968999190256,
       "error_type": null,
       "error_message": null,
       "artifacts": [
@@ -77,7 +77,7 @@
     "integral_metrics": {
       "completed": true,
       "passed": true,
-      "duration_seconds": 0.020845100050792098,
+      "duration_seconds": 0.02050410001538694,
       "error_type": null,
       "error_message": null,
       "artifacts": [
@@ -89,7 +89,7 @@
     "partial_criteria": {
       "completed": true,
       "passed": true,
-      "duration_seconds": 0.06648639997001737,
+      "duration_seconds": 0.0643286999547854,
       "error_type": null,
       "error_message": null,
       "artifacts": [
@@ -101,7 +101,7 @@
     "classification": {
       "completed": true,
       "passed": true,
-      "duration_seconds": 0.03008539997972548,
+      "duration_seconds": 0.029600500012747943,
       "error_type": null,
       "error_message": null,
       "artifacts": [
@@ -114,7 +114,7 @@
     "interval_prediction": {
       "completed": true,
       "passed": true,
-      "duration_seconds": 0.06194849999155849,
+      "duration_seconds": 0.06188379996456206,
       "error_type": null,
       "error_message": null,
       "artifacts": [
@@ -126,7 +126,7 @@
     "baseline_comparison": {
       "completed": true,
       "passed": true,
-      "duration_seconds": 0.06472580006811768,
+      "duration_seconds": 0.0630730000557378,
       "error_type": null,
       "error_message": null,
       "artifacts": [
@@ -139,7 +139,7 @@
     "bootstrap_analysis": {
       "completed": true,
       "passed": true,
-      "duration_seconds": 32.28933979989961,
+      "duration_seconds": 30.856365999905393,
       "error_type": null,
       "error_message": null,
       "artifacts": [
@@ -152,7 +152,7 @@
     "prediction_error_analysis": {
       "completed": true,
       "passed": true,
-      "duration_seconds": 0.147505100001581,
+      "duration_seconds": 0.147426399984397,
       "error_type": null,
       "error_message": null,
       "artifacts": [
@@ -165,7 +165,7 @@
     "figures": {
       "completed": true,
       "passed": true,
-      "duration_seconds": 6.102169999969192,
+      "duration_seconds": 6.197330900002271,
       "error_type": null,
       "error_message": null,
       "artifacts": [
@@ -184,7 +184,7 @@
     "final_report": {
       "completed": true,
       "passed": true,
-      "duration_seconds": 0.10206639999523759,
+      "duration_seconds": 0.09860240004491061,
       "error_type": null,
       "error_message": null,
       "artifacts": [

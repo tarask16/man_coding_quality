@@ -25,6 +25,10 @@ from manual_coding_sim.validation.chapter6_config import (
     Chapter6ValidationConfig,
     load_chapter6_validation_config,
 )
+from manual_coding_sim.validation.chapter6_dissertation_updater import (
+    Chapter6DissertationUpdateError,
+    Chapter6DissertationUpdater,
+)
 from manual_coding_sim.validation.chapter6_data_loader import (
     Chapter6DataLoadError,
     Chapter6DataLoader,
@@ -185,6 +189,30 @@ def build_arg_parser() -> argparse.ArgumentParser:
         help="Выполнить финальную техническую приемку этапа 14.",
     )
     parser.add_argument(
+        "--update-dissertation",
+        action="store_true",
+        help=(
+            "Перенести принятые результаты этапов 2--14 в DOCX главы 6 "
+            "и сформировать Markdown-сводку этапа 15."
+        ),
+    )
+    parser.add_argument(
+        "--chapter6-document",
+        default=(
+            "6. Глава 6. Экспериментальная проверка достоверности "
+            "априорной оценки качества.docx"
+        ),
+        help="Путь к исходному DOCX главы 6 относительно корня проекта.",
+    )
+    parser.add_argument(
+        "--chapter6-output-document",
+        default=None,
+        help=(
+            "Необязательный путь к итоговому DOCX. При отсутствии документ "
+            "обновляется на месте с созданием резервной копии."
+        ),
+    )
+    parser.add_argument(
         "--run-full-pipeline",
         action="store_true",
         help=(
@@ -266,6 +294,27 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "Этап 13 выполнен. Переход к этапу 14 требует "
                 "отдельного подтверждения."
             )
+        if args.update_dissertation:
+            try:
+                dissertation_result = Chapter6DissertationUpdater(
+                    project_root=project_root,
+                    source_document=Path(args.chapter6_document),
+                    output_document=(
+                        Path(args.chapter6_output_document)
+                        if args.chapter6_output_document
+                        else None
+                    ),
+                ).build_and_save()
+            except (
+                FileNotFoundError,
+                OSError,
+                Chapter6DissertationUpdateError,
+                TypeError,
+                ValueError,
+            ) as error:
+                print(f"Ошибка обновления текста главы 6: {error}")
+                return 1
+            _print_stage15_result(dissertation_result)
         return 0
 
     if not any(
@@ -283,6 +332,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             args.build_figures,
             args.build_report,
             args.run_acceptance,
+            args.update_dissertation,
         )
     ):
         print(
@@ -292,7 +342,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             "--validate-partial-criteria, --validate-classification, "
             "--validate-interval-prediction, --compare-baselines, "
             "--bootstrap-analysis, --analyze-prediction-errors, "
-            "--build-figures, --build-report или --run-acceptance. Для "
+            "--build-figures, --build-report, --run-acceptance или "
+            "--update-dissertation. Для "
             "единого запуска используйте --run-full-pipeline."
         )
         return 0
@@ -869,7 +920,46 @@ def main(argv: Sequence[str] | None = None) -> int:
 
         _print_stage14_result(acceptance_result)
 
+    if args.update_dissertation:
+        try:
+            dissertation_result = Chapter6DissertationUpdater(
+                project_root=project_root,
+                source_document=Path(args.chapter6_document),
+                output_document=(
+                    Path(args.chapter6_output_document)
+                    if args.chapter6_output_document
+                    else None
+                ),
+            ).build_and_save()
+        except (
+            FileNotFoundError,
+            OSError,
+            Chapter6DissertationUpdateError,
+            TypeError,
+            ValueError,
+        ) as error:
+            print(f"Ошибка обновления текста главы 6: {error}")
+            return 1
+        _print_stage15_result(dissertation_result)
+
     return 0
+
+
+def _print_stage15_result(result: object) -> None:
+    """Вывести краткую сводку этапа 15."""
+
+    report = result.report
+    print("Результаты главы 6 перенесены в текст диссертации.")
+    print(f"Сценариев: {report['row_count']}")
+    print(f"Заполнено таблиц: {report['filled_tables']}")
+    print(f"Вставлено рисунков: {report['inserted_figures']}")
+    print(f"Статус основной гипотезы: {report['hypothesis_status']}")
+    print(f"Итоговый DOCX: {result.document_path}")
+    print(f"Markdown-сводка: {result.markdown_path}")
+    print(f"JSON-отчет этапа 15: {result.report_json_path}")
+    if result.backup_path is not None:
+        print(f"Резервная копия исходного DOCX: {result.backup_path}")
+    print("Этап 15 выполнен. Текст главы 6 обновлен по принятым результатам.")
 
 
 def _print_stage14_result(result: object) -> None:
