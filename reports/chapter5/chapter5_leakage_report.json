@@ -64,6 +64,6 @@
     "fact_reject_count",
     "fact_success"
   ],
-  "source_name": "data\\processed\\prior_features.csv",
+  "source_name": "D:\\Projects\\man_coding_quality\\data\\processed\\prior_features.csv",
   "matched_patterns_by_column": {}
 }

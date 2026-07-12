@@ -1,0 +1,38 @@
+{
+  "stage": 2,
+  "archive_name": "chapter6_stage2_data_loader_rebuilt_v3.zip",
+  "baseline": "состояние проекта после завершения этапа 1",
+  "files": [
+    {
+      "path": "README_STAGE2.md",
+      "sha256": "e16db5a73aa5bd054a3fae99e2105a86e08ef1354b27cf543f815e027c41788c",
+      "size_bytes": 3011
+    },
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_data_loader.py",
+      "sha256": "69553b85d943af650ab282a383291923866dd7063e0d640d75f9164489911124",
+      "size_bytes": 37123
+    },
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_runner.py",
+      "sha256": "844c22b3a5b654b32337886d0a044d5758a268250dc086b16bf5c34c8b414d68",
+      "size_bytes": 5993
+    },
+    {
+      "path": "tests/test_stage13_chapter3_report.py",
+      "sha256": "9b70ead9a84987ec4b58191a452495996af30013d60c70e8260ea013d5a4424c",
+      "size_bytes": 7949
+    },
+    {
+      "path": "tests/validation/test_chapter6_data_loader.py",
+      "sha256": "a0cacd5c0ef310415f32bd3ac1dc437dca4d95fb692334daf837daf4a467990e",
+      "size_bytes": 14923
+    }
+  ],
+  "verification": {
+    "stage1_stage2_stage13_tests": "36 passed",
+    "full_regression": "340 passed",
+    "production_input_hashes_unchanged_after_full_regression": true,
+    "stage2_cli_after_full_regression": "passed"
+  }
+}

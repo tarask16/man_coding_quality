@@ -21,16 +21,29 @@ from manual_coding_sim.chapter3_report import (
 
 
 def _make_config(tmp_path: Path, run_experiment: bool = True) -> Chapter3ImplementationReportConfig:
-    """Создает тестовую конфигурацию итогового отчета."""
+    """Создать изолированную тестовую конфигурацию итогового отчета."""
+
+    project_root = _prepare_sandbox_project(tmp_path)
     return Chapter3ImplementationReportConfig(
-        project_root=Path.cwd(),
-        output_json=tmp_path / "chapter3_implementation_report.json",
-        output_markdown=tmp_path / "chapter3_implementation_report.md",
+        project_root=project_root,
+        output_json=Path("reports/chapter3/chapter3_implementation_report.json"),
+        output_markdown=Path("reports/chapter3/chapter3_implementation_report.md"),
         run_experiment=run_experiment,
         experiment_run_count=2,
         random_seed=42,
         scenario_id="A_TEST_FINAL",
     )
+
+
+def _prepare_sandbox_project(tmp_path: Path) -> Path:
+    """Подготовить временный корень, не изменяющий рабочие артефакты проекта."""
+
+    project_root = tmp_path / "sandbox_project"
+    for relative_path in (*EXPECTED_SOURCE_FILES, *EXPECTED_TEST_FILES):
+        target = project_root / relative_path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.touch()
+    return project_root
 
 
 def test_report_config_is_valid(tmp_path: Path) -> None:

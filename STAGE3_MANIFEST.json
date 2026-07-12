@@ -1,0 +1,36 @@
+{
+  "stage": 3,
+  "archive_name": "chapter6_stage3_validation_dataset.zip",
+  "purpose": "Формирование единого проверочного датасета главы 6.",
+  "base_state": "Этапы 1 и 2 полностью закрыты.",
+  "generated_artifact": "reports/chapter6/validation_dataset.csv",
+  "files": [
+    {
+      "path": "README_STAGE3.md",
+      "size_bytes": 5914,
+      "sha256": "99d6555e4375317ae245bbbbb3e161b066a8b887261e53b2baf31a4f61e04f3f"
+    },
+    {
+      "path": "src/manual_coding_sim/validation/validation_dataset_builder.py",
+      "size_bytes": 19881,
+      "sha256": "541b8e5352fa722684046de78598741092880206a1eab5e9ca04a0d78caf0438"
+    },
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_runner.py",
+      "size_bytes": 8367,
+      "sha256": "64967ff0b76e7f9c2f4fb9e7557e69a6a7d03b5e734f9227272623f37f1b5062"
+    },
+    {
+      "path": "tests/validation/test_validation_dataset_builder.py",
+      "size_bytes": 14147,
+      "sha256": "508691b08409acb87d4eab204706469c70190f5f7cf0aa774b7feed3bfb73a62"
+    }
+  ],
+  "method_constraints": [
+    "Объединение выполняется по scenario_id и protocol_id.",
+    "Режим объединения one_to_one.",
+    "Q_pred не изменяется и не пересчитывается.",
+    "q_fact является копией integral_quality.",
+    "Переход к этапу 4 допускается только после закрытия этапа 3."
+  ]
+}

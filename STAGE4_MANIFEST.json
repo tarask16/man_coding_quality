@@ -1,0 +1,49 @@
+{
+  "stage": 4,
+  "archive_name": "chapter6_stage4_integral_quality.zip",
+  "purpose": "Проверка согласованности integral_quality с контрольной агрегацией шести частных критериев.",
+  "base_state": "Этапы 1–3 полностью закрыты.",
+  "generated_artifacts": [
+    "reports/chapter6/integral_quality_consistency.csv",
+    "reports/chapter6/integral_quality_consistency_report.json",
+    "reports/chapter6/integral_quality_consistency_report.md"
+  ],
+  "files": [
+    {
+      "path": "README_STAGE4.md",
+      "size_bytes": 5704,
+      "sha256": "36032bcebd22b34b5708761b37e61847de26be53f964df86d1acca8f481b3db1"
+    },
+    {
+      "path": "src/manual_coding_sim/validation/integral_quality_validator.py",
+      "size_bytes": 16194,
+      "sha256": "4ed99f82b07a61156873fafbe1f77b53f9dc3560cdd6981aa54b809f16ac7f50"
+    },
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_runner.py",
+      "size_bytes": 11293,
+      "sha256": "7daa96dbc72f4bb639bca060330b4dd52ece1f446080abde08209cfec9334fe5"
+    },
+    {
+      "path": "tests/validation/test_integral_quality_validator.py",
+      "size_bytes": 9743,
+      "sha256": "c428f701cbdf6e966fd24663cda806240051657b9b4aa484ab615d1e977e7353"
+    }
+  ],
+  "method_constraints": [
+    "Q_fact остается точной копией integral_quality.",
+    "Контрольная агрегация не подменяет фактическую целевую переменную.",
+    "Используются зафиксированные веса шести критериев главы 5.",
+    "Фиксированный диагностический допуск равен 0.05.",
+    "Переход к этапу 5 допускается только после закрытия этапа 4."
+  ],
+  "control_results": {
+    "stage4_tests": "10 passed",
+    "validation_tests": "43 passed",
+    "full_regression": "360 passed",
+    "row_count": 150,
+    "mean_absolute_difference": 0.014920375537676429,
+    "max_absolute_difference": 0.042020666608812984,
+    "outside_tolerance_count": 0
+  }
+}

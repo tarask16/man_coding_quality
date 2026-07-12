@@ -1,0 +1,132 @@
+{
+  "stage": 2,
+  "report_type": "chapter6_input_validation_report",
+  "passed": true,
+  "expected_row_count": 150,
+  "join_keys": [
+    "scenario_id",
+    "protocol_id"
+  ],
+  "checked_csv_count": 8,
+  "checked_json_count": 2,
+  "artifact_checks": {
+    "q_pred": {
+      "name": "q_pred",
+      "path": "reports\\chapter5\\q_pred.csv",
+      "row_count": 150,
+      "column_count": 24,
+      "reconstructed_key_columns": [],
+      "unique_keys": true,
+      "finite_values": true,
+      "unit_interval_values": true,
+      "key_set_aligned": true
+    },
+    "q_pred_components": {
+      "name": "q_pred_components",
+      "path": "reports\\chapter5\\q_pred_components.csv",
+      "row_count": 150,
+      "column_count": 35,
+      "reconstructed_key_columns": [],
+      "unique_keys": true,
+      "finite_values": true,
+      "unit_interval_values": true,
+      "key_set_aligned": true
+    },
+    "prediction_uncertainty": {
+      "name": "prediction_uncertainty",
+      "path": "reports\\chapter5\\prediction_uncertainty.csv",
+      "row_count": 150,
+      "column_count": 15,
+      "reconstructed_key_columns": [],
+      "unique_keys": true,
+      "finite_values": true,
+      "unit_interval_values": true,
+      "key_set_aligned": true
+    },
+    "normalized_prior_features": {
+      "name": "normalized_prior_features",
+      "path": "reports\\chapter5\\normalized_prior_features.csv",
+      "row_count": 150,
+      "column_count": 34,
+      "reconstructed_key_columns": [],
+      "unique_keys": true,
+      "finite_values": true,
+      "unit_interval_values": true,
+      "key_set_aligned": true
+    },
+    "latent_quality_component": {
+      "name": "latent_quality_component",
+      "path": "reports\\chapter5\\latent_quality_component.csv",
+      "row_count": 150,
+      "column_count": 10,
+      "reconstructed_key_columns": [],
+      "unique_keys": true,
+      "finite_values": true,
+      "unit_interval_values": true,
+      "key_set_aligned": true
+    },
+    "theta_prior": {
+      "name": "theta_prior",
+      "path": "reports\\chapter4\\theta_prior.csv",
+      "row_count": 150,
+      "column_count": 11,
+      "reconstructed_key_columns": [],
+      "unique_keys": true,
+      "finite_values": true,
+      "unit_interval_values": true,
+      "key_set_aligned": true
+    },
+    "quality_targets": {
+      "name": "quality_targets",
+      "path": "data\\processed\\quality_targets.csv",
+      "row_count": 150,
+      "column_count": 10,
+      "reconstructed_key_columns": [],
+      "unique_keys": true,
+      "finite_values": true,
+      "unit_interval_values": true,
+      "key_set_aligned": true
+    },
+    "fact_features": {
+      "name": "fact_features",
+      "path": "data\\processed\\fact_features.csv",
+      "row_count": 150,
+      "column_count": 8,
+      "reconstructed_key_columns": [],
+      "unique_keys": true,
+      "finite_values": true,
+      "unit_interval_values": true,
+      "key_set_aligned": true
+    }
+  },
+  "q_pred_consistency": {
+    "passed": true,
+    "tolerance": 1e-10,
+    "max_abs_difference": 0.0,
+    "partial_criteria_max_abs_difference": {
+      "q_acc_pred": 0.0,
+      "q_time_pred": 0.0,
+      "q_effort_pred": 0.0,
+      "q_res_pred": 0.0,
+      "q_rep_pred": 0.0,
+      "q_fit_pred": 0.0
+    }
+  },
+  "chapter5_prediction_report": {
+    "stage": 11,
+    "row_count": 150,
+    "apriori_only": true,
+    "leakage_check_passed": true,
+    "forbidden_column_count": 0
+  },
+  "chapter5_acceptance": {
+    "stage": 12,
+    "accepted": true,
+    "check_count": 18,
+    "all_checks_passed": true,
+    "apriori_only": true,
+    "leakage_check_passed": true,
+    "full_pipeline_completed": true
+  },
+  "method_note": "Фактические показатели загружены только для внешней проверки. Формулы, веса, нормировки и значения Q_pred главы 5 не изменялись."
+}

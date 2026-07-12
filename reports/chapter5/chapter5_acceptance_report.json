@@ -53,17 +53,17 @@
     "full_pipeline_completed": true
   },
   "artifact_paths": {
-    "prior_features": "data\\processed\\prior_features.csv",
-    "theta_prior": "reports\\chapter4\\theta_prior.csv",
-    "leakage_report": "reports\\chapter5\\chapter5_leakage_report.json",
-    "normalized_prior_features": "reports\\chapter5\\normalized_prior_features.csv",
-    "latent_quality_component": "reports\\chapter5\\latent_quality_component.csv",
-    "q_pred_components": "reports\\chapter5\\q_pred_components.csv",
-    "q_pred": "reports\\chapter5\\q_pred.csv",
-    "prediction_uncertainty": "reports\\chapter5\\prediction_uncertainty.csv",
-    "pipeline_run_report": "reports\\chapter5\\chapter5_pipeline_run_report.json",
-    "final_report_json": "reports\\chapter5\\chapter5_prediction_report.json",
-    "final_report_md": "reports\\chapter5\\chapter5_prediction_report.md"
+    "prior_features": "D:\\Projects\\man_coding_quality\\data\\processed\\prior_features.csv",
+    "theta_prior": "D:\\Projects\\man_coding_quality\\reports\\chapter4\\theta_prior.csv",
+    "leakage_report": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\chapter5_leakage_report.json",
+    "normalized_prior_features": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\normalized_prior_features.csv",
+    "latent_quality_component": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\latent_quality_component.csv",
+    "q_pred_components": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\q_pred_components.csv",
+    "q_pred": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\q_pred.csv",
+    "prediction_uncertainty": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\prediction_uncertainty.csv",
+    "pipeline_run_report": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\chapter5_pipeline_run_report.json",
+    "final_report_json": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\chapter5_prediction_report.json",
+    "final_report_md": "D:\\Projects\\man_coding_quality\\reports\\chapter5\\chapter5_prediction_report.md"
   },
   "acceptance_notes": [
     "Все артефакты главы 5 согласованы и готовы к фиксации.",
