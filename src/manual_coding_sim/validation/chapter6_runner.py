@@ -30,6 +30,14 @@ from manual_coding_sim.validation.chapter6_figure_builder import (
     Chapter6FigureBuildError,
     Chapter6FigureBuilder,
 )
+from manual_coding_sim.validation.chapter6_pipeline import (
+    Chapter6Pipeline,
+    Chapter6PipelineError,
+)
+from manual_coding_sim.validation.chapter6_report_builder import (
+    Chapter6ReportBuildError,
+    Chapter6ReportBuilder,
+)
 from manual_coding_sim.validation.classification_validator import (
     ClassificationValidationError,
     ClassificationValidator,
@@ -162,6 +170,19 @@ def build_arg_parser() -> argparse.ArgumentParser:
             "главы 6 на этапе 12."
         ),
     )
+    parser.add_argument(
+        "--build-report",
+        action="store_true",
+        help="Сформировать итоговый JSON- и Markdown-отчет этапа 13.",
+    )
+    parser.add_argument(
+        "--run-full-pipeline",
+        action="store_true",
+        help=(
+            "Выполнить единый контур этапов 2--11; флаги --build-figures "
+            "и --build-report добавляют этапы 12 и 13."
+        ),
+    )
     return parser
 
 
@@ -180,6 +201,47 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     _print_config(config, project_root, args.config, args.show_config)
 
+    if args.run_full_pipeline:
+        try:
+            pipeline_result = Chapter6Pipeline(
+                config=config,
+                project_root=project_root,
+            ).run(
+                build_figures=args.build_figures,
+                build_report=args.build_report,
+            )
+        except (FileNotFoundError, OSError, Chapter6PipelineError) as error:
+            print(f"Ошибка полного контура главы 6: {error}")
+            return 1
+
+        print("Полный программный контур главы 6 успешно завершен.")
+        print(
+            "Выполнено шагов: "
+            f"{sum(pipeline_result.report['completed_steps'].values())}/"
+            f"{len(pipeline_result.report['completed_steps'])}"
+        )
+        chapter5_unchanged = pipeline_result.report[
+            "methodological_checks"
+        ]["chapter5_artifacts_unchanged"]
+        print(
+            "Артефакты главы 5 не изменены: "
+            f"{chapter5_unchanged}"
+        )
+        print(f"Отчет полного запуска: {pipeline_result.report_path}")
+        if pipeline_result.final_report_result is not None:
+            final_result = pipeline_result.final_report_result
+            print(
+                "Статус основной гипотезы: "
+                f"{final_result.hypothesis_status}"
+            )
+            print(f"JSON-отчет главы 6: {final_result.json_path}")
+            print(f"Markdown-отчет главы 6: {final_result.markdown_path}")
+        print(
+            "Этап 13 выполнен. Переход к этапу 14 требует "
+            "отдельного подтверждения."
+        )
+        return 0
+
     if not any(
         (
             args.validate_inputs,
@@ -193,6 +255,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             args.bootstrap_analysis,
             args.analyze_prediction_errors,
             args.build_figures,
+            args.build_report,
         )
     ):
         print(
@@ -201,8 +264,9 @@ def main(argv: Sequence[str] | None = None) -> int:
             "--validate-integral-quality, --calculate-integral-metrics, "
             "--validate-partial-criteria, --validate-classification, "
             "--validate-interval-prediction, --compare-baselines, "
-            "--bootstrap-analysis, --analyze-prediction-errors "
-            "или --build-figures."
+            "--bootstrap-analysis, --analyze-prediction-errors, "
+            "--build-figures или --build-report. Для единого запуска "
+            "используйте --run-full-pipeline."
         )
         return 0
 
@@ -729,6 +793,33 @@ def main(argv: Sequence[str] | None = None) -> int:
 
         print(
             "Этап 12 выполнен. Переход к этапу 13 требует "
+            "отдельного подтверждения."
+        )
+
+    if args.build_report:
+        try:
+            report_result = Chapter6ReportBuilder(
+                config=config,
+                project_root=project_root,
+            ).build_and_save()
+        except (
+            FileNotFoundError,
+            OSError,
+            Chapter6ReportBuildError,
+            TypeError,
+            ValueError,
+        ) as error:
+            print(f"Ошибка формирования итогового отчета главы 6: {error}")
+            return 1
+
+        print("Итоговый отчет экспериментальной проверки главы 6 сформирован.")
+        print(f"Сценариев: {report_result.report['row_count']}")
+        print(f"Технический статус: {report_result.passed}")
+        print(f"Статус основной гипотезы: {report_result.hypothesis_status}")
+        print(f"JSON-отчет: {report_result.json_path}")
+        print(f"Markdown-отчет: {report_result.markdown_path}")
+        print(
+            "Этап 13 выполнен. Переход к этапу 14 требует "
             "отдельного подтверждения."
         )
 

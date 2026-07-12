@@ -1,0 +1,78 @@
+{
+  "stage": 13,
+  "name": "Итоговый отчет экспериментальной проверки главы 6",
+  "archive_name": "chapter6_stage13_report_builder.zip",
+  "created_files": [
+    "src/manual_coding_sim/validation/chapter6_report_builder.py",
+    "src/manual_coding_sim/validation/chapter6_pipeline.py",
+    "tests/validation/test_chapter6_report_builder.py",
+    "README_STAGE13.md",
+    "STAGE13_MANIFEST.json"
+  ],
+  "updated_files": [
+    "src/manual_coding_sim/validation/chapter6_runner.py"
+  ],
+  "generated_runtime_artifacts": [
+    "reports/chapter6/chapter6_validation_report.json",
+    "reports/chapter6/chapter6_validation_report.md",
+    "reports/chapter6/chapter6_pipeline_run_report.json"
+  ],
+  "cli_flags": [
+    "--build-report",
+    "--run-full-pipeline"
+  ],
+  "hypothesis_statuses": [
+    "hypothesis_supported",
+    "hypothesis_partially_supported",
+    "hypothesis_not_supported"
+  ],
+  "test_file": "tests/validation/test_chapter6_report_builder.py",
+  "test_count": 16,
+  "control_results": {
+    "stage13_tests": "16 passed",
+    "validation_tests_reconstructed_copy": "159 passed",
+    "full_regression_reconstructed_copy": "476 passed",
+    "full_pipeline_steps": "12/12",
+    "main_corpus_row_count": 150,
+    "technical_status": true,
+    "hypothesis_status": "hypothesis_partially_supported",
+    "chapter5_artifacts_unchanged": true
+  },
+  "local_expected_counts_after_confirmed_stage12": {
+    "validation_tests": 167,
+    "full_regression": 484,
+    "note": "Ожидаемые числа получены добавлением 16 тестов к локально подтвержденному состоянию этапа 12; критерием является отсутствие падений."
+  },
+  "files": [
+    {
+      "path": "README_STAGE13.md",
+      "size_bytes": 10267,
+      "sha256": "862ca67a24064da55638dc51cdf5af14ebda5ef3601c55740adb61ea71d33837",
+      "action": "create"
+    },
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_report_builder.py",
+      "size_bytes": 45385,
+      "sha256": "de2924ecbba2e2fd0e31a82218e283d9118746b8377aa0c6afd863b972436874",
+      "action": "create"
+    },
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_pipeline.py",
+      "size_bytes": 16346,
+      "sha256": "2d02f9a0ca5c0a14e13ede9291e4253706be83f4b51d518f05909f5c1eab9d18",
+      "action": "create"
+    },
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_runner.py",
+      "size_bytes": 38573,
+      "sha256": "787f1a230d8417e58ee3742e6f701ab8ad191629919efa212ee9e854ec236f84",
+      "action": "update"
+    },
+    {
+      "path": "tests/validation/test_chapter6_report_builder.py",
+      "size_bytes": 28555,
+      "sha256": "96dc879e7363979e18ac7457e45f10b19fb122b3402da349d301247d3ba018da",
+      "action": "create"
+    }
+  ]
+}

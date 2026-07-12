@@ -1,0 +1,1107 @@
+{
+  "stage": 13,
+  "report_type": "chapter6_validation_final_report",
+  "passed": true,
+  "row_count": 150,
+  "expected_row_count": 150,
+  "hypothesis_status": "hypothesis_partially_supported",
+  "hypothesis": {
+    "statement": "Включение латентного профиля LDA повышает достоверность априорной оценки качества относительно схемы без LDA.",
+    "status": "hypothesis_partially_supported",
+    "allowed_statuses": [
+      "hypothesis_supported",
+      "hypothesis_partially_supported",
+      "hypothesis_not_supported"
+    ],
+    "decision_rule": {
+      "full_support": "Статистически устойчивое преимущество полной модели над prior-only baseline одновременно по MAE/RMSE и Spearman/Kendall, точечное преимущество по Balanced Accuracy и Macro F1, отсутствие критических классификационных ошибок.",
+      "partial_support": "Высокая ранговая согласованность и преимущество хотя бы в одной прикладной размерности при отсутствии полного подтверждения абсолютной точности.",
+      "not_supported": "Отсутствует подтвержденное преимущество полной модели в ранжировании, классификации или абсолютной точности."
+    },
+    "criteria": {
+      "absolute_accuracy_stably_supported": false,
+      "absolute_accuracy_stably_contradicted": true,
+      "ranking_point_advantage": true,
+      "ranking_stably_supported": false,
+      "ranking_stably_contradicted": false,
+      "ranking_level_high": true,
+      "classification_point_advantage": true,
+      "classification_stably_supported": false,
+      "critical_error_count": 0,
+      "interval_coverage_rate": 0.18666666666666668,
+      "integral_bias": -0.14939864470445038,
+      "stable_chapter5_wins_all_baselines": 7,
+      "stable_baseline_wins_all_baselines": 5
+    },
+    "evidence_for": [
+      "Полная модель имеет более высокие точечные Spearman и Kendall, чем prior-only baseline.",
+      "Полная модель превосходит prior-only baseline по Balanced Accuracy и Macro F1 в точечной оценке.",
+      "Критические ошибки low→high и high→low отсутствуют."
+    ],
+    "evidence_against": [
+      "Prior-only baseline статистически устойчиво превосходит полную модель хотя бы по одной метрике абсолютной ошибки.",
+      "Эмпирическое покрытие прогнозных интервалов ниже диагностического ориентира 0,80.",
+      "Абсолютная шкала имеет выраженное систематическое смещение."
+    ],
+    "interpretation": "Основная гипотеза подтверждена частично: латентный профиль улучшает дифференциацию или ранжирование, но не обеспечивает одновременного статистически устойчивого улучшения абсолютной точности и интервальной калибровки."
+  },
+  "technical_checks": {
+    "all_source_reports_passed": true,
+    "row_count_matches_expected": true,
+    "composite_key_is_unique": true,
+    "q_pred_consistency_confirmed": true,
+    "chapter5_acceptance_confirmed": true,
+    "baseline_leakage_checks_passed": true,
+    "bootstrap_methodological_checks_passed": true,
+    "prediction_model_not_modified": true,
+    "quality_thresholds_not_modified": true,
+    "figure_sources_not_modified": true,
+    "manual_data_substitution_absent": true,
+    "all_source_hashes_recorded": true
+  },
+  "input_validation": {
+    "passed": true,
+    "expected_row_count": 150,
+    "checked_csv_count": 8,
+    "checked_json_count": 2,
+    "q_pred_consistency": {
+      "passed": true,
+      "tolerance": 1e-10,
+      "max_abs_difference": 0.0,
+      "partial_criteria_max_abs_difference": {
+        "q_acc_pred": 0.0,
+        "q_time_pred": 0.0,
+        "q_effort_pred": 0.0,
+        "q_res_pred": 0.0,
+        "q_rep_pred": 0.0,
+        "q_fit_pred": 0.0
+      }
+    },
+    "chapter5_acceptance": {
+      "stage": 12,
+      "accepted": true,
+      "check_count": 18,
+      "all_checks_passed": true,
+      "apriori_only": true,
+      "leakage_check_passed": true,
+      "full_pipeline_completed": true
+    }
+  },
+  "integral_quality_consistency": {
+    "passed": true,
+    "row_count": 150,
+    "consistency_tolerance": 0.05,
+    "metrics": {
+      "mean_signed_difference": 0.00948657998009265,
+      "mean_absolute_difference": 0.014920375537676429,
+      "max_absolute_difference": 0.042020666608812984,
+      "rmse_difference": 0.0175177992036286,
+      "max_q_fact_alias_difference": 0.0,
+      "within_tolerance_count": 150,
+      "outside_tolerance_count": 0,
+      "consistency_rate": 1.0
+    }
+  },
+  "integral_prediction": {
+    "passed": true,
+    "row_count": 150,
+    "error_definition": "prediction_error = q_pred - q_fact",
+    "metrics": {
+      "mae": 0.15924416685631146,
+      "rmse": 0.19440271102220305,
+      "bias": -0.14939864470445038,
+      "median_absolute_error": 0.1452399879442813,
+      "max_absolute_error": 0.37666320802262926,
+      "pearson": 0.8920527352062814,
+      "spearman": 0.881768967509667,
+      "kendall": 0.6993288590604027,
+      "r2": -1.9716122140335437,
+      "q_pred_mean": 0.49884356862888296,
+      "q_fact_mean": 0.6482422133333333,
+      "q_pred_std": 0.2147846963694056,
+      "q_fact_std": 0.1131510907985743
+    }
+  },
+  "partial_criteria": {
+    "passed": true,
+    "row_count": 150,
+    "criterion_count": 6,
+    "summary": {
+      "mean_mae": 0.2182707507926732,
+      "mean_rmse": 0.26403377523350585,
+      "mean_absolute_bias": 0.15888522470292274,
+      "mean_spearman": 0.6947963808971115,
+      "mean_kendall": 0.5392276457064696,
+      "best_mae_criterion": "q_effort",
+      "best_mae": 0.15606408721472015,
+      "worst_mae_criterion": "q_fit",
+      "worst_mae": 0.3442877621221375,
+      "best_spearman_criterion": "q_fit",
+      "best_spearman": 0.8732743677496778,
+      "worst_spearman_criterion": "q_time",
+      "worst_spearman": 0.5944744210853816
+    },
+    "metrics": [
+      {
+        "criterion": "q_acc",
+        "predicted_column": "q_acc_pred",
+        "factual_column": "q_acc",
+        "description": "Точность восстановления сообщения",
+        "mae": 0.20892704166659282,
+        "rmse": 0.2549953068815382,
+        "bias": -0.19056167579084285,
+        "pearson": 0.8396598334098799,
+        "spearman": 0.8583211918928502,
+        "kendall": 0.691816046791952,
+        "r2": -3.4535252330726927,
+        "predicted_mean": 0.4677022108758239,
+        "factual_mean": 0.6582638866666667,
+        "predicted_std": 0.25853261374383396,
+        "factual_std": 0.12123631406945752,
+        "max_absolute_error": 0.5297105091044816
+      },
+      {
+        "criterion": "q_time",
+        "predicted_column": "q_time_pred",
+        "factual_column": "q_time",
+        "description": "Временная эффективность",
+        "mae": 0.17022825766637362,
+        "rmse": 0.2252667112466207,
+        "bias": -0.11261542295854984,
+        "pearson": 0.5837591021841233,
+        "spearman": 0.5944744210853816,
+        "kendall": 0.41906040268456374,
+        "r2": -3.3312082569938823,
+        "predicted_mean": 0.5528510437081169,
+        "factual_mean": 0.6654664666666665,
+        "predicted_std": 0.23816370349953142,
+        "factual_std": 0.10860378987477054,
+        "max_absolute_error": 0.531707380187747
+      },
+      {
+        "criterion": "q_effort",
+        "predicted_column": "q_effort_pred",
+        "factual_column": "q_effort",
+        "description": "Трудоемкость ручной процедуры",
+        "mae": 0.15606408721472015,
+        "rmse": 0.18492850110409348,
+        "bias": -0.04722535731478095,
+        "pearson": 0.6229871964954887,
+        "spearman": 0.6117192472765158,
+        "kendall": 0.4556094223959342,
+        "r2": -0.6943422141330642,
+        "predicted_mean": 0.507219082685219,
+        "factual_mean": 0.5544444399999999,
+        "predicted_std": 0.2293380163930308,
+        "factual_std": 0.14254624427701684,
+        "max_absolute_error": 0.4437468895242754
+      },
+      {
+        "criterion": "q_res",
+        "predicted_column": "q_res_pred",
+        "factual_column": "q_res",
+        "description": "Результативность и устойчивость",
+        "mae": 0.20566567233896757,
+        "rmse": 0.2560608882693847,
+        "bias": -0.1013408764948141,
+        "pearson": 0.632817307527778,
+        "spearman": 0.6328172126284024,
+        "kendall": 0.5184125397763869,
+        "r2": 0.2787144734977528,
+        "predicted_mean": 0.4523257901718526,
+        "factual_mean": 0.5536666666666668,
+        "predicted_std": 0.2197582964700712,
+        "factual_std": 0.3025116707863825,
+        "max_absolute_error": 0.6467473128045242
+      },
+      {
+        "criterion": "q_rep",
+        "predicted_column": "q_rep_pred",
+        "factual_column": "q_rep",
+        "description": "Повторяемость результата",
+        "mae": 0.2244516837472475,
+        "rmse": 0.27452572760330524,
+        "bias": -0.15728025353641123,
+        "pearson": 0.6036555757707361,
+        "spearman": 0.5981718447498416,
+        "kendall": 0.46026612030810204,
+        "r2": -0.31673435252271487,
+        "predicted_mean": 0.5282752331302554,
+        "factual_mean": 0.6855554866666668,
+        "predicted_std": 0.2646681891792586,
+        "factual_std": 0.24004157272108634,
+        "max_absolute_error": 0.6954968225593601
+      },
+      {
+        "criterion": "q_fit",
+        "predicted_column": "q_fit_pred",
+        "factual_column": "q_fit",
+        "description": "Соответствие условиям применения",
+        "mae": 0.3442877621221375,
+        "rmse": 0.3884255162960927,
+        "bias": -0.3442877621221375,
+        "pearson": 0.8633228363900988,
+        "spearman": 0.8732743677496778,
+        "kendall": 0.6902013422818792,
+        "r2": -45.852657867711045,
+        "predicted_mean": 0.4846880512111956,
+        "factual_mean": 0.8289758133333334,
+        "predicted_std": 0.2272889731579527,
+        "factual_std": 0.0569368099206311,
+        "max_absolute_error": 0.6595563386375659
+      }
+    ]
+  },
+  "classification": {
+    "passed": true,
+    "row_count": 150,
+    "metrics": {
+      "accuracy": 0.44666666666666666,
+      "balanced_accuracy": 0.6678231292517007,
+      "macro_f1": 0.42251516924389226,
+      "weighted_f1": 0.5552571279987696
+    },
+    "critical_errors": {
+      "low_to_high": 0,
+      "high_to_low": 0,
+      "total": 0
+    },
+    "per_class_metrics": [
+      {
+        "class_label": "low",
+        "precision": 0.014925373134328358,
+        "recall": 1.0,
+        "f1": 0.029411764705882353,
+        "support": 1,
+        "predicted_count": 67,
+        "true_positive": 1,
+        "false_positive": 66,
+        "false_negative": 0
+      },
+      {
+        "class_label": "medium",
+        "precision": 0.673469387755102,
+        "recall": 0.33,
+        "f1": 0.4429530201342282,
+        "support": 100,
+        "predicted_count": 49,
+        "true_positive": 33,
+        "false_positive": 16,
+        "false_negative": 67
+      },
+      {
+        "class_label": "high",
+        "precision": 0.9705882352941176,
+        "recall": 0.673469387755102,
+        "f1": 0.7951807228915663,
+        "support": 49,
+        "predicted_count": 34,
+        "true_positive": 33,
+        "false_positive": 1,
+        "false_negative": 16
+      }
+    ]
+  },
+  "interval_prediction": {
+    "passed": true,
+    "row_count": 150,
+    "coverage_condition": "q_pred_lower <= q_fact <= q_pred_upper",
+    "metrics": {
+      "coverage_rate": 0.18666666666666668,
+      "covered_count": 28,
+      "miss_count": 122,
+      "mean_interval_width": 0.08418315325643524,
+      "median_interval_width": 0.09743192032480363,
+      "min_interval_width": 0.029825129753644097,
+      "max_interval_width": 0.1616081492819207,
+      "miss_lower_count": 11,
+      "miss_upper_count": 111,
+      "mean_distance_to_interval": 0.12117878510543256,
+      "mean_miss_distance": 0.1489903095558597,
+      "max_distance_to_interval": 0.3530994296688182
+    },
+    "slices": {
+      "by_factual_class": [
+        {
+          "group": "low",
+          "count": 1,
+          "covered_count": 0,
+          "coverage_rate": 0.0,
+          "mean_interval_width": 0.08659556179715358,
+          "median_interval_width": 0.08659556179715358,
+          "miss_lower_count": 0,
+          "miss_upper_count": 1,
+          "mean_distance_to_interval": 0.1678391046699279,
+          "mean_miss_distance": 0.1678391046699279,
+          "mean_uncertainty_score": 0.2886518726571784,
+          "mean_q_pred": 0.2093401144314953,
+          "mean_q_fact": 0.420477
+        },
+        {
+          "group": "medium",
+          "count": 100,
+          "covered_count": 12,
+          "coverage_rate": 0.12,
+          "mean_interval_width": 0.09256159343402659,
+          "median_interval_width": 0.10669341242553029,
+          "miss_lower_count": 3,
+          "miss_upper_count": 85,
+          "mean_distance_to_interval": 0.16007347397966662,
+          "mean_miss_distance": 0.18190167497689388,
+          "mean_uncertainty_score": 0.30853864478008863,
+          "mean_q_pred": 0.38568314376143237,
+          "mean_q_fact": 0.5825886299999999
+        },
+        {
+          "group": "high",
+          "count": 49,
+          "covered_count": 16,
+          "coverage_rate": 0.32653061224489793,
+          "mean_interval_width": 0.06703506292378514,
+          "median_interval_width": 0.061059331918254856,
+          "miss_lower_count": 8,
+          "miss_upper_count": 25,
+          "mean_distance_to_interval": 0.04084961761588355,
+          "mean_miss_distance": 0.060655492823584664,
+          "mean_uncertainty_score": 0.22345020974595045,
+          "mean_q_pred": 0.7356914449746472,
+          "mean_q_fact": 0.786877387755102
+        }
+      ],
+      "by_predicted_class": [
+        {
+          "group": "low",
+          "count": 67,
+          "covered_count": 0,
+          "coverage_rate": 0.0,
+          "mean_interval_width": 0.08270132189445073,
+          "median_interval_width": 0.0962932479666043,
+          "miss_lower_count": 0,
+          "miss_upper_count": 67,
+          "mean_distance_to_interval": 0.21706703176050574,
+          "mean_miss_distance": 0.21706703176050574,
+          "mean_uncertainty_score": 0.2756710729815024,
+          "mean_q_pred": 0.29205082968032864,
+          "mean_q_fact": 0.5504685223880598
+        },
+        {
+          "group": "medium",
+          "count": 49,
+          "covered_count": 14,
+          "coverage_rate": 0.2857142857142857,
+          "mean_interval_width": 0.11437509808042808,
+          "median_interval_width": 0.11188191685395782,
+          "miss_lower_count": 2,
+          "miss_upper_count": 33,
+          "mean_distance_to_interval": 0.05984360191488713,
+          "mean_miss_distance": 0.08378104268084198,
+          "mean_uncertainty_score": 0.38125032693476024,
+          "mean_q_pred": 0.5756792880407885,
+          "mean_q_fact": 0.6763505918367347
+        },
+        {
+          "group": "high",
+          "count": 34,
+          "covered_count": 14,
+          "coverage_rate": 0.4117647058823529,
+          "mean_interval_width": 0.04359131222341504,
+          "median_interval_width": 0.030616677606789988,
+          "miss_lower_count": 9,
+          "miss_upper_count": 11,
+          "mean_distance_to_interval": 0.02061735717739798,
+          "mean_miss_distance": 0.03504950720157657,
+          "mean_uncertainty_score": 0.14530437407805008,
+          "mean_q_pred": 0.7956130762279939,
+          "mean_q_fact": 0.8004047647058824
+        }
+      ],
+      "by_dominant_factor": [
+        {
+          "group": "theta_0",
+          "count": 34,
+          "covered_count": 0,
+          "coverage_rate": 0.0,
+          "mean_interval_width": 0.09151105390529042,
+          "median_interval_width": 0.1058398696843004,
+          "miss_lower_count": 0,
+          "miss_upper_count": 34,
+          "mean_distance_to_interval": 0.20494577187330207,
+          "mean_miss_distance": 0.20494577187330207,
+          "mean_uncertainty_score": 0.305036846350968,
+          "mean_q_pred": 0.3454182011740527,
+          "mean_q_fact": 0.5961194999999999
+        },
+        {
+          "group": "theta_1",
+          "count": 46,
+          "covered_count": 0,
+          "coverage_rate": 0.0,
+          "mean_interval_width": 0.08343740002148357,
+          "median_interval_width": 0.09964907301490211,
+          "miss_lower_count": 0,
+          "miss_upper_count": 46,
+          "mean_distance_to_interval": 0.19158703951140982,
+          "mean_miss_distance": 0.19158703951140982,
+          "mean_uncertainty_score": 0.2781246667382785,
+          "mean_q_pred": 0.3111511083039354,
+          "mean_q_fact": 0.5444568478260869
+        },
+        {
+          "group": "theta_2",
+          "count": 70,
+          "covered_count": 28,
+          "coverage_rate": 0.4,
+          "mean_interval_width": 0.08111395363853097,
+          "median_interval_width": 0.09038309924804344,
+          "miss_lower_count": 11,
+          "miss_upper_count": 31,
+          "mean_distance_to_interval": 0.03422368149425376,
+          "mean_miss_distance": 0.0570394691570896,
+          "mean_uncertainty_score": 0.2703798454617698,
+          "mean_q_pred": 0.6967052210347662,
+          "mean_q_fact": 0.7417607714285714
+        }
+      ],
+      "by_uncertainty_quantile": [
+        {
+          "group": "Q1",
+          "count": 38,
+          "covered_count": 4,
+          "coverage_rate": 0.10526315789473684,
+          "mean_interval_width": 0.0305321258659428,
+          "median_interval_width": 0.030438011748392002,
+          "miss_lower_count": 6,
+          "miss_upper_count": 28,
+          "mean_distance_to_interval": 0.12948645914436288,
+          "mean_miss_distance": 0.14472016022017026,
+          "mean_uncertainty_score": 0.10177375288647596,
+          "mean_q_pred": 0.569070989169499,
+          "mean_q_fact": 0.6958421052631578,
+          "uncertainty_score_min": 0.0994170991788137,
+          "uncertainty_score_max": 0.1044749885946898
+        },
+        {
+          "group": "Q2",
+          "count": 37,
+          "covered_count": 11,
+          "coverage_rate": 0.2972972972972973,
+          "mean_interval_width": 0.0691370509353882,
+          "median_interval_width": 0.07441041722788688,
+          "miss_lower_count": 5,
+          "miss_upper_count": 21,
+          "mean_distance_to_interval": 0.1148621494020054,
+          "mean_miss_distance": 0.16345767414900766,
+          "mean_uncertainty_score": 0.23045683645129394,
+          "mean_q_pred": 0.5242268270047358,
+          "mean_q_fact": 0.6479301891891892,
+          "uncertainty_score_min": 0.1047661827337218,
+          "uncertainty_score_max": 0.3246319459215847
+        },
+        {
+          "group": "Q3",
+          "count": 37,
+          "covered_count": 8,
+          "coverage_rate": 0.21621621621621623,
+          "mean_interval_width": 0.1079347315350464,
+          "median_interval_width": 0.10900701374614141,
+          "miss_lower_count": 0,
+          "miss_upper_count": 29,
+          "mean_distance_to_interval": 0.12975416167487722,
+          "mean_miss_distance": 0.16554841317139507,
+          "mean_uncertainty_score": 0.35978243845015473,
+          "mean_q_pred": 0.43629169919478233,
+          "mean_q_fact": 0.6143003513513513,
+          "uncertainty_score_min": 0.3249141895771065,
+          "uncertainty_score_max": 0.3789124208380551
+        },
+        {
+          "group": "Q4",
+          "count": 38,
+          "covered_count": 5,
+          "coverage_rate": 0.13157894736842105,
+          "mean_interval_width": 0.12935779616193105,
+          "median_interval_width": 0.11601599560099989,
+          "miss_lower_count": 0,
+          "miss_upper_count": 33,
+          "mean_distance_to_interval": 0.1106718107495905,
+          "mean_miss_distance": 0.12744026692377086,
+          "mean_uncertainty_score": 0.4311926538731035,
+          "mean_q_pred": 0.46480663780287684,
+          "mean_q_fact": 0.6339947894736844,
+          "uncertainty_score_min": 0.3794995025763518,
+          "uncertainty_score_max": 0.5386938309397353
+        }
+      ]
+    }
+  },
+  "baseline_comparison": {
+    "passed": true,
+    "row_count": 150,
+    "metrics": [
+      {
+        "model": "mean_baseline",
+        "description": "Out-of-fold среднее фактического качества",
+        "mae": 0.09722685733333333,
+        "rmse": 0.11290290886798957,
+        "bias": -1.628327102783563e-17,
+        "median_absolute_error": 0.09491060000000001,
+        "max_absolute_error": 0.27248120833333334,
+        "pearson": -0.06394548057809361,
+        "spearman": -0.07174442724917014,
+        "kendall": -0.05125285924134016,
+        "r2": -0.002300076273579199,
+        "accuracy": 0.6666666666666666,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.26666666666666666,
+        "weighted_f1": 0.5333333333333333,
+        "prediction_mean": 0.6482422133333334,
+        "prediction_std": 0.0018088752197625642,
+        "predicted_low_count": 0,
+        "predicted_medium_count": 150,
+        "predicted_high_count": 0
+      },
+      {
+        "model": "prior_only_baseline",
+        "description": "Только априорные feature-компоненты без LDA",
+        "mae": 0.11182212466744895,
+        "rmse": 0.13211309386475656,
+        "bias": -0.10771008772152825,
+        "median_absolute_error": 0.11045477939199003,
+        "max_absolute_error": 0.30971996800451845,
+        "pearson": 0.8482473879070187,
+        "spearman": 0.8590515134005956,
+        "kendall": 0.6665771812080536,
+        "r2": -0.3723953152466415,
+        "accuracy": 0.5133333333333333,
+        "balanced_accuracy": 0.6456462585034013,
+        "macro_f1": 0.3931547300596369,
+        "weighted_f1": 0.5804602705491541,
+        "prediction_mean": 0.5405321256118051,
+        "prediction_std": 0.1439457092565406,
+        "predicted_low_count": 42,
+        "predicted_medium_count": 91,
+        "predicted_high_count": 17
+      },
+      {
+        "model": "theta_only_baseline",
+        "description": "Только латентная компонента q_latent",
+        "mae": 0.3041245324865814,
+        "rmse": 0.36054419164092977,
+        "bias": -0.22872079717436142,
+        "median_absolute_error": 0.24346234853055004,
+        "max_absolute_error": 0.6363587504629,
+        "pearson": 0.8643067885365794,
+        "spearman": 0.8666891861860527,
+        "kendall": 0.6774944071588367,
+        "r2": -9.221261693560972,
+        "accuracy": 0.34,
+        "balanced_accuracy": 0.6248979591836735,
+        "macro_f1": 0.3430737205922784,
+        "weighted_f1": 0.4039629236872079,
+        "prediction_mean": 0.419521416158972,
+        "prediction_std": 0.37158801534558367,
+        "predicted_low_count": 81,
+        "predicted_medium_count": 26,
+        "predicted_high_count": 43
+      },
+      {
+        "model": "chapter5_model",
+        "description": "Неизменный интегральный прогноз главы 5",
+        "mae": 0.15924416685631146,
+        "rmse": 0.19440271102220305,
+        "bias": -0.14939864470445038,
+        "median_absolute_error": 0.1452399879442813,
+        "max_absolute_error": 0.37666320802262926,
+        "pearson": 0.8920527352062814,
+        "spearman": 0.881768967509667,
+        "kendall": 0.6993288590604027,
+        "r2": -1.9716122140335437,
+        "accuracy": 0.44666666666666666,
+        "balanced_accuracy": 0.6678231292517007,
+        "macro_f1": 0.42251516924389226,
+        "weighted_f1": 0.5552571279987696,
+        "prediction_mean": 0.49884356862888296,
+        "prediction_std": 0.2147846963694056,
+        "predicted_low_count": 67,
+        "predicted_medium_count": 49,
+        "predicted_high_count": 34
+      }
+    ],
+    "best_models": {
+      "mae": {
+        "model": "mean_baseline",
+        "value": 0.09722685733333333,
+        "direction": "min"
+      },
+      "rmse": {
+        "model": "mean_baseline",
+        "value": 0.11290290886798957,
+        "direction": "min"
+      },
+      "absolute_bias": {
+        "model": "mean_baseline",
+        "value": 1.628327102783563e-17,
+        "direction": "min"
+      },
+      "spearman": {
+        "model": "chapter5_model",
+        "value": 0.881768967509667,
+        "direction": "max"
+      },
+      "kendall": {
+        "model": "chapter5_model",
+        "value": 0.6993288590604027,
+        "direction": "max"
+      },
+      "accuracy": {
+        "model": "mean_baseline",
+        "value": 0.6666666666666666,
+        "direction": "max"
+      },
+      "balanced_accuracy": {
+        "model": "chapter5_model",
+        "value": 0.6678231292517007,
+        "direction": "max"
+      },
+      "macro_f1": {
+        "model": "chapter5_model",
+        "value": 0.42251516924389226,
+        "direction": "max"
+      }
+    },
+    "chapter5_differences": [
+      {
+        "baseline": "mean_baseline",
+        "delta_mae_chapter5_minus_baseline": 0.062017309522978126,
+        "delta_rmse_chapter5_minus_baseline": 0.08149980215421349,
+        "delta_spearman_chapter5_minus_baseline": 0.9535133947588372,
+        "delta_kendall_chapter5_minus_baseline": 0.7505817183017428,
+        "delta_accuracy_chapter5_minus_baseline": -0.21999999999999997,
+        "delta_macro_f1_chapter5_minus_baseline": 0.1558485025772256
+      },
+      {
+        "baseline": "prior_only_baseline",
+        "delta_mae_chapter5_minus_baseline": 0.04742204218886251,
+        "delta_rmse_chapter5_minus_baseline": 0.06228961715744649,
+        "delta_spearman_chapter5_minus_baseline": 0.022717454109071444,
+        "delta_kendall_chapter5_minus_baseline": 0.032751677852349004,
+        "delta_accuracy_chapter5_minus_baseline": -0.06666666666666665,
+        "delta_macro_f1_chapter5_minus_baseline": 0.02936043918425535
+      },
+      {
+        "baseline": "theta_only_baseline",
+        "delta_mae_chapter5_minus_baseline": -0.14488036563026993,
+        "delta_rmse_chapter5_minus_baseline": -0.16614148061872672,
+        "delta_spearman_chapter5_minus_baseline": 0.015079781323614316,
+        "delta_kendall_chapter5_minus_baseline": 0.021834451901565965,
+        "delta_accuracy_chapter5_minus_baseline": 0.10666666666666663,
+        "delta_macro_f1_chapter5_minus_baseline": 0.07944144865161384
+      }
+    ],
+    "leakage_checks": {
+      "mean_baseline_is_out_of_fold": true,
+      "test_fold_targets_excluded_from_training_mean": true,
+      "prior_only_uses_q_fact": false,
+      "theta_only_uses_q_fact": false,
+      "chapter5_prediction_unchanged": true
+    }
+  },
+  "bootstrap_analysis": {
+    "passed": true,
+    "row_count": 150,
+    "sampling": {
+      "method": "paired_cluster_percentile_bootstrap",
+      "sampling_unit": "scenario_id",
+      "sampling_unit_count": 150,
+      "resamples": 1000,
+      "confidence_level": 0.95,
+      "random_seed": 42,
+      "sampled_units_per_resample": 150,
+      "replacement": true
+    },
+    "chapter5_confidence_intervals": [
+      {
+        "model": "chapter5_model",
+        "metric": "mae",
+        "direction": "min",
+        "point_estimate": 0.15924416685631146,
+        "bootstrap_mean": 0.15912112042513882,
+        "bootstrap_std": 0.00943075011321396,
+        "ci_lower": 0.1405341873992505,
+        "ci_upper": 0.17797414370352796,
+        "confidence_level": 0.95,
+        "resamples": 1000,
+        "valid_resamples": 1000
+      },
+      {
+        "model": "chapter5_model",
+        "metric": "rmse",
+        "direction": "min",
+        "point_estimate": 0.19440271102220305,
+        "bootstrap_mean": 0.19409611308912667,
+        "bootstrap_std": 0.008594616494077003,
+        "ci_lower": 0.1767722536115618,
+        "ci_upper": 0.21065990400065673,
+        "confidence_level": 0.95,
+        "resamples": 1000,
+        "valid_resamples": 1000
+      },
+      {
+        "model": "chapter5_model",
+        "metric": "spearman",
+        "direction": "max",
+        "point_estimate": 0.881768967509667,
+        "bootstrap_mean": 0.8785732158827589,
+        "bootstrap_std": 0.022542317826106804,
+        "ci_lower": 0.8273055976156682,
+        "ci_upper": 0.9136315535631095,
+        "confidence_level": 0.95,
+        "resamples": 1000,
+        "valid_resamples": 1000
+      },
+      {
+        "model": "chapter5_model",
+        "metric": "kendall",
+        "direction": "max",
+        "point_estimate": 0.6993288590604027,
+        "bootstrap_mean": 0.6999236546790361,
+        "bootstrap_std": 0.0278570352942672,
+        "ci_lower": 0.640935744730385,
+        "ci_upper": 0.7475942569839894,
+        "confidence_level": 0.95,
+        "resamples": 1000,
+        "valid_resamples": 1000
+      },
+      {
+        "model": "chapter5_model",
+        "metric": "accuracy",
+        "direction": "max",
+        "point_estimate": 0.44666666666666666,
+        "bootstrap_mean": 0.4472866666666666,
+        "bootstrap_std": 0.04149275068575933,
+        "ci_lower": 0.36666666666666664,
+        "ci_upper": 0.5266666666666666,
+        "confidence_level": 0.95,
+        "resamples": 1000,
+        "valid_resamples": 1000
+      },
+      {
+        "model": "chapter5_model",
+        "metric": "macro_f1",
+        "direction": "max",
+        "point_estimate": 0.42251516924389226,
+        "bootstrap_mean": 0.4213444854980893,
+        "bootstrap_std": 0.02860370648095462,
+        "ci_lower": 0.3667620359506435,
+        "ci_upper": 0.4772037968634112,
+        "confidence_level": 0.95,
+        "resamples": 1000,
+        "valid_resamples": 1000
+      }
+    ],
+    "summary": {
+      "stable_chapter5_wins": 7,
+      "stable_baseline_wins": 5,
+      "no_stable_difference": 6,
+      "comparison_count": 18
+    },
+    "methodological_checks": {
+      "paired_resamples_used_for_all_models": true,
+      "fixed_stage9_predictions_used": true,
+      "models_refitted_inside_bootstrap": false,
+      "chapter5_prediction_modified": false,
+      "quality_thresholds_modified": false,
+      "factual_values_used_only_for_external_validation": true
+    }
+  },
+  "prediction_error_analysis": {
+    "passed": true,
+    "row_count": 150,
+    "top_error_count": 10,
+    "summary": {
+      "mae": 0.15924416685631146,
+      "rmse": 0.19440271102220305,
+      "bias": -0.14939864470445038,
+      "median_absolute_error": 0.1452399879442813,
+      "max_absolute_error": 0.37666320802262926,
+      "underestimation_count": 132,
+      "overestimation_count": 18,
+      "exact_count": 0,
+      "top10_absolute_error_sum": 3.555532205438173,
+      "top10_share_of_total_absolute_error": 0.14885033784403906,
+      "top10_most_frequent_dominant_factor": "theta_1",
+      "worst_dominant_factor_by_mae": "theta_0",
+      "worst_dominant_factor_mae": 0.2507012988259472,
+      "worst_uncertainty_quantile_by_mae": "Q3",
+      "worst_uncertainty_quantile_mae": 0.17800865215656908,
+      "strongest_diagnostic_absolute_error_relation": {
+        "variable": "fact_duration_sec",
+        "description": "Фактическая длительность выполнения",
+        "spearman": 0.7468154140184009
+      }
+    },
+    "uncertainty_relation": {
+      "variable": "uncertainty_score",
+      "description": "Априорная оценка неопределенности",
+      "pearson_signed_error": -0.13680620271721136,
+      "spearman_signed_error": -0.1877363438375039,
+      "kendall_signed_error": -0.11964205816554808,
+      "pearson_absolute_error": 0.08592055776228767,
+      "spearman_absolute_error": 0.16467042979687987,
+      "kendall_absolute_error": 0.101744966442953
+    },
+    "group_highlights": [
+      {
+        "analysis_dimension": "factual_class",
+        "worst_group_by_mae": "low",
+        "count": 1,
+        "mae": 0.21113688556850468,
+        "bias": -0.21113688556850468
+      },
+      {
+        "analysis_dimension": "predicted_class",
+        "worst_group_by_mae": "low",
+        "count": 67,
+        "mae": 0.25841769270773113,
+        "bias": -0.25841769270773113
+      },
+      {
+        "analysis_dimension": "dominant_factor",
+        "worst_group_by_mae": "theta_0",
+        "count": 34,
+        "mae": 0.2507012988259472,
+        "bias": -0.2507012988259472
+      },
+      {
+        "analysis_dimension": "uncertainty_quantile",
+        "worst_group_by_mae": "Q3",
+        "count": 37,
+        "mae": 0.17800865215656908,
+        "bias": -0.17800865215656908
+      },
+      {
+        "analysis_dimension": "noise_level",
+        "worst_group_by_mae": "low",
+        "count": 66,
+        "mae": 0.1881998824435686,
+        "bias": -0.17592660686202016
+      },
+      {
+        "analysis_dimension": "time_pressure",
+        "worst_group_by_mae": "low",
+        "count": 72,
+        "mae": 0.23054939640630195,
+        "bias": -0.2289526569259023
+      },
+      {
+        "analysis_dimension": "fact_success",
+        "worst_group_by_mae": "unsuccessful",
+        "count": 103,
+        "mae": 0.2009176348528898,
+        "bias": -0.1951673396908377
+      },
+      {
+        "analysis_dimension": "fact_error_count",
+        "worst_group_by_mae": "6+",
+        "count": 50,
+        "mae": 0.2632692217763262,
+        "bias": -0.26064113226119295
+      },
+      {
+        "analysis_dimension": "fact_recheck_count",
+        "worst_group_by_mae": "1",
+        "count": 38,
+        "mae": 0.17643335452910539,
+        "bias": -0.16345016381440872
+      },
+      {
+        "analysis_dimension": "fact_reject_count",
+        "worst_group_by_mae": "1+",
+        "count": 67,
+        "mae": 0.22029579122871146,
+        "bias": -0.2172060527716173
+      },
+      {
+        "analysis_dimension": "fact_duration_quantile",
+        "worst_group_by_mae": "Q4",
+        "count": 38,
+        "mae": 0.2944493159786886,
+        "bias": -0.2944493159786886
+      },
+      {
+        "analysis_dimension": "error_direction",
+        "worst_group_by_mae": "underestimation",
+        "count": 132,
+        "mae": 0.17536523384134195,
+        "bias": -0.17536523384134195
+      }
+    ],
+    "methodological_checks": {
+      "chapter5_prediction_modified": false,
+      "quality_thresholds_modified": false,
+      "factual_values_used_only_for_external_validation": true,
+      "dominant_factor_recalculated_from_theta": true,
+      "stored_classes_revalidated": true,
+      "analysis_is_diagnostic_not_calibrating": true
+    }
+  },
+  "figures": {
+    "passed": true,
+    "row_count": 150,
+    "figure_count": 8,
+    "dpi": 300,
+    "source_data_modified": false,
+    "manual_data_substitution": false,
+    "figures": [
+      {
+        "filename": "q_pred_vs_q_fact.png",
+        "path": "reports\\chapter6\\figures\\q_pred_vs_q_fact.png",
+        "sha256": "a1f6d9d91f8f319c73e354defdf99f1a82401154798a45f6eee8a00b980ce687",
+        "width_px": 3574,
+        "height_px": 2134,
+        "size_bytes": 364979
+      },
+      {
+        "filename": "residuals_vs_q_fact.png",
+        "path": "reports\\chapter6\\figures\\residuals_vs_q_fact.png",
+        "sha256": "2b03d714bbee49017b9337856d6f1b26bfdf8ee59f93c83aae0506dafa6eff68",
+        "width_px": 3574,
+        "height_px": 2134,
+        "size_bytes": 314539
+      },
+      {
+        "filename": "absolute_error_distribution.png",
+        "path": "reports\\chapter6\\figures\\absolute_error_distribution.png",
+        "sha256": "b1b80dc63a83ff4cca39b3550f55fcbda0a9bb07c6c3407c2c8491b7de96560a",
+        "width_px": 3574,
+        "height_px": 2134,
+        "size_bytes": 120582
+      },
+      {
+        "filename": "confusion_matrix.png",
+        "path": "reports\\chapter6\\figures\\confusion_matrix.png",
+        "sha256": "3a3872bbcc27d2a3fa7ea72ce6b8b6c7961af62501ddcfd96e63ccb9e36dbee6",
+        "width_px": 2611,
+        "height_px": 2134,
+        "size_bytes": 108097
+      },
+      {
+        "filename": "baseline_comparison.png",
+        "path": "reports\\chapter6\\figures\\baseline_comparison.png",
+        "sha256": "dbcb842533bddd50207af3d03dd0788f2b2b1ddc8131662d3da334042e71a521",
+        "width_px": 3574,
+        "height_px": 2134,
+        "size_bytes": 177677
+      },
+      {
+        "filename": "prediction_intervals.png",
+        "path": "reports\\chapter6\\figures\\prediction_intervals.png",
+        "sha256": "4be99fbb395eb13718df5ac38c48a3c24fd4583cf7b794b46bb494fc126dcfdc",
+        "width_px": 3574,
+        "height_px": 2134,
+        "size_bytes": 205992
+      },
+      {
+        "filename": "error_by_dominant_topic.png",
+        "path": "reports\\chapter6\\figures\\error_by_dominant_topic.png",
+        "sha256": "d9074c69130041b14b7572f0a825263acbd022b491fa4d41fe27da1266337554",
+        "width_px": 3574,
+        "height_px": 2134,
+        "size_bytes": 86175
+      },
+      {
+        "filename": "partial_criteria_comparison.png",
+        "path": "reports\\chapter6\\figures\\partial_criteria_comparison.png",
+        "sha256": "34addd6803d62bb07567d6a731994c96debaa1b3a7e319fb3b4fa21a3da43bf9",
+        "width_px": 3574,
+        "height_px": 2134,
+        "size_bytes": 183476
+      }
+    ]
+  },
+  "methodological_conclusion": {
+    "experimental_contour_operable": true,
+    "apriori_nature_confirmed": true,
+    "ranking_validity_confirmed": true,
+    "absolute_scale_calibrated": false,
+    "classification_is_balanced": false,
+    "interval_prediction_is_calibrated": false,
+    "hypothesis_status": "hypothesis_partially_supported",
+    "recommended_claim": "Основная гипотеза подтверждена частично: латентный профиль улучшает дифференциацию или ранжирование, но не обеспечивает одновременного статистически устойчивого улучшения абсолютной точности и интервальной калибровки."
+  },
+  "limitations": [
+    "Основной корпус является вычислительным и требует внешней проверки на независимых эмпирических данных.",
+    "Зафиксировано систематическое смещение абсолютной шкалы Q_pred.",
+    "Отрицательный R² указывает на неудовлетворительную абсолютную калибровку относительно прогноза средним значением.",
+    "Фактическое покрытие прогнозных интервалов недостаточно.",
+    "Оценка метрик отдельных классов ограничена дисбалансом фактических классов качества."
+  ],
+  "source_artifacts": [
+    {
+      "name": "validation_dataset",
+      "path": "reports\\chapter6\\validation_dataset.csv",
+      "sha256": "e3fde46331013a119b1a1a24bf2e2ddfff73bbba149c4336d127a90b4983ec31",
+      "size_bytes": 170637
+    },
+    {
+      "name": "input_validation",
+      "path": "reports\\chapter6\\chapter6_input_validation_report.json",
+      "sha256": "c88a80e1cc0476312c7b2fe8df1b1245279fd55033116228d29eb15e6bf69429",
+      "size_bytes": 4027
+    },
+    {
+      "name": "integral_quality",
+      "path": "reports\\chapter6\\integral_quality_consistency_report.json",
+      "sha256": "83bae0c5be85641c052b944e231dd38f396ed5938f11438e34249f81f313d41b",
+      "size_bytes": 1343
+    },
+    {
+      "name": "integral_prediction",
+      "path": "reports\\chapter6\\validation_metrics.json",
+      "sha256": "fd4c3cf44cccbbd94efc0c87d98cd3f37d991d5b2badb4029eeab4e6414e1c8c",
+      "size_bytes": 1828
+    },
+    {
+      "name": "partial_criteria",
+      "path": "reports\\chapter6\\partial_criteria_validation_report.json",
+      "sha256": "a7544209102ec2b27f5ac75b99627bdca47289af1e12ad4719bb0f3d1a659234",
+      "size_bytes": 7165
+    },
+    {
+      "name": "classification",
+      "path": "reports\\chapter6\\classification_report.json",
+      "sha256": "e279af7ff2ad4990b0762468e768b1713417c2cebe1d3b145fdc948cede35213",
+      "size_bytes": 3016
+    },
+    {
+      "name": "interval_prediction",
+      "path": "reports\\chapter6\\interval_coverage_report.json",
+      "sha256": "f7bbfd919cad25774219492ce97093226278645fe7d5c7ba85fe1aeb9a30c7cb",
+      "size_bytes": 10156
+    },
+    {
+      "name": "baselines",
+      "path": "reports\\chapter6\\baseline_comparison_report.json",
+      "sha256": "1b5eb37e6427a4972a0393b38f7e069201dd0f1c3a551eae91bc4cbfe2d784ce",
+      "size_bytes": 8908
+    },
+    {
+      "name": "bootstrap",
+      "path": "reports\\chapter6\\bootstrap_report.json",
+      "sha256": "f604bea944cd5632d45feee1837d4ab4f176dc262eb47ff1e833f3b486643b28",
+      "size_bytes": 25037
+    },
+    {
+      "name": "error_analysis",
+      "path": "reports\\chapter6\\prediction_error_analysis.json",
+      "sha256": "d3a234c0e8bdb8da84efaec6881efb2af136a187e8808e67acec65d370b9b6fd",
+      "size_bytes": 18079
+    },
+    {
+      "name": "figures",
+      "path": "reports\\chapter6\\figures\\figure_manifest.json",
+      "sha256": "b55dbf51ea267d54a1d80421ee31cec50b2f0b831bc194a8edf240654afae719",
+      "size_bytes": 4486
+    }
+  ]
+}
