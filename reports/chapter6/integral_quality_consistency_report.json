@@ -1,0 +1,39 @@
+{
+  "stage": 4,
+  "report_type": "integral_quality_consistency_report",
+  "passed": true,
+  "row_count": 150,
+  "expected_row_count": 150,
+  "q_fact_source": "integral_quality",
+  "control_aggregation": "weighted_sum_of_partial_quality_criteria",
+  "criterion_columns": [
+    "q_acc",
+    "q_time",
+    "q_effort",
+    "q_res",
+    "q_rep",
+    "q_fit"
+  ],
+  "weights": {
+    "q_acc": 0.1666666667,
+    "q_time": 0.1666666667,
+    "q_effort": 0.1666666667,
+    "q_res": 0.1666666667,
+    "q_rep": 0.1666666666,
+    "q_fit": 0.1666666666
+  },
+  "weight_sum": 1.0,
+  "consistency_tolerance": 0.05,
+  "q_fact_alias_tolerance": 1e-12,
+  "metrics": {
+    "mean_signed_difference": 0.00948657998009265,
+    "mean_absolute_difference": 0.014920375537676429,
+    "max_absolute_difference": 0.042020666608812984,
+    "rmse_difference": 0.0175177992036286,
+    "max_q_fact_alias_difference": 0.0,
+    "within_tolerance_count": 150,
+    "outside_tolerance_count": 0,
+    "consistency_rate": 1.0
+  },
+  "methodological_note": "integral_quality остается основной фактической целевой переменной. Контрольная агрегация используется только для диагностики согласованности и не подменяет Q_fact."
+}

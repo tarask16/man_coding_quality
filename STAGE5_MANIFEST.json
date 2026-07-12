@@ -1,0 +1,55 @@
+{
+  "stage": 5,
+  "archive_name": "chapter6_stage5_integral_metrics.zip",
+  "purpose": "Расчет построчных ошибок и метрик интегрального априорного прогноза q_pred относительно q_fact.",
+  "base_state": "Этапы 1–4 полностью закрыты.",
+  "generated_artifacts": [
+    "reports/chapter6/integral_prediction_errors.csv",
+    "reports/chapter6/validation_metrics.json",
+    "reports/chapter6/validation_metrics.md"
+  ],
+  "files": [
+    {
+      "path": "README_STAGE5.md",
+      "size_bytes": 6674,
+      "sha256": "4739b130583e559750e38cb4dc083826ac26df2455da5a8997347cfbd032d4e0"
+    },
+    {
+      "path": "src/manual_coding_sim/validation/integral_prediction_validator.py",
+      "size_bytes": 19116,
+      "sha256": "98feda51c2af5c6743aea5e4ce21afe4bbfe50c113940e5b87478c050dc1edd3"
+    },
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_runner.py",
+      "size_bytes": 13734,
+      "sha256": "f2e96a7d551bdd2dbf90e7a2c6cd1b5d67d235c1dc94b0fb1a6f7ef3008479db"
+    },
+    {
+      "path": "tests/validation/test_integral_prediction_validator.py",
+      "size_bytes": 9433,
+      "sha256": "7b5c2d7e73fb92927540cac90659271c15caf4f235ec81e0e186487f694dfc96"
+    }
+  ],
+  "method_constraints": [
+    "Ошибка определяется как q_pred - q_fact.",
+    "Прогноз q_pred и фактический показатель q_fact не изменяются.",
+    "Фактические данные используются только для внешней проверки.",
+    "Отрицательный R² допускается и не считается программной ошибкой.",
+    "Переход к этапу 6 допускается только после закрытия этапа 5."
+  ],
+  "control_results": {
+    "stage5_tests": "11 passed",
+    "validation_tests": "54 passed",
+    "full_regression": "371 passed",
+    "row_count": 150,
+    "mae": 0.15924416685631146,
+    "rmse": 0.19440271102220305,
+    "bias": -0.14939864470445038,
+    "median_absolute_error": 0.1452399879442813,
+    "max_absolute_error": 0.37666320802262926,
+    "pearson": 0.8920527352062814,
+    "spearman": 0.881768967509667,
+    "kendall": 0.6993288590604027,
+    "r2": -1.9716122140335437
+  }
+}

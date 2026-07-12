@@ -17,6 +17,10 @@ from manual_coding_sim.validation.chapter6_data_loader import (
     Chapter6DataLoader,
     Chapter6LoadedInputs,
 )
+from manual_coding_sim.validation.integral_prediction_validator import (
+    IntegralPredictionValidationError,
+    IntegralPredictionValidator,
+)
 from manual_coding_sim.validation.integral_quality_validator import (
     IntegralQualityValidationError,
     IntegralQualityValidator,
@@ -70,6 +74,13 @@ def build_arg_parser() -> argparse.ArgumentParser:
             "агрегацией шести частных критериев на этапе 4."
         ),
     )
+    parser.add_argument(
+        "--calculate-integral-metrics",
+        action="store_true",
+        help=(
+            "Рассчитать ошибки и метрики интегрального прогноза на этапе 5."
+        ),
+    )
     return parser
 
 
@@ -93,12 +104,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             args.validate_inputs,
             args.build_validation_dataset,
             args.validate_integral_quality,
+            args.calculate_integral_metrics,
         )
     ):
         print(
             "Расчетные этапы не выполнялись. Используйте флаг "
-            "--validate-inputs, --build-validation-dataset или "
-            "--validate-integral-quality."
+            "--validate-inputs, --build-validation-dataset, "
+            "--validate-integral-quality или --calculate-integral-metrics."
         )
         return 0
 
@@ -131,53 +143,94 @@ def main(argv: Sequence[str] | None = None) -> int:
             return 1
         _print_stage3_result(dataset_result)
 
-    if not args.validate_integral_quality:
+    active_dataset = dataset_result.dataset if dataset_result is not None else None
+
+    if args.validate_integral_quality:
+        try:
+            validation_result = IntegralQualityValidator(
+                config=config,
+                project_root=project_root,
+            ).validate_and_save(dataset=active_dataset)
+        except (
+            FileNotFoundError,
+            OSError,
+            IntegralQualityValidationError,
+            TypeError,
+            ValueError,
+        ) as error:
+            print(f"Ошибка проверки фактического интегрального качества: {error}")
+            return 1
+
+        metrics = validation_result.report["metrics"]
+        print("Проверка фактического интегрального качества завершена.")
+        print(f"Сценариев: {validation_result.report['row_count']}")
+        print(
+            "Среднее абсолютное расхождение: "
+            f"{metrics['mean_absolute_difference']:.10f}"
+        )
+        print(
+            "Максимальное абсолютное расхождение: "
+            f"{metrics['max_absolute_difference']:.10f}"
+        )
+        print(
+            "Сценариев вне допуска: "
+            f"{metrics['outside_tolerance_count']}"
+        )
+        if validation_result.csv_path is not None:
+            print(f"Таблица согласованности: {validation_result.csv_path}")
+        if validation_result.json_path is not None:
+            print(f"JSON-отчет: {validation_result.json_path}")
+        if validation_result.markdown_path is not None:
+            print(f"Markdown-отчет: {validation_result.markdown_path}")
+
+        if not validation_result.passed:
+            print("Этап 4 не пройден: контрольное расхождение превышает допуск.")
+            return 1
+
+        print(
+            "Этап 4 выполнен. Переход к этапу 5 требует "
+            "отдельного подтверждения."
+        )
+
+    if not args.calculate_integral_metrics:
         return 0
 
     try:
-        validation_result = IntegralQualityValidator(
+        prediction_result = IntegralPredictionValidator(
             config=config,
             project_root=project_root,
-        ).validate_and_save(
-            dataset=(dataset_result.dataset if dataset_result is not None else None)
-        )
+        ).validate_and_save(dataset=active_dataset)
     except (
         FileNotFoundError,
         OSError,
-        IntegralQualityValidationError,
+        IntegralPredictionValidationError,
         TypeError,
         ValueError,
     ) as error:
-        print(f"Ошибка проверки фактического интегрального качества: {error}")
+        print(f"Ошибка расчета метрик интегрального прогноза: {error}")
         return 1
 
-    metrics = validation_result.report["metrics"]
-    print("Проверка фактического интегрального качества завершена.")
-    print(f"Сценариев: {validation_result.report['row_count']}")
-    print(
-        "Среднее абсолютное расхождение: "
-        f"{metrics['mean_absolute_difference']:.10f}"
-    )
-    print(
-        "Максимальное абсолютное расхождение: "
-        f"{metrics['max_absolute_difference']:.10f}"
-    )
-    print(
-        "Сценариев вне допуска: "
-        f"{metrics['outside_tolerance_count']}"
-    )
-    if validation_result.csv_path is not None:
-        print(f"Таблица согласованности: {validation_result.csv_path}")
-    if validation_result.json_path is not None:
-        print(f"JSON-отчет: {validation_result.json_path}")
-    if validation_result.markdown_path is not None:
-        print(f"Markdown-отчет: {validation_result.markdown_path}")
+    prediction_metrics = prediction_result.report["metrics"]
+    print("Метрики интегрального априорного прогноза рассчитаны.")
+    print(f"Сценариев: {prediction_result.report['row_count']}")
+    print(f"MAE: {prediction_metrics['mae']:.10f}")
+    print(f"RMSE: {prediction_metrics['rmse']:.10f}")
+    print(f"Bias: {prediction_metrics['bias']:.10f}")
+    print(f"Spearman: {prediction_metrics['spearman']:.10f}")
+    print(f"Kendall: {prediction_metrics['kendall']:.10f}")
+    print(f"R²: {prediction_metrics['r2']:.10f}")
+    if prediction_result.csv_path is not None:
+        print(f"Таблица ошибок: {prediction_result.csv_path}")
+    if prediction_result.json_path is not None:
+        print(f"JSON-отчет: {prediction_result.json_path}")
+    if prediction_result.markdown_path is not None:
+        print(f"Markdown-отчет: {prediction_result.markdown_path}")
 
-    if not validation_result.passed:
-        print("Этап 4 не пройден: контрольное расхождение превышает допуск.")
+    if not prediction_result.passed:
+        print("Этап 5 не пройден: рассчитаны некорректные метрики.")
         return 1
 
-    print("Этап 4 выполнен. Переход к этапу 5 требует отдельного подтверждения.")
+    print("Этап 5 выполнен. Переход к этапу 6 требует отдельного подтверждения.")
     return 0
 
 
