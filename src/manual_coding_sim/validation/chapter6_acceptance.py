@@ -343,16 +343,47 @@ class Chapter6AcceptanceBuilder:
         pipeline = reports["pipeline"]
 
         artifact_checks = input_report.get("artifact_checks", {})
-        all_input_artifacts = bool(artifact_checks) and all(
-            isinstance(item, Mapping)
-            and int(item.get("row_count", -1)) == expected_row_count
-            and item.get("required_columns_present") is True
-            and item.get("unique_keys") is True
-            and item.get("finite_values") is True
-            and item.get("unit_interval_values") is True
-            and item.get("key_set_aligned") is True
-            and self._project_path(str(item.get("path", ""))).exists()
-            for item in artifact_checks.values()
+        checked_csv_count = int(input_report.get("checked_csv_count", -1))
+        checked_json_count = int(input_report.get("checked_json_count", -1))
+        all_input_artifacts = (
+            input_report.get("passed") is True
+            and isinstance(artifact_checks, Mapping)
+            and bool(artifact_checks)
+            and checked_csv_count == len(artifact_checks)
+            and checked_json_count == 2
+            and all(
+                isinstance(item, Mapping)
+                and int(item.get("row_count", -1)) == expected_row_count
+                and int(item.get("column_count", 1)) > 0
+                and item.get("required_columns_present", True) is True
+                and item.get("unique_keys") is True
+                and item.get("finite_values") is True
+                and item.get("unit_interval_values") is True
+                and item.get("key_set_aligned") is True
+                and self._project_path(str(item.get("path", ""))).is_file()
+                for item in artifact_checks.values()
+            )
+        )
+
+        key_alignment_reference = input_report.get("key_alignment_reference")
+        all_input_key_sets_aligned = (
+            isinstance(artifact_checks, Mapping)
+            and "q_pred" in artifact_checks
+            and bool(artifact_checks)
+            and all(
+                isinstance(item, Mapping)
+                and item.get("key_set_aligned") is True
+                for item in artifact_checks.values()
+            )
+        )
+        input_key_alignment_confirmed = (
+            key_alignment_reference == "q_pred"
+            or (
+                input_report.get("passed") is True
+                and all_input_key_sets_aligned
+                and input_report.get("q_pred_consistency", {}).get("passed")
+                is True
+            )
         )
 
         report_row_counts = all(
@@ -486,11 +517,15 @@ class Chapter6AcceptanceBuilder:
             "merge_without_row_loss",
             "Объединение выполнено без потери строк.",
             len(dataset) == expected_row_count
-            and input_report.get("key_alignment_reference") == "q_pred",
+            and input_key_alignment_confirmed,
             {
                 "dataset_rows": len(dataset),
-                "key_alignment_reference": input_report.get(
-                    "key_alignment_reference"
+                "key_alignment_reference": key_alignment_reference,
+                "all_input_key_sets_aligned": all_input_key_sets_aligned,
+                "alignment_confirmation_mode": (
+                    "explicit_reference"
+                    if key_alignment_reference == "q_pred"
+                    else "derived_from_stage2_artifact_checks"
                 ),
             },
         )

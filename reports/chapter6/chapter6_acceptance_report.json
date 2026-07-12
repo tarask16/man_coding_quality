@@ -1,0 +1,513 @@
+{
+  "stage": 14,
+  "report_type": "chapter6_final_acceptance_report",
+  "passed": true,
+  "accepted": true,
+  "full_pipeline_completed": true,
+  "prediction_model_frozen": true,
+  "target_leakage_detected": false,
+  "row_count": 150,
+  "expected_row_count": 150,
+  "hypothesis_status": "hypothesis_partially_supported",
+  "acceptance_scope": "technical_and_methodological_reproducibility",
+  "scientific_status_is_not_overridden": true,
+  "check_count": 27,
+  "passed_check_count": 27,
+  "failed_check_count": 0,
+  "failed_checks": [],
+  "checks": [
+    {
+      "id": "input_files_found",
+      "description": "Все обязательные входные CSV- и JSON-файлы найдены.",
+      "passed": true,
+      "evidence": {
+        "checked_csv_count": 8,
+        "checked_json_count": 2,
+        "artifact_count": 8
+      }
+    },
+    {
+      "id": "all_tables_have_expected_rows",
+      "description": "Все основные таблицы и отчеты содержат ожидаемое число сценариев.",
+      "passed": true,
+      "evidence": {
+        "expected_row_count": 150,
+        "dataset_rows": 150
+      }
+    },
+    {
+      "id": "merge_without_row_loss",
+      "description": "Объединение выполнено без потери строк.",
+      "passed": true,
+      "evidence": {
+        "dataset_rows": 150,
+        "key_alignment_reference": null,
+        "all_input_key_sets_aligned": true,
+        "alignment_confirmation_mode": "derived_from_stage2_artifact_checks"
+      }
+    },
+    {
+      "id": "composite_keys_unique",
+      "description": "Составной ключ проверочного датасета уникален.",
+      "passed": true,
+      "evidence": {
+        "key_columns": [
+          "scenario_id",
+          "protocol_id"
+        ]
+      }
+    },
+    {
+      "id": "quality_values_in_unit_interval",
+      "description": "Контролируемые показатели находятся в диапазоне [0; 1].",
+      "passed": true,
+      "evidence": {
+        "checked_columns": [
+          "q_pred",
+          "q_fact",
+          "integral_quality",
+          "q_acc_pred",
+          "q_time_pred",
+          "q_effort_pred",
+          "q_res_pred",
+          "q_rep_pred",
+          "q_fit_pred",
+          "q_acc",
+          "q_time",
+          "q_effort",
+          "q_res",
+          "q_rep",
+          "q_fit",
+          "q_latent",
+          "theta_0",
+          "theta_1",
+          "theta_2",
+          "theta_dominant_value",
+          "theta_entropy",
+          "uncertainty_score",
+          "q_pred_lower",
+          "q_pred_upper",
+          "q_acc_feature_component",
+          "q_acc_latent_component",
+          "q_acc_observed_weight",
+          "q_acc_latent_weight",
+          "q_time_feature_component",
+          "q_time_latent_component",
+          "q_time_observed_weight",
+          "q_time_latent_weight",
+          "q_effort_feature_component",
+          "q_effort_latent_component",
+          "q_effort_observed_weight",
+          "q_effort_latent_weight",
+          "q_res_feature_component",
+          "q_res_latent_component",
+          "q_res_observed_weight",
+          "q_res_latent_weight",
+          "q_rep_feature_component",
+          "q_rep_latent_component",
+          "q_rep_observed_weight",
+          "q_rep_latent_weight",
+          "q_fit_feature_component",
+          "q_fit_latent_component",
+          "q_fit_observed_weight",
+          "q_fit_latent_weight",
+          "prior_alpha_ratio_norm",
+          "prior_attention_deficit_norm",
+          "prior_condition_mean_adjusted_attention_norm",
+          "prior_condition_noise_adjustment_norm",
+          "prior_condition_noise_level_norm",
+          "prior_condition_time_pressure_norm",
+          "prior_condition_total_adjusted_time_norm",
+          "prior_control_expected_detection_rate_norm",
+          "prior_control_intensity_norm",
+          "prior_control_marker_ratio_norm",
+          "prior_digit_ratio_norm",
+          "prior_expected_error_probability_norm",
+          "prior_manual_operation_count_norm",
+          "prior_mean_complexity_norm",
+          "prior_mean_message_criticality_norm",
+          "prior_memory_load_index_norm",
+          "prior_message_entropy_estimate_norm",
+          "prior_message_length_norm",
+          "prior_operator_attention_norm",
+          "prior_operator_error_susceptibility_norm",
+          "prior_operator_fatigue_norm",
+          "prior_operator_skill_norm",
+          "prior_operator_total_estimated_time_norm",
+          "prior_procedure_branch_count_norm",
+          "prior_procedure_steps_norm",
+          "prior_repetition_expected_count_norm",
+          "prior_symbol_group_count_norm",
+          "prior_time_pressure_index_norm",
+          "prior_total_nominal_time_norm",
+          "prior_verification_required_norm"
+        ]
+      }
+    },
+    {
+      "id": "integral_quality_consistent",
+      "description": "integral_quality согласован с шестью частными критериями.",
+      "passed": true,
+      "evidence": {
+        "mean_signed_difference": 0.00948657998009265,
+        "mean_absolute_difference": 0.014920375537676429,
+        "max_absolute_difference": 0.042020666608812984,
+        "rmse_difference": 0.0175177992036286,
+        "max_q_fact_alias_difference": 0.0,
+        "within_tolerance_count": 150,
+        "outside_tolerance_count": 0,
+        "consistency_rate": 1.0
+      }
+    },
+    {
+      "id": "integral_metrics_calculated",
+      "description": "Интегральные метрики рассчитаны и прошли техническую проверку.",
+      "passed": true,
+      "evidence": {
+        "mae": 0.15924416685631146,
+        "rmse": 0.19440271102220305,
+        "bias": -0.14939864470445038,
+        "median_absolute_error": 0.1452399879442813,
+        "max_absolute_error": 0.37666320802262926,
+        "pearson": 0.8920527352062814,
+        "spearman": 0.881768967509667,
+        "kendall": 0.6993288590604027,
+        "r2": -1.9716122140335437,
+        "q_pred_mean": 0.49884356862888296,
+        "q_fact_mean": 0.6482422133333333,
+        "q_pred_std": 0.2147846963694056,
+        "q_fact_std": 0.1131510907985743
+      }
+    },
+    {
+      "id": "six_partial_criteria_validated",
+      "description": "Проверены шесть частных прогнозных критериев.",
+      "passed": true,
+      "evidence": {
+        "criterion_count": 6
+      }
+    },
+    {
+      "id": "confusion_matrix_created",
+      "description": "Матрица ошибок сформирована и содержит все сценарии.",
+      "passed": true,
+      "evidence": {
+        "path": "reports\\chapter6\\confusion_matrix.csv"
+      }
+    },
+    {
+      "id": "classification_metrics_calculated",
+      "description": "Классификационные метрики рассчитаны.",
+      "passed": true,
+      "evidence": {
+        "accuracy": 0.44666666666666666,
+        "balanced_accuracy": 0.6678231292517007,
+        "macro_f1": 0.42251516924389226,
+        "weighted_f1": 0.5552571279987696
+      }
+    },
+    {
+      "id": "prediction_intervals_checked",
+      "description": "Интервальный прогноз проверен.",
+      "passed": true,
+      "evidence": {
+        "coverage_rate": 0.18666666666666668,
+        "covered_count": 28,
+        "miss_count": 122,
+        "mean_interval_width": 0.08418315325643524,
+        "median_interval_width": 0.09743192032480363,
+        "min_interval_width": 0.029825129753644097,
+        "max_interval_width": 0.1616081492819207,
+        "miss_lower_count": 11,
+        "miss_upper_count": 111,
+        "mean_distance_to_interval": 0.12117878510543256,
+        "mean_miss_distance": 0.1489903095558597,
+        "max_distance_to_interval": 0.3530994296688182
+      }
+    },
+    {
+      "id": "baseline_models_built",
+      "description": "Построены четыре сравниваемые модели.",
+      "passed": true,
+      "evidence": {
+        "path": "reports\\chapter6\\baseline_comparison.csv"
+      }
+    },
+    {
+      "id": "mean_baseline_has_no_target_leakage",
+      "description": "Mean baseline построен out-of-fold без целевой утечки.",
+      "passed": true,
+      "evidence": {
+        "mean_baseline_is_out_of_fold": true,
+        "test_fold_targets_excluded_from_training_mean": true,
+        "prior_only_uses_q_fact": false,
+        "theta_only_uses_q_fact": false,
+        "chapter5_prediction_unchanged": true
+      }
+    },
+    {
+      "id": "bootstrap_completed",
+      "description": "Парный cluster-bootstrap выполнен.",
+      "passed": true,
+      "evidence": {
+        "method": "paired_cluster_percentile_bootstrap",
+        "sampling_unit": "scenario_id",
+        "sampling_unit_count": 150,
+        "resamples": 1000,
+        "confidence_level": 0.95,
+        "random_seed": 42,
+        "sampled_units_per_resample": 150,
+        "replacement": true
+      }
+    },
+    {
+      "id": "paired_difference_intervals_calculated",
+      "description": "Рассчитаны доверительные интервалы парных разностей моделей.",
+      "passed": true,
+      "evidence": {
+        "comparison_count": 18,
+        "path": "reports\\chapter6\\bootstrap_model_differences.csv"
+      }
+    },
+    {
+      "id": "top10_errors_created",
+      "description": "Сформирован top-10 сценариев с наибольшей ошибкой.",
+      "passed": true,
+      "evidence": {
+        "path": "reports\\chapter6\\top_prediction_errors.csv"
+      }
+    },
+    {
+      "id": "figures_created",
+      "description": "Сформированы восемь графических материалов.",
+      "passed": true,
+      "evidence": {
+        "figure_count": 8,
+        "dpi": 300
+      }
+    },
+    {
+      "id": "final_json_report_created",
+      "description": "Создан итоговый JSON-отчет главы 6.",
+      "passed": true,
+      "evidence": {
+        "path": "reports\\chapter6\\chapter6_validation_report.json"
+      }
+    },
+    {
+      "id": "final_markdown_report_created",
+      "description": "Создан итоговый Markdown-отчет главы 6.",
+      "passed": true,
+      "evidence": {
+        "path": "reports\\chapter6\\chapter6_validation_report.md"
+      }
+    },
+    {
+      "id": "stage13_technical_checks_passed",
+      "description": "Все повторные технические проверки итогового отчета пройдены.",
+      "passed": true,
+      "evidence": {
+        "all_source_reports_passed": true,
+        "row_count_matches_expected": true,
+        "composite_key_is_unique": true,
+        "q_pred_consistency_confirmed": true,
+        "chapter5_acceptance_confirmed": true,
+        "baseline_leakage_checks_passed": true,
+        "bootstrap_methodological_checks_passed": true,
+        "prediction_model_not_modified": true,
+        "quality_thresholds_not_modified": true,
+        "figure_sources_not_modified": true,
+        "manual_data_substitution_absent": true,
+        "all_source_hashes_recorded": true
+      }
+    },
+    {
+      "id": "final_report_source_hashes_match",
+      "description": "Хэши источников итогового отчета соответствуют текущим файлам.",
+      "passed": true,
+      "evidence": {
+        "source_count": 11
+      }
+    },
+    {
+      "id": "chapter5_artifacts_unchanged",
+      "description": "Зафиксированные артефакты главы 5 не изменены.",
+      "passed": true,
+      "evidence": {
+        "reports/chapter5/q_pred.csv": "ee02121ea74804b2ff339e8fd7a03ab117bcf5d7490cfd6cb556de7b6c5449b5",
+        "reports/chapter5/q_pred_components.csv": "eb6527307ea30a08b75520d591c4d28d7ac3c78bd0fbd4ac9d4b7a08f78b0b10",
+        "reports/chapter5/prediction_uncertainty.csv": "06e631fec1b9d1aec04a6d7a916459801c282787aa29e7f3bc151d6a597616fb",
+        "configs/chapter5.yaml": "70b0dc4c948988529588d479f4f1cf4083b726d1c46bb2d71e3cf204f0f79bd4"
+      }
+    },
+    {
+      "id": "chapter5_parameters_not_tuned",
+      "description": "Параметры и пороги главы 5 не подгонялись по фактической выборке.",
+      "passed": true,
+      "evidence": {
+        "prediction_model_frozen": true,
+        "chapter5_artifacts_unchanged": true,
+        "target_leakage_detected": false,
+        "factual_values_used_only_for_external_validation": true,
+        "quality_thresholds_modified": false
+      }
+    },
+    {
+      "id": "target_leakage_absent",
+      "description": "Целевая утечка в основном экспериментальном контуре отсутствует.",
+      "passed": true,
+      "evidence": {
+        "prediction_model_frozen": true,
+        "chapter5_artifacts_unchanged": true,
+        "target_leakage_detected": false,
+        "factual_values_used_only_for_external_validation": true,
+        "quality_thresholds_modified": false
+      }
+    },
+    {
+      "id": "manual_data_substitution_absent",
+      "description": "Ручная подмена расчетных данных при построении рисунков отсутствует.",
+      "passed": true,
+      "evidence": {
+        "manual_data_substitution": false,
+        "source_data_modified": false
+      }
+    },
+    {
+      "id": "synthetic_holdout_excluded_from_main_acceptance",
+      "description": "Изолированный синтетический holdout не подменяет основной корпус.",
+      "passed": true,
+      "evidence": {
+        "dataset_path": "reports\\chapter6\\validation_dataset.csv"
+      }
+    },
+    {
+      "id": "full_cli_pipeline_completed",
+      "description": "Полный CLI-контур этапов 2--13 завершен без ошибок.",
+      "passed": true,
+      "evidence": {
+        "completed_steps": {
+          "input_validation": true,
+          "validation_dataset": true,
+          "integral_quality": true,
+          "integral_metrics": true,
+          "partial_criteria": true,
+          "classification": true,
+          "interval_prediction": true,
+          "baseline_comparison": true,
+          "bootstrap_analysis": true,
+          "prediction_error_analysis": true,
+          "figures": true,
+          "final_report": true
+        },
+        "requested_optional_steps": {
+          "build_figures": true,
+          "build_report": true
+        },
+        "error": null
+      }
+    }
+  ],
+  "methodological_checks": {
+    "main_dataset_used": true,
+    "synthetic_holdout_used_as_main_evidence": false,
+    "chapter5_artifacts_unchanged": true,
+    "prediction_model_frozen": true,
+    "target_leakage_detected": false,
+    "factual_values_used_only_for_external_validation": true,
+    "quality_thresholds_modified": false,
+    "manual_data_substitution_detected": false
+  },
+  "accepted_artifacts": [
+    {
+      "name": "validation_dataset",
+      "path": "reports\\chapter6\\validation_dataset.csv",
+      "sha256": "e3fde46331013a119b1a1a24bf2e2ddfff73bbba149c4336d127a90b4983ec31",
+      "size_bytes": 170637
+    },
+    {
+      "name": "input_validation",
+      "path": "reports\\chapter6\\chapter6_input_validation_report.json",
+      "sha256": "c88a80e1cc0476312c7b2fe8df1b1245279fd55033116228d29eb15e6bf69429",
+      "size_bytes": 4027
+    },
+    {
+      "name": "integral_quality",
+      "path": "reports\\chapter6\\integral_quality_consistency_report.json",
+      "sha256": "83bae0c5be85641c052b944e231dd38f396ed5938f11438e34249f81f313d41b",
+      "size_bytes": 1343
+    },
+    {
+      "name": "integral_prediction",
+      "path": "reports\\chapter6\\validation_metrics.json",
+      "sha256": "fd4c3cf44cccbbd94efc0c87d98cd3f37d991d5b2badb4029eeab4e6414e1c8c",
+      "size_bytes": 1828
+    },
+    {
+      "name": "partial_criteria",
+      "path": "reports\\chapter6\\partial_criteria_validation_report.json",
+      "sha256": "a7544209102ec2b27f5ac75b99627bdca47289af1e12ad4719bb0f3d1a659234",
+      "size_bytes": 7165
+    },
+    {
+      "name": "classification",
+      "path": "reports\\chapter6\\classification_report.json",
+      "sha256": "e279af7ff2ad4990b0762468e768b1713417c2cebe1d3b145fdc948cede35213",
+      "size_bytes": 3016
+    },
+    {
+      "name": "interval_prediction",
+      "path": "reports\\chapter6\\interval_coverage_report.json",
+      "sha256": "f7bbfd919cad25774219492ce97093226278645fe7d5c7ba85fe1aeb9a30c7cb",
+      "size_bytes": 10156
+    },
+    {
+      "name": "baselines",
+      "path": "reports\\chapter6\\baseline_comparison_report.json",
+      "sha256": "1b5eb37e6427a4972a0393b38f7e069201dd0f1c3a551eae91bc4cbfe2d784ce",
+      "size_bytes": 8908
+    },
+    {
+      "name": "bootstrap",
+      "path": "reports\\chapter6\\bootstrap_report.json",
+      "sha256": "125c0062cfa7568ac341f3eec87bc6c01889a1f034ec5da66e5b1039b97ec424",
+      "size_bytes": 25036
+    },
+    {
+      "name": "error_analysis",
+      "path": "reports\\chapter6\\prediction_error_analysis.json",
+      "sha256": "d3a234c0e8bdb8da84efaec6881efb2af136a187e8808e67acec65d370b9b6fd",
+      "size_bytes": 18079
+    },
+    {
+      "name": "figures",
+      "path": "reports\\chapter6\\figures\\figure_manifest.json",
+      "sha256": "b55dbf51ea267d54a1d80421ee31cec50b2f0b831bc194a8edf240654afae719",
+      "size_bytes": 4486
+    },
+    {
+      "name": "final_report",
+      "path": "reports\\chapter6\\chapter6_validation_report.json",
+      "sha256": "26b0de9dea994fd21582501915ad30206ce6c4064104909abec630d762afab0f",
+      "size_bytes": 42882
+    },
+    {
+      "name": "pipeline",
+      "path": "reports\\chapter6\\chapter6_pipeline_run_report.json",
+      "sha256": "aa03802acedd60f031ef0bb3c78bd9c2d29eed0c5bdf1174e9f26dbc99f67c5b",
+      "size_bytes": 7229
+    }
+  ],
+  "scientific_conclusion": {
+    "hypothesis_status": "hypothesis_partially_supported",
+    "recommended_claim": "Основная гипотеза подтверждена частично: латентный профиль улучшает дифференциацию или ранжирование, но не обеспечивает одновременного статистически устойчивого улучшения абсолютной точности и интервальной калибровки.",
+    "limitations": [
+      "Основной корпус является вычислительным и требует внешней проверки на независимых эмпирических данных.",
+      "Зафиксировано систематическое смещение абсолютной шкалы Q_pred.",
+      "Отрицательный R² указывает на неудовлетворительную абсолютную калибровку относительно прогноза средним значением.",
+      "Фактическое покрытие прогнозных интервалов недостаточно.",
+      "Оценка метрик отдельных классов ограничена дисбалансом фактических классов качества."
+    ],
+    "acceptance_note": "Техническая приемка подтверждает воспроизводимость и методическую корректность вычислительного контура, но не изменяет фактический статус основной гипотезы."
+  }
+}

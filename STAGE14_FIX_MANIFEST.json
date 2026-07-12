@@ -1,0 +1,49 @@
+{
+  "stage": 14,
+  "archive_name": "chapter6_stage14_acceptance_contract_fix.zip",
+  "patch_version": 2,
+  "description": "Исправление ложного отказа финальной приемки из-за несовместимости с фактическим JSON-контрактом этапа 2.",
+  "updated_files": [
+    "src/manual_coding_sim/validation/chapter6_acceptance.py",
+    "tests/validation/test_chapter6_acceptance.py"
+  ],
+  "created_files": [
+    "README_STAGE14_FIX.md",
+    "STAGE14_FIX_MANIFEST.json"
+  ],
+  "fixed_checks": [
+    "input_files_found",
+    "merge_without_row_loss"
+  ],
+  "acceptance_check_count": 27,
+  "tests": {
+    "targeted_result": "21 passed",
+    "py_compile": "passed",
+    "expected_validation_total_after_install": 188,
+    "expected_full_regression_total_after_install": 505,
+    "note": "Итоговые числа основаны на подтвержденных пользователем 187 и 504 тестах до исправления и одном новом регрессионном тесте."
+  },
+  "compatibility": {
+    "supports_stage2_required_columns_present_field": true,
+    "supports_stage2_without_required_columns_present_field": true,
+    "supports_explicit_key_alignment_reference": true,
+    "supports_alignment_derived_from_artifact_checks": true
+  },
+  "files": [
+    {
+      "path": "README_STAGE14_FIX.md",
+      "sha256": "05364cc3891f50c79bf3d5a5abe3da98f7fae683e70207c452179a3e470cdad8",
+      "size_bytes": 3680
+    },
+    {
+      "path": "src/manual_coding_sim/validation/chapter6_acceptance.py",
+      "sha256": "d89f391076b82c861dcec11158e9b9279088ef3b862f2d11e6cec6738f0e40d8",
+      "size_bytes": 43233
+    },
+    {
+      "path": "tests/validation/test_chapter6_acceptance.py",
+      "sha256": "c55fb346758b583bd2797d6a356a1879f3d3e1a60f765eec489b533305a5257e",
+      "size_bytes": 26756
+    }
+  ]
+}

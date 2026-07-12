@@ -87,6 +87,18 @@ def test_missing_required_report_is_rejected(tmp_path: Path) -> None:
         _builder(tmp_path).build()
 
 
+def test_missing_input_artifact_is_rejected(tmp_path: Path) -> None:
+    """Отсутствующий CSV этапа 2 должен блокировать приемку."""
+
+    paths = _write_sources(tmp_path)
+    input_report = _read_json(paths["input"])
+    first_artifact = next(iter(input_report["artifact_checks"].values()))
+    (tmp_path / first_artifact["path"]).unlink()
+
+    with pytest.raises(Chapter6AcceptanceError, match="input_files_found"):
+        _builder(tmp_path).build()
+
+
 def test_wrong_report_stage_is_rejected(tmp_path: Path) -> None:
     """Неверный номер этапа должен блокировать приемку."""
 
@@ -398,16 +410,19 @@ def _write_sources(project_root: Path) -> dict[str, Path]:
 
     input_report = {
         "stage": 2,
+        "report_type": "chapter6_input_validation_report",
         "passed": True,
         "expected_row_count": ROW_COUNT,
+        "join_keys": ["scenario_id", "protocol_id"],
         "checked_csv_count": 8,
         "checked_json_count": 2,
-        "key_alignment_reference": "q_pred",
         "artifact_checks": {
             name: {
+                "name": name,
                 "path": str(path.relative_to(project_root)),
                 "row_count": ROW_COUNT,
-                "required_columns_present": True,
+                "column_count": 3,
+                "reconstructed_key_columns": [],
                 "unique_keys": True,
                 "finite_values": True,
                 "unit_interval_values": True,
