@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1065.6pt" height="606.6pt" viewBox="0 0 1065.6 606.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>manual_coding_sim</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 606.6 
+L 1065.6 606.6 
+L 1065.6 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 530.398454 223.814289 
+Q 442.325156 249.444714 367.564121 299.742135 
+" clip-path="url(#p14ccc8580a)" style="fill: none; stroke-dasharray: 5.365,2.32; stroke-dashoffset: 0; stroke: #b3261e; stroke-width: 1.45; stroke-linecap: round"/>
+    <path d="M 372.886388 299.054042 
+L 367.564121 299.742135 
+L 370.207006 295.071466 
+z
+" clip-path="url(#p14ccc8580a)" style="fill: #b3261e; stroke-dasharray: 5.365,2.32; stroke-dashoffset: 0; stroke: #b3261e; stroke-width: 1.45; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 878.161609 223.418368 
+Q 751.68482 238.802551 641.807382 300.035997 
+" clip-path="url(#p14ccc8580a)" style="fill: none; stroke-dasharray: 5.365,2.32; stroke-dashoffset: 0; stroke: #b3261e; stroke-width: 1.45; stroke-linecap: round"/>
+    <path d="M 647.168566 299.795794 
+L 641.807382 300.035997 
+L 644.83193 295.602927 
+z
+" clip-path="url(#p14ccc8580a)" style="fill: #b3261e; stroke-dasharray: 5.365,2.32; stroke-dashoffset: 0; stroke: #b3261e; stroke-width: 1.45; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 184.9536 225.622691 
+Q 184.9536 254.127216 184.9536 280.507476 
+" clip-path="url(#p14ccc8580a)" style="fill: none; stroke: #2f6690; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 187.7536 274.907476 
+L 184.9536 280.507476 
+L 182.1536 274.907476 
+z
+" clip-path="url(#p14ccc8580a)" style="fill: #2f6690; stroke: #2f6690; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 340.294008 346.02048 
+Q 358.874587 346.02048 375.442705 346.02048 
+" clip-path="url(#p14ccc8580a)" style="fill: none; stroke: #456a7f; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 369.842705 343.22048 
+L 375.442705 346.02048 
+L 369.842705 348.82048 
+z
+" clip-path="url(#p14ccc8580a)" style="fill: #456a7f; stroke: #456a7f; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 645.977208 346.02048 
+Q 664.557787 346.02048 681.125905 346.02048 
+" clip-path="url(#p14ccc8580a)" style="fill: none; stroke: #456a7f; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 675.525905 343.22048 
+L 681.125905 346.02048 
+L 675.525905 348.82048 
+z
+" clip-path="url(#p14ccc8580a)" style="fill: #456a7f; stroke: #456a7f; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 258.7392 446.122564 
+Q 258.7392 426.072587 258.7392 407.643759 
+" clip-path="url(#p14ccc8580a)" style="fill: none; stroke-dasharray: 1.45,2.3925; stroke-dashoffset: 0; stroke: #a07b19; stroke-width: 1.45; stroke-linecap: round"/>
+    <path d="M 256.3392 412.443759 
+L 258.7392 407.643759 
+L 261.1392 412.443759 
+z
+" clip-path="url(#p14ccc8580a)" style="fill: #a07b19; stroke-dasharray: 1.45,2.3925; stroke-dashoffset: 0; stroke: #a07b19; stroke-width: 1.45; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 817.4016 406.026236 
+Q 817.4016 426.076213 817.4016 444.113729 
+" clip-path="url(#p14ccc8580a)" style="fill: none; stroke: #6a4c93; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 820.2016 438.513729 
+L 817.4016 444.113729 
+L 814.6016 438.513729 
+z
+" clip-path="url(#p14ccc8580a)" style="fill: #6a4c93; stroke: #6a4c93; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #526575" x="532.8" y="70.365196" transform="rotate(-0 532.8 70.365196)">Фактические признаки и целевые показатели отделены от априорного контура</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #2f6690" x="532.8" y="256.918225" transform="rotate(-0 532.8 256.918225)">Разрешённый путь формирования документа корпуса</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #2f6690" x="197.60256" y="259.015931" transform="rotate(-0 197.60256 259.015931)">единственный допустимый вход</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #4b5f6c" x="532.8" y="577.619456" transform="rotate(-0 532.8 577.619456)">Методическое следствие: внешняя проверка Q_pred по X_fact и Y_fact выполняется после построения априорного профиля и не изменяет d_i.</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 48.97728 229.88592 
+L 320.92992 229.88592 
+Q 339.90336 229.88592 339.90336 219.73824 
+L 339.90336 99.65736 
+Q 339.90336 89.50968 320.92992 89.50968 
+L 48.97728 89.50968 
+Q 30.00384 89.50968 30.00384 99.65736 
+L 30.00384 219.73824 
+Q 30.00384 229.88592 48.97728 229.88592 
+z
+" clip-path="url(#p14ccc8580a)" style="fill: #eaf4fb; stroke: #2f6690; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 396.82368 229.88592 
+L 668.77632 229.88592 
+Q 687.74976 229.88592 687.74976 219.73824 
+L 687.74976 99.65736 
+Q 687.74976 89.50968 668.77632 89.50968 
+L 396.82368 89.50968 
+Q 377.85024 89.50968 377.85024 99.65736 
+L 377.85024 219.73824 
+Q 377.85024 229.88592 396.82368 229.88592 
+z
+" clip-path="url(#p14ccc8580a)" style="fill: #f5f5f5; stroke: #7b8791; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 744.67008 229.88592 
+L 1016.62272 229.88592 
+Q 1035.59616 229.88592 1035.59616 219.73824 
+L 1035.59616 99.65736 
+Q 1035.59616 89.50968 1016.62272 89.50968 
+L 744.67008 89.50968 
+Q 725.69664 89.50968 725.69664 99.65736 
+L 725.69664 219.73824 
+Q 725.69664 229.88592 744.67008 229.88592 
+z
+" clip-path="url(#p14ccc8580a)" style="fill: #fff2f0; stroke: #b05a4a; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 80.59968 410.28912 
+L 331.47072 410.28912 
+Q 350.44416 410.28912 350.44416 400.14144 
+L 350.44416 291.33576 
+Q 350.44416 281.18808 331.47072 281.18808 
+L 80.59968 281.18808 
+Q 61.62624 281.18808 61.62624 291.33576 
+L 61.62624 400.14144 
+Q 61.62624 410.28912 80.59968 410.28912 
+z
+" clip-path="url(#p14ccc8580a)" style="fill: #eef6fc; stroke: #3d7ea6; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 386.28288 410.28912 
+L 637.15392 410.28912 
+Q 656.12736 410.28912 656.12736 400.14144 
+L 656.12736 291.33576 
+Q 656.12736 281.18808 637.15392 281.18808 
+L 386.28288 281.18808 
+Q 367.30944 281.18808 367.30944 291.33576 
+L 367.30944 400.14144 
+Q 367.30944 410.28912 386.28288 410.28912 
+z
+" clip-path="url(#p14ccc8580a)" style="fill: #eef8f3; stroke: #3c8d63; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 691.96608 410.28912 
+L 942.83712 410.28912 
+Q 961.81056 410.28912 961.81056 400.14144 
+L 961.81056 291.33576 
+Q 961.81056 281.18808 942.83712 281.18808 
+L 691.96608 281.18808 
+Q 672.99264 281.18808 672.99264 291.33576 
+L 672.99264 400.14144 
+Q 672.99264 410.28912 691.96608 410.28912 
+z
+" clip-path="url(#p14ccc8580a)" style="fill: #f2eef8; stroke: #6a4c93; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 80.59968 554.04792 
+L 436.87872 554.04792 
+Q 455.85216 554.04792 455.85216 543.90024 
+L 455.85216 452.00736 
+Q 455.85216 441.85968 436.87872 441.85968 
+L 80.59968 441.85968 
+Q 61.62624 441.85968 61.62624 452.00736 
+L 61.62624 543.90024 
+Q 61.62624 554.04792 80.59968 554.04792 
+z
+" clip-path="url(#p14ccc8580a)" style="fill: #fff9e8; stroke: #a07b19; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 507.50208 554.04792 
+L 985.00032 554.04792 
+Q 1003.97376 554.04792 1003.97376 543.90024 
+L 1003.97376 452.00736 
+Q 1003.97376 441.85968 985.00032 441.85968 
+L 507.50208 441.85968 
+Q 488.52864 441.85968 488.52864 452.00736 
+L 488.52864 543.90024 
+Q 488.52864 554.04792 507.50208 554.04792 
+z
+" clip-path="url(#p14ccc8580a)" style="fill: #f5f2fa; stroke: #6a4c93; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 9.9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="184.9536" y="128.043489" transform="rotate(-0 184.9536 128.043489)">X_prior — Априорные признаки</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(118.95242 154.14087)">структура средства и процедуры</text>
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(116.234916 162.653065)">подготовка и внимание оператора</text>
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(121.871307 171.321326)">условия, сообщения и контроль</text>
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(152.713143 179.833522)">признаки prior_*</text>
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(184.9536 188.55292)"/>
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(133.504948 197.065116)">РАЗРЕШЕНО для LDA_prior</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 9.9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="532.8" y="128.043489" transform="rotate(-0 532.8 128.043489)">X_fact — Фактические признаки</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(468.802754 154.166438)">фактическое время выполнения</text>
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(479.999289 162.8347)">ошибки, повторы и отказы</text>
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(461.088512 171.502961)">результаты срабатывания контроля</text>
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(482.215664 180.015156)">признаки fact_* и actual_*</text>
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(532.8 188.734555)"/>
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(469.828293 197.24675)">ТОЛЬКО для внешней проверки</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 9.9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="880.6464" y="128.043489" transform="rotate(-0 880.6464 128.043489)">Y_fact — Фактические показатели</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(838.248916 154.0117)">q_acc, q_time, q_effort</text>
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(847.638244 162.731098)">q_res, q_rep, q_fit</text>
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(851.679287 171.450497)">integral_quality</text>
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(856.794177 180.169895)">quality_class</text>
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(880.6464 188.889294)"/>
+    <text style="font-size: 7.45px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(817.674693 197.401489)">ТОЛЬКО для внешней проверки</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="206.0352" y="317.293859" transform="rotate(-0 206.0352 317.293859)">Дискретизация</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 7.25px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(142.289575 343.884575)">числовые признаки → интервалы</text>
+    <text style="font-size: 7.25px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(130.158852 352.168255)">категориальные признаки → состояния</text>
+    <text style="font-size: 7.25px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(146.527427 360.451935)">правила фиксируются заранее</text>
+    <text style="font-size: 7.25px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(206.0352 368.735615)"/>
+    <text style="font-size: 7.25px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(135.227055 377.019295)">Пример: quantile bins: low / mid / high</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="511.7184" y="317.293859" transform="rotate(-0 511.7184 317.293859)">Токенизация</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 7.25px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(442.505255 343.845493)">признак и состояние объединяются</text>
+    <text style="font-size: 7.25px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(444.233927 352.129173)">каждый токен сохраняет источник</text>
+    <text style="font-size: 7.25px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(441.359982 360.412853)">порядок элементов не используется</text>
+    <text style="font-size: 7.25px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(511.7184 368.696533)"/>
+    <text style="font-size: 7.25px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(447.593283 376.980213)">Пример: prior_attention__level_low</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="817.4016" y="317.154796" transform="rotate(-0 817.4016 317.154796)">Документ сценария d_i</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 7.25px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(755.569862 343.845493)">набор токенов одного сценария</text>
+    <text style="font-size: 7.25px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(742.505702 352.129173)">частотное представление bag-of-words</text>
+    <text style="font-size: 7.25px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(738.921483 360.412853)">идентификаторы сценария сохраняются</text>
+    <text style="font-size: 7.25px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(817.4016 368.696533)"/>
+    <text style="font-size: 7.25px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(753.900096 376.980213)">Пример: d_i = {t_i1, t_i2, …, t_im}</text>
+   </g>
+   <g id="line2d_1">
+    <path d="M 446.36544 275.55048 
+L 471.66336 255.25512 
+" clip-path="url(#p14ccc8580a)" style="fill: none; stroke: #b3261e; stroke-width: 2.6; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 446.36544 255.25512 
+L 471.66336 275.55048 
+" clip-path="url(#p14ccc8580a)" style="fill: none; stroke: #b3261e; stroke-width: 2.6; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 752.04864 275.55048 
+L 777.34656 255.25512 
+" clip-path="url(#p14ccc8580a)" style="fill: none; stroke: #b3261e; stroke-width: 2.6; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 752.04864 255.25512 
+L 777.34656 275.55048 
+" clip-path="url(#p14ccc8580a)" style="fill: none; stroke: #b3261e; stroke-width: 2.6; stroke-linecap: round"/>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 9.6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="258.7392" y="473.92764" transform="rotate(-0 258.7392 473.92764)">LeakageGuard и аудит априорности</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(183.807755 502.097793)">проверка имён колонок и источников</text>
+    <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(186.864005 510.667117)">запрет fact_*, actual_*, target_* и q_*</text>
+    <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(200.954044 519.445035)">правило: X_fact ∪ Y_fact ↛ d_i</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 9.6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="746.2512" y="473.94864" transform="rotate(-0 746.2512 473.94864)">Итоговый корпус априорных документов</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 7.35px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(642.749419 502.068843)">D_prior = {d_i | d_i = Tokenize(Discretize(X_prior(A_i)))}</text>
+    <text style="font-size: 7.35px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(644.274544 510.671202)">каждый документ связан со scenario_id и protocol_id</text>
+    <text style="font-size: 7.35px; font-family: 'DejaVu Sans'; fill: #405464" transform="translate(629.827774 519.427533)">корпус D_prior используется для обучения только LDA_prior</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #b3261e" x="459.0144" y="296.242875" transform="rotate(-0 459.0144 296.242875)">запрещено</text>
+   </g>
+   <g id="text_22">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #b3261e" x="764.6976" y="296.242875" transform="rotate(-0 764.6976 296.242875)">запрещено</text>
+   </g>
+  </g>
+  <g id="text_23">
+   <text style="font-weight: 700; font-size: 15.2px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="532.8" y="17.309625" transform="rotate(-0 532.8 17.309625)">Разделение информационных множеств и формирование документа LDA_prior</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p14ccc8580a">
+   <rect x="5.76" y="37.08" width="1054.08" height="563.76"/>
+  </clipPath>
+ </defs>
+</svg>
