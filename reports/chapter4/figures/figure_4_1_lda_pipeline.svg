@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1071.72pt" height="654.12pt" viewBox="0 0 1071.72 654.12" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>manual_coding_sim</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 654.12 
+L 1071.72 654.12 
+L 1071.72 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 42.867 351.4788 
+L 1028.853 351.4788 
+Q 1047.9366 351.4788 1047.9366 341.300016 
+L 1047.9366 157.516416 
+Q 1047.9366 147.337632 1028.853 147.337632 
+L 42.867 147.337632 
+Q 23.7834 147.337632 23.7834 157.516416 
+L 23.7834 341.300016 
+Q 23.7834 351.4788 42.867 351.4788 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #fafcfd; stroke: #c3d1d8; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 8.4px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #526976" x="51.3486" y="169.897903" transform="rotate(-0 51.3486 169.897903)">Основной априорный вычислительный контур</text>
+   </g>
+   <g id="patch_3">
+    <path d="M 59.8302 621.782064 
+L 982.2042 621.782064 
+Q 997.047 621.782064 997.047 613.865232 
+L 997.047 574.281072 
+Q 997.047 566.36424 982.2042 566.36424 
+L 59.8302 566.36424 
+Q 44.9874 566.36424 44.9874 574.281072 
+L 44.9874 613.865232 
+Q 44.9874 621.782064 59.8302 621.782064 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #f7f9fa; stroke: #b9c8cf; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #465b68" x="535.86" y="122.226376" transform="rotate(-0 535.86 122.226376)">От априорных признаков сценария к латентному профилю и распределениям токенов</text>
+   </g>
+   <g id="patch_4">
+    <path d="M 194.356793 258.17328 
+Q 202.429101 258.17328 208.936161 258.17328 
+" clip-path="url(#p872f68c2b7)" style="fill: none; stroke: #456a7d; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 204.136161 255.77328 
+L 208.936161 258.17328 
+L 204.136161 260.57328 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #456a7d; stroke: #456a7d; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 358.687793 258.17328 
+Q 366.760101 258.17328 373.267161 258.17328 
+" clip-path="url(#p872f68c2b7)" style="fill: none; stroke: #456a7d; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 368.467161 255.77328 
+L 373.267161 258.17328 
+L 368.467161 260.57328 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #456a7d; stroke: #456a7d; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 523.018793 258.17328 
+Q 531.091101 258.17328 537.598161 258.17328 
+" clip-path="url(#p872f68c2b7)" style="fill: none; stroke: #456a7d; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 532.798161 255.77328 
+L 537.598161 258.17328 
+L 532.798161 260.57328 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #456a7d; stroke: #456a7d; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 687.349793 258.17328 
+Q 695.422101 258.17328 701.929161 258.17328 
+" clip-path="url(#p872f68c2b7)" style="fill: none; stroke: #456a7d; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 697.129161 255.77328 
+L 701.929161 258.17328 
+L 697.129161 260.57328 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #456a7d; stroke: #456a7d; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 851.680793 258.17328 
+Q 859.753101 258.17328 866.260161 258.17328 
+" clip-path="url(#p872f68c2b7)" style="fill: none; stroke: #456a7d; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 861.460161 255.77328 
+L 866.260161 258.17328 
+L 861.460161 260.57328 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #456a7d; stroke: #456a7d; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 941.9166 332.252208 
+L 941.9166 365.616 
+" clip-path="url(#p872f68c2b7)" style="fill: none; stroke: #2f7a50; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 671.0355 365.616 
+L 890.4969 365.616 
+" clip-path="url(#p872f68c2b7)" style="fill: none; stroke: #2f7a50; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 671.0355 367.616952 
+Q 671.0355 377.209513 671.0355 385.236825 
+" clip-path="url(#p872f68c2b7)" style="fill: none; stroke: #2f7a50; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 673.4355 380.436825 
+L 671.0355 385.236825 
+L 668.6355 380.436825 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #2f7a50; stroke: #2f7a50; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 890.4969 367.616952 
+Q 890.4969 377.209513 890.4969 385.236825 
+" clip-path="url(#p872f68c2b7)" style="fill: none; stroke: #2f7a50; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 892.8969 380.436825 
+L 890.4969 385.236825 
+L 888.0969 380.436825 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #2f7a50; stroke: #2f7a50; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 58.77 333.383184 
+L 181.7532 333.383184 
+Q 196.596 333.383184 196.596 325.466352 
+L 196.596 190.880208 
+Q 196.596 182.963376 181.7532 182.963376 
+L 58.77 182.963376 
+Q 43.9272 182.963376 43.9272 190.880208 
+L 43.9272 325.466352 
+Q 43.9272 333.383184 58.77 333.383184 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #eaf2fb; stroke: #34699a; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 223.101 333.383184 
+L 346.0842 333.383184 
+Q 360.927 333.383184 360.927 325.466352 
+L 360.927 190.880208 
+Q 360.927 182.963376 346.0842 182.963376 
+L 223.101 182.963376 
+Q 208.2582 182.963376 208.2582 190.880208 
+L 208.2582 325.466352 
+Q 208.2582 333.383184 223.101 333.383184 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #f4f0fb; stroke: #7557a6; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 387.432 333.383184 
+L 510.4152 333.383184 
+Q 525.258 333.383184 525.258 325.466352 
+L 525.258 190.880208 
+Q 525.258 182.963376 510.4152 182.963376 
+L 387.432 182.963376 
+Q 372.5892 182.963376 372.5892 190.880208 
+L 372.5892 325.466352 
+Q 372.5892 333.383184 387.432 333.383184 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #f4f0fb; stroke: #7557a6; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 551.763 333.383184 
+L 674.7462 333.383184 
+Q 689.589 333.383184 689.589 325.466352 
+L 689.589 190.880208 
+Q 689.589 182.963376 674.7462 182.963376 
+L 551.763 182.963376 
+Q 536.9202 182.963376 536.9202 190.880208 
+L 536.9202 325.466352 
+Q 536.9202 333.383184 551.763 333.383184 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #f4f0fb; stroke: #7557a6; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 716.094 333.383184 
+L 839.0772 333.383184 
+Q 853.92 333.383184 853.92 325.466352 
+L 853.92 190.880208 
+Q 853.92 182.963376 839.0772 182.963376 
+L 716.094 182.963376 
+Q 701.2512 182.963376 701.2512 190.880208 
+L 701.2512 325.466352 
+Q 701.2512 333.383184 716.094 333.383184 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #fff4e8; stroke: #a56623; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 880.425 333.383184 
+L 1003.4082 333.383184 
+Q 1018.251 333.383184 1018.251 325.466352 
+L 1018.251 190.880208 
+Q 1018.251 182.963376 1003.4082 182.963376 
+L 880.425 182.963376 
+Q 865.5822 182.963376 865.5822 190.880208 
+L 865.5822 325.466352 
+Q 865.5822 333.383184 880.425 333.383184 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #e9f6ef; stroke: #2f7a50; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 579.3282 529.60752 
+L 762.7428 529.60752 
+Q 777.5856 529.60752 777.5856 521.690688 
+L 777.5856 393.8904 
+Q 777.5856 385.973568 762.7428 385.973568 
+L 579.3282 385.973568 
+Q 564.4854 385.973568 564.4854 393.8904 
+L 564.4854 521.690688 
+Q 564.4854 529.60752 579.3282 529.60752 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #f3faf5; stroke: #2f7a50; stroke-width: 1.45; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 798.7896 529.60752 
+L 982.2042 529.60752 
+Q 997.047 529.60752 997.047 521.690688 
+L 997.047 393.8904 
+Q 997.047 385.973568 982.2042 385.973568 
+L 798.7896 385.973568 
+Q 783.9468 385.973568 783.9468 393.8904 
+L 783.9468 521.690688 
+Q 783.9468 529.60752 798.7896 529.60752 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #f3faf5; stroke: #2f7a50; stroke-width: 1.45; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 59.8302 530.738496 
+L 497.6928 530.738496 
+Q 514.656 530.738496 514.656 521.690688 
+L 514.656 393.8904 
+Q 514.656 384.842592 497.6928 384.842592 
+L 59.8302 384.842592 
+Q 42.867 384.842592 42.867 393.8904 
+L 42.867 521.690688 
+Q 42.867 530.738496 59.8302 530.738496 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #fff5f5; stroke: #a64646; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 8.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #314a57" x="521.0172" y="583.281666" transform="rotate(-0 521.0172 583.281666)">Результат этапа: воспроизводимая априорная модель с фиксированными корпусом, словарём, параметрами и хэшами</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 7.6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #526976" x="521.0172" y="603.994187" transform="rotate(-0 521.0172 603.994187)">θ_prior используется как латентное описание сценария; φ_k(token) — для содержательной интерпретации факторов</text>
+   </g>
+   <g id="patch_20">
+    <path d="M 64.071 220.285584 
+L 84.2148 220.285584 
+Q 91.6362 220.285584 91.6362 216.327168 
+L 91.6362 198.231552 
+Q 91.6362 194.273136 84.2148 194.273136 
+L 64.071 194.273136 
+Q 56.6496 194.273136 56.6496 198.231552 
+L 56.6496 216.327168 
+Q 56.6496 220.285584 64.071 220.285584 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #ffffff; stroke: #34699a; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 64.071 301.150368 
+L 176.4522 301.150368 
+" clip-path="url(#p872f68c2b7)" style="fill: none; stroke: #34699a; stroke-opacity: 0.55; stroke-width: 0.75; stroke-linecap: square"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 228.402 220.285584 
+L 248.5458 220.285584 
+Q 255.9672 220.285584 255.9672 216.327168 
+L 255.9672 198.231552 
+Q 255.9672 194.273136 248.5458 194.273136 
+L 228.402 194.273136 
+Q 220.9806 194.273136 220.9806 198.231552 
+L 220.9806 216.327168 
+Q 220.9806 220.285584 228.402 220.285584 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #ffffff; stroke: #7557a6; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 228.402 301.150368 
+L 340.7832 301.150368 
+" clip-path="url(#p872f68c2b7)" style="fill: none; stroke: #7557a6; stroke-opacity: 0.55; stroke-width: 0.75; stroke-linecap: square"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 392.733 220.285584 
+L 412.8768 220.285584 
+Q 420.2982 220.285584 420.2982 216.327168 
+L 420.2982 198.231552 
+Q 420.2982 194.273136 412.8768 194.273136 
+L 392.733 194.273136 
+Q 385.3116 194.273136 385.3116 198.231552 
+L 385.3116 216.327168 
+Q 385.3116 220.285584 392.733 220.285584 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #ffffff; stroke: #7557a6; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 392.733 301.150368 
+L 505.1142 301.150368 
+" clip-path="url(#p872f68c2b7)" style="fill: none; stroke: #7557a6; stroke-opacity: 0.55; stroke-width: 0.75; stroke-linecap: square"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 557.064 220.285584 
+L 577.2078 220.285584 
+Q 584.6292 220.285584 584.6292 216.327168 
+L 584.6292 198.231552 
+Q 584.6292 194.273136 577.2078 194.273136 
+L 557.064 194.273136 
+Q 549.6426 194.273136 549.6426 198.231552 
+L 549.6426 216.327168 
+Q 549.6426 220.285584 557.064 220.285584 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #ffffff; stroke: #7557a6; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 557.064 301.150368 
+L 669.4452 301.150368 
+" clip-path="url(#p872f68c2b7)" style="fill: none; stroke: #7557a6; stroke-opacity: 0.55; stroke-width: 0.75; stroke-linecap: square"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 721.395 220.285584 
+L 741.5388 220.285584 
+Q 748.9602 220.285584 748.9602 216.327168 
+L 748.9602 198.231552 
+Q 748.9602 194.273136 741.5388 194.273136 
+L 721.395 194.273136 
+Q 713.9736 194.273136 713.9736 198.231552 
+L 713.9736 216.327168 
+Q 713.9736 220.285584 721.395 220.285584 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #ffffff; stroke: #a56623; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 721.395 301.150368 
+L 833.7762 301.150368 
+" clip-path="url(#p872f68c2b7)" style="fill: none; stroke: #a56623; stroke-opacity: 0.55; stroke-width: 0.75; stroke-linecap: square"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 885.726 220.285584 
+L 905.8698 220.285584 
+Q 913.2912 220.285584 913.2912 216.327168 
+L 913.2912 198.231552 
+Q 913.2912 194.273136 905.8698 194.273136 
+L 885.726 194.273136 
+Q 878.3046 194.273136 878.3046 198.231552 
+L 878.3046 216.327168 
+Q 878.3046 220.285584 885.726 220.285584 
+z
+" clip-path="url(#p872f68c2b7)" style="fill: #ffffff; stroke: #2f7a50; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 885.726 301.150368 
+L 998.1072 301.150368 
+" clip-path="url(#p872f68c2b7)" style="fill: none; stroke: #2f7a50; stroke-opacity: 0.55; stroke-width: 0.75; stroke-linecap: square"/>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 8.9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #34699a" x="74.1429" y="209.591274" transform="rotate(-0 74.1429 209.591274)">1</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 7.8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="132.475104" y="212.132972" transform="rotate(-0 132.475104 212.132972)">Априорные признаки</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="65.1312" y="247.563892" transform="rotate(-0 65.1312 247.563892)">• 150 сценариев</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="65.1312" y="270.183687" transform="rotate(-0 65.1312 270.183687)">• только признаки prior_*</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="65.1312" y="292.803207" transform="rotate(-0 65.1312 292.803207)">• scenario_id и protocol_id</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 6.75px; font-family: 'DejaVu Sans Mono'; text-anchor: middle; fill: #34699a" x="120.2616" y="317.04125" transform="rotate(-0 120.2616 317.04125)">prior_features.csv</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 8.9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #7557a6" x="238.4739" y="209.591274" transform="rotate(-0 238.4739 209.591274)">2</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 7.8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="296.806104" y="212.132972" transform="rotate(-0 296.806104 212.132972)">Дискретизация</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="229.4622" y="247.563892" transform="rotate(-0 229.4622 247.563892)">• числовые признаки → интервалы</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="229.4622" y="270.183412" transform="rotate(-0 229.4622 270.183412)">• категории сохраняются</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="229.4622" y="292.802932" transform="rotate(-0 229.4622 292.802932)">• правила фиксируются</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 6.75px; font-family: 'DejaVu Sans Mono'; text-anchor: middle; fill: #7557a6" x="284.5926" y="317.059179" transform="rotate(-0 284.5926 317.059179)">quantile / 3 bins</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 8.9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #7557a6" x="402.8049" y="209.591274" transform="rotate(-0 402.8049 209.591274)">3</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 7.8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="461.137104" y="212.132972" transform="rotate(-0 461.137104 212.132972)">Токенизация</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="393.7932" y="247.563892" transform="rotate(-0 393.7932 247.563892)">• признак + уровень → токен</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="393.7932" y="270.183412" transform="rotate(-0 393.7932 270.183412)">• единое кодирование корпуса</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="393.7932" y="292.802932" transform="rotate(-0 393.7932 292.802932)">• воспроизводимая карта</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 6.75px; font-family: 'DejaVu Sans Mono'; text-anchor: middle; fill: #7557a6" x="448.9236" y="317.04125" transform="rotate(-0 448.9236 317.04125)">token_map.json</text>
+   </g>
+   <g id="text_23">
+    <text style="font-weight: 700; font-size: 8.9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #7557a6" x="567.1359" y="209.591274" transform="rotate(-0 567.1359 209.591274)">4</text>
+   </g>
+   <g id="text_24">
+    <text style="font-weight: 700; font-size: 7.8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="625.468104" y="212.152167" transform="rotate(-0 625.468104 212.152167)">Априорный корпус</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="558.1242" y="247.563892" transform="rotate(-0 558.1242 247.563892)">• один документ на сценарий</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="558.1242" y="270.183412" transform="rotate(-0 558.1242 270.183412)">• 4800 вхождений токенов</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="558.1242" y="292.803207" transform="rotate(-0 558.1242 292.803207)">• hash корпуса фиксируется</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 6.75px; font-family: 'DejaVu Sans Mono'; text-anchor: middle; fill: #7557a6" x="613.2546" y="317.04125" transform="rotate(-0 613.2546 317.04125)">corpus_prior.csv</text>
+   </g>
+   <g id="text_29">
+    <text style="font-weight: 700; font-size: 8.9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #a56623" x="731.4669" y="209.591274" transform="rotate(-0 731.4669 209.591274)">5</text>
+   </g>
+   <g id="text_30">
+    <text style="font-weight: 700; font-size: 7.8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="789.799104" y="212.132972" transform="rotate(-0 789.799104 212.132972)">Словарь и матрица</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="722.4552" y="247.564167" transform="rotate(-0 722.4552 247.564167)">• df_min = 2</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="722.4552" y="270.183687" transform="rotate(-0 722.4552 270.183687)">• df_max_ratio = 0,95</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="722.4552" y="292.802932" transform="rotate(-0 722.4552 292.802932)">• X ∈ N^(150×96)</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 6.75px; font-family: 'DejaVu Sans Mono'; text-anchor: middle; fill: #a56623" x="777.5856" y="317.04125" transform="rotate(-0 777.5856 317.04125)">dictionary.json</text>
+   </g>
+   <g id="text_35">
+    <text style="font-weight: 700; font-size: 8.9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #2f7a50" x="895.7979" y="209.591274" transform="rotate(-0 895.7979 209.591274)">6</text>
+   </g>
+   <g id="text_36">
+    <text style="font-weight: 700; font-size: 7.8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="954.130104" y="212.260636" transform="rotate(-0 954.130104 212.260636)">Обучение LDA_prior</text>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="886.7862" y="247.563892" transform="rotate(-0 886.7862 247.563892)">• K = 3 латентных фактора</text>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="886.7862" y="270.183687" transform="rotate(-0 886.7862 270.183687)">• batch, max_iter = 100</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 7.05px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="886.7862" y="292.803207" transform="rotate(-0 886.7862 292.803207)">• random_state = 11</text>
+   </g>
+   <g id="text_40">
+    <text style="font-size: 6.75px; font-family: 'DejaVu Sans Mono'; text-anchor: middle; fill: #2f7a50" x="941.9166" y="317.059179" transform="rotate(-0 941.9166 317.059179)">lda_prior.joblib</text>
+   </g>
+   <g id="text_41">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #183d2a" x="671.0355" y="413.649454" transform="rotate(-0 671.0355 413.649454)">Латентный профиль сценария</text>
+   </g>
+   <g id="text_42">
+    <text style="font-size: 7.15px; font-family: 'DejaVu Sans Mono'; text-anchor: middle; fill: #2f7a50" x="671.0355" y="437.028628" transform="rotate(-0 671.0355 437.028628)">theta_prior.csv</text>
+   </g>
+   <g id="text_43">
+    <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="590.9904" y="461.332985" transform="rotate(-0 590.9904 461.332985)">• θ_prior(A_i) = (θ_i0, θ_i1, θ_i2)</text>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="590.9904" y="485.621351" transform="rotate(-0 590.9904 485.621351)">• сумма компонент равна 1</text>
+   </g>
+   <g id="text_45">
+    <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="590.9904" y="509.937335" transform="rotate(-0 590.9904 509.937335)">• 150 строк по сценариям</text>
+   </g>
+   <g id="text_46">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #183d2a" x="890.4969" y="413.628868" transform="rotate(-0 890.4969 413.628868)">Структура латентных факторов</text>
+   </g>
+   <g id="text_47">
+    <text style="font-size: 7.15px; font-family: 'DejaVu Sans Mono'; text-anchor: middle; fill: #2f7a50" x="890.4969" y="437.028628" transform="rotate(-0 890.4969 437.028628)">topic_word.csv</text>
+   </g>
+   <g id="text_48">
+    <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="810.4518" y="461.305641" transform="rotate(-0 810.4518 461.305641)">• φ_k(token) для каждого фактора</text>
+   </g>
+   <g id="text_49">
+    <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="810.4518" y="485.621351" transform="rotate(-0 810.4518 485.621351)">• 96 весов на фактор</text>
+   </g>
+   <g id="text_50">
+    <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="810.4518" y="509.937335" transform="rotate(-0 810.4518 509.937335)">• основа интерпретации тем</text>
+   </g>
+   <g id="text_51">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #8d3030" x="278.7615" y="414.889746" transform="rotate(-0 278.7615 414.889746)">LeakageGuard: только априорные данные</text>
+   </g>
+   <g id="text_52">
+    <text style="font-weight: 700; font-size: 7.6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #2f7a50" x="74.673" y="442.234635" transform="rotate(-0 74.673 442.234635)">Разрешено:</text>
+   </g>
+   <g id="text_53">
+    <text style="font-size: 7.5px; font-family: 'DejaVu Sans Mono'; text-anchor: start; fill: #2f7a50" x="145.7064" y="442.208951" transform="rotate(-0 145.7064 442.208951)">prior_features.csv</text>
+   </g>
+   <g id="text_54">
+    <text style="font-weight: 700; font-size: 7.6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #a64646" x="74.673" y="469.943547" transform="rotate(-0 74.673 469.943547)">Запрещено:</text>
+   </g>
+   <g id="text_55">
+    <text style="font-size: 7.2px; font-family: 'DejaVu Sans Mono'; text-anchor: start; fill: #a64646" x="145.7064" y="469.859047" transform="rotate(-0 145.7064 469.859047)">fact_features.csv, quality_targets.csv</text>
+   </g>
+   <g id="text_56">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #5b4646" x="74.673" y="498.70579" transform="rotate(-0 74.673 498.70579)">Диагностическая модель не изменяет параметры основной LDA_prior.</text>
+   </g>
+   <g id="text_57">
+    <g id="patch_26">
+     <path d="M 1000.41725 611.349248 
+L 1036.08475 611.349248 
+Q 1040.48475 611.349248 1040.48475 606.949248 
+L 1040.48475 572.149248 
+Q 1040.48475 567.749248 1036.08475 567.749248 
+L 1000.41725 567.749248 
+Q 996.01725 567.749248 996.01725 572.149248 
+L 996.01725 606.949248 
+Q 996.01725 611.349248 1000.41725 611.349248 
+z
+" style="fill: #f3faf5; stroke: #7ead90; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; fill: #2f7a50" transform="translate(1000.41725 580.861123)">N = 150</text>
+    <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; fill: #2f7a50" transform="translate(1003.45225 592.457373)">V = 96</text>
+    <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; fill: #2f7a50" transform="translate(1006.231625 604.061123)">K = 3</text>
+   </g>
+   <g id="text_58">
+    <g id="patch_27">
+     <path d="M 190.515393 246.778852 
+L 214.338807 246.778852 
+L 214.338807 239.031356 
+L 190.515393 239.031356 
+z
+" style="fill: #ffffff; opacity: 0.95"/>
+    </g>
+    <text style="font-size: 6.35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #456a7d" x="202.4271" y="244.554864" transform="rotate(-0 202.4271 244.554864)">X_prior</text>
+   </g>
+   <g id="text_59">
+    <g id="patch_28">
+     <path d="M 354.211889 246.778604 
+L 379.304311 246.778604 
+L 379.304311 239.031604 
+L 354.211889 239.031604 
+z
+" style="fill: #ffffff; opacity: 0.95"/>
+    </g>
+    <text style="font-size: 6.35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #456a7d" x="366.7581" y="244.554616" transform="rotate(-0 366.7581 244.554616)">уровни</text>
+   </g>
+   <g id="text_60">
+    <g id="patch_29">
+     <path d="M 518.144526 246.778604 
+L 544.033674 246.778604 
+L 544.033674 239.031604 
+L 518.144526 239.031604 
+z
+" style="fill: #ffffff; opacity: 0.95"/>
+    </g>
+    <text style="font-size: 6.35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #456a7d" x="531.0891" y="244.554616" transform="rotate(-0 531.0891 244.554616)">токены</text>
+   </g>
+   <g id="text_61">
+    <g id="patch_30">
+     <path d="M 678.072694 246.778852 
+L 712.767506 246.778852 
+L 712.767506 239.031356 
+L 678.072694 239.031356 
+z
+" style="fill: #ffffff; opacity: 0.95"/>
+    </g>
+    <text style="font-size: 6.35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #456a7d" x="695.4201" y="244.554864" transform="rotate(-0 695.4201 244.554864)">df-фильтр</text>
+   </g>
+   <g id="text_62">
+    <g id="patch_31">
+     <path d="M 842.038073 246.778604 
+L 877.464127 246.778604 
+L 877.464127 239.031604 
+L 842.038073 239.031604 
+z
+" style="fill: #ffffff; opacity: 0.95"/>
+    </g>
+    <text style="font-size: 6.35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #456a7d" x="859.7511" y="244.554616" transform="rotate(-0 859.7511 244.554616)">X: 150×96</text>
+   </g>
+   <g id="text_63">
+    <g id="patch_32">
+     <path d="M 641.808137 369.772492 
+L 700.262863 369.772492 
+L 700.262863 362.024996 
+L 641.808137 362.024996 
+z
+" style="fill: #ffffff; opacity: 0.95"/>
+    </g>
+    <text style="font-size: 6.35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #2f7a50" x="671.0355" y="367.548504" transform="rotate(-0 671.0355 367.548504)">document × topic</text>
+   </g>
+   <g id="text_64">
+    <g id="patch_33">
+     <path d="M 868.41031 369.772492 
+L 912.58349 369.772492 
+L 912.58349 362.024996 
+L 868.41031 362.024996 
+z
+" style="fill: #ffffff; opacity: 0.95"/>
+    </g>
+    <text style="font-size: 6.35px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #2f7a50" x="890.4969" y="367.548504" transform="rotate(-0 890.4969 367.548504)">topic × token</text>
+   </g>
+  </g>
+  <g id="text_65">
+   <text style="font-weight: 700; font-size: 15.2px; font-family: 'DejaVu Sans'; text-anchor: middle" x="518.76" y="17.38325" transform="rotate(-0 518.76 17.38325)">Рисунок 4.1 — Конвейер построения априорной LDA-модели</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p872f68c2b7">
+   <rect x="5.76" y="82.872" width="1060.2" height="565.488"/>
+  </clipPath>
+ </defs>
+</svg>
