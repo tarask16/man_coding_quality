@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1027.08pt" height="560.2176pt" viewBox="0 0 1027.08 560.2176" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>manual_coding_sim</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 560.2176 
+L 1027.08 560.2176 
+L 1027.08 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 40.28904 484.691904 
+L 986.79096 484.691904 
+Q 1005.07104 484.691904 1005.07104 475.910208 
+L 1005.07104 132.44832 
+Q 1005.07104 123.666624 986.79096 123.666624 
+L 40.28904 123.666624 
+Q 22.00896 123.666624 22.00896 132.44832 
+L 22.00896 475.910208 
+Q 22.00896 484.691904 40.28904 484.691904 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #f8fbfd; stroke: #6e8797; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 7.7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #527184" x="51.4602" y="141.436027" transform="rotate(-0 51.4602 141.436027)">АПРИОРНЫЙ РАСЧЁТНЫЙ КОНТУР</text>
+   </g>
+   <g id="patch_3">
+    <path d="M 54.50688 529.576128 
+L 512.52444 529.576128 
+Q 523.6956 529.576128 523.6956 524.209536 
+L 523.6956 492.985728 
+Q 523.6956 487.619136 512.52444 487.619136 
+L 54.50688 487.619136 
+Q 43.33572 487.619136 43.33572 492.985728 
+L 43.33572 524.209536 
+Q 43.33572 529.576128 54.50688 529.576128 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #fff4f3; stroke-dasharray: 4.255,1.84; stroke-dashoffset: 0; stroke: #b44743; stroke-width: 1.15; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 542.99124 529.576128 
+L 972.57312 529.576128 
+Q 983.74428 529.576128 983.74428 524.209536 
+L 983.74428 492.985728 
+Q 983.74428 487.619136 972.57312 487.619136 
+L 542.99124 487.619136 
+Q 531.82008 487.619136 531.82008 492.985728 
+L 531.82008 524.209536 
+Q 531.82008 529.576128 542.99124 529.576128 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #f4f7f9; stroke: #6b7e8b; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #4a5e6d" x="513.54" y="105.602141" transform="rotate(-0 513.54 105.602141)">Только X_prior и θ_prior: фактические признаки и целевые показатели не участвуют в расчёте Q_pred</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 277.902311 213.679008 
+Q 284.02521 213.679008 288.750567 213.679008 
+" clip-path="url(#p48f3567e13)" style="fill: none; stroke: #425a6b; stroke-width: 1.25; stroke-linecap: round"/>
+    <path d="M 283.550567 211.079008 
+L 288.750567 213.679008 
+L 283.550567 216.279008 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #425a6b; stroke: #425a6b; stroke-width: 1.25; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 511.481111 213.679008 
+Q 517.60401 213.679008 522.329367 213.679008 
+" clip-path="url(#p48f3567e13)" style="fill: none; stroke: #425a6b; stroke-width: 1.25; stroke-linecap: round"/>
+    <path d="M 517.129367 211.079008 
+L 522.329367 213.679008 
+L 517.129367 216.279008 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #425a6b; stroke: #425a6b; stroke-width: 1.25; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 745.059911 213.679008 
+Q 751.18281 213.679008 755.908167 213.679008 
+" clip-path="url(#p48f3567e13)" style="fill: none; stroke: #425a6b; stroke-width: 1.25; stroke-linecap: round"/>
+    <path d="M 750.708167 211.079008 
+L 755.908167 213.679008 
+L 750.708167 216.279008 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #425a6b; stroke: #425a6b; stroke-width: 1.25; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 867.97044 275.933131 
+Q 867.97044 294.180388 867.97044 311.030102 
+" clip-path="url(#p48f3567e13)" style="fill: none; stroke: #425a6b; stroke-width: 1.25; stroke-linecap: round"/>
+    <path d="M 870.57044 305.830102 
+L 867.97044 311.030102 
+L 865.37044 305.830102 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #425a6b; stroke: #425a6b; stroke-width: 1.25; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 757.302169 374.676768 
+Q 751.17927 374.676768 746.453913 374.676768 
+" clip-path="url(#p48f3567e13)" style="fill: none; stroke: #425a6b; stroke-width: 1.25; stroke-linecap: round"/>
+    <path d="M 751.653913 377.276768 
+L 746.453913 374.676768 
+L 751.653913 372.076768 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #425a6b; stroke: #425a6b; stroke-width: 1.25; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 523.723369 374.676768 
+Q 517.60047 374.676768 512.875113 374.676768 
+" clip-path="url(#p48f3567e13)" style="fill: none; stroke: #425a6b; stroke-width: 1.25; stroke-linecap: round"/>
+    <path d="M 518.075113 377.276768 
+L 512.875113 374.676768 
+L 518.075113 372.076768 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #425a6b; stroke: #425a6b; stroke-width: 1.25; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 290.144569 374.676768 
+Q 284.02167 374.676768 279.296313 374.676768 
+" clip-path="url(#p48f3567e13)" style="fill: none; stroke: #425a6b; stroke-width: 1.25; stroke-linecap: round"/>
+    <path d="M 284.496313 377.276768 
+L 279.296313 374.676768 
+L 284.496313 372.076768 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #425a6b; stroke: #425a6b; stroke-width: 1.25; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 62.63136 277.834176 
+L 271.83672 277.834176 
+Q 284.02344 277.834176 284.02344 271.979712 
+L 284.02344 155.378304 
+Q 284.02344 149.52384 271.83672 149.52384 
+L 62.63136 149.52384 
+Q 50.44464 149.52384 50.44464 155.378304 
+L 50.44464 271.979712 
+Q 50.44464 277.834176 62.63136 277.834176 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #eaf3fa; stroke: #2d6d98; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 296.21016 277.834176 
+L 505.41552 277.834176 
+Q 517.60224 277.834176 517.60224 271.979712 
+L 517.60224 155.378304 
+Q 517.60224 149.52384 505.41552 149.52384 
+L 296.21016 149.52384 
+Q 284.02344 149.52384 284.02344 155.378304 
+L 284.02344 271.979712 
+Q 284.02344 277.834176 296.21016 277.834176 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #fff2f1; stroke: #b44743; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 529.78896 277.834176 
+L 738.99432 277.834176 
+Q 751.18104 277.834176 751.18104 271.979712 
+L 751.18104 155.378304 
+Q 751.18104 149.52384 738.99432 149.52384 
+L 529.78896 149.52384 
+Q 517.60224 149.52384 517.60224 155.378304 
+L 517.60224 271.979712 
+Q 517.60224 277.834176 529.78896 277.834176 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #eef7f3; stroke: #397c64; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 763.36776 277.834176 
+L 972.57312 277.834176 
+Q 984.75984 277.834176 984.75984 271.979712 
+L 984.75984 155.378304 
+Q 984.75984 149.52384 972.57312 149.52384 
+L 763.36776 149.52384 
+Q 751.18104 149.52384 751.18104 155.378304 
+L 751.18104 271.979712 
+Q 751.18104 277.834176 763.36776 277.834176 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #f3f0fa; stroke: #6d57a5; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 62.63136 438.831936 
+L 271.83672 438.831936 
+Q 284.02344 438.831936 284.02344 432.977472 
+L 284.02344 316.376064 
+Q 284.02344 310.5216 271.83672 310.5216 
+L 62.63136 310.5216 
+Q 50.44464 310.5216 50.44464 316.376064 
+L 50.44464 432.977472 
+Q 50.44464 438.831936 62.63136 438.831936 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #eef8ec; stroke: #4e8145; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 296.21016 438.831936 
+L 505.41552 438.831936 
+Q 517.60224 438.831936 517.60224 432.977472 
+L 517.60224 316.376064 
+Q 517.60224 310.5216 505.41552 310.5216 
+L 296.21016 310.5216 
+Q 284.02344 310.5216 284.02344 316.376064 
+L 284.02344 432.977472 
+Q 284.02344 438.831936 296.21016 438.831936 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #fff7e8; stroke: #a87522; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 529.78896 438.831936 
+L 738.99432 438.831936 
+Q 751.18104 438.831936 751.18104 432.977472 
+L 751.18104 316.376064 
+Q 751.18104 310.5216 738.99432 310.5216 
+L 529.78896 310.5216 
+Q 517.60224 310.5216 517.60224 316.376064 
+L 517.60224 432.977472 
+Q 517.60224 438.831936 529.78896 438.831936 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #eef4fb; stroke: #3e6e9e; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 763.36776 438.831936 
+L 972.57312 438.831936 
+Q 984.75984 438.831936 984.75984 432.977472 
+L 984.75984 316.376064 
+Q 984.75984 310.5216 972.57312 310.5216 
+L 763.36776 310.5216 
+Q 751.18104 310.5216 751.18104 316.376064 
+L 751.18104 432.977472 
+Q 751.18104 438.831936 763.36776 438.831936 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #eef4fb; stroke: #3e6e9e; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #a33e39" x="64.66248" y="506.611667" transform="rotate(-0 64.66248 506.611667)">ЗАПРЕЩЁННЫЕ ВХОДЫ</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 6.7px; font-family: 'DejaVu Sans Mono'; text-anchor: start; fill: #7f403c" x="64.66248" y="518.162072" transform="rotate(-0 64.66248 518.162072)">fact_features.csv · quality_targets.csv · theta_diag.csv · theta_full.csv</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #4b6271" x="554.1624" y="506.025143" transform="rotate(-0 554.1624 506.025143)">МЕТОДИЧЕСКАЯ ИНТЕРПРЕТАЦИЯ</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 6.55px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #526875" x="554.1624" y="518.161082" transform="rotate(-0 554.1624 518.161082)">Q_pred — априорный сравнительный индекс; интервал отражает диагностическую неопределённость, а не доказанную калибровку.</text>
+   </g>
+   <g id="patch_20">
+    <path d="M 67.70916 180.259776 
+L 88.02036 180.259776 
+Q 94.11372 180.259776 94.11372 177.332544 
+L 94.11372 161.72064 
+Q 94.11372 158.793408 88.02036 158.793408 
+L 67.70916 158.793408 
+Q 61.6158 158.793408 61.6158 161.72064 
+L 61.6158 177.332544 
+Q 61.6158 180.259776 67.70916 180.259776 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #ffffff; stroke: #2d6d98; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 67.70916 254.904192 
+L 266.75892 254.904192 
+" clip-path="url(#p48f3567e13)" style="fill: none; stroke: #2d6d98; stroke-opacity: 0.55; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 301.28796 180.259776 
+L 321.59916 180.259776 
+Q 327.69252 180.259776 327.69252 177.332544 
+L 327.69252 161.72064 
+Q 327.69252 158.793408 321.59916 158.793408 
+L 301.28796 158.793408 
+Q 295.1946 158.793408 295.1946 161.72064 
+L 295.1946 177.332544 
+Q 295.1946 180.259776 301.28796 180.259776 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #ffffff; stroke: #b44743; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 301.28796 254.904192 
+L 500.33772 254.904192 
+" clip-path="url(#p48f3567e13)" style="fill: none; stroke: #b44743; stroke-opacity: 0.55; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 534.86676 180.259776 
+L 555.17796 180.259776 
+Q 561.27132 180.259776 561.27132 177.332544 
+L 561.27132 161.72064 
+Q 561.27132 158.793408 555.17796 158.793408 
+L 534.86676 158.793408 
+Q 528.7734 158.793408 528.7734 161.72064 
+L 528.7734 177.332544 
+Q 528.7734 180.259776 534.86676 180.259776 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #ffffff; stroke: #397c64; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 534.86676 254.904192 
+L 733.91652 254.904192 
+" clip-path="url(#p48f3567e13)" style="fill: none; stroke: #397c64; stroke-opacity: 0.55; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 768.44556 180.259776 
+L 788.75676 180.259776 
+Q 794.85012 180.259776 794.85012 177.332544 
+L 794.85012 161.72064 
+Q 794.85012 158.793408 788.75676 158.793408 
+L 768.44556 158.793408 
+Q 762.3522 158.793408 762.3522 161.72064 
+L 762.3522 177.332544 
+Q 762.3522 180.259776 768.44556 180.259776 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #ffffff; stroke: #6d57a5; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 768.44556 254.904192 
+L 967.49532 254.904192 
+" clip-path="url(#p48f3567e13)" style="fill: none; stroke: #6d57a5; stroke-opacity: 0.55; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 67.70916 341.257536 
+L 88.02036 341.257536 
+Q 94.11372 341.257536 94.11372 338.330304 
+L 94.11372 322.7184 
+Q 94.11372 319.791168 88.02036 319.791168 
+L 67.70916 319.791168 
+Q 61.6158 319.791168 61.6158 322.7184 
+L 61.6158 338.330304 
+Q 61.6158 341.257536 67.70916 341.257536 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #ffffff; stroke: #4e8145; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 67.70916 415.901952 
+L 266.75892 415.901952 
+" clip-path="url(#p48f3567e13)" style="fill: none; stroke: #4e8145; stroke-opacity: 0.55; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 301.28796 341.257536 
+L 321.59916 341.257536 
+Q 327.69252 341.257536 327.69252 338.330304 
+L 327.69252 322.7184 
+Q 327.69252 319.791168 321.59916 319.791168 
+L 301.28796 319.791168 
+Q 295.1946 319.791168 295.1946 322.7184 
+L 295.1946 338.330304 
+Q 295.1946 341.257536 301.28796 341.257536 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #ffffff; stroke: #a87522; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 301.28796 415.901952 
+L 500.33772 415.901952 
+" clip-path="url(#p48f3567e13)" style="fill: none; stroke: #a87522; stroke-opacity: 0.55; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 534.86676 341.257536 
+L 555.17796 341.257536 
+Q 561.27132 341.257536 561.27132 338.330304 
+L 561.27132 322.7184 
+Q 561.27132 319.791168 555.17796 319.791168 
+L 534.86676 319.791168 
+Q 528.7734 319.791168 528.7734 322.7184 
+L 528.7734 338.330304 
+Q 528.7734 341.257536 534.86676 341.257536 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #ffffff; stroke: #3e6e9e; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 534.86676 415.901952 
+L 733.91652 415.901952 
+" clip-path="url(#p48f3567e13)" style="fill: none; stroke: #3e6e9e; stroke-opacity: 0.55; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 768.44556 341.257536 
+L 788.75676 341.257536 
+Q 794.85012 341.257536 794.85012 338.330304 
+L 794.85012 322.7184 
+Q 794.85012 319.791168 788.75676 319.791168 
+L 768.44556 319.791168 
+Q 762.3522 319.791168 762.3522 322.7184 
+L 762.3522 338.330304 
+Q 762.3522 341.257536 768.44556 341.257536 
+z
+" clip-path="url(#p48f3567e13)" style="fill: #ffffff; stroke: #3e6e9e; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 768.44556 415.901952 
+L 967.49532 415.901952 
+" clip-path="url(#p48f3567e13)" style="fill: none; stroke: #3e6e9e; stroke-opacity: 0.55; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 19px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #b44743" x="500.33772" y="513.533179" transform="rotate(-0 500.33772 513.533179)">×</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #2d6d98" x="77.86476" y="171.7346" transform="rotate(-0 77.86476 171.7346)">1</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 7.4px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="184.620427" y="171.448858" transform="rotate(-0 184.620427 171.448858)">Загрузка априорных входов</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 6.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #2d6d98" x="167.23404" y="192.271951" transform="rotate(-0 167.23404 192.271951)">X_prior(Aᵢ),  θ_prior(Aᵢ)</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="68.72472" y="211.643503" transform="rotate(-0 68.72472 211.643503)">• 150 сценариев</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="68.72472" y="227.255651" transform="rotate(-0 68.72472 227.255651)">• ключи scenario_id, protocol_id</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="68.72472" y="242.891969" transform="rotate(-0 68.72472 242.891969)">• X_prior и θ_prior согласованы</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans Mono'; text-anchor: middle; fill: #20303d" x="167.23404" y="265.732588" transform="rotate(-0 167.23404 265.732588)">prior_features.csv + theta_prior.csv</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #b44743" x="311.44356" y="171.7346" transform="rotate(-0 311.44356 171.7346)">2</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 7.4px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="418.199227" y="171.449147" transform="rotate(-0 418.199227 171.449147)">LeakageGuard</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 6.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #b44743" x="400.81284" y="192.245779" transform="rotate(-0 400.81284 192.245779)">X_fact ∪ Y_fact ↛ Q_pred</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="302.30352" y="211.668161" transform="rotate(-0 302.30352 211.668161)">• разрешены только prior_* и θ₀–θ₂</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="302.30352" y="227.255407" transform="rotate(-0 302.30352 227.255407)">• запрещённые колонки: 0</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="302.30352" y="242.867555" transform="rotate(-0 302.30352 242.867555)">• is_safe = true</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans Mono'; text-anchor: middle; fill: #20303d" x="400.81284" y="265.748526" transform="rotate(-0 400.81284 265.748526)">chapter5_leakage_report.json</text>
+   </g>
+   <g id="text_22">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #397c64" x="545.02236" y="171.7346" transform="rotate(-0 545.02236 171.7346)">3</text>
+   </g>
+   <g id="text_23">
+    <text style="font-weight: 700; font-size: 7.4px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="651.778027" y="171.448858" transform="rotate(-0 651.778027 171.448858)">Направленная нормировка</text>
+   </g>
+   <g id="text_24">
+    <text style="font-weight: 700; font-size: 6.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #397c64" x="634.39164" y="192.245779" transform="rotate(-0 634.39164 192.245779)">x_norm = N(x; direction)</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="535.88232" y="211.643747" transform="rotate(-0 535.88232 211.643747)">• min–max в диапазон [0; 1]</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="535.88232" y="227.255651" transform="rotate(-0 535.88232 227.255651)">• lower_is_better инвертируется</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="535.88232" y="242.867311" transform="rotate(-0 535.88232 242.867311)">• постоянные признаки → 1,0</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans Mono'; text-anchor: middle; fill: #20303d" x="634.39164" y="265.748526" transform="rotate(-0 634.39164 265.748526)">normalized_prior_features.csv</text>
+   </g>
+   <g id="text_29">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #6d57a5" x="778.60116" y="171.7346" transform="rotate(-0 778.60116 171.7346)">4</text>
+   </g>
+   <g id="text_30">
+    <text style="font-weight: 700; font-size: 7.4px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="885.356827" y="171.448858" transform="rotate(-0 885.356827 171.448858)">Латентная компонента</text>
+   </g>
+   <g id="text_31">
+    <text style="font-weight: 700; font-size: 6.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #6d57a5" x="867.97044" y="192.271951" transform="rotate(-0 867.97044 192.271951)">q_latent = (Σ dₖθₖ + 1) / 2</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="769.46112" y="211.643747" transform="rotate(-0 769.46112 211.643747)">• d = (−1, −1, +1)</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="769.46112" y="227.255407" transform="rotate(-0 769.46112 227.255407)">• процедурная нагрузка и риск снижают</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="769.46112" y="242.920778" transform="rotate(-0 769.46112 242.920778)">• благоприятные условия повышают</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans Mono'; text-anchor: middle; fill: #20303d" x="867.97044" y="265.748526" transform="rotate(-0 867.97044 265.748526)">latent_quality_component.csv</text>
+   </g>
+   <g id="text_36">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #4e8145" x="77.86476" y="332.73236" transform="rotate(-0 77.86476 332.73236)">8</text>
+   </g>
+   <g id="text_37">
+    <text style="font-weight: 700; font-size: 7.4px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="184.620427" y="332.498938" transform="rotate(-0 184.620427 332.498938)">Финальная приёмка</text>
+   </g>
+   <g id="text_38">
+    <text style="font-weight: 700; font-size: 6.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #4e8145" x="167.23404" y="353.243539" transform="rotate(-0 167.23404 353.243539)">accepted = ∧ checks</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="68.72472" y="372.69473" transform="rotate(-0 68.72472 372.69473)">• 18 обязательных проверок</text>
+   </g>
+   <g id="text_40">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="68.72472" y="388.253167" transform="rotate(-0 68.72472 388.253167)">• все выходы: 150 строк</text>
+   </g>
+   <g id="text_41">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="68.72472" y="403.865315" transform="rotate(-0 68.72472 403.865315)">• accepted = true</text>
+   </g>
+   <g id="text_42">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans Mono'; text-anchor: middle; fill: #20303d" x="167.23404" y="426.730348" transform="rotate(-0 167.23404 426.730348)">chapter5_acceptance_report.json</text>
+   </g>
+   <g id="text_43">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #a87522" x="311.44356" y="332.73236" transform="rotate(-0 311.44356 332.73236)">7</text>
+   </g>
+   <g id="text_44">
+    <text style="font-weight: 700; font-size: 7.4px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="418.199227" y="332.498938" transform="rotate(-0 418.199227 332.498938)">Диагностика неопределённости</text>
+   </g>
+   <g id="text_45">
+    <text style="font-weight: 700; font-size: 6.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #a87522" x="400.81284" y="353.243539" transform="rotate(-0 400.81284 353.243539)">[Q_pred − r; Q_pred + r]</text>
+   </g>
+   <g id="text_46">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="302.30352" y="372.665921" transform="rotate(-0 302.30352 372.665921)">• энтропия θ, устойчивость LDA, входы</text>
+   </g>
+   <g id="text_47">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="302.30352" y="388.253411" transform="rotate(-0 302.30352 388.253411)">• δ = 0,15;  r = δ · uncertainty</text>
+   </g>
+   <g id="text_48">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="302.30352" y="403.918538" transform="rotate(-0 302.30352 403.918538)">• диагностический, не калиброванный интервал</text>
+   </g>
+   <g id="text_49">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans Mono'; text-anchor: middle; fill: #20303d" x="400.81284" y="426.730348" transform="rotate(-0 400.81284 426.730348)">prediction_uncertainty.csv</text>
+   </g>
+   <g id="text_50">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #3e6e9e" x="545.02236" y="332.73236" transform="rotate(-0 545.02236 332.73236)">6</text>
+   </g>
+   <g id="text_51">
+    <text style="font-weight: 700; font-size: 7.4px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="651.778027" y="332.464829" transform="rotate(-0 651.778027 332.464829)">Интегральный индекс</text>
+   </g>
+   <g id="text_52">
+    <text style="font-weight: 700; font-size: 6.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #3e6e9e" x="634.39164" y="353.243539" transform="rotate(-0 634.39164 353.243539)">Q_pred = Σ wⱼ qⱼ_pred</text>
+   </g>
+   <g id="text_53">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="535.88232" y="372.641263" transform="rotate(-0 535.88232 372.641263)">• 6 частных критериев</text>
+   </g>
+   <g id="text_54">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="535.88232" y="388.253167" transform="rotate(-0 535.88232 388.253167)">• равные веса ≈ 1/6</text>
+   </g>
+   <g id="text_55">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="535.88232" y="403.865315" transform="rotate(-0 535.88232 403.865315)">• Q_pred ∈ [0; 1]</text>
+   </g>
+   <g id="text_56">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans Mono'; text-anchor: middle; fill: #20303d" x="634.39164" y="426.730348" transform="rotate(-0 634.39164 426.730348)">q_pred.csv</text>
+   </g>
+   <g id="text_57">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #3e6e9e" x="778.60116" y="332.73236" transform="rotate(-0 778.60116 332.73236)">5</text>
+   </g>
+   <g id="text_58">
+    <text style="font-weight: 700; font-size: 7.4px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="885.356827" y="332.446618" transform="rotate(-0 885.356827 332.446618)">Частные критерии</text>
+   </g>
+   <g id="text_59">
+    <text style="font-weight: 700; font-size: 6.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #3e6e9e" x="867.97044" y="353.243539" transform="rotate(-0 867.97044 353.243539)">qⱼ_pred = αⱼBⱼ(X_norm) + (1−αⱼ)q_latent</text>
+   </g>
+   <g id="text_60">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="769.46112" y="372.641507" transform="rotate(-0 769.46112 372.641507)">• q_acc, q_time, q_effort</text>
+   </g>
+   <g id="text_61">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="769.46112" y="388.253411" transform="rotate(-0 769.46112 388.253411)">• q_res, q_rep, q_fit</text>
+   </g>
+   <g id="text_62">
+    <text style="font-size: 6.25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #334a5a" x="769.46112" y="403.865315" transform="rotate(-0 769.46112 403.865315)">• X_prior_norm + q_latent</text>
+   </g>
+   <g id="text_63">
+    <text style="font-size: 6px; font-family: 'DejaVu Sans Mono'; text-anchor: middle; fill: #20303d" x="867.97044" y="426.730348" transform="rotate(-0 867.97044 426.730348)">q_pred_components.csv</text>
+   </g>
+   <g id="text_64">
+    <text style="font-size: 6.1px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #425a6b" x="284.02344" y="203.431882" transform="rotate(-0 284.02344 203.431882)">входы</text>
+   </g>
+   <g id="text_65">
+    <text style="font-size: 6.1px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #425a6b" x="517.60224" y="203.431882" transform="rotate(-0 517.60224 203.431882)">без утечки</text>
+   </g>
+   <g id="text_66">
+    <text style="font-size: 6.1px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #425a6b" x="751.18104" y="203.431882" transform="rotate(-0 751.18104 203.431882)">X_norm</text>
+   </g>
+   <g id="text_67">
+    <text style="font-size: 6.1px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #425a6b" x="880.15716" y="295.762697" transform="rotate(-0 880.15716 295.762697)">q_latent</text>
+   </g>
+   <g id="text_68">
+    <text style="font-size: 6.1px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #425a6b" x="751.18104" y="388.581383" transform="rotate(-0 751.18104 388.581383)">qⱼ_pred</text>
+   </g>
+   <g id="text_69">
+    <text style="font-size: 6.1px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #425a6b" x="517.60224" y="388.581383" transform="rotate(-0 517.60224 388.581383)">Q_pred</text>
+   </g>
+   <g id="text_70">
+    <text style="font-size: 6.1px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #425a6b" x="284.02344" y="388.581383" transform="rotate(-0 284.02344 388.581383)">Q_pred ± r</text>
+   </g>
+  </g>
+  <g id="text_71">
+   <text style="font-weight: 700; font-size: 15.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #182733" x="497.16" y="17.612656" transform="rotate(-0 497.16 17.612656)">Рисунок 5.1 — Конвейер построения априорной интегральной оценки качества</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p48f3567e13">
+   <rect x="5.76" y="66.5856" width="1015.56" height="487.872"/>
+  </clipPath>
+ </defs>
+</svg>
