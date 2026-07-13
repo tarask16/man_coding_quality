@@ -1,0 +1,59 @@
+# Roadmap генерации графиков и иллюстраций диссертации
+
+## Общие правила
+
+- каждый рисунок реализуется отдельным последовательным этапом;
+- переход к следующему этапу выполняется только после подтверждения пользователя;
+- каждый этап формирует отдельный ZIP-архив с сохранением структуры каталогов;
+- каждый рисунок сохраняется одновременно в PNG и SVG;
+- подписи, комментарии, docstring-и и консольный вывод оформляются на русском языке;
+- для каждого этапа создаются отдельные тесты и выполняется полная регрессия;
+- PNG формируется с разрешением 300 dpi, SVG сохраняется как редактируемая векторная графика.
+
+## Последовательность этапов
+
+| Этап | Рисунок | Назначение | Выходная основа файла |
+|---:|:---:|---|---|
+| 1 | 1.1 | структурная схема; связи средства S, оператора O, условий U, сообщений G и контроля K с частными показателями качества | `reports/dissertation_figures/chapter1/figure_1_1_quality_factors` |
+| 2 | 1.2 | линейный график; зависимость вероятности безошибочного выполнения от числа операций для нескольких значений вероятности ошибки на шаге | `reports/dissertation_figures/chapter1/figure_1_2_error_accumulation` |
+| 3 | 1.3 | качественная матрица или тепловая карта; сопоставление экспертного, балльного, многокритериального, имитационного и латентно-вероятностного подходов | `reports/dissertation_figures/chapter1/figure_1_3_methods_comparison` |
+| 4 | 1.4 | блок-схема; формальная модель → моделирование → априорные признаки → LDA_prior → сравнительный индекс → внешняя проверка | `reports/dissertation_figures/chapter1/figure_1_4_method_logic` |
+| 5 | 2.1 | структурная схема; пять компонентов A_i = {S_i, O_i, U_i, G_i, K_i}, их параметры и формируемое априорное описание X_prior | `reports/dissertation_figures/chapter2/figure_2_1_scenario_structure` |
+| 6 | 2.2 | процессная схема; M → E_h → C → D_h → M′ с каналами возникновения ошибок, задержек, обнаружения и исправления | `reports/dissertation_figures/chapter2/figure_2_2_encoding_decoding_process` |
+| 7 | 2.3 | иерархическая схема; замена, пропуск, вставка, перестановка, ошибочный выбор правила и ошибка контроля с указанием факторов-модификаторов | `reports/dissertation_figures/chapter2/figure_2_3_error_taxonomy` |
+| 8 | 2.4 | причинно-функциональная схема; контроль снижает остаточную ошибку, но увеличивает время и трудоемкость, влияя на интегральный результат | `reports/dissertation_figures/chapter2/figure_2_4_control_tradeoff` |
+| 9 | 2.5 | составная схема; X_prior отдельно от X_fact и Y_fact, затем дискретизация X_prior → токены → документ d_i; запрещенные связи перечеркнуты | `reports/dissertation_figures/chapter2/figure_2_5_information_sets_and_tokenization` |
+| 10 | 3.2 | компонентная диаграмма; message, procedure, operator, condition, error, control, protocol, features, quality, dataset и runner | `reports/chapter3/figures/figure_3_2_package_architecture` |
+| 11 | 3.3 | набор гистограмм или boxplot; сложность, критичность сообщения, расчетное время, давление времени, внимание и ожидаемая ошибкоопасность | `reports/chapter3/figures/figure_3_3_prior_feature_distributions` |
+| 12 | 3.4 | boxplot или violin-графики; q_acc, q_time, q_effort, q_res, q_rep, q_fit и integral_quality в общей шкале [0; 1] | `reports/chapter3/figures/figure_3_4_quality_target_distributions` |
+| 13 | 3.5 | комбинированная диаграмма; фактические и пороговые значения числа документов, сценариев, протоколов, токенов и уровней ключевых признаков | `reports/chapter3/figures/figure_3_5_corpus_sufficiency` |
+| 14 | 3.6 | блок-схема; конфигурация и seed → запуск → CSV/JSON-артефакты → контрольные суммы → тесты → отчет воспроизводимости | `reports/chapter3/figures/figure_3_6_reproducibility_contour` |
+| 15 | 4.1 | блок-схема; prior_features.csv → дискретизация → token_map → corpus_prior → dictionary → LDA_prior → theta_prior и topic_word | `reports/chapter4/figures/figure_4_1_lda_pipeline` |
+| 16 | 4.2 | ранжированная диаграмма частот или распределение document frequency; выделить границы df_min и df_max_ratio и итоговые 96 токенов | `reports/chapter4/figures/figure_4_2_token_frequency_and_filtering` |
+| 17 | 4.3 | комбинированный график для K = 3…8; perplexity, mean coherence, topic diversity и нормированный selection_score с выделением K = 3 | `reports/chapter4/figures/figure_4_3_k_selection_metrics` |
+| 18 | 4.4 | тепловая карта попарного сходства запусков и интервалы min/mean similarity по факторам; отдельно отметить чувствительные пары seed | `reports/chapter4/figures/figure_4_4_topic_stability` |
+| 19 | 4.5 | три горизонтальные диаграммы наиболее весомых токенов; единая шкала веса и русские краткие подписи признаков | `reports/chapter4/figures/figure_4_5_top_tokens_by_topic` |
+| 20 | 4.6 | составной график; boxplot компонент theta_0–theta_2 и столбцы долей доминирующих факторов по 150 сценариям | `reports/chapter4/figures/figure_4_6_theta_profile_distribution` |
+| 21 | 5.1 | блок-схема; загрузка X_prior и theta_prior → leakage guard → нормировка → латентная компонента → частные критерии → Q_pred → uncertainty → приемка | `reports/chapter5/figures/figure_5_1_prediction_pipeline` |
+| 22 | 5.2 | гистограмма и boxplot latent_quality_component; отметить медиану, диапазон и вклад направлений theta_0, theta_1, theta_2 | `reports/chapter5/figures/figure_5_2_latent_quality_component` |
+| 23 | 5.3 | boxplot или violin-графики q_acc_pred, q_time_pred, q_effort_pred, q_res_pred, q_rep_pred и q_fit_pred в общей шкале [0; 1] | `reports/chapter5/figures/figure_5_3_partial_prediction_components` |
+| 24 | 5.4 | гистограмма Q_pred с вертикальными границами 0,45 и 0,70; дополнительно указать численность low, medium и high | `reports/chapter5/figures/figure_5_4_q_pred_distribution` |
+| 25 | 5.5 | диаграмма рассеяния uncertainty_score и interval_radius с маргинальными распределениями; не трактовать как доказательство калибровки | `reports/chapter5/figures/figure_5_5_uncertainty_and_interval_radius` |
+| 26 | 5.6 | stacked bar для репрезентативной выборки сценариев или усредненная диаграмма вкладов частных критериев и латентной компоненты в Q_pred | `reports/chapter5/figures/figure_5_6_q_pred_contributions` |
+| 27 | 6.1 | диаграмма рассеяния Q_pred против Q_fact с линией идеального соответствия y = x; указать Pearson, Spearman и систематическое смещение | `reports/chapter6/figures/q_pred_vs_q_fact` |
+| 28 | 6.2 | график остатков e_i = Q_pred,i − Q_fact,i относительно Q_fact с нулевой линией и сглаженной тенденцией | `reports/chapter6/figures/residuals_vs_q_fact` |
+| 29 | 6.3 | гистограмма и/или эмпирическая функция распределения /e_i/ с отметками MAE, медианы и максимальной абсолютной ошибки | `reports/chapter6/figures/absolute_error_distribution` |
+| 30 | 6.4 | комбинированная диаграмма MAE, RMSE, Bias и ранговой корреляции для шести пар прогнозных и фактических критериев | `reports/chapter6/figures/partial_criteria_comparison` |
+| 31 | 6.5 | тепловая карта confusion matrix в абсолютных значениях; дополнительно показать отсутствие критических ошибок low → high и high → low | `reports/chapter6/figures/confusion_matrix` |
+| 32 | 6.6 | интервальный график сценариев, отсортированных по Q_fact; выделить покрытые и непокрытые наблюдения, а также промахи выше и ниже интервала | `reports/chapter6/figures/prediction_intervals` |
+| 33 | 6.7 | группированная столбчатая диаграмма MAE и RMSE для mean, prior-only, full и theta-only; меньшие значения трактуются как лучшие | `reports/chapter6/figures/baseline_comparison` |
+| 34 | 6.8 | boxplot абсолютной ошибки по dominant_topic с численностью групп; интерпретация только ассоциативная, без причинных выводов | `reports/chapter6/figures/error_by_dominant_topic` |
+
+## Критерий закрытия каждого этапа
+
+Этап считается завершенным после генерации обоих форматов, прохождения тестов этапа и полной регрессии, визуальной проверки PNG/SVG и явного подтверждения пользователя.
+
+## Текущий статус
+
+- этап 1 — реализован и ожидает проверки пользователя;
+- этапы 2–34 — не начаты.
