@@ -112,7 +112,7 @@ z
 " clip-path="url(#p47243f64c0)" style="fill: #55765a; stroke: #55765a; stroke-width: 1.5; stroke-linecap: round"/>
    </g>
    <g id="text_1">
-    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="382.41" y="27.97527" transform="rotate(-0 382.41 27.97527)">Факторы качества сценария применения ручного средства кодирования</text>
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17212b" x="382.41" y="27.858239" transform="rotate(-0 382.41 27.858239)">Факторы качества сценария применения ручного средства кодирования</text>
    </g>
    <g id="patch_10">
     <path d="M 36.6453 105.041952 
@@ -284,73 +284,73 @@ z
 " clip-path="url(#p47243f64c0)" style="fill: #ddeedb; stroke: #3b6b3d; stroke-width: 1.6; stroke-linejoin: miter"/>
    </g>
    <g id="text_2">
-    <text style="font-style: italic; font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #435566" transform="translate(242.357031 306.083603)">Совместное влияние факторов формирует</text>
-    <text style="font-style: italic; font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #435566" transform="translate(258.091906 316.573615)">наблюдаемые результаты сценария</text>
+    <text style="font-style: italic; font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #435566" transform="translate(242.357031 307.003782)">Совместное влияние факторов формирует</text>
+    <text style="font-style: italic; font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #435566" transform="translate(258.091906 318.202985)">наблюдаемые результаты сценария</text>
    </g>
    <g id="text_3">
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(53.907047 68.980902)">Средство кодирования S</text>
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(68.477203 79.103033)">правила, таблицы,</text>
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(85.210875 89.044293)">инструкция</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(53.907047 68.313144)">Средство кодирования S</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(68.477203 79.089238)">правила, таблицы,</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(85.210875 88.733301)">инструкция</text>
    </g>
    <g id="text_4">
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(85.033688 132.661018)">Оператор O</text>
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(58.0815 142.602278)">подготовка, внимание,</text>
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(87.391969 152.543537)">утомление</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(85.033688 131.902824)">Оператор O</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(58.0815 142.017278)">подготовка, внимание,</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(87.391969 152.322981)">утомление</text>
    </g>
    <g id="text_5">
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(89.251734 196.250698)">Условия U</text>
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(76.988531 206.191958)">время, помехи,</text>
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(53.554781 216.133217)">доступность инструкции</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(89.251734 196.305317)">Условия U</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(76.988531 205.292661)">время, помехи,</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(53.554781 215.912661)">доступность инструкции</text>
    </g>
    <g id="text_6">
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(81.183375 259.840378)">Сообщения G</text>
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(68.601656 269.781638)">длина, сложность,</text>
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(82.958766 279.722897)">критичность</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(81.183375 259.552575)">Сообщения G</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(68.601656 269.196638)">длина, сложность,</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(82.958766 279.502341)">критичность</text>
    </g>
    <g id="text_7">
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(86.073609 323.339622)">Контроль K</text>
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(54.302203 333.461753)">проверка, обнаружение,</text>
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(82.217672 343.403013)">исправление</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(86.073609 322.612802)">Контроль K</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(54.302203 333.447958)">проверка, обнаружение,</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(82.217672 343.092021)">исправление</text>
    </g>
    <g id="text_8">
-    <text style="font-size: 11.2px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(279.453625 187.18453)">Сценарий применения</text>
-    <text style="font-size: 11.2px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(293.108 199.555875)">A = {S, O, U, G, K}</text>
-    <text style="font-size: 11.2px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(346.62825 211.92722)"/>
-    <text style="font-size: 11.2px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(249.511125 224.298565)">ручное кодирование → контроль</text>
-    <text style="font-size: 11.2px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(271.56725 236.66991)">→ ручное декодирование</text>
+    <text style="font-size: 11.2px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(279.453625 185.494345)">Сценарий применения</text>
+    <text style="font-size: 11.2px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(293.108 198.962345)">A = {S, O, U, G, K}</text>
+    <text style="font-size: 11.2px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(346.62825 208.83672)"/>
+    <text style="font-size: 11.2px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(249.511125 224.024095)">ручное кодирование → контроль</text>
+    <text style="font-size: 11.2px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(271.56725 237.240095)">→ ручное декодирование</text>
    </g>
    <g id="text_9">
-    <text style="font-weight: 700; font-size: 11.2px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #31465a" x="617.81625" y="90.9017" transform="rotate(-0 617.81625 90.9017)">Частные показатели качества</text>
+    <text style="font-weight: 700; font-size: 11.2px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #31465a" x="617.81625" y="90.720575" transform="rotate(-0 617.81625 90.720575)">Частные показатели качества</text>
    </g>
    <g id="text_10">
-    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(550.246586 137.350919)">q_acc</text>
-    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(541.487125 147.65573)">точность</text>
+    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(550.246586 136.225035)">q_acc</text>
+    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(541.487125 147.971145)">точность</text>
    </g>
    <g id="text_11">
-    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(660.754016 132.451607)">q_time</text>
-    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(650.120523 142.756418)">временная</text>
-    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(638.489586 152.808136)">эффективность</text>
+    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(660.754016 131.765324)">q_time</text>
+    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(650.120523 141.720582)">временная</text>
+    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(638.489586 153.227817)">эффективность</text>
    </g>
    <g id="text_12">
-    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(545.597055 205.169705)">q_effort</text>
-    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(529.441711 215.474517)">трудоемкость</text>
+    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(545.666016 204.826564)">q_effort</text>
+    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(529.441711 214.781822)">трудоемкость</text>
    </g>
    <g id="text_13">
-    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(664.095422 205.043159)">q_res</text>
-    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(643.666633 215.34797)">устойчивость</text>
+    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(664.093289 203.917275)">q_res</text>
+    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(643.666633 215.6904)">устойчивость</text>
    </g>
    <g id="text_14">
-    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(550.582148 272.735399)">q_rep</text>
-    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(526.851766 283.04021)">повторяемость</text>
+    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(550.580016 271.609515)">q_rep</text>
+    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(526.851766 282.474062)">повторяемость</text>
    </g>
    <g id="text_15">
-    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(666.38393 267.836087)">q_fit</text>
-    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(645.463883 278.140898)">пригодность</text>
-    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(653.501742 288.192616)">условиям</text>
+    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(666.38393 267.149804)">q_fit</text>
+    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(645.463883 277.105062)">пригодность</text>
+    <text style="font-size: 9.1px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(653.501742 287.843062)">условиям</text>
    </g>
    <g id="text_16">
-    <text style="font-size: 10.8px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(550.009969 360.723729)">Интегральное качество</text>
-    <text style="font-size: 10.8px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(576.949219 372.653241)">сценария Q(A)</text>
+    <text style="font-size: 10.8px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(550.009969 360.150266)">Интегральное качество</text>
+    <text style="font-size: 10.8px; font-family: 'DejaVu Sans'; fill: #17212b" transform="translate(576.949219 373.054579)">сценария Q(A)</text>
    </g>
   </g>
  </g>
