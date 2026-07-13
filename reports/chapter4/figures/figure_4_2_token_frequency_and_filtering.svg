@@ -1230,7 +1230,7 @@ z
    <text style="font-size: 9.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536976" x="526.11625" y="37.33582" transform="rotate(-0 526.11625 37.33582)">Расширенный корпус: N = 150 документов; итоговый словарь: V = 96 токенов</text>
   </g>
   <g id="text_72">
-   <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536976" x="526.11625" y="578.200227" transform="rotate(-0 526.11625 578.200227)">Примечание. Диаграмма описывает уже сформированный итоговый словарь. Отброшенные до его сохранения кандидаты в dictionary.json отсутствуют; поэтому рисунок не используется для оценки их числа.</text>
+   <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #536976" x="526.11625" y="578.200227" transform="rotate(-0 526.11625 578.200227)">Примечание. Диаграмма описывает уже сформированный итоговый словарь. Сведения об отброшенных до сохранения кандидатах в dictionary.json отсутствуют; поэтому рисунок не используется для оценки их числа.</text>
   </g>
   <g id="text_73">
    <text style="font-weight: 700; font-size: 8.4px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #314a57" x="526.11625" y="604.102359" transform="rotate(-0 526.11625 604.102359)">Итог: document frequency всех 96 токенов находится в диапазоне 23–90 документов при заданных границах [2; 142.5].</text>
