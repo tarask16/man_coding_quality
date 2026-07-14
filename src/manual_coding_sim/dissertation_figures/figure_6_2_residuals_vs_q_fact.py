@@ -211,15 +211,13 @@ def merge_residual_points(
         )
         for scenario_id, protocol_id in sorted(prediction_map)
     )
-    validate_points(points)
+    validate_merged_points(points)
     return points
 
 
-def validate_points(points: Sequence[ResidualPoint]) -> None:
-    """Проверить достаточность и корректность набора остатков."""
+def validate_merged_points(points: Sequence[ResidualPoint]) -> None:
+    """Проверить структурную корректность объединённого набора."""
 
-    if len(points) < 3:
-        raise ValueError("Для анализа остатков требуется не менее трёх сценариев.")
     keys: set[tuple[str, str]] = set()
     for point in points:
         key = (point.scenario_id, point.protocol_id)
@@ -229,6 +227,14 @@ def validate_points(points: Sequence[ResidualPoint]) -> None:
         for name, value in (("q_pred", point.q_pred), ("q_fact", point.q_fact)):
             if not math.isfinite(value) or not 0.0 <= value <= 1.0:
                 raise ValueError(f"Значение {name} должно находиться в диапазоне [0; 1].")
+
+
+def validate_points(points: Sequence[ResidualPoint]) -> None:
+    """Проверить достаточность данных для анализа остатков относительно Q_fact."""
+
+    validate_merged_points(points)
+    if len(points) < 3:
+        raise ValueError("Для анализа остатков требуется не менее трёх сценариев.")
     q_fact = np.asarray([point.q_fact for point in points], dtype=float)
     if np.ptp(q_fact) <= 1e-15:
         raise ValueError("Анализ относительно Q_fact невозможен для постоянного ряда.")
