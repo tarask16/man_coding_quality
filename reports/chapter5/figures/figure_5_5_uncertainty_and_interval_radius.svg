@@ -1203,7 +1203,7 @@ L 1167.245047 570.24
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_40">
-    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(952.164409 241.095238)">Маргинальное распределение</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(996.228003 241.095238)">Распределение</text>
     <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(1000.330659 254.298246)">interval_radius</text>
    </g>
   </g>

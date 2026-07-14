@@ -210,7 +210,7 @@ def build_figure(profiles: Sequence[ThetaProfile]) -> plt.Figure:
         top=0.82,
         bottom=0.18,
         hspace=0.54,
-        wspace=0.30,
+        wspace=0.42,
     )
     histogram_axis = figure.add_subplot(grid[:, 0])
     box_axis = figure.add_subplot(grid[0, 1])
@@ -301,7 +301,7 @@ def build_figure(profiles: Sequence[ThetaProfile]) -> plt.Figure:
 
     box_axis.boxplot(
         latent_values,
-        vert=False,
+        orientation="horizontal",
         widths=0.52,
         patch_artist=True,
         showfliers=True,
@@ -362,7 +362,7 @@ def build_figure(profiles: Sequence[ThetaProfile]) -> plt.Figure:
     direction_axis.set_yticks(
         y_positions,
         (
-            "θ₀ — трудоёмкость",
+            "θ₀ — процедурная трудоёмкость",
             "θ₁ — операционный риск",
             "θ₂ — благоприятные условия",
         ),

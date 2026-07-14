@@ -104,7 +104,7 @@ def test_summary_uses_population_standard_deviation() -> None:
 def test_validate_rejects_value_outside_unit_interval() -> None:
     """Значение Q_pred вне [0; 1] должно отклоняться."""
 
-    with pytest.raises(ValueError, match="диапазоне \[0; 1\]"):
+    with pytest.raises(ValueError, match=r"диапазоне \[0; 1\]"):
         validate_q_pred_rows((QPredRow("scn", "prt", 1.2),))
 
 

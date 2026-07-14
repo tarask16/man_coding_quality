@@ -519,7 +519,7 @@ def build_figure(
         linestyle="--",
     )
     right_axis.set_xlabel("Частота")
-    right_axis.set_title("Маргинальное распределение\ninterval_radius", pad=6, fontsize=11.0)
+    right_axis.set_title("Распределение\ninterval_radius", pad=6, fontsize=11.0)
     right_axis.grid(axis="x", linestyle=":", alpha=0.35)
     right_axis.tick_params(axis="y", labelleft=False)
     right_axis.spines[["top", "right"]].set_visible(False)
