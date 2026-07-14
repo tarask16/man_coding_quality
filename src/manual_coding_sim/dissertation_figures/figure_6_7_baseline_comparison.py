@@ -62,6 +62,7 @@ _MODEL_ALIASES = {
     "full_model": "full",
     "full_pipeline": "full",
     "chapter5_full": "full",
+    "chapter5_model": "full",
     "q_pred": "full",
     "theta": "theta_only",
     "theta_only": "theta_only",

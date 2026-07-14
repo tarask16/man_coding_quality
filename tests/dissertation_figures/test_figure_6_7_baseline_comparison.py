@@ -90,7 +90,7 @@ def test_load_baseline_metrics_accepts_report_aliases(tmp_path: Path) -> None:
         rows=(
             ("Mean baseline", 0.10, 0.11),
             ("Prior-only baseline", 0.12, 0.13),
-            ("Full model", 0.16, 0.19),
+            ("chapter5_model", 0.16, 0.19),
             ("Theta-only baseline", 0.30, 0.36),
         ),
     )
