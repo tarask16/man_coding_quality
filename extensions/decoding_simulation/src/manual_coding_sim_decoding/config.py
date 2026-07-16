@@ -82,11 +82,7 @@ class ExtensionPathConfig:
 
 @dataclass(frozen=True)
 class MaterialEncodingConfig:
-    """Правила формирования материального кодированного сообщения C.
-
-    Конфигурация задает только абстрактное представление ошибок. Она не
-    раскрывает конкретную схему кодирования и не изменяет базовые модели.
-    """
+    """Правила формирования материального кодированного сообщения C."""
 
     encoded_message_prefix: str = "C"
     substitution_prefix: str = "ERR_SUB"
@@ -114,6 +110,106 @@ class MaterialEncodingConfig:
 
 
 @dataclass(frozen=True)
+class DecodingOperationRule:
+    """Правило соответствия прямой и обратной абстрактных операций."""
+
+    encoding_operation_type: str
+    decoding_operation_type: str
+    nominal_time: float
+    complexity: float
+    reference_required: bool = False
+
+    def validate(self) -> None:
+        """Проверить параметры одной обратной операции."""
+        if not self.encoding_operation_type:
+            raise ValueError("Не задан тип прямой операции кодирования.")
+        if not self.decoding_operation_type:
+            raise ValueError("Не задан тип обратной операции декодирования.")
+        if self.nominal_time <= 0:
+            raise ValueError("Нормативное время декодирования должно быть положительным.")
+        if not 0.0 <= self.complexity <= 1.0:
+            raise ValueError(
+                "Сложность обратной операции должна находиться в диапазоне [0; 1]."
+            )
+
+
+@dataclass(frozen=True)
+class FormalDecodingConfig:
+    """Конфигурация нормативной обратной процедуры ``D_h(C)``."""
+
+    decoding_procedure_id: str = "D_001"
+    token_prefix: str = "TOK"
+    token_position_width: int = 4
+    fail_on_unknown_token: bool = False
+    service_values: tuple[str, ...] = ("SEP", "CTRL", "END")
+    operation_rules: tuple[DecodingOperationRule, ...] = field(
+        default_factory=lambda: (
+            DecodingOperationRule(
+                encoding_operation_type="abstract_substitution",
+                decoding_operation_type="abstract_inverse_substitution",
+                nominal_time=1.10,
+                complexity=0.40,
+            ),
+            DecodingOperationRule(
+                encoding_operation_type="abstract_numeric_mapping",
+                decoding_operation_type="abstract_inverse_numeric_mapping",
+                nominal_time=1.30,
+                complexity=0.50,
+                reference_required=True,
+            ),
+            DecodingOperationRule(
+                encoding_operation_type="abstract_service_marking",
+                decoding_operation_type="abstract_inverse_service_interpretation",
+                nominal_time=1.55,
+                complexity=0.60,
+                reference_required=True,
+            ),
+            DecodingOperationRule(
+                encoding_operation_type="abstract_copying",
+                decoding_operation_type="abstract_inverse_copying",
+                nominal_time=0.90,
+                complexity=0.30,
+            ),
+        )
+    )
+    unresolved_rule: DecodingOperationRule = field(
+        default_factory=lambda: DecodingOperationRule(
+            encoding_operation_type="__unresolved__",
+            decoding_operation_type="abstract_unresolved_inverse_operation",
+            nominal_time=1.80,
+            complexity=0.80,
+            reference_required=True,
+        )
+    )
+
+    def validate(self) -> None:
+        """Проверить правила и синтаксические параметры D_h."""
+        if not self.decoding_procedure_id:
+            raise ValueError("Не задан decoding_procedure_id.")
+        if not self.token_prefix or any(
+            character.isspace() for character in self.token_prefix
+        ):
+            raise ValueError("token_prefix должен быть непустым и без пробелов.")
+        if self.token_position_width <= 0:
+            raise ValueError("token_position_width должен быть положительным.")
+        if not self.service_values:
+            raise ValueError("Набор служебных значений не должен быть пустым.")
+        if not self.operation_rules:
+            raise ValueError("Набор обратных операций не должен быть пустым.")
+
+        seen_operations: set[str] = set()
+        for rule in self.operation_rules:
+            rule.validate()
+            if rule.encoding_operation_type in seen_operations:
+                raise ValueError(
+                    "Для прямой операции задано несколько обратных правил: "
+                    f"{rule.encoding_operation_type}."
+                )
+            seen_operations.add(rule.encoding_operation_type)
+        self.unresolved_rule.validate()
+
+
+@dataclass(frozen=True)
 class DecodingExtensionConfig:
     """Полная конфигурация изолированного расширения декодирования."""
 
@@ -123,6 +219,9 @@ class DecodingExtensionConfig:
     material_encoding: MaterialEncodingConfig = field(
         default_factory=MaterialEncodingConfig
     )
+    formal_decoding: FormalDecodingConfig = field(
+        default_factory=FormalDecodingConfig
+    )
 
     def validate(self) -> None:
         """Проверить все разделы конфигурации."""
@@ -130,6 +229,7 @@ class DecodingExtensionConfig:
         self.base_contract.validate()
         self.paths.validate()
         self.material_encoding.validate()
+        self.formal_decoding.validate()
 
 
 def _require_mapping(value: Any, section_name: str) -> dict[str, Any]:
@@ -156,6 +256,71 @@ def _parse_required_symbols(value: Any) -> dict[str, tuple[str, ...]]:
     return parsed
 
 
+def _parse_operation_rule(raw: Any, section_name: str) -> DecodingOperationRule:
+    """Преобразовать YAML-словарь в правило обратной операции."""
+    source = _require_mapping(raw, section_name)
+    return DecodingOperationRule(
+        encoding_operation_type=str(source.get("encoding_operation_type", "")),
+        decoding_operation_type=str(source.get("decoding_operation_type", "")),
+        nominal_time=_require_positive_number(
+            source.get("nominal_time"),
+            f"{section_name}.nominal_time",
+        ),
+        complexity=_require_unit_number(
+            source.get("complexity"),
+            f"{section_name}.complexity",
+        ),
+        reference_required=bool(source.get("reference_required", False)),
+    )
+
+
+def _parse_formal_decoding(raw: dict[str, Any]) -> FormalDecodingConfig:
+    """Загрузить раздел формальной обратной процедуры."""
+    default_config = FormalDecodingConfig()
+    rules_raw = raw.get("operation_rules")
+    if rules_raw is None:
+        rules = default_config.operation_rules
+    else:
+        if not isinstance(rules_raw, list):
+            raise ValueError("formal_decoding.operation_rules должен быть списком.")
+        rules = tuple(
+            _parse_operation_rule(item, f"formal_decoding.operation_rules[{index}]")
+            for index, item in enumerate(rules_raw)
+        )
+
+    unresolved_raw = raw.get("unresolved_rule")
+    unresolved_rule = (
+        default_config.unresolved_rule
+        if unresolved_raw is None
+        else _parse_operation_rule(
+            unresolved_raw,
+            "formal_decoding.unresolved_rule",
+        )
+    )
+    service_values_raw = raw.get("service_values", list(default_config.service_values))
+    if not isinstance(service_values_raw, list) or not all(
+        isinstance(value, str) and value for value in service_values_raw
+    ):
+        raise ValueError("formal_decoding.service_values должен быть списком строк.")
+
+    return FormalDecodingConfig(
+        decoding_procedure_id=str(
+            raw.get("decoding_procedure_id", default_config.decoding_procedure_id)
+        ),
+        token_prefix=str(raw.get("token_prefix", default_config.token_prefix)),
+        token_position_width=_require_positive_int(
+            raw.get("token_position_width", default_config.token_position_width),
+            "formal_decoding.token_position_width",
+        ),
+        fail_on_unknown_token=bool(
+            raw.get("fail_on_unknown_token", default_config.fail_on_unknown_token)
+        ),
+        service_values=tuple(service_values_raw),
+        operation_rules=rules,
+        unresolved_rule=unresolved_rule,
+    )
+
+
 def load_decoding_extension_config(
     config_path: str | Path,
 ) -> DecodingExtensionConfig:
@@ -171,8 +336,8 @@ def load_decoding_extension_config(
     extension_raw = _require_mapping(root.get("extension"), "extension")
     contract_raw = _require_mapping(root.get("base_contract"), "base_contract")
     paths_raw = _require_mapping(root.get("paths"), "paths")
-    material_raw_value = root.get("material_encoding", {})
-    material_raw = _require_mapping(material_raw_value, "material_encoding")
+    material_raw = _require_mapping(root.get("material_encoding", {}), "material_encoding")
+    formal_raw = _require_mapping(root.get("formal_decoding", {}), "formal_decoding")
 
     config = DecodingExtensionConfig(
         extension=ExtensionMetadata(
@@ -215,6 +380,7 @@ def load_decoding_extension_config(
                 "material_encoding.position_shift",
             ),
         ),
+        formal_decoding=_parse_formal_decoding(formal_raw),
     )
     config.validate()
     return config
@@ -236,3 +402,23 @@ def _require_positive_int(value: Any, field_name: str) -> int:
     if value <= 0:
         raise ValueError(f"Поле {field_name} должно быть положительным.")
     return value
+
+
+def _require_positive_number(value: Any, field_name: str) -> float:
+    """Проверить положительное числовое поле."""
+    if not isinstance(value, (int, float)) or isinstance(value, bool):
+        raise ValueError(f"Поле {field_name} должно быть числом.")
+    result = float(value)
+    if result <= 0:
+        raise ValueError(f"Поле {field_name} должно быть положительным.")
+    return result
+
+
+def _require_unit_number(value: Any, field_name: str) -> float:
+    """Проверить числовое поле диапазона [0; 1]."""
+    if not isinstance(value, (int, float)) or isinstance(value, bool):
+        raise ValueError(f"Поле {field_name} должно быть числом.")
+    result = float(value)
+    if not 0.0 <= result <= 1.0:
+        raise ValueError(f"Поле {field_name} должно находиться в диапазоне [0; 1].")
+    return result

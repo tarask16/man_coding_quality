@@ -7,10 +7,19 @@ from manual_coding_sim_decoding.base_adapter import (
 from manual_coding_sim_decoding.config import (
     BaseContractConfig,
     DecodingExtensionConfig,
+    DecodingOperationRule,
     ExtensionMetadata,
     ExtensionPathConfig,
+    FormalDecodingConfig,
     MaterialEncodingConfig,
     load_decoding_extension_config,
+)
+from manual_coding_sim_decoding.decoding_procedure import (
+    DecodingPlan,
+    DecodingProcedureModel,
+    DecodingStep,
+    TokenParseResult,
+    summarize_decoding_plan,
 )
 from manual_coding_sim_decoding.encoded_message import (
     EncodedElement,
@@ -28,6 +37,10 @@ __all__ = [
     "BaseContractConfig",
     "DecodingExtensionConfig",
     "DecodingExtensionPaths",
+    "DecodingOperationRule",
+    "DecodingPlan",
+    "DecodingProcedureModel",
+    "DecodingStep",
     "EncodedElement",
     "EncodedMessage",
     "EncodedMessageBuilder",
@@ -35,10 +48,13 @@ __all__ = [
     "EncodingTraceStep",
     "ExtensionMetadata",
     "ExtensionPathConfig",
+    "FormalDecodingConfig",
     "ManualCodingSimAdapterContract",
     "MaterialEncodingConfig",
     "MaterialEncodingResult",
+    "TokenParseResult",
     "load_decoding_extension_config",
+    "summarize_decoding_plan",
     "summarize_material_encoding",
 ]
 

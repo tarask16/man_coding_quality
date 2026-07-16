@@ -8,7 +8,11 @@ from pathlib import Path
 from typing import Sequence
 
 from manual_coding_sim_decoding.base_adapter import ManualCodingSimAdapterContract
-from manual_coding_sim_decoding.config import load_decoding_extension_config
+from manual_coding_sim_decoding.config import (
+    DecodingExtensionConfig,
+    load_decoding_extension_config,
+)
+from manual_coding_sim_decoding.decoding_procedure import DecodingProcedureModel
 from manual_coding_sim_decoding.encoded_message import EncodedMessageBuilder
 from manual_coding_sim_decoding.paths import DecodingExtensionPaths
 
@@ -44,13 +48,18 @@ def build_argument_parser() -> argparse.ArgumentParser:
         help="Сформировать демонстрационное материальное сообщение C.",
     )
     parser.add_argument(
+        "--build-decoding-plan",
+        action="store_true",
+        help="Построить формальный нормативный план D_h(C).",
+    )
+    parser.add_argument(
         "--message-id",
-        default="M_STAGE2_DEMO",
+        default="M_STAGE3_DEMO",
         help="Идентификатор демонстрационного исходного сообщения.",
     )
     parser.add_argument(
         "--output",
-        default="reports/stage2/encoded_message_demo.json",
+        default=None,
         help=(
             "Путь результата относительно extensions/decoding_simulation "
             "или абсолютный путь внутри этой папки."
@@ -65,17 +74,18 @@ def build_argument_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-    """Выполнить выбранные проверки или построение сообщения C."""
+    """Выполнить выбранные проверки или построение артефактов расширения."""
     parser = build_argument_parser()
     args = parser.parse_args(argv)
     if not (
         args.show_config
         or args.check_base_contract
         or args.build_encoded_message
+        or args.build_decoding_plan
     ):
         parser.error(
-            "Нужно указать --show-config, --check-base-contract "
-            "и/или --build-encoded-message."
+            "Нужно указать --show-config, --check-base-contract, "
+            "--build-encoded-message и/или --build-decoding-plan."
         )
 
     project_root = Path(args.project_root).resolve()
@@ -86,8 +96,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.show_config:
         _print_config(config, paths)
 
+    builds_artifact = args.build_encoded_message or args.build_decoding_plan
     contract_result = None
-    if args.check_base_contract or args.build_encoded_message:
+    if args.check_base_contract or builds_artifact:
         contract_result = ManualCodingSimAdapterContract(project_root, config).check()
         if not contract_result.is_compatible:
             if args.json:
@@ -103,7 +114,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             return 2
 
     if args.check_base_contract:
-        if args.json and not args.build_encoded_message:
+        if args.json and not builds_artifact:
             print(
                 json.dumps(
                     contract_result.to_dict(),
@@ -114,54 +125,135 @@ def main(argv: Sequence[str] | None = None) -> int:
         elif not args.json:
             _print_contract_result(contract_result.to_dict())
 
-    if args.build_encoded_message:
+    if args.build_decoding_plan:
+        output_value = args.output or "reports/stage3/decoding_plan_demo.json"
+        payload, output_path = _build_decoding_plan(
+            paths=paths,
+            config=config,
+            message_id=args.message_id,
+            output_value=output_value,
+        )
+        _print_or_emit_decoding_plan(payload, output_path, args.json)
+    elif args.build_encoded_message:
+        output_value = args.output or "reports/stage2/encoded_message_demo.json"
         payload, output_path = _build_encoded_message(
             paths=paths,
             config=config,
             message_id=args.message_id,
-            output_value=args.output,
+            output_value=output_value,
         )
-        if args.json:
-            print(json.dumps(payload, ensure_ascii=False, indent=2))
-        else:
-            metadata = payload["encoded_message"]["metadata"]
-            print("Материальное кодированное сообщение C сформировано.")
-            print(f"Файл результата: {output_path}")
-            print(
-                "Нормативных / материализованных элементов: "
-                f"{metadata['normative_element_count']} / "
-                f"{metadata['materialized_element_count']}"
-            )
-            print(
-                "Остаточных ошибок: "
-                f"{metadata['residual_error_count']}"
-            )
-            print(
-                "Соответствие нормативному плану: "
-                f"{metadata['is_normative_equivalent']}"
-            )
+        _print_or_emit_encoded_message(payload, output_path, args.json)
 
     return 0
 
 
-def _build_encoded_message(
-    paths: DecodingExtensionPaths,
-    config,
+def _simulate_and_encode(
+    config: DecodingExtensionConfig,
     message_id: str,
-    output_value: str,
-) -> tuple[dict[str, object], Path]:
-    """Выполнить один базовый прогон и материализовать его результат в C."""
+):
+    """Выполнить базовый прогон и материализовать сообщение C."""
     from manual_coding_sim.protocol_simulator import ProtocolSimulator
 
     simulation_result = ProtocolSimulator().simulate_once(message_id=message_id)
     builder = EncodedMessageBuilder(config.material_encoding)
-    result = builder.build_from_simulation_result(simulation_result)
+    return builder.build_from_simulation_result(simulation_result)
+
+
+def _build_encoded_message(
+    paths: DecodingExtensionPaths,
+    config: DecodingExtensionConfig,
+    message_id: str,
+    output_value: str,
+) -> tuple[dict[str, object], Path]:
+    """Выполнить один базовый прогон и материализовать его результат в C."""
+    result = _simulate_and_encode(config, message_id)
     payload = result.to_dict()
+    output_path = _write_payload(paths, output_value, payload)
+    return payload, output_path
+
+
+def _build_decoding_plan(
+    paths: DecodingExtensionPaths,
+    config: DecodingExtensionConfig,
+    message_id: str,
+    output_value: str,
+) -> tuple[dict[str, object], Path]:
+    """Сформировать C и построить нормативный план обратной процедуры."""
+    encoding_result = _simulate_and_encode(config, message_id)
+    decoding_model = DecodingProcedureModel(config.formal_decoding)
+    plan = decoding_model.build_plan(encoding_result.encoded_message)
+    encoding_payload = encoding_result.to_dict()
+    payload: dict[str, object] = {
+        "encoded_message": encoding_payload["encoded_message"],
+        "encoding_protocol": encoding_payload["protocol"],
+        "decoding_plan": plan.to_dict(),
+    }
+    output_path = _write_payload(paths, output_value, payload)
+    return payload, output_path
+
+
+def _write_payload(
+    paths: DecodingExtensionPaths,
+    output_value: str,
+    payload: dict[str, object],
+) -> Path:
+    """Записать JSON только внутри каталога изолированного расширения."""
     output_path = _resolve_output_path(paths, output_value)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("w", encoding="utf-8") as stream:
         json.dump(payload, stream, ensure_ascii=False, indent=2)
-    return payload, output_path
+    return output_path
+
+
+def _print_or_emit_encoded_message(
+    payload: dict[str, object],
+    output_path: Path,
+    as_json: bool,
+) -> None:
+    """Показать результат этапа 2 в выбранном формате."""
+    if as_json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+        return
+    encoded_message = payload["encoded_message"]
+    metadata = encoded_message["metadata"]
+    print("Материальное кодированное сообщение C сформировано.")
+    print(f"Файл результата: {output_path}")
+    print(
+        "Нормативных / материализованных элементов: "
+        f"{metadata['normative_element_count']} / "
+        f"{metadata['materialized_element_count']}"
+    )
+    print(f"Остаточных ошибок: {metadata['residual_error_count']}")
+    print(
+        "Соответствие нормативному плану: "
+        f"{metadata['is_normative_equivalent']}"
+    )
+
+
+def _print_or_emit_decoding_plan(
+    payload: dict[str, object],
+    output_path: Path,
+    as_json: bool,
+) -> None:
+    """Показать результат этапа 3 в выбранном формате."""
+    if as_json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+        return
+    plan = payload["decoding_plan"]
+    metadata = plan["metadata"]
+    print("Формальный план обратной процедуры D_h(C) сформирован.")
+    print(f"Файл результата: {output_path}")
+    print(f"Шагов декодирования: {metadata['input_element_count']}")
+    print(
+        "Распознанных / неразрешенных токенов: "
+        f"{metadata['recognized_token_count']} / "
+        f"{metadata['unresolved_token_count']}"
+    )
+    print(f"План декодирования полон: {metadata['decoding_plan_complete']}")
+    print(
+        "Использование source_value при декодировании: "
+        f"{metadata['uses_source_value_for_decoding']}"
+    )
 
 
 def _resolve_config_path(project_root: Path, value: str) -> Path:
@@ -182,7 +274,10 @@ def _resolve_output_path(paths: DecodingExtensionPaths, value: str) -> Path:
     return resolved
 
 
-def _print_config(config, paths: DecodingExtensionPaths) -> None:
+def _print_config(
+    config: DecodingExtensionConfig,
+    paths: DecodingExtensionPaths,
+) -> None:
     """Показать ключевые параметры без изменения файлов проекта."""
     print("Конфигурация расширения успешно загружена.")
     print(f"Имя расширения: {config.extension.name}")
@@ -201,6 +296,18 @@ def _print_config(config, paths: DecodingExtensionPaths) -> None:
     print(
         "Смещение при позиционной ошибке: "
         f"{config.material_encoding.position_shift}"
+    )
+    print(
+        "Идентификатор обратной процедуры: "
+        f"{config.formal_decoding.decoding_procedure_id}"
+    )
+    print(
+        "Правил обратных операций: "
+        f"{len(config.formal_decoding.operation_rules)}"
+    )
+    print(
+        "Остановка на неизвестном токене: "
+        f"{config.formal_decoding.fail_on_unknown_token}"
     )
 
 
