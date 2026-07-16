@@ -1,0 +1,197 @@
+{
+  "encoded_message": {
+    "encoded_message_id": "C_M_STAGE2_JSON",
+    "source_message_id": "M_STAGE2_JSON",
+    "procedure_id": "S_001",
+    "elements": [
+      {
+        "element_id": "ENC_0001",
+        "encoded_position": 0,
+        "source_step_id": "STEP_0001",
+        "source_position": 0,
+        "source_value": "E",
+        "source_element_type": "symbol",
+        "operation_type": "abstract_substitution",
+        "normative_token": "TOK_abstract_substitution_0000_E",
+        "token": "TOK_abstract_substitution_0000_E",
+        "residual_error": false,
+        "error_type": null,
+        "mutation_kind": "none"
+      },
+      {
+        "element_id": "ENC_0002",
+        "encoded_position": 1,
+        "source_step_id": "STEP_0002",
+        "source_position": 1,
+        "source_value": "B",
+        "source_element_type": "symbol",
+        "operation_type": "abstract_substitution",
+        "normative_token": "TOK_abstract_substitution_0001_B",
+        "token": "TOK_abstract_substitution_0001_B",
+        "residual_error": false,
+        "error_type": null,
+        "mutation_kind": "none"
+      },
+      {
+        "element_id": "ENC_0003",
+        "encoded_position": 2,
+        "source_step_id": "STEP_0003",
+        "source_position": 2,
+        "source_value": "SEP",
+        "source_element_type": "service",
+        "operation_type": "abstract_service_marking",
+        "normative_token": "TOK_abstract_service_marking_0002_SEP",
+        "token": "TOK_abstract_service_marking_0002_SEP",
+        "residual_error": false,
+        "error_type": null,
+        "mutation_kind": "none"
+      },
+      {
+        "element_id": "ENC_0004",
+        "encoded_position": 3,
+        "source_step_id": "STEP_0004",
+        "source_position": 3,
+        "source_value": "A",
+        "source_element_type": "symbol",
+        "operation_type": "abstract_substitution",
+        "normative_token": "TOK_abstract_substitution_0003_A",
+        "token": "TOK_abstract_substitution_0003_A",
+        "residual_error": false,
+        "error_type": null,
+        "mutation_kind": "none"
+      },
+      {
+        "element_id": "ENC_0005",
+        "encoded_position": 4,
+        "source_step_id": "STEP_0005",
+        "source_position": 4,
+        "source_value": "I",
+        "source_element_type": "symbol",
+        "operation_type": "abstract_substitution",
+        "normative_token": "TOK_abstract_substitution_0004_I",
+        "token": "TOK_abstract_substitution_0004_I",
+        "residual_error": false,
+        "error_type": null,
+        "mutation_kind": "none"
+      },
+      {
+        "element_id": "ENC_0006",
+        "encoded_position": 5,
+        "source_step_id": "STEP_0006",
+        "source_position": 5,
+        "source_value": "SEP",
+        "source_element_type": "service",
+        "operation_type": "abstract_service_marking",
+        "normative_token": "TOK_abstract_service_marking_0005_SEP",
+        "token": "TOK_abstract_service_marking_0005_SEP",
+        "residual_error": false,
+        "error_type": null,
+        "mutation_kind": "none"
+      }
+    ],
+    "metadata": {
+      "normative_element_count": 6,
+      "materialized_element_count": 6,
+      "residual_error_count": 0,
+      "omission_count": 0,
+      "moved_element_count": 0,
+      "altered_token_count": 0,
+      "is_normative_equivalent": true
+    }
+  },
+  "protocol": {
+    "encoded_message_id": "C_M_STAGE2_JSON",
+    "source_message_id": "M_STAGE2_JSON",
+    "procedure_id": "S_001",
+    "control_id": "K_001",
+    "trace_steps": [
+      {
+        "source_step_id": "STEP_0001",
+        "source_position": 0,
+        "normative_position": 0,
+        "normative_token": "TOK_abstract_substitution_0000_E",
+        "materialized": true,
+        "encoded_position": 0,
+        "actual_token": "TOK_abstract_substitution_0000_E",
+        "residual_error": false,
+        "error_type": null,
+        "mutation_kind": "none",
+        "position_changed": false
+      },
+      {
+        "source_step_id": "STEP_0002",
+        "source_position": 1,
+        "normative_position": 1,
+        "normative_token": "TOK_abstract_substitution_0001_B",
+        "materialized": true,
+        "encoded_position": 1,
+        "actual_token": "TOK_abstract_substitution_0001_B",
+        "residual_error": false,
+        "error_type": null,
+        "mutation_kind": "none",
+        "position_changed": false
+      },
+      {
+        "source_step_id": "STEP_0003",
+        "source_position": 2,
+        "normative_position": 2,
+        "normative_token": "TOK_abstract_service_marking_0002_SEP",
+        "materialized": true,
+        "encoded_position": 2,
+        "actual_token": "TOK_abstract_service_marking_0002_SEP",
+        "residual_error": false,
+        "error_type": null,
+        "mutation_kind": "none",
+        "position_changed": false
+      },
+      {
+        "source_step_id": "STEP_0004",
+        "source_position": 3,
+        "normative_position": 3,
+        "normative_token": "TOK_abstract_substitution_0003_A",
+        "materialized": true,
+        "encoded_position": 3,
+        "actual_token": "TOK_abstract_substitution_0003_A",
+        "residual_error": false,
+        "error_type": null,
+        "mutation_kind": "none",
+        "position_changed": false
+      },
+      {
+        "source_step_id": "STEP_0005",
+        "source_position": 4,
+        "normative_position": 4,
+        "normative_token": "TOK_abstract_substitution_0004_I",
+        "materialized": true,
+        "encoded_position": 4,
+        "actual_token": "TOK_abstract_substitution_0004_I",
+        "residual_error": false,
+        "error_type": null,
+        "mutation_kind": "none",
+        "position_changed": false
+      },
+      {
+        "source_step_id": "STEP_0006",
+        "source_position": 5,
+        "normative_position": 5,
+        "normative_token": "TOK_abstract_service_marking_0005_SEP",
+        "materialized": true,
+        "encoded_position": 5,
+        "actual_token": "TOK_abstract_service_marking_0005_SEP",
+        "residual_error": false,
+        "error_type": null,
+        "mutation_kind": "none",
+        "position_changed": false
+      }
+    ],
+    "metadata": {
+      "normative_element_count": 6,
+      "materialized_element_count": 6,
+      "residual_error_count": 0,
+      "omission_count": 0,
+      "moved_element_count": 0,
+      "altered_token_count": 0,
+      "is_normative_equivalent": true
+    }
+  }
+}
