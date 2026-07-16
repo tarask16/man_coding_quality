@@ -1,0 +1,47 @@
+extension:
+  name: decoding_simulation
+  package_name: manual_coding_sim_decoding
+  version: "0.1.0"
+  random_seed: 3042
+
+base_contract:
+  package_name: manual_coding_sim
+  baseline_manifest: extensions/decoding_simulation/manifests/baseline_core_sha256.json
+  required_symbols:
+    types:
+      - ScenarioParameters
+      - MessageElement
+      - GeneratedMessage
+    message_model:
+      - MessageGenerationConfig
+      - MessageModel
+    procedure_model:
+      - ProcedureModelConfig
+      - ProcedureStep
+      - ProcedurePlan
+      - ProcedureModel
+    operator_model:
+      - OperatorModelConfig
+      - OperatorPlanEstimate
+      - OperatorModel
+    condition_model:
+      - ConditionModelConfig
+      - ConditionPlanEstimate
+      - ConditionModel
+    error_model:
+      - ErrorModelConfig
+      - ErrorProtocol
+      - ErrorModel
+    control_model:
+      - ControlModelConfig
+      - ControlProtocol
+      - ControlModel
+    protocol_simulator:
+      - ProtocolSimulatorConfig
+      - SimulationResult
+      - ProtocolSimulator
+
+paths:
+  reports_dir: extensions/decoding_simulation/reports
+  data_dir: extensions/decoding_simulation/data/processed
+  manifests_dir: extensions/decoding_simulation/manifests

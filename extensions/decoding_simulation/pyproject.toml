@@ -1,0 +1,16 @@
+[project]
+name = "manual-coding-sim-decoding"
+version = "0.1.0"
+description = "Изолированное расширение моделирования декодирования для manual-coding-quality"
+requires-python = ">=3.11"
+dependencies = ["PyYAML>=6.0"]
+
+[project.scripts]
+manual-coding-decoding = "manual_coding_sim_decoding.runner:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

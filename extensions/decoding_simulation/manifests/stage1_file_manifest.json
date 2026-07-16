@@ -1,0 +1,15 @@
+{
+  "extensions/decoding_simulation/README_STAGE1.md": "c027c47bc59a131d0412edc1badeb44eb3b36e8a23b6446dbb139080715c5a8a",
+  "extensions/decoding_simulation/configs/decoding_stage1.yaml": "2e2d1dc95ac5a62f559546552854465d18977c5b777dc9911a68d1c0c36a2933",
+  "extensions/decoding_simulation/docs/BASE_ADAPTER_CONTRACT.md": "b790931e42c16afb027faf857eece24d319d5960430e11a0f1ee2bb535371419",
+  "extensions/decoding_simulation/docs/STAGE1_IMPLEMENTATION.md": "9c8d2baf8eaccb38caaf68c9bfb827cfb81bc38d9a5f143bb924c6d6ed80f0d2",
+  "extensions/decoding_simulation/pyproject.toml": "fe86be77bd81bca888ae24767e323acc635383a5536b1c33f9c858f40447ccde",
+  "extensions/decoding_simulation/reports/stage1/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "extensions/decoding_simulation/src/manual_coding_sim_decoding/__init__.py": "7c5e5c526441d12f38d64318c38cd2fc236b589b0564a1e480381d638396008d",
+  "extensions/decoding_simulation/src/manual_coding_sim_decoding/__main__.py": "e3b2c0efd6021b572c5b3ceabd2298b13363de80fd6e76191bf954f94e655f96",
+  "extensions/decoding_simulation/src/manual_coding_sim_decoding/base_adapter.py": "6eae8769eceb3c4f22659faab80dcaca74a220b045333f7a5bb428354895802e",
+  "extensions/decoding_simulation/src/manual_coding_sim_decoding/config.py": "d780ece95d35137f41d3596fe38764bdee39b8b9659058b0da36b4c92ae60779",
+  "extensions/decoding_simulation/src/manual_coding_sim_decoding/paths.py": "4392cba444d6a78979e85990a37205a04a04d4c99324322557847e3ce50d57c4",
+  "extensions/decoding_simulation/src/manual_coding_sim_decoding/runner.py": "bcc8456e3c31e039e985898d9bd902ae5907fd0a22f6e2b5a3cec12b98bd8501",
+  "extensions/decoding_simulation/tests/test_stage1_package_scaffold.py": "e11bc7da90e57592c20b7838472580fc26739ec2d22e14a9d7ce4c3f7e992f8a"
+}

@@ -1,0 +1,11 @@
+{
+  "extensions/decoding_simulation/README_STAGE2.md": "7e9625610d5f79b50ac13c31a6af4408023933b7de0854ae646d7062f54ab7c1",
+  "extensions/decoding_simulation/configs/decoding_stage2.yaml": "364505ea22b76d4217b52e1bb0650cfad2b30a2205c8fa226c6ae87fb46f8538",
+  "extensions/decoding_simulation/docs/STAGE2_IMPLEMENTATION.md": "6f3de4b88de335b97c1d717ee5ddfea141ab4a517f7bc7ea7a2941d302aed96b",
+  "extensions/decoding_simulation/reports/stage2/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "extensions/decoding_simulation/src/manual_coding_sim_decoding/__init__.py": "654675d3cbe631dda2c3d5ec72e7df27c5e6a410ef7cba34d097489b94f53935",
+  "extensions/decoding_simulation/src/manual_coding_sim_decoding/config.py": "2d1422098f79038eb564d4864c34391cae5774a8a7cc52af30e238f66928b3ed",
+  "extensions/decoding_simulation/src/manual_coding_sim_decoding/encoded_message.py": "00b87dcb38d71cb02662053a22e559525e158ce3c95c801c4d8d8fb554c65879",
+  "extensions/decoding_simulation/src/manual_coding_sim_decoding/runner.py": "1624a7e93b4a7a949510222becaedb972127862a50a6254f1fc0e25728bb55b6",
+  "extensions/decoding_simulation/tests/test_stage2_encoded_message.py": "ffe8ebd9b411c31d2a557d715b66c0ae1b7f153267cdd3d9161e72c51650caa0"
+}
