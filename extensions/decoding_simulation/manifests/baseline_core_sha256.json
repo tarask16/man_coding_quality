@@ -1,0 +1,20 @@
+{
+  "pyproject.toml": "e1f20ee093ec0fc0fe469b10b8ce73f3a634573323d31f3fca87e9c8f53b02b4",
+  "src/manual_coding_sim/__init__.py": "f97a41f65b28fb2457dbdfe234445ddf4495f59a2cfb046c2be2dda47c88711a",
+  "src/manual_coding_sim/types.py": "c08f8bd6216ea2d0f3b37f22106638a2e9d7ab036ddbea55415af36fa5ccc6af",
+  "src/manual_coding_sim/message_model.py": "a5fc89706d773108faaf179af54e83cab4bfff85e141504738aa7efc3806be37",
+  "src/manual_coding_sim/procedure_model.py": "511c5261b763d4e5643ad5b10daa0fcc98eeca5f058ae5a424cf4f2154c3c197",
+  "src/manual_coding_sim/operator_model.py": "6f3aac8363e40761ff9c25d00817941d25b8389cb417ce29f06f2efbf652d903",
+  "src/manual_coding_sim/condition_model.py": "ee828ffd8660ca7435230e15a99ef2afb7defda5a5119c68011449021e37073b",
+  "src/manual_coding_sim/error_model.py": "bf78db312116845bfccca5d233ac895c658c83828613cbe04a319f8cf5d27ee2",
+  "src/manual_coding_sim/control_model.py": "f86441564bfd22c93c08971a61b1fdea3b8b6e30bb1a2aa5048948a1990a3c84",
+  "src/manual_coding_sim/protocol_simulator.py": "cfac5df0cf18acc22a6d2895a8aba5397ce1ec78854a1f2adb674603a5c165fe",
+  "src/manual_coding_sim/feature_extractor.py": "39c477ee090afa71fcfd450f0f53a27e9875b3f2af0e02cb2e0e5ef54bc1ca64",
+  "src/manual_coding_sim/quality_calculator.py": "39de31fb589b8537102090b978cd6ffa6f18bc7281a5ef0507399ee9619d468a",
+  "src/manual_coding_sim/dataset_builder.py": "db43f8250c6f1027b041e9dc32ab9e02b8e62ba10a35493f093b2fed3146c7b9",
+  "src/manual_coding_sim/experiment_runner.py": "4eaf8f611967c65c6535403d6e92f5bd1f5689098680ebb29d110ce890b32d73",
+  "src/manual_coding_sim/experiments/extended_corpus_plan.py": "99ddced7017db7682275c36988d3aad9830fb9f5733e6ad346718e2b358cfc44",
+  "src/manual_coding_sim/experiments/extended_corpus_runner.py": "aef55418236b97b8112252a7599bc3e26d00d4d24c485e1272df209c1183872b",
+  "configs/base_experiment.yaml": "2c0d67f1c12ff6b4024e4cbbb16838729d28877eae7cfa17e811aea52de87c1a",
+  "configs/chapter3_extended_corpus.yaml": "d96a66aa3620fe904257ce5f485bdc9bf37fc15fd7c616960a013bf4603aa767"
+}

@@ -1,0 +1,253 @@
+{
+  "audit_version": "1.0",
+  "source_description": "Архив man_coding_quality_chapter6(1).zip, предоставленный в текущем проекте",
+  "status": "ready_for_isolated_extension",
+  "required_core_file_count": 18,
+  "required_test_file_count": 15,
+  "required_data_file_count": 6,
+  "missing_required_core_or_test_files": [],
+  "missing_data_files": [],
+  "syntax_errors": [],
+  "symbol_checks": [
+    {
+      "file": "src/manual_coding_sim/types.py",
+      "missing_symbols": [],
+      "status": "ok"
+    },
+    {
+      "file": "src/manual_coding_sim/procedure_model.py",
+      "missing_symbols": [],
+      "status": "ok"
+    },
+    {
+      "file": "src/manual_coding_sim/error_model.py",
+      "missing_symbols": [],
+      "status": "ok"
+    },
+    {
+      "file": "src/manual_coding_sim/control_model.py",
+      "missing_symbols": [],
+      "status": "ok"
+    },
+    {
+      "file": "src/manual_coding_sim/protocol_simulator.py",
+      "missing_symbols": [],
+      "status": "ok"
+    },
+    {
+      "file": "src/manual_coding_sim/feature_extractor.py",
+      "missing_symbols": [],
+      "status": "ok"
+    },
+    {
+      "file": "src/manual_coding_sim/quality_calculator.py",
+      "missing_symbols": [],
+      "status": "ok"
+    }
+  ],
+  "decoder_components_detected": [],
+  "decoder_component_status": "absent",
+  "csv_artifacts": {
+    "data/processed/protocols.csv": {
+      "rows": 150,
+      "columns": 10,
+      "header": [
+        "run_id",
+        "scenario_id",
+        "protocol_id",
+        "alternative_id",
+        "coding_tool_type",
+        "message_length",
+        "message_complexity",
+        "message_criticality",
+        "condition_profile",
+        "protocol_status"
+      ],
+      "sha256": "12cdb743199882ee31ace9782716ff4637dad5d1dd139433ef4a645a27364072"
+    },
+    "data/processed/prior_features.csv": {
+      "rows": 150,
+      "columns": 36,
+      "header": [
+        "run_id",
+        "protocol_id",
+        "scenario_id",
+        "alternative_id",
+        "prior_message_length",
+        "prior_mean_complexity",
+        "prior_mean_message_criticality",
+        "prior_digit_ratio",
+        "prior_control_marker_ratio",
+        "prior_procedure_steps",
+        "prior_total_nominal_time",
+        "prior_operator_skill",
+        "prior_operator_fatigue",
+        "prior_operator_attention",
+        "prior_operator_total_estimated_time",
+        "prior_condition_noise_level",
+        "prior_condition_time_pressure",
+        "prior_condition_mean_adjusted_attention",
+        "prior_condition_total_adjusted_time",
+        "prior_control_intensity",
+        "prior_expected_error_probability",
+        "prior_coding_tool_type",
+        "prior_condition_profile",
+        "prior_symbol_group_count",
+        "prior_alpha_ratio",
+        "prior_message_entropy_estimate",
+        "prior_operator_error_susceptibility",
+        "prior_control_expected_detection_rate",
+        "prior_procedure_branch_count",
+        "prior_memory_load_index",
+        "prior_time_pressure_index",
+        "prior_condition_noise_adjustment",
+        "prior_attention_deficit",
+        "prior_manual_operation_count",
+        "prior_verification_required",
+        "prior_repetition_expected_count"
+      ],
+      "sha256": "24eec65576212ce74bbda16e0612a397ad148f2e16b4ca0ecefc4ec0ec9c8b69"
+    },
+    "data/processed/diagnostic_features.csv": {
+      "rows": 150,
+      "columns": 8,
+      "header": [
+        "run_id",
+        "protocol_id",
+        "scenario_id",
+        "diagnostic_expected_error_probability",
+        "diagnostic_control_load",
+        "diagnostic_operator_stress",
+        "diagnostic_risk_class",
+        "diagnostic_condition_profile"
+      ],
+      "sha256": "9ce47d4a4ed3a312fca2f3ab0761194e5767ba5cb7d69212aec9203e190c5758"
+    },
+    "data/processed/fact_features.csv": {
+      "rows": 150,
+      "columns": 8,
+      "header": [
+        "run_id",
+        "protocol_id",
+        "scenario_id",
+        "fact_error_count",
+        "fact_duration_sec",
+        "fact_recheck_count",
+        "fact_reject_count",
+        "fact_success"
+      ],
+      "sha256": "daf45177b266e8235d2e3d517a4b3c1007f0b43e5fb2dda1942f2300f959bfcb"
+    },
+    "data/processed/quality_targets.csv": {
+      "rows": 150,
+      "columns": 10,
+      "header": [
+        "run_id",
+        "protocol_id",
+        "scenario_id",
+        "q_acc",
+        "q_time",
+        "q_effort",
+        "q_res",
+        "q_rep",
+        "q_fit",
+        "integral_quality"
+      ],
+      "sha256": "a11b2e856c81d2ac5912ff2b1cd54469d2f5b6f7f1af084bffacd4fe939ab4a5"
+    },
+    "data/processed/all_features.csv": {
+      "rows": 150,
+      "columns": 53,
+      "header": [
+        "run_id",
+        "protocol_id",
+        "scenario_id",
+        "alternative_id",
+        "prior_message_length",
+        "prior_mean_complexity",
+        "prior_mean_message_criticality",
+        "prior_digit_ratio",
+        "prior_control_marker_ratio",
+        "prior_procedure_steps",
+        "prior_total_nominal_time",
+        "prior_operator_skill",
+        "prior_operator_fatigue",
+        "prior_operator_attention",
+        "prior_operator_total_estimated_time",
+        "prior_condition_noise_level",
+        "prior_condition_time_pressure",
+        "prior_condition_mean_adjusted_attention",
+        "prior_condition_total_adjusted_time",
+        "prior_control_intensity",
+        "prior_expected_error_probability",
+        "prior_coding_tool_type",
+        "prior_condition_profile",
+        "prior_symbol_group_count",
+        "prior_alpha_ratio",
+        "prior_message_entropy_estimate",
+        "prior_operator_error_susceptibility",
+        "prior_control_expected_detection_rate",
+        "prior_procedure_branch_count",
+        "prior_memory_load_index",
+        "prior_time_pressure_index",
+        "prior_condition_noise_adjustment",
+        "prior_attention_deficit",
+        "prior_manual_operation_count",
+        "prior_verification_required",
+        "prior_repetition_expected_count",
+        "diagnostic_expected_error_probability",
+        "diagnostic_control_load",
+        "diagnostic_operator_stress",
+        "diagnostic_risk_class",
+        "diagnostic_condition_profile",
+        "fact_error_count",
+        "fact_duration_sec",
+        "fact_recheck_count",
+        "fact_reject_count",
+        "fact_success",
+        "q_acc",
+        "q_time",
+        "q_effort",
+        "q_res",
+        "q_rep",
+        "q_fit",
+        "integral_quality"
+      ],
+      "sha256": "1a76d64ec192d94ead904bbb8f04beaaf6068c31e051b2944c6fe0acf50e5ec9"
+    }
+  },
+  "all_required_csv_have_150_rows": true,
+  "test_file_count_total": 43,
+  "test_function_count_total": 317,
+  "chapter6_validation_source_files": [],
+  "chapter6_validation_source_status": "absent_in_uploaded_snapshot",
+  "baseline_core_hashes": {
+    "pyproject.toml": "e1f20ee093ec0fc0fe469b10b8ce73f3a634573323d31f3fca87e9c8f53b02b4",
+    "src/manual_coding_sim/__init__.py": "f97a41f65b28fb2457dbdfe234445ddf4495f59a2cfb046c2be2dda47c88711a",
+    "src/manual_coding_sim/types.py": "c08f8bd6216ea2d0f3b37f22106638a2e9d7ab036ddbea55415af36fa5ccc6af",
+    "src/manual_coding_sim/message_model.py": "a5fc89706d773108faaf179af54e83cab4bfff85e141504738aa7efc3806be37",
+    "src/manual_coding_sim/procedure_model.py": "511c5261b763d4e5643ad5b10daa0fcc98eeca5f058ae5a424cf4f2154c3c197",
+    "src/manual_coding_sim/operator_model.py": "6f3aac8363e40761ff9c25d00817941d25b8389cb417ce29f06f2efbf652d903",
+    "src/manual_coding_sim/condition_model.py": "ee828ffd8660ca7435230e15a99ef2afb7defda5a5119c68011449021e37073b",
+    "src/manual_coding_sim/error_model.py": "bf78db312116845bfccca5d233ac895c658c83828613cbe04a319f8cf5d27ee2",
+    "src/manual_coding_sim/control_model.py": "f86441564bfd22c93c08971a61b1fdea3b8b6e30bb1a2aa5048948a1990a3c84",
+    "src/manual_coding_sim/protocol_simulator.py": "cfac5df0cf18acc22a6d2895a8aba5397ce1ec78854a1f2adb674603a5c165fe",
+    "src/manual_coding_sim/feature_extractor.py": "39c477ee090afa71fcfd450f0f53a27e9875b3f2af0e02cb2e0e5ef54bc1ca64",
+    "src/manual_coding_sim/quality_calculator.py": "39de31fb589b8537102090b978cd6ffa6f18bc7281a5ef0507399ee9619d468a",
+    "src/manual_coding_sim/dataset_builder.py": "db43f8250c6f1027b041e9dc32ab9e02b8e62ba10a35493f093b2fed3146c7b9",
+    "src/manual_coding_sim/experiment_runner.py": "4eaf8f611967c65c6535403d6e92f5bd1f5689098680ebb29d110ce890b32d73",
+    "src/manual_coding_sim/experiments/extended_corpus_plan.py": "99ddced7017db7682275c36988d3aad9830fb9f5733e6ad346718e2b358cfc44",
+    "src/manual_coding_sim/experiments/extended_corpus_runner.py": "aef55418236b97b8112252a7599bc3e26d00d4d24c485e1272df209c1183872b",
+    "configs/base_experiment.yaml": "2c0d67f1c12ff6b4024e4cbbb16838729d28877eae7cfa17e811aea52de87c1a",
+    "configs/chapter3_extended_corpus.yaml": "d96a66aa3620fe904257ce5f485bdc9bf37fc15fd7c616960a013bf4603aa767"
+  },
+  "architectural_findings": [
+    "Событийный ProtocolSimulator завершает цепочку протоколом контроля и не формирует материальное кодированное сообщение C.",
+    "ProcedureModel создает нормативные абстрактные токены, но не выполняет отдельный слой фактического кодирования.",
+    "ErrorModel и ControlModel работают с исходами шагов, а не с изменяемой последовательностью кодированных элементов.",
+    "Типы EncodedMessage, DecodedMessage и восстановленное сообщение M_prime отсутствуют.",
+    "QualityCalculator рассчитывает q_acc по остаточной доле ошибок, а не по прямому расстоянию между M и M_prime.",
+    "Расширенный корпус из 150 сценариев формируется параметрическими формулами ExtendedCorpusRunner, а не событийным ProtocolSimulator.",
+    "Безопасная стратегия — отдельное расширение extensions/decoding_simulation без изменения исходного пакета manual_coding_sim."
+  ]
+}
