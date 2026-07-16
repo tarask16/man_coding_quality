@@ -12,6 +12,7 @@ from manual_coding_sim_decoding.config import (
     DecodingExtensionConfig,
     load_decoding_extension_config,
 )
+from manual_coding_sim_decoding.decoding_context import DecodingExecutionContextModel
 from manual_coding_sim_decoding.decoding_procedure import DecodingProcedureModel
 from manual_coding_sim_decoding.encoded_message import EncodedMessageBuilder
 from manual_coding_sim_decoding.paths import DecodingExtensionPaths
@@ -53,8 +54,16 @@ def build_argument_parser() -> argparse.ArgumentParser:
         help="Построить формальный нормативный план D_h(C).",
     )
     parser.add_argument(
+        "--estimate-decoding-context",
+        action="store_true",
+        help=(
+            "Рассчитать детерминированные оценки декодирующего "
+            "оператора и условий выполнения D_h(C)."
+        ),
+    )
+    parser.add_argument(
         "--message-id",
-        default="M_STAGE3_DEMO",
+        default="M_STAGE4_DEMO",
         help="Идентификатор демонстрационного исходного сообщения.",
     )
     parser.add_argument(
@@ -82,10 +91,12 @@ def main(argv: Sequence[str] | None = None) -> int:
         or args.check_base_contract
         or args.build_encoded_message
         or args.build_decoding_plan
+        or args.estimate_decoding_context
     ):
         parser.error(
             "Нужно указать --show-config, --check-base-contract, "
-            "--build-encoded-message и/или --build-decoding-plan."
+            "--build-encoded-message, --build-decoding-plan и/или "
+            "--estimate-decoding-context."
         )
 
     project_root = Path(args.project_root).resolve()
@@ -96,7 +107,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.show_config:
         _print_config(config, paths)
 
-    builds_artifact = args.build_encoded_message or args.build_decoding_plan
+    builds_artifact = (
+        args.build_encoded_message
+        or args.build_decoding_plan
+        or args.estimate_decoding_context
+    )
     contract_result = None
     if args.check_base_contract or builds_artifact:
         contract_result = ManualCodingSimAdapterContract(project_root, config).check()
@@ -125,7 +140,16 @@ def main(argv: Sequence[str] | None = None) -> int:
         elif not args.json:
             _print_contract_result(contract_result.to_dict())
 
-    if args.build_decoding_plan:
+    if args.estimate_decoding_context:
+        output_value = args.output or "reports/stage4/decoding_context_demo.json"
+        payload, output_path = _build_decoding_context(
+            paths=paths,
+            config=config,
+            message_id=args.message_id,
+            output_value=output_value,
+        )
+        _print_or_emit_decoding_context(payload, output_path, args.json)
+    elif args.build_decoding_plan:
         output_value = args.output or "reports/stage3/decoding_plan_demo.json"
         payload, output_path = _build_decoding_plan(
             paths=paths,
@@ -187,6 +211,35 @@ def _build_decoding_plan(
         "encoded_message": encoding_payload["encoded_message"],
         "encoding_protocol": encoding_payload["protocol"],
         "decoding_plan": plan.to_dict(),
+    }
+    output_path = _write_payload(paths, output_value, payload)
+    return payload, output_path
+
+
+def _build_decoding_context(
+    paths: DecodingExtensionPaths,
+    config: DecodingExtensionConfig,
+    message_id: str,
+    output_value: str,
+) -> tuple[dict[str, object], Path]:
+    """Сформировать C, D_h(C) и детерминированный контекст O_d + U_d."""
+    encoding_result = _simulate_and_encode(config, message_id)
+    decoding_model = DecodingProcedureModel(config.formal_decoding)
+    plan = decoding_model.build_plan(encoding_result.encoded_message)
+    context_model = DecodingExecutionContextModel(
+        operator_config=config.decoding_operator,
+        condition_config=config.decoding_conditions,
+    )
+    context = context_model.estimate_plan(plan)
+    encoding_payload = encoding_result.to_dict()
+    context_payload = context.to_dict()
+    payload: dict[str, object] = {
+        "encoded_message": encoding_payload["encoded_message"],
+        "encoding_protocol": encoding_payload["protocol"],
+        "decoding_plan": plan.to_dict(),
+        "decoding_operator_estimate": context_payload["operator_estimate"],
+        "decoding_condition_estimate": context_payload["condition_estimate"],
+        "decoding_execution_context": context_payload["metadata"],
     }
     output_path = _write_payload(paths, output_value, payload)
     return payload, output_path
@@ -256,6 +309,42 @@ def _print_or_emit_decoding_plan(
     )
 
 
+def _print_or_emit_decoding_context(
+    payload: dict[str, object],
+    output_path: Path,
+    as_json: bool,
+) -> None:
+    """Показать результат детерминированной оценки этапа 4."""
+    if as_json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+        return
+    operator = payload["decoding_operator_estimate"]
+    conditions = payload["decoding_condition_estimate"]
+    context = payload["decoding_execution_context"]
+    operator_metadata = operator["metadata"]
+    condition_metadata = conditions["metadata"]
+    print("Контекст выполнения обратной процедуры O_d + U_d сформирован.")
+    print(f"Файл результата: {output_path}")
+    print(f"Декодирующий оператор: {operator['operator_id']}")
+    print(f"Условия декодирования: {conditions['condition_id']}")
+    print(f"Шагов оценки: {operator_metadata['step_count']}")
+    print(
+        "Расчетное / скорректированное время: "
+        f"{operator_metadata['total_estimated_time']} / "
+        f"{condition_metadata['total_adjusted_time']}"
+    )
+    print(
+        "Среднее / скорректированное внимание: "
+        f"{operator_metadata['mean_attention']} / "
+        f"{condition_metadata['mean_adjusted_attention']}"
+    )
+    print(
+        "Ошибки декодирования генерируются: "
+        f"{context['generates_decoding_errors']}"
+    )
+    print(f"Восстановленное сообщение создается: {context['creates_decoded_message']}")
+
+
 def _resolve_config_path(project_root: Path, value: str) -> Path:
     """Разрешить абсолютный или относительный путь конфигурации."""
     path = Path(value)
@@ -308,6 +397,18 @@ def _print_config(
     print(
         "Остановка на неизвестном токене: "
         f"{config.formal_decoding.fail_on_unknown_token}"
+    )
+    print(
+        "Декодирующий оператор: "
+        f"{config.decoding_operator.profile.operator_id}"
+    )
+    print(
+        "Условия декодирования: "
+        f"{config.decoding_conditions.profile.condition_id}"
+    )
+    print(
+        "Лимит времени декодирования: "
+        f"{config.decoding_conditions.profile.time_limit_seconds}"
     )
 
 

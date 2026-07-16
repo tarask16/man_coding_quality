@@ -1,0 +1,131 @@
+extension:
+  name: decoding_simulation
+  package_name: manual_coding_sim_decoding
+  version: "0.1.0"
+  random_seed: 3042
+
+base_contract:
+  package_name: manual_coding_sim
+  baseline_manifest: extensions/decoding_simulation/manifests/baseline_core_sha256.json
+  required_symbols:
+    types:
+      - ScenarioParameters
+      - MessageElement
+      - GeneratedMessage
+    message_model:
+      - MessageGenerationConfig
+      - MessageModel
+    procedure_model:
+      - ProcedureModelConfig
+      - ProcedureStep
+      - ProcedurePlan
+      - ProcedureModel
+    operator_model:
+      - OperatorModelConfig
+      - OperatorPlanEstimate
+      - OperatorModel
+    condition_model:
+      - ConditionModelConfig
+      - ConditionPlanEstimate
+      - ConditionModel
+    error_model:
+      - ErrorModelConfig
+      - ErrorStepOutcome
+      - ErrorProtocol
+      - ErrorModel
+    control_model:
+      - ControlModelConfig
+      - ControlStepOutcome
+      - ControlProtocol
+      - ControlModel
+    protocol_simulator:
+      - ProtocolSimulatorConfig
+      - SimulationResult
+      - ProtocolSimulator
+
+paths:
+  reports_dir: extensions/decoding_simulation/reports
+  data_dir: extensions/decoding_simulation/data/processed
+  manifests_dir: extensions/decoding_simulation/manifests
+
+material_encoding:
+  encoded_message_prefix: C
+  substitution_prefix: ERR_SUB
+  reference_prefix: ERR_REF
+  service_marker_prefix: ERR_SERVICE
+  unknown_error_prefix: ERR_UNKNOWN
+  position_shift: 1
+
+formal_decoding:
+  decoding_procedure_id: D_001
+  token_prefix: TOK
+  token_position_width: 4
+  fail_on_unknown_token: false
+  service_values:
+    - SEP
+    - CTRL
+    - END
+  operation_rules:
+    - encoding_operation_type: abstract_substitution
+      decoding_operation_type: abstract_inverse_substitution
+      nominal_time: 1.10
+      complexity: 0.40
+      reference_required: false
+    - encoding_operation_type: abstract_numeric_mapping
+      decoding_operation_type: abstract_inverse_numeric_mapping
+      nominal_time: 1.30
+      complexity: 0.50
+      reference_required: true
+    - encoding_operation_type: abstract_service_marking
+      decoding_operation_type: abstract_inverse_service_interpretation
+      nominal_time: 1.55
+      complexity: 0.60
+      reference_required: true
+    - encoding_operation_type: abstract_copying
+      decoding_operation_type: abstract_inverse_copying
+      nominal_time: 0.90
+      complexity: 0.30
+      reference_required: false
+  unresolved_rule:
+    encoding_operation_type: __unresolved__
+    decoding_operation_type: abstract_unresolved_inverse_operation
+    nominal_time: 1.80
+    complexity: 0.80
+    reference_required: true
+
+decoding_operator:
+  profile:
+    operator_id: OD_001
+    preparation_level: 0.75
+    experience_level: 0.65
+    base_attention: 0.85
+    fatigue_rate: 0.015
+    reference_skill: 0.70
+    interpretation_skill: 0.72
+    work_rate: 1.00
+    min_attention: 0.25
+  reference_penalty: 0.10
+  complexity_weight: 0.40
+  fatigue_time_weight: 0.45
+  unresolved_token_penalty: 0.35
+
+decoding_conditions:
+  profile:
+    condition_id: UD_001
+    time_limit_seconds: null
+    noise_level: 0.20
+    instruction_access: 0.90
+    workload_level: 0.30
+    interruption_rate: 0.10
+    lighting_quality: 0.90
+  noise_weight: 0.25
+  workload_weight: 0.30
+  instruction_weight: 0.20
+  interruption_weight: 0.15
+  lighting_weight: 0.10
+  time_pressure_weight: 0.30
+  time_expansion_weight: 0.45
+  environment_attention_weight: 0.35
+  time_attention_weight: 0.30
+  ambiguity_time_weight: 0.35
+  ambiguity_attention_weight: 0.35
